@@ -18,6 +18,8 @@
 @property (assign, nonatomic) NSDate *finalDate;
 @property (assign, nonatomic) BOOL complited;
 
+-(id) initWithItem:(PFObject*) item;
+
 
 
 @end
