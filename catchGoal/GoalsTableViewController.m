@@ -67,6 +67,8 @@
 
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender {
     [PFUser logOut];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+
 }
 
 
