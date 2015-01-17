@@ -7,6 +7,7 @@
 //
 
 #import "GoalsTableViewController.h"
+#import "DetailTableViewController.h"
 #import "GoalTableViewCell.h"
 #import "Goal.h"
 
@@ -34,11 +35,9 @@
     
     self.goalsArray = [NSMutableArray array];
     Goal *goal = [Goal new];
-    
     goal.name = @"Name of the goal";
     goal.price = @100;
     goal.progress = @0;
-    
     [self.goalsArray addObject:goal];
 }
 
@@ -53,11 +52,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *identifier = @"cell";
-    
     GoalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
     Goal *goal = self.goalsArray[indexPath.row];
-    
     cell.nameLabel.text = goal.name;
     cell.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
     cell.progressLabel.text = [NSString stringWithFormat:@"%@%%", goal.progress];
@@ -66,10 +62,29 @@
 }
 
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender {
+    
     [PFUser logOut];
     [self.navigationController popToRootViewControllerAnimated:YES];
 
 }
 
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"showDetailSegue"]) {
+        
+        DetailTableViewController *detailTableViewController = (DetailTableViewController *)segue.destinationViewController;
+        UITableViewCell *cell = (UITableViewCell *)sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        Goal *goal = self.goalsArray[indexPath.row];
+        detailTableViewController.nameLabel.text = goal.name;
+        detailTableViewController.priceLabel.text = [NSString stringWithFormat:@"$%@", goal.price];
+        detailTableViewController.perMonthLabel.text = [NSString stringWithFormat:@"$%@", goal.perMonth];
+        detailTableViewController.totalLabel.text = [NSString stringWithFormat:@"%@", goal.progress];
+    }
+    
+}
 
 @end

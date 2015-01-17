@@ -31,21 +31,29 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) hideKeyboard {
+- (void) hideKeyboard {
     [self.nameTextField resignFirstResponder];
     [self.passwordTextField resignFirstResponder];
     [self.emailTextField resignFirstResponder];
 }
+
 
 #pragma mark - Actions
 
 - (IBAction)backButtonPressed:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 - (IBAction)registerButtonClicked:(UIButton *)sender {
     
     if ([self.emailTextField.text isEqualToString:@""] || [self.passwordTextField.text isEqualToString:@""] || [self.nameTextField.text isEqualToString:@""]) {
-        [[[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Заполните все поля" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+        
+        [[[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                    message:@"Заполните все поля"
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles: nil] show];
+        
     } else {
         
         BOOL isValid = [self validEmail:self.emailTextField.text];
@@ -88,7 +96,7 @@
     
 }
 
--(BOOL) textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     switch (textField.tag) {
         case 0:
@@ -108,9 +116,9 @@
 
 #pragma mark - Validate Email address
 
-- (BOOL) validEmail:(NSString*) emailString {
+- (BOOL)validEmail:(NSString *)emailString {
     
-    if([emailString length]==0){
+    if ([emailString length] == 0){
         return NO;
     }
     NSString *regExPattern = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
@@ -126,7 +134,7 @@
 
 #pragma mark - API request
 
--(void) registrationRequest:(NSString*) login withPassword:(NSString*) password andEmail:(NSString*) email {
+- (void)registrationRequest:(NSString*) login withPassword:(NSString*) password andEmail:(NSString *)email {
     
     PFUser *user = [PFUser user];
     user.username = login;

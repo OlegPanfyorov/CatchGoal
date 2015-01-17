@@ -16,7 +16,8 @@
     
     //hide keyboard on BG tap
     UITapGestureRecognizer *singleTap;
-    singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                        action:@selector(hideKeyboard)];
     singleTap.numberOfTapsRequired = 1;
     self.view.userInteractionEnabled = TRUE;
     [self.view addGestureRecognizer:singleTap];
@@ -40,7 +41,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
-- (void)keyboardWillShow: (NSNotification *) notif{
+- (void)keyboardWillShow: (NSNotification *)notif {
     
     CGFloat height = [[notif.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
     self.heightOfKeyboard = height;

@@ -70,8 +70,8 @@
         NSCharacterSet *illegalChars = [[NSCharacterSet alphanumericCharacterSet] invertedSet];
         // Test if there is an illegal character in the string
         BOOL hasIllegalCharacter = [myString rangeOfCharacterFromSet:illegalChars].location != NSNotFound;
-        BOOL hasLetter = [myString rangeOfCharacterFromSet: [NSCharacterSet letterCharacterSet]].location != NSNotFound;
-        BOOL hasDigit  = [myString rangeOfCharacterFromSet: [NSCharacterSet decimalDigitCharacterSet]].location != NSNotFound;
+        BOOL hasLetter = [myString rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]].location != NSNotFound;
+        BOOL hasDigit  = [myString rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]].location != NSNotFound;
             if (!hasDigit  && !hasLetter  && hasIllegalCharacter  ) {
                 return NO;
             }
@@ -98,7 +98,11 @@
 - (IBAction)loginClicked:(UIButton *)sender {
     
     if ([self.loginTextField.text isEqualToString:@""] || [self.passwordTextField.text isEqualToString:@""]) {
-        [[[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Заполните поля логин и пароль" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+        [[[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                    message:@"Заполните поля логин и пароль"
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles: nil] show];
     } else {
         [self hideKeyboard];
         [self loginRequest:self.loginTextField.text withPassword:self.passwordTextField.text];

@@ -58,7 +58,7 @@
 
 #pragma mark - Validate Email address
 
-- (BOOL) validEmail:(NSString*) emailString {
+- (BOOL)validEmail:(NSString *)emailString {
     
     if([emailString length]==0){
         return NO;
@@ -75,19 +75,24 @@
     }
 }
 
+
 #pragma mark - UITextFieldDelegate
 
--(BOOL) textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
 }
 
 #pragma mark - API Request
 
--(void) forgotPasswordRequest:(NSString*) email {
+- (void)forgotPasswordRequest:(NSString *)email {
     [PFUser requestPasswordResetForEmailInBackground:email block:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            [[[UIAlertView alloc] initWithTitle:@"Успешно" message:@"На ваш email адресс отправлена ссылка по котороый вы можете изменить пароль" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+            [[[UIAlertView alloc] initWithTitle:@"Успешно"
+                                        message:@"На ваш email адресс отправлена ссылка по котороый вы можете изменить пароль"
+                                       delegate:self
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles: nil] show];
             
         } else {
             NSLog(@"Forgot password request error: %@", [error description]);

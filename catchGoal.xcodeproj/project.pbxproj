@@ -43,6 +43,7 @@
 		794465D31A6A536800F00F63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794465D21A6A536800F00F63 /* UIKit.framework */; };
 		794465D61A6A5CE400F00F63 /* StartScreensMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 794465D51A6A5CE400F00F63 /* StartScreensMainViewController.m */; };
 		8B0471A51A6A2EE100CE1F06 /* GoalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0471A41A6A2EE100CE1F06 /* GoalsTableViewController.m */; };
+		8B6A205E1A6AB22100C4FDFE /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */; };
 		8B9E33421A6A32A400CA3778 /* GoalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,8 @@
 		794465D51A6A5CE400F00F63 /* StartScreensMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreensMainViewController.m; sourceTree = "<group>"; };
 		8B0471A31A6A2EE100CE1F06 /* GoalsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalsTableViewController.h; sourceTree = "<group>"; };
 		8B0471A41A6A2EE100CE1F06 /* GoalsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalsTableViewController.m; sourceTree = "<group>"; };
+		8B6A205C1A6AB22100C4FDFE /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
+		8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
 		8B9E33401A6A32A400CA3778 /* GoalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalTableViewCell.h; sourceTree = "<group>"; };
 		8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -314,10 +317,10 @@
 		8B0471A21A6A2E9100CE1F06 /* Goals */ = {
 			isa = PBXGroup;
 			children = (
-				8B0471A31A6A2EE100CE1F06 /* GoalsTableViewController.h */,
-				8B0471A41A6A2EE100CE1F06 /* GoalsTableViewController.m */,
 				8B9E33401A6A32A400CA3778 /* GoalTableViewCell.h */,
 				8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */,
+				8B0471A31A6A2EE100CE1F06 /* GoalsTableViewController.h */,
+				8B0471A41A6A2EE100CE1F06 /* GoalsTableViewController.m */,
 			);
 			name = Goals;
 			sourceTree = "<group>";
@@ -325,6 +328,8 @@
 		8BFB55321A6A3D2900FE9379 /* Goal detail */ = {
 			isa = PBXGroup;
 			children = (
+				8B6A205C1A6AB22100C4FDFE /* DetailTableViewController.h */,
+				8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */,
 			);
 			name = "Goal detail";
 			sourceTree = "<group>";
@@ -429,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B6A205E1A6AB22100C4FDFE /* DetailTableViewController.m in Sources */,
 				794465D61A6A5CE400F00F63 /* StartScreensMainViewController.m in Sources */,
 				790B7F4B1A69C5DB009C1F1B /* Goal.m in Sources */,
 				790B7F5B1A69CA3E009C1F1B /* LaunchScreenViewController.m in Sources */,
