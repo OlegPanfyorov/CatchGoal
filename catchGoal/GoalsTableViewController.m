@@ -23,8 +23,9 @@
     [super viewDidLoad];
     // Delete separators
     self.tableView.tableFooterView = [[UIView alloc] init];
-    
+    self.navigationController.navigationBarHidden = NO;
     [self performSelector:@selector(generateNewCell) withObject:nil];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)didReceiveMemoryWarning {
