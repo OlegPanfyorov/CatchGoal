@@ -64,8 +64,13 @@
 
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender {
     
-    [PFUser logOut];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [PFUser logOut];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        });
+    });
+    
 }
 
 
