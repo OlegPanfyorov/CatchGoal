@@ -20,6 +20,7 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     
     [self setupCirculeIndicator];
+    [self SetSumLeft];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,12 +34,37 @@
 - (IBAction)nextGoalButtonTap:(id)sender {
     
 }
+- (void) SetSumLeft {
+    
+    self.sumLeftLabel.progressLabelVCBlock = ^(KAProgressLabel *label, CGFloat progress) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [label setText:[NSString stringWithFormat:@"%.0f%%", (progress*100)]];
+            [label setTextColor:[UIColor darkGrayColor]];
+            [label setFont:[UIFont systemFontOfSize:12.f]];
+        });
+    };
+    
+    [self.sumLeftLabel setBackBorderWidth: 3.0];
+    [self.sumLeftLabel setFrontBorderWidth: 3.0];
+    
+    
+    [self.sumLeftLabel setColorTable: @{
+                                               NSStringFromProgressLabelColorTableKey(ProgressLabelTrackColor):
+                                                   [UIColor colorWithRed:0.89 green:0.89 blue:0.9 alpha:1],
+                                               NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
+                                                   [UIColor colorWithRed:1 green:0.26 blue:0.3 alpha:1],
+                                               }];
+    
+    [self.sumLeftLabel setProgress:50.f/100.f timing:TPPropertyAnimationTimingEaseIn duration:2.f delay:0];
+}
 
 - (void) setupCirculeIndicator {
     
     self.circleProgressLabel.progressLabelVCBlock = ^(KAProgressLabel *label, CGFloat progress) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [label setText:[NSString stringWithFormat:@"%.0f%%", (progress*100)]];
+            [label setTextColor:[UIColor darkGrayColor]];
+            [label setFont:[UIFont systemFontOfSize:40.f]];
         });
     };
     

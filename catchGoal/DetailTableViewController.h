@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 
 @property (weak, nonatomic) IBOutlet KAProgressLabel *circleProgressLabel;
+@property (weak, nonatomic) IBOutlet KAProgressLabel *sumLeftLabel;
 
 @end
