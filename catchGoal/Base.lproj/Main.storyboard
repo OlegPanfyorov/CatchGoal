@@ -446,7 +446,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D55-Rl-J0M" customClass="KAProgressLabel">
-                                                    <rect key="frame" x="85" y="50" width="150" height="150"/>
+                                                    <rect key="frame" x="85" y="30" width="150" height="150"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="Mbc-ML-TG0"/>
                                                         <constraint firstAttribute="height" constant="150" id="qcO-n2-NDf"/>
@@ -455,9 +455,21 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLc-zB-dGb" customClass="KAProgressLabel">
+                                                    <rect key="frame" x="8" y="198" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="hAk-2F-fj0"/>
+                                                        <constraint firstAttribute="width" constant="44" id="y8h-Xy-0m9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="D55-Rl-J0M" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="top" constant="50" id="7Gu-Vj-lKk"/>
+                                                <constraint firstItem="D55-Rl-J0M" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="top" constant="30" id="7Gu-Vj-lKk"/>
+                                                <constraint firstItem="mLc-zB-dGb" firstAttribute="leading" secondItem="pjv-DK-ZIF" secondAttribute="leadingMargin" id="K6D-Me-q8e"/>
+                                                <constraint firstAttribute="bottom" secondItem="mLc-zB-dGb" secondAttribute="bottom" constant="8" id="bDL-2K-Ui8"/>
                                                 <constraint firstAttribute="centerX" secondItem="D55-Rl-J0M" secondAttribute="centerX" id="bOW-7g-gut"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -504,6 +516,7 @@
                         <outlet property="nameLabel" destination="FfD-5g-n4D" id="RSC-XH-Iqj"/>
                         <outlet property="perMonthLabel" destination="4xW-eE-NPZ" id="b47-JC-eR9"/>
                         <outlet property="priceLabel" destination="iFL-x4-xny" id="4XN-dp-9eX"/>
+                        <outlet property="sumLeftLabel" destination="mLc-zB-dGb" id="WRE-gz-hJf"/>
                         <outlet property="totalLabel" destination="9dF-2W-VfA" id="cVY-R8-ybW"/>
                     </connections>
                 </tableViewController>
