@@ -28,7 +28,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     self.navigationController.navigationBarHidden = YES;
+    self.wrapFieldsLabel.layer.cornerRadius = 5.f;
+    self.loginButton.layer.cornerRadius = 5.f;
+    
+    self.loginTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 45)];
+    self.loginTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.passwordTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 45)];
+    self.passwordTextField.leftViewMode = UITextFieldViewModeAlways;
+    
+       
+    if ([self.loginTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
+        
+        self.loginTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.loginTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:18.f]}];
+    }
+    
+    if ([self.passwordTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
+        
+        self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.passwordTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:18.f]}];
+    }
+
+}
+
+-(UIStatusBarStyle) preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
