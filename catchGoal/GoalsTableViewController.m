@@ -13,6 +13,8 @@
 
 @interface GoalsTableViewController ()
 
+@property (assign, nonatomic) float progress;
+
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender;
 
 @end
@@ -21,8 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Delete separators
-    self.tableView.tableFooterView = [[UIView alloc] init];
+
     self.navigationController.navigationBarHidden = NO;
     [self performSelector:@selector(generateNewCell) withObject:nil];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -39,6 +40,10 @@
     goal.name = @"Name of the goal";
     goal.price = @100;
     goal.progress = @50;
+    // Total accumulated
+    NSInteger intProgress = [goal.progress integerValue];
+    NSInteger intPrice = [goal.price integerValue];
+    self.progress = (float)((intProgress * 100 / intPrice) / 100);
     [self.goalsArray addObject:goal];
 }
 
@@ -58,6 +63,7 @@
     cell.nameLabel.text = goal.name;
     cell.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
     cell.progressLabel.text = [NSString stringWithFormat:@"%@%%", goal.progress];
+    cell.lineProgressView.progress = self.progress;
     
     return cell;
 }

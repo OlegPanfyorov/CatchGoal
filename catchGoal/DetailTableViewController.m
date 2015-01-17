@@ -26,14 +26,6 @@
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)previewsGoalButtonTap:(id)sender {
-    
-}
-
-- (IBAction)nextGoalButtonTap:(id)sender {
-    
-}
-
 - (void) setupCirculeIndicator {
     
     self.circleProgressLabel.progressLabelVCBlock = ^(KAProgressLabel *label, CGFloat progress) {
@@ -54,8 +46,18 @@
                                   }];
     
     [self.circleProgressLabel setProgress:50.f/100.f timing:TPPropertyAnimationTimingEaseIn duration:2.f delay:0];
+}
 
+
+#pragma mark - Actions
+
+- (IBAction)previewsGoalButtonTap:(id)sender {
     
 }
+
+- (IBAction)nextGoalButtonTap:(id)sender {
+    
+}
+
 
 @end
