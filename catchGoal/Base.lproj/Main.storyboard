@@ -212,9 +212,13 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.47999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="E0W-Pr-cD2">
+                                            <rect key="frame" x="8" y="78" width="584" height="2"/>
+                                        </progressView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="lineProgressView" destination="E0W-Pr-cD2" id="Zk7-gU-NYi"/>
                                     <outlet property="nameLabel" destination="Lzf-41-UkP" id="PtI-wt-eji"/>
                                     <outlet property="priceLabel" destination="lXy-cC-Tmc" id="mgl-86-yge"/>
                                     <outlet property="progressLabel" destination="Hwo-Xe-RsV" id="5Jx-JY-JVq"/>
@@ -238,7 +242,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jwR-Pt-K35" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3538" y="474"/>
+            <point key="canvasLocation" x="3538" y="470"/>
         </scene>
         <!--Detail Table View Controller-->
         <scene sceneID="fHd-zK-bZn">

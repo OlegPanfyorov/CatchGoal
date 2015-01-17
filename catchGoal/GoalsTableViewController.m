@@ -65,7 +65,6 @@
     
     [PFUser logOut];
     [self.navigationController popToRootViewControllerAnimated:YES];
-
 }
 
 
