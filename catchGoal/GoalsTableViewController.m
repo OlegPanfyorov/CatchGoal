@@ -39,11 +39,11 @@
     Goal *goal = [Goal new];
     goal.name = @"Name of the goal";
     goal.price = @100;
-    goal.progress = @50;
+    goal.progress = @70;
     // Total accumulated
-    NSInteger intProgress = [goal.progress integerValue];
-    NSInteger intPrice = [goal.price integerValue];
-    self.progress = (float)((intProgress * 100 / intPrice) / 100);
+    CGFloat intProgress = [goal.progress floatValue];
+    CGFloat intPrice = [goal.price floatValue];
+    self.progress = (float) intProgress / 100;
     [self.goalsArray addObject:goal];
 }
 
