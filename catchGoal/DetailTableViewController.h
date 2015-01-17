@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *perMonthLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 
+@property (weak, nonatomic) IBOutlet KAProgressLabel *circleProgressLabel;
 
 @end

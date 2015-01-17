@@ -15,5 +15,6 @@
 #import "Constants.h"
 #import "Goal.h"
 #import "StartScreensMainViewController.h"
+#import "KAProgressLabel.h"
 
 #endif

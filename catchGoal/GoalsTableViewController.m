@@ -38,7 +38,7 @@
     Goal *goal = [Goal new];
     goal.name = @"Name of the goal";
     goal.price = @100;
-    goal.progress = @0;
+    goal.progress = @50;
     [self.goalsArray addObject:goal];
 }
 

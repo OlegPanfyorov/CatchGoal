@@ -444,6 +444,22 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zeT-j9-71q" id="pjv-DK-ZIF">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D55-Rl-J0M" customClass="KAProgressLabel">
+                                                    <rect key="frame" x="85" y="50" width="150" height="150"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="Mbc-ML-TG0"/>
+                                                        <constraint firstAttribute="height" constant="150" id="qcO-n2-NDf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="D55-Rl-J0M" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="top" constant="50" id="7Gu-Vj-lKk"/>
+                                                <constraint firstAttribute="centerX" secondItem="D55-Rl-J0M" secondAttribute="centerX" id="bOW-7g-gut"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LUH-ju-656">
@@ -484,6 +500,7 @@
                     <navigationItem key="navigationItem" id="tDh-WW-9vo"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="circleProgressLabel" destination="D55-Rl-J0M" id="Tia-W7-2So"/>
                         <outlet property="nameLabel" destination="FfD-5g-n4D" id="RSC-XH-Iqj"/>
                         <outlet property="perMonthLabel" destination="4xW-eE-NPZ" id="b47-JC-eR9"/>
                         <outlet property="priceLabel" destination="iFL-x4-xny" id="4XN-dp-9eX"/>
