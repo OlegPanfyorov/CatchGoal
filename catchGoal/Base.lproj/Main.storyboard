@@ -456,30 +456,30 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLc-zB-dGb" customClass="KAProgressLabel">
-                                                    <rect key="frame" x="16" y="198" width="44" height="44"/>
+                                                    <rect key="frame" x="16" y="194" width="48" height="48"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="hAk-2F-fj0"/>
-                                                        <constraint firstAttribute="width" constant="44" id="y8h-Xy-0m9"/>
+                                                        <constraint firstAttribute="height" constant="48" id="hAk-2F-fj0"/>
+                                                        <constraint firstAttribute="width" constant="48" id="y8h-Xy-0m9"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxb-RD-tt9" customClass="KAProgressLabel">
-                                                    <rect key="frame" x="138" y="198" width="44" height="44"/>
+                                                    <rect key="frame" x="136" y="194" width="48" height="48"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="8oV-xA-d4s"/>
-                                                        <constraint firstAttribute="width" constant="44" id="rrX-gk-zeK"/>
+                                                        <constraint firstAttribute="height" constant="48" id="8oV-xA-d4s"/>
+                                                        <constraint firstAttribute="width" constant="48" id="rrX-gk-zeK"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5O-Ag-bUu" customClass="KAProgressLabel">
-                                                    <rect key="frame" x="260" y="198" width="44" height="44"/>
+                                                    <rect key="frame" x="256" y="194" width="48" height="48"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="B9a-D3-aJP"/>
-                                                        <constraint firstAttribute="width" constant="44" id="noM-vx-lzT"/>
+                                                        <constraint firstAttribute="height" constant="48" id="B9a-D3-aJP"/>
+                                                        <constraint firstAttribute="width" constant="48" id="noM-vx-lzT"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
