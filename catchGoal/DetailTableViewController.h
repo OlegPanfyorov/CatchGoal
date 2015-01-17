@@ -17,5 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet KAProgressLabel *circleProgressLabel;
 @property (weak, nonatomic) IBOutlet KAProgressLabel *sumLeftLabel;
+@property (strong, nonatomic) IBOutletCollection(KAProgressLabel) NSArray *smallCircleLabals;
 
 @end
