@@ -45,6 +45,10 @@
     CGFloat intPrice = [goal.price floatValue];
     self.progress = (float) intProgress / 100;
     [self.goalsArray addObject:goal];
+    NSInteger intProgress = [goal.progress integerValue];
+    NSInteger intPrice = [goal.price integerValue];
+    self.progress = (float)((intProgress * 100 / intPrice) / 100);
+    
 }
 
 
