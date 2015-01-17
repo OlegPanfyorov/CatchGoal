@@ -10,14 +10,14 @@
 	<string>catchGoal</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>DAD01A0CEC8A062F4A2190D97A5566E034FD9366</key>
+		<key>AAB0F0161D4DCC888702AB5432611B9E3D2A71E2</key>
 		<string>https://github.com/OlegPanfyorov/catchGoal.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>catchGoal.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>DAD01A0CEC8A062F4A2190D97A5566E034FD9366</key>
+		<key>AAB0F0161D4DCC888702AB5432611B9E3D2A71E2</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>DAD01A0CEC8A062F4A2190D97A5566E034FD9366</string>
+	<string>AAB0F0161D4DCC888702AB5432611B9E3D2A71E2</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>DAD01A0CEC8A062F4A2190D97A5566E034FD9366</string>
+			<string>AAB0F0161D4DCC888702AB5432611B9E3D2A71E2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>catchGoal</string>
 		</dict>
