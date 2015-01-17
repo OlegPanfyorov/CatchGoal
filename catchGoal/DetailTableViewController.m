@@ -48,9 +48,9 @@
     
     [self.circleProgressLabel setColorTable: @{
                                   NSStringFromProgressLabelColorTableKey(ProgressLabelTrackColor):
-                                      [UIColor lightGrayColor],
+                                      [UIColor colorWithRed:0.89 green:0.89 blue:0.9 alpha:1],
                                   NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
-                                      [UIColor colorWithRed:0.97 green:0.88 blue:0.45 alpha:1],
+                                      [UIColor colorWithRed:0 green:0.69 blue:0.96 alpha:1],
                                   }];
     
     [self.circleProgressLabel setProgress:50.f/100.f timing:TPPropertyAnimationTimingEaseIn duration:2.f delay:0];
