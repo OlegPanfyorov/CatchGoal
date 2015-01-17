@@ -19,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+}
+- (void) viewWillAppear:(BOOL)animated {
     
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
