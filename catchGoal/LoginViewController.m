@@ -48,7 +48,23 @@
         
         self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.passwordTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:18.f]}];
     }
+    
+    [self.loginButton addTarget:self action:@selector(lowAlfa:) forControlEvents:UIControlEventTouchDown];
+    [self.loginButton addTarget:self action:@selector(hightAlfa:)
+              forControlEvents:UIControlEventTouchUpInside |
+     UIControlEventTouchDragOutside |
+     UIControlEventTouchDragExit |
+     UIControlEventTouchUpOutside];
 
+
+}
+
+- (void) lowAlfa:(UIButton*) sender {
+    sender.alpha = 0.5f;
+}
+
+- (void) hightAlfa:(UIButton*) sender {
+    sender.alpha = 1.f;
 }
 
 -(UIStatusBarStyle) preferredStatusBarStyle
