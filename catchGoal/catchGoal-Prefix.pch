@@ -12,6 +12,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import <CoreText/CoreText.h>
 #import "Constants.h"
 #import "Goal.h"
 #import "StartScreensMainViewController.h"

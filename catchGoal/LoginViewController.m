@@ -15,6 +15,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *loginTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *restoreButton;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *registrationButton;
 
 - (IBAction)registrationClicked:(UIButton *)sender;
 - (IBAction)forgotPasswordClicked:(UIButton *)sender;
@@ -55,7 +58,9 @@
      UIControlEventTouchDragOutside |
      UIControlEventTouchDragExit |
      UIControlEventTouchUpOutside];
-
+    [self underlineString:@"Восстановить пароль" button:self.restoreButton];
+    [self underlineString:@"Регистрация" button:self.registrationButton];
+    
 
 }
 
@@ -77,6 +82,19 @@
     self.loginTextField.text = @"";
     self.passwordTextField.text = @"";
 
+}
+
+#pragma mark - Underline Button text
+
+-(void) underlineString:(NSString*) string button: (UIButton*) button {
+    
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:string];
+    [attString addAttribute:(NSString*)kCTUnderlineStyleAttributeName
+                      value:[NSNumber numberWithInt:kCTUnderlineStyleSingle]
+                      range:(NSRange){0,[attString length]}];
+    button.titleLabel.attributedText = attString;
+    
+    
 }
 
 #pragma mark - Keyboard

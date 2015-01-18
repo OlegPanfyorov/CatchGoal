@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C99d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -722,7 +722,7 @@
                         <outlet property="loginTextField" destination="cJi-BC-fTd" id="Zpu-gl-1IP"/>
                         <outlet property="passwordTextField" destination="8vd-j9-0rO" id="5yL-Hg-x5q"/>
                         <outlet property="registrationButton" destination="4kn-vD-Tkc" id="HGd-W4-D2U"/>
-                        <outlet property="restoreButtone" destination="zHG-EY-Pbf" id="SAD-6J-jLe"/>
+                        <outlet property="restoreButton" destination="zHG-EY-Pbf" id="8aM-zT-s3f"/>
                         <outlet property="wrapFieldsLabel" destination="2pu-bc-YZh" id="3Px-ai-VW0"/>
                     </connections>
                 </viewController>
