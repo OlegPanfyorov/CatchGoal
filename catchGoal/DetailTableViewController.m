@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Delete separators
     self.tableView.tableFooterView = [[UIView alloc] init];
-    
+    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     [self canGoToPreviousOrNextGoal];
     
     [self setupCirculeIndicator];
