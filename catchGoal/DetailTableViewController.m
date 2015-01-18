@@ -139,8 +139,9 @@
     self.circleProgressLabel.progressLabelVCBlock = ^(KAProgressLabel *label, CGFloat progress) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [label setText:[NSString stringWithFormat:@"%.0f%%", (progress*100)]];
-            [label setTextColor:[UIColor darkGrayColor]];
+            [label setTextColor:[UIColor colorWithRed:0.42 green:0.82 blue:0.28 alpha:1]];
             [label setFont:[UIFont systemFontOfSize:40.f]];
+            
         });
     };
     

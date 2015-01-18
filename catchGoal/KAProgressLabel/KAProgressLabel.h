@@ -26,6 +26,8 @@ typedef NS_ENUM(NSUInteger, ProgressLableType) {
 
 @interface KAProgressLabel : UILabel
 
+
+
 @property (nonatomic, copy) progressLabelValueChangedCompletion progressLabelVCBlock;
 
 @property (nonatomic, assign) CGFloat backBorderWidth;
