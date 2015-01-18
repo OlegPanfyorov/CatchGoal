@@ -37,16 +37,19 @@
     
     self.goalsArray = [NSMutableArray array];
     Goal *goal = [Goal new];
-    goal.name = @"Name of the goal";
+    goal.name = @"IPhone 6 Plus";
     goal.price = @100;
     goal.progress = @70;
     // Total accumulated
     CGFloat intProgress = [goal.progress floatValue];
     CGFloat intPrice = [goal.price floatValue];
     self.progress = (float) intProgress / 100;
-    [self.goalsArray addObject:goal];
 
     self.progress = (float)((intProgress * 100 / intPrice) / 100);
+    
+    for (int i = 0; i < 5; i++) {
+        [self.goalsArray addObject:goal];
+    }
     
 }
 

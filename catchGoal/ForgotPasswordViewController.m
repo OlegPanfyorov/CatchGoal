@@ -11,6 +11,7 @@
 @interface ForgotPasswordViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UIButton *restoreButton;
 
 - (IBAction)backButtonPressed:(UIButton *)sender;
 - (IBAction)restorePasswordPressed:(UIButton *)sender;
@@ -22,13 +23,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.restoreButton.layer.cornerRadius = 5.f;
     self.emailTextField.layer.cornerRadius = 5.f;
     
     if ([self.emailTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
         
         self.emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.emailTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:18.f]}];
     }
+    
+    [self.restoreButton addTarget:self action:@selector(lowAlfa:) forControlEvents:UIControlEventTouchDown];
+    [self.restoreButton addTarget:self action:@selector(hightAlfa:)
+               forControlEvents:UIControlEventTouchUpInside |
+     UIControlEventTouchDragOutside |
+     UIControlEventTouchDragExit |
+     UIControlEventTouchUpOutside];
 
+
+}
+
+- (void) lowAlfa:(UIButton*) sender {
+    sender.alpha = 0.5f;
+}
+
+- (void) hightAlfa:(UIButton*) sender {
+    sender.alpha = 1.f;
 }
 
 -(UIStatusBarStyle) preferredStatusBarStyle
