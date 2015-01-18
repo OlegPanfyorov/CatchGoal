@@ -42,6 +42,7 @@
 		794465D11A6A536000F00F63 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794465D01A6A536000F00F63 /* SystemConfiguration.framework */; };
 		794465D31A6A536800F00F63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794465D21A6A536800F00F63 /* UIKit.framework */; };
 		794465D61A6A5CE400F00F63 /* StartScreensMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 794465D51A6A5CE400F00F63 /* StartScreensMainViewController.m */; };
+		79548FFD1A6C37BB005AE681 /* DataSingletone.m in Sources */ = {isa = PBXBuildFile; fileRef = 79548FFC1A6C37BB005AE681 /* DataSingletone.m */; };
 		8B0471A51A6A2EE100CE1F06 /* GoalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0471A41A6A2EE100CE1F06 /* GoalsTableViewController.m */; };
 		8B6A205E1A6AB22100C4FDFE /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */; };
 		8B9E33421A6A32A400CA3778 /* GoalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */; };
@@ -122,6 +123,8 @@
 		794465D21A6A536800F00F63 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		794465D41A6A5CE400F00F63 /* StartScreensMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScreensMainViewController.h; sourceTree = "<group>"; };
 		794465D51A6A5CE400F00F63 /* StartScreensMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreensMainViewController.m; sourceTree = "<group>"; };
+		79548FFB1A6C37BB005AE681 /* DataSingletone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSingletone.h; sourceTree = "<group>"; };
+		79548FFC1A6C37BB005AE681 /* DataSingletone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSingletone.m; sourceTree = "<group>"; };
 		8B0471A31A6A2EE100CE1F06 /* GoalsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalsTableViewController.h; sourceTree = "<group>"; };
 		8B0471A41A6A2EE100CE1F06 /* GoalsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalsTableViewController.m; sourceTree = "<group>"; };
 		8B6A205C1A6AB22100C4FDFE /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
@@ -284,6 +287,8 @@
 			children = (
 				790B7F491A69C5DB009C1F1B /* Goal.h */,
 				790B7F4A1A69C5DB009C1F1B /* Goal.m */,
+				79548FFB1A6C37BB005AE681 /* DataSingletone.h */,
+				79548FFC1A6C37BB005AE681 /* DataSingletone.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -466,10 +471,11 @@
 				TargetAttributes = {
 					790B7F181A69C3AE009C1F1B = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = Q4878CH2H6;
+						DevelopmentTeam = ZNV8E83E9C;
 					};
 					790B7F311A69C3AE009C1F1B = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = ZNV8E83E9C;
 						TestTargetID = 790B7F181A69C3AE009C1F1B;
 					};
 				};
@@ -541,6 +547,7 @@
 				790B7F471A69C5C8009C1F1B /* Constants.m in Sources */,
 				8B9E33421A6A32A400CA3778 /* GoalTableViewCell.m in Sources */,
 				DABF0E5C1A6AD96800105669 /* KAProgressLabel.m in Sources */,
+				79548FFD1A6C37BB005AE681 /* DataSingletone.m in Sources */,
 				D3494B6C1A6C0FE60007DD0C /* NewGoalTableViewController.m in Sources */,
 				790B7F551A69CA0D009C1F1B /* RegistrationViewController.m in Sources */,
 				D3494B6F1A6C10460007DD0C /* BGDatePicker.m in Sources */,
