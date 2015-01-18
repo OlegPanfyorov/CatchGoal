@@ -10,6 +10,5 @@
 
 @interface GoalsTableViewController : UITableViewController
 
-@property (strong, nonatomic) NSMutableArray *goalsArray;
 
 @end

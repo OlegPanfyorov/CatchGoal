@@ -42,19 +42,18 @@
 }
 
 - (void)generateNewCell {
-    
-    self.goalsArray = [NSMutableArray array];
-    Goal *goal = [Goal new];
-    goal.name = @"iPhone 6 Plus";
-    goal.price = @800;
-    goal.perMonth = @80;
-    goal.progress = @160;
-    
-    // Total accumulated
-    self.progress = (float)([goal.progress floatValue] * 100 / [goal.price floatValue]);
-    
+
     for (int i = 0; i < 5; i++) {
-        [self.goalsArray addObject:goal];
+        Goal *goal = [Goal new];
+        int iPhoneNumber = arc4random() % 4 + 2;
+        int totalPrice = (arc4random() % 10 + 1) * 1000;
+        int progress = (arc4random() % 5 + 1) * 200;
+        goal.name = [NSString stringWithFormat:@"iPhone %d", iPhoneNumber];
+        goal.price = [NSNumber numberWithInt:totalPrice];
+        goal.perMonth = @100;
+        goal.progress = [NSNumber numberWithInt:progress];
+        
+        [[DataSingletone sharedModel].goalsArray addObject:goal];
     }
 }
 
@@ -63,18 +62,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.goalsArray count];
+    return  [[DataSingletone sharedModel].goalsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *identifier = @"cell";
     GoalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    Goal *goal = self.goalsArray[indexPath.row];
+    Goal *goal = [DataSingletone sharedModel].goalsArray[indexPath.row];
     cell.nameLabel.text = goal.name;
     cell.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
-    cell.progressLabel.text = [NSString stringWithFormat:@"%0.f%%", self.progress];
-    cell.lineProgressView.progress = self.progress / 100;
+    cell.progressLabel.text = [NSString stringWithFormat:@"%0.f%%", (float)([goal.progress floatValue] * 100 / [goal.price floatValue])];
+    cell.lineProgressView.progress = (float)([goal.progress floatValue] * 100 / [goal.price floatValue]) / 100;
     
     return cell;
 }
@@ -101,9 +100,9 @@
         UITableViewCell *cell = (UITableViewCell *)sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         detailTableViewController.selectedItemInArray = indexPath.row;
-        detailTableViewController.goalsArray = self.goalsArray;
+        detailTableViewController.goalsArray = [DataSingletone sharedModel].goalsArray;
         
-        Goal *goal = self.goalsArray[indexPath.row];
+        Goal *goal = [DataSingletone sharedModel].goalsArray[indexPath.row];
         detailTableViewController.nameLabel.text = goal.name;
         detailTableViewController.priceLabel.text = [NSString stringWithFormat:@"$%@", goal.price];
         detailTableViewController.perMonthLabel.text = [NSString stringWithFormat:@"$%@", goal.perMonth];
