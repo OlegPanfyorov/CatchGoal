@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C99d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -55,9 +55,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="E-mail" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EAC-af-0Ch">
-                                <rect key="frame" x="33" y="200" width="254" height="50"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="DCG-7M-3jY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EAC-af-0Ch">
+                                <rect key="frame" x="33" y="207" width="254" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Bwo-ZN-E74"/>
                                 </constraints>
@@ -69,7 +72,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ax-Jj-Hoy">
-                                <rect key="frame" x="87" y="260" width="147" height="50"/>
+                                <rect key="frame" x="87" y="267" width="147" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="147" id="Rie-Bg-Ziz"/>
                                     <constraint firstAttribute="height" constant="50" id="jo3-pC-G6v"/>
@@ -83,7 +86,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WH5-sl-Amc">
-                                <rect key="frame" x="109" y="299" width="102" height="50"/>
+                                <rect key="frame" x="109" y="306" width="102" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="06S-9T-Hvc"/>
                                     <constraint firstAttribute="height" constant="50" id="BWd-jO-AJx"/>
@@ -96,27 +99,29 @@
                                     <action selector="backButtonPressed:" destination="V0I-8j-dyI" eventType="touchUpInside" id="27q-iE-sEE"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Восстановить пароль." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFA-2a-Crt">
-                                <rect key="frame" x="41" y="85" width="238" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="TK6-GZ-xv4">
+                                <rect key="frame" x="53" y="81" width="215" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="8S2-nJ-YOC"/>
-                                    <constraint firstAttribute="width" constant="238" id="qEt-zC-cye"/>
+                                    <constraint firstAttribute="height" constant="35" id="9k7-OW-Prt"/>
+                                    <constraint firstAttribute="width" constant="215" id="WTX-7N-fh5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9Ax-Jj-Hoy" firstAttribute="top" secondItem="EAC-af-0Ch" secondAttribute="bottom" constant="10" id="257-fs-umb"/>
                             <constraint firstItem="EAC-af-0Ch" firstAttribute="leading" secondItem="8Pz-Zd-Iq3" secondAttribute="leadingMargin" constant="17" id="9jD-bK-jFv"/>
                             <constraint firstAttribute="centerX" secondItem="9Ax-Jj-Hoy" secondAttribute="centerX" id="C0e-Mm-LKQ"/>
-                            <constraint firstItem="EAC-af-0Ch" firstAttribute="top" secondItem="8Pz-Zd-Iq3" secondAttribute="top" constant="200" id="Dm5-dd-ZbT"/>
+                            <constraint firstItem="DCG-7M-3jY" firstAttribute="leading" secondItem="8Pz-Zd-Iq3" secondAttribute="leading" id="CJG-xh-g8z"/>
+                            <constraint firstItem="EAC-af-0Ch" firstAttribute="top" secondItem="8Pz-Zd-Iq3" secondAttribute="top" constant="207" id="Dm5-dd-ZbT"/>
                             <constraint firstAttribute="centerX" secondItem="WH5-sl-Amc" secondAttribute="centerX" id="NVx-aE-jap"/>
-                            <constraint firstAttribute="centerX" secondItem="CFA-2a-Crt" secondAttribute="centerX" id="Po7-hv-Kzz"/>
-                            <constraint firstItem="CFA-2a-Crt" firstAttribute="top" secondItem="8Pz-Zd-Iq3" secondAttribute="top" constant="85" id="Zko-Vu-4mA"/>
+                            <constraint firstItem="qh9-Lt-paQ" firstAttribute="top" secondItem="DCG-7M-3jY" secondAttribute="bottom" id="QpS-0r-TEz"/>
+                            <constraint firstItem="DCG-7M-3jY" firstAttribute="top" secondItem="8Pz-Zd-Iq3" secondAttribute="top" id="RaK-dD-AGc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EAC-af-0Ch" secondAttribute="trailing" constant="17" id="kTi-bq-fPS"/>
+                            <constraint firstAttribute="centerX" secondItem="TK6-GZ-xv4" secondAttribute="centerX" id="muv-6I-Ea1"/>
+                            <constraint firstItem="TK6-GZ-xv4" firstAttribute="top" secondItem="8Pz-Zd-Iq3" secondAttribute="top" constant="81" id="mvf-fL-aiB"/>
                             <constraint firstItem="WH5-sl-Amc" firstAttribute="top" secondItem="9Ax-Jj-Hoy" secondAttribute="bottom" constant="-11" id="sE2-WI-Rrk"/>
+                            <constraint firstAttribute="trailing" secondItem="DCG-7M-3jY" secondAttribute="trailing" id="w0K-Gc-TpN"/>
                         </constraints>
                     </view>
                     <connections>

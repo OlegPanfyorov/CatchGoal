@@ -31,8 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     self.navigationController.navigationBarHidden = YES;
+
     self.wrapFieldsLabel.layer.cornerRadius = 5.f;
     self.loginButton.layer.cornerRadius = 5.f;
     
@@ -81,6 +81,7 @@
     
     self.loginTextField.text = @"";
     self.passwordTextField.text = @"";
+
 
 }
 
