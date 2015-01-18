@@ -18,6 +18,24 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
+        
+        [[UIApplication sharedApplication] registerUserNotificationSettings:
+         [UIUserNotificationSettings settingsForTypes:
+          UIUserNotificationTypeAlert|
+          UIUserNotificationTypeSound|
+          UIUserNotificationTypeBadge categories:nil]];
+    }
+    
+    UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (localNotification) {
+        [application cancelAllLocalNotifications];
+    }
+    
+    [application setApplicationIconBadgeNumber:0];
+
+    
     [Parse enableLocalDatastore];
     
     // Initialize Parse.
@@ -25,8 +43,7 @@
         [Parse setApplicationId:@"9U7x7B73EwYNsGZO25vNZSSirM2J2YpEOH3P0FzV"
                       clientKey:@"VhrL0mzXXlfDBxPivBqocuOS3RjHla8zV3itIXv7"];
     });
-
-
+    
     return YES;
 }
 
@@ -50,6 +67,15 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    
+    // Handle the notification when the app is running
+    
+    [application setApplicationIconBadgeNumber:0];
+    
+    NSLog(@"Recieved Notification %@", notification);
 }
 
 @end

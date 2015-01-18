@@ -191,7 +191,6 @@
 		790B7F101A69C3AE009C1F1B = {
 			isa = PBXGroup;
 			children = (
-				D3494B701A6C14110007DD0C /* NotificationCenter.framework */,
 				790B7F1B1A69C3AE009C1F1B /* catchGoal */,
 				790B7F351A69C3AE009C1F1B /* catchGoalTests */,
 				790B7F1A1A69C3AE009C1F1B /* Products */,
@@ -254,6 +253,8 @@
 		790B7F421A69C5A0009C1F1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				794465C81A6A532D00F00F63 /* MobileCoreServices.framework */,
+				D3494B701A6C14110007DD0C /* NotificationCenter.framework */,
 				794465B31A6A529900F00F63 /* parse need. */,
 			);
 			name = Frameworks;
@@ -332,7 +333,6 @@
 				794465CE1A6A535700F00F63 /* StoreKit.framework */,
 				794465CC1A6A534E00F00F63 /* Security.framework */,
 				794465CA1A6A533500F00F63 /* QuartzCore.framework */,
-				794465C81A6A532D00F00F63 /* MobileCoreServices.framework */,
 				794465C61A6A532500F00F63 /* libstdc++.6.dylib */,
 				794465C41A6A531800F00F63 /* libz.1.1.3.dylib */,
 				794465C21A6A530900F00F63 /* Foundation.framework */,
@@ -466,6 +466,7 @@
 				TargetAttributes = {
 					790B7F181A69C3AE009C1F1B = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = Q4878CH2H6;
 					};
 					790B7F311A69C3AE009C1F1B = {
 						CreatedOnToolsVersion = 6.1.1;
