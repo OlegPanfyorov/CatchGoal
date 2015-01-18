@@ -7,8 +7,12 @@
 //
 
 #import "DetailTableViewController.h"
+#import "Goal.h"
 
 @interface DetailTableViewController ()
+
+@property (weak, nonatomic) IBOutlet UIButton *previousGoalButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextGoalButton;
 
 @end
 
@@ -19,12 +23,13 @@
     // Delete separators
     self.tableView.tableFooterView = [[UIView alloc] init];
     
+    [self canGoToPreviousOrNextGoal];
+    
     [self setupCirculeIndicator];
     [self setupSmallCircleLabels];
 }
 
--(UIStatusBarStyle) preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
 
@@ -32,13 +37,51 @@
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)previewsGoalButtonTap:(id)sender {
+- (void)canGoToPreviousOrNextGoal {
     
+    // For previews button
+    if (self.selectedItemInArray == 0) {
+        self.previousGoalButton.hidden = YES;
+        // For next button
+    } else {
+        self.previousGoalButton.hidden = NO;
+    }
+    
+    if (self.selectedItemInArray + 2 > [self.goalsArray count]) {
+        self.nextGoalButton.hidden = YES;
+    } else {
+        self.nextGoalButton.hidden = NO;
+    }
 }
 
-- (IBAction)nextGoalButtonTap:(id)sender {
+#pragma mark - Actions
+
+- (IBAction)previousGoalButtonTap:(UIButton *)sender {
     
+    self.selectedItemInArray--;
+
+    [self canGoToPreviousOrNextGoal];
+    
+    Goal *goal = self.goalsArray[self.selectedItemInArray];
+    self.nameLabel.text = goal.name;
+    self.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
+    self.perMonthLabel.text = [NSString stringWithFormat:@"%@", goal.perMonth];
+    self.totalLabel.text = [NSString stringWithFormat:@"%@", goal.progress];
 }
+
+- (IBAction)nextGoalButtonTap:(UIButton *)sender {
+    
+    self.selectedItemInArray++;
+
+    [self canGoToPreviousOrNextGoal];
+    
+    Goal *goal = self.goalsArray[self.selectedItemInArray];
+    self.nameLabel.text = goal.name;
+    self.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
+    self.perMonthLabel.text = [NSString stringWithFormat:@"%@", goal.perMonth];
+    self.totalLabel.text = [NSString stringWithFormat:@"%@", goal.progress];
+}
+
 - (void) setupSmallCircleLabels {
     
     for (KAProgressLabel* object in self.smallCircleLabals) {

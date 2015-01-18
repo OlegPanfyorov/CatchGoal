@@ -13,7 +13,7 @@
 
 @interface GoalsTableViewController ()
 
-@property (assign, nonatomic) float progress;
+@property (assign, nonatomic) CGFloat progress;
 
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender;
 
@@ -33,8 +33,7 @@
 
 }
 
--(UIStatusBarStyle) preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
 
@@ -46,20 +45,17 @@
     
     self.goalsArray = [NSMutableArray array];
     Goal *goal = [Goal new];
-    goal.name = @"IPhone 6 Plus";
-    goal.price = @100;
-    goal.progress = @70;
+    goal.name = @"iPhone 6 Plus";
+    goal.price = @800;
+    goal.perMonth = @80;
+    goal.progress = @160;
+    
     // Total accumulated
-    CGFloat intProgress = [goal.progress floatValue];
-    CGFloat intPrice = [goal.price floatValue];
-    self.progress = (float) intProgress / 100;
-
-    self.progress = (float)((intProgress * 100 / intPrice) / 100);
+    self.progress = (float)([goal.progress floatValue] * 100 / [goal.price floatValue]);
     
     for (int i = 0; i < 5; i++) {
         [self.goalsArray addObject:goal];
     }
-    
 }
 
 
@@ -77,8 +73,8 @@
     Goal *goal = self.goalsArray[indexPath.row];
     cell.nameLabel.text = goal.name;
     cell.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
-    cell.progressLabel.text = [NSString stringWithFormat:@"%@%%", goal.progress];
-    cell.lineProgressView.progress = self.progress;
+    cell.progressLabel.text = [NSString stringWithFormat:@"%0.f%%", self.progress];
+    cell.lineProgressView.progress = self.progress / 100;
     
     return cell;
 }
@@ -104,6 +100,9 @@
         DetailTableViewController *detailTableViewController = (DetailTableViewController *)segue.destinationViewController;
         UITableViewCell *cell = (UITableViewCell *)sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        detailTableViewController.selectedItemInArray = indexPath.row;
+        detailTableViewController.goalsArray = self.goalsArray;
+        
         Goal *goal = self.goalsArray[indexPath.row];
         detailTableViewController.nameLabel.text = goal.name;
         detailTableViewController.priceLabel.text = [NSString stringWithFormat:@"$%@", goal.price];

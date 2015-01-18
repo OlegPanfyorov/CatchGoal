@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C99d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -472,17 +472,18 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgq-oB-PFO">
-                                                    <rect key="frame" x="8" y="21" width="30" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgq-oB-PFO">
+                                                    <rect key="frame" x="8" y="21" width="41" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="71G-1n-ZJ3"/>
                                                         <constraint firstAttribute="height" constant="30" id="uNF-RQ-wla"/>
                                                     </constraints>
                                                     <state key="normal" title="&lt;">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="previewsGoalButtonTap:" destination="6Lk-Xg-R2n" eventType="touchUpInside" id="dua-he-C9c"/>
+                                                        <action selector="previousGoalButtonTap:" destination="6Lk-Xg-R2n" eventType="touchUpInside" id="fg0-aw-fGP"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6D-ZH-SCP">
@@ -568,16 +569,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zeT-j9-71q" id="pjv-DK-ZIF">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D55-Rl-J0M" customClass="KAProgressLabel">
-                                                    <rect key="frame" x="85" y="20" width="150" height="150"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="Mbc-ML-TG0"/>
-                                                        <constraint firstAttribute="height" constant="150" id="qcO-n2-NDf"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLc-zB-dGb" customClass="KAProgressLabel">
                                                     <rect key="frame" x="16" y="198" width="44" height="44"/>
                                                     <constraints>
@@ -603,6 +594,16 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="B9a-D3-aJP"/>
                                                         <constraint firstAttribute="width" constant="44" id="noM-vx-lzT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D55-Rl-J0M" customClass="KAProgressLabel">
+                                                    <rect key="frame" x="85" y="20" width="150" height="150"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="Mbc-ML-TG0"/>
+                                                        <constraint firstAttribute="height" constant="150" id="qcO-n2-NDf"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -661,7 +662,9 @@
                     <connections>
                         <outlet property="circleProgressLabel" destination="D55-Rl-J0M" id="Tia-W7-2So"/>
                         <outlet property="nameLabel" destination="FfD-5g-n4D" id="RSC-XH-Iqj"/>
+                        <outlet property="nextGoalButton" destination="j6D-ZH-SCP" id="vQs-Zw-N43"/>
                         <outlet property="perMonthLabel" destination="4xW-eE-NPZ" id="b47-JC-eR9"/>
+                        <outlet property="previousGoalButton" destination="hgq-oB-PFO" id="ggh-Ve-dAF"/>
                         <outlet property="priceLabel" destination="iFL-x4-xny" id="4XN-dp-9eX"/>
                         <outlet property="totalLabel" destination="9dF-2W-VfA" id="cVY-R8-ybW"/>
                         <outletCollection property="smallCircleLabals" destination="mLc-zB-dGb" id="aMw-hN-eYS"/>
