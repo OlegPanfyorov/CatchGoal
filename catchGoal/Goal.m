@@ -21,7 +21,7 @@
         _finalDate = [item objectForKey:@"createdAt"];
         _finalDate = [item objectForKey:@"finalDate"];
         _complited = [item objectForKey:@"complited"];
-        //NSLog(@"New goal object with name: %@, price: %@, perMonth: %@, progress: %@, image: %@, finalDate: %@, complited: %@", _name, _price, _perMonth, _progress, _goalImage, _finalDate, _complited ? @"NO" : @"YES");
+        NSLog(@"New goal object with name: %@, price: %@, perMonth: %@, progress: %@, image: %@, finalDate: %@, complited: %@", _name, _price, _perMonth, _progress, _goalImage, _finalDate, _complited ? @"NO" : @"YES");
     }
     return self;
 }
