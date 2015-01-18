@@ -27,6 +27,7 @@
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -675,24 +676,36 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Начало: 24.12.2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9N-O5-PuY">
-                                                    <rect key="frame" x="25" y="206" width="115" height="21"/>
+                                                    <rect key="frame" x="25" y="211" width="115" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Zh4-83-u8U"/>
                                                         <constraint firstAttribute="width" constant="115" id="ggi-dy-X1n"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Срок: 24.12.2014" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFK-0L-fNp">
+                                                    <rect key="frame" x="175" y="211" width="120" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="6yu-FG-Vjl"/>
+                                                        <constraint firstAttribute="width" constant="120" id="sYc-FV-bNl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="j6D-ZH-SCP" secondAttribute="trailing" constant="17" id="5WQ-SG-Upn"/>
                                                 <constraint firstItem="D55-Rl-J0M" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="top" constant="20" id="7Gu-Vj-lKk"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="XFK-0L-fNp" secondAttribute="bottom" constant="10" id="BCG-3m-6gm"/>
                                                 <constraint firstItem="M9N-O5-PuY" firstAttribute="leading" secondItem="pjv-DK-ZIF" secondAttribute="leadingMargin" constant="17" id="LFY-ng-VMt"/>
                                                 <constraint firstItem="j6D-ZH-SCP" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="topMargin" constant="87" id="WGI-Nv-3pg"/>
                                                 <constraint firstItem="hgq-oB-PFO" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="topMargin" constant="87" id="XaJ-QB-m2G"/>
                                                 <constraint firstAttribute="centerX" secondItem="D55-Rl-J0M" secondAttribute="centerX" id="bOW-7g-gut"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="M9N-O5-PuY" secondAttribute="bottom" constant="15" id="bgS-K3-mtY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="M9N-O5-PuY" secondAttribute="bottom" constant="10" id="bgS-K3-mtY"/>
+                                                <constraint firstItem="XFK-0L-fNp" firstAttribute="trailing" secondItem="pjv-DK-ZIF" secondAttribute="trailingMargin" constant="-17" id="h1a-eF-bPd"/>
                                                 <constraint firstItem="hgq-oB-PFO" firstAttribute="leading" secondItem="pjv-DK-ZIF" secondAttribute="leadingMargin" constant="17" id="nXg-qf-X9b"/>
                                             </constraints>
                                         </tableViewCellContentView>
