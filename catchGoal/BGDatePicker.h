@@ -11,6 +11,7 @@
 @interface BGDatePicker : UIDatePicker
 
 @property (strong, nonatomic) UIToolbar *toolbar;
+@property (strong, nonatomic) UITextField *textField;
 
 -(instancetype)initWithDateFormatString:(NSString*) dateFromString
                            forTextField:(UITextField*)textField

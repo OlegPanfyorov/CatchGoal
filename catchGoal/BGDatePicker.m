@@ -11,7 +11,7 @@
 @interface BGDatePicker ()
 
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
-@property (strong, nonatomic) UITextField *textField;
+
 
 @end
 
@@ -86,6 +86,17 @@
     UILocalNotification *localNotification = [UILocalNotification new];
     
     localNotification.fireDate = self.date;
+    
+    NSDate *leftThreeDays =
+    //[NSDate dateWithTimeIntervalSinceNow:-(24*60*60)*3];
+    [NSDate dateWithTimeIntervalSinceNow:10];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    [calendar component:NSCalendarUnitMinute fromDate:leftThreeDays];
+    
+    localNotification.repeatCalendar = calendar;
+
+    
     localNotification.alertBody = @"Hurry up!";
     localNotification.soundName = UILocalNotificationDefaultSoundName;
     [localNotification setApplicationIconBadgeNumber:1];
