@@ -12,6 +12,10 @@
 
 @interface NewGoalTableViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+{
+    DataSingletone *singletone;
+}
+
 @property (strong, nonatomic) BGDatePicker *datePicker;
 @property (strong, nonatomic) UIBarButtonItem *cameraItem;
 
@@ -24,10 +28,12 @@
 @end
 
 @implementation NewGoalTableViewController
-@synthesize datePicker, textFieldDeadline, cameraItem, picture;
+@synthesize datePicker, textFieldDeadline, cameraItem, picture, goalName, totalCost, commentView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    singletone = [DataSingletone sharedModel];
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
@@ -140,15 +146,23 @@
 didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:nil];
     if ([mediaType isEqualToString:(NSString*)kUTTypeImage]) {
         
         UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
         picture.image = image;
     }
+    
+    NSArray *newGoalInfo = [NSArray arrayWithObjects: goalName, totalCost, commentView, picture, nil];
+    
+    [singletone.goalsArray addObjectsFromArray:newGoalInfo];
+    
 }
 
-
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
 
 /*
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
