@@ -16,10 +16,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 
 @property (weak, nonatomic) IBOutlet KAProgressLabel *circleProgressLabel;
-@property (weak, nonatomic) IBOutlet KAProgressLabel *sumLeftLabel; // ???
+@property (weak, nonatomic) IBOutlet KAProgressLabel *sumLeftLabel; 
 @property (strong, nonatomic) IBOutletCollection(KAProgressLabel) NSArray *smallCircleLabals;
 
 @property (assign, nonatomic) NSInteger selectedItemInArray;
+@property (assign, nonatomic) CGFloat progress;
 @property (strong, nonatomic) NSMutableArray *goalsArray;
 
 @end

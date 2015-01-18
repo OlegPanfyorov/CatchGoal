@@ -15,6 +15,7 @@
 
 @property (assign, nonatomic) CGFloat progress;
 
+
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender;
 
 @end
@@ -53,6 +54,8 @@
         goal.perMonth = @100;
         goal.progress = [NSNumber numberWithInt:progress];
         
+        self.progress = (float)([goal.progress floatValue] * 100 / [goal.price floatValue]);
+        
         [[DataSingletone sharedModel].goalsArray addObject:goal];
     }
 }
@@ -72,7 +75,7 @@
     Goal *goal = [DataSingletone sharedModel].goalsArray[indexPath.row];
     cell.nameLabel.text = goal.name;
     cell.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
-    cell.progressLabel.text = [NSString stringWithFormat:@"%0.f%%", (float)([goal.progress floatValue] * 100 / [goal.price floatValue])];
+    cell.progressLabel.text = [NSString stringWithFormat:@"%0.f%%", self.progress];
     cell.lineProgressView.progress = (float)([goal.progress floatValue] * 100 / [goal.price floatValue]) / 100;
     
     return cell;
@@ -107,6 +110,9 @@
         detailTableViewController.priceLabel.text = [NSString stringWithFormat:@"$%@", goal.price];
         detailTableViewController.perMonthLabel.text = [NSString stringWithFormat:@"$%@", goal.perMonth];
         detailTableViewController.totalLabel.text = [NSString stringWithFormat:@"%@", goal.progress];
+        detailTableViewController.progress = self.progress;
+        
+        NSLog(@"0.%f", self.progress);
     }
     
 }
