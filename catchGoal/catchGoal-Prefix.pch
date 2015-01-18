@@ -17,5 +17,6 @@
 #import "Goal.h"
 #import "StartScreensMainViewController.h"
 #import "KAProgressLabel.h"
+#import "DataSingletone.h"
 
 #endif
