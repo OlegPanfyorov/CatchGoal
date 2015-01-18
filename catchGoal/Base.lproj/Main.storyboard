@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C99d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -614,27 +614,6 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgq-oB-PFO">
-                                                    <rect key="frame" x="8" y="21" width="41" height="30"/>
-                                                    <state key="normal" title="&lt;">
-                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="previousGoalButtonTap:" destination="6Lk-Xg-R2n" eventType="touchUpInside" id="fg0-aw-fGP"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6D-ZH-SCP">
-                                                    <rect key="frame" x="282" y="21" width="30" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="DIq-Jf-xIU"/>
-                                                        <constraint firstAttribute="height" constant="30" id="nP0-EY-IOf"/>
-                                                    </constraints>
-                                                    <state key="normal" title=">"/>
-                                                    <connections>
-                                                        <action selector="nextGoalButtonTap:" destination="6Lk-Xg-R2n" eventType="touchUpInside" id="5R3-T1-TbE"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iPad Air 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfD-5g-n4D">
                                                     <rect key="frame" x="60" y="14" width="200" height="21"/>
                                                     <constraints>
@@ -649,14 +628,8 @@
                                             <constraints>
                                                 <constraint firstItem="FfD-5g-n4D" firstAttribute="top" secondItem="6Sd-TE-USB" secondAttribute="top" constant="14" id="2jT-mA-8d0"/>
                                                 <constraint firstAttribute="centerX" secondItem="iFL-x4-xny" secondAttribute="centerX" id="C6D-lN-GbT"/>
-                                                <constraint firstItem="j6D-ZH-SCP" firstAttribute="trailing" secondItem="6Sd-TE-USB" secondAttribute="trailingMargin" id="HNZ-8B-5rt"/>
-                                                <constraint firstItem="j6D-ZH-SCP" firstAttribute="top" secondItem="6Sd-TE-USB" secondAttribute="topMargin" constant="13" id="Kgu-3i-hSN"/>
-                                                <constraint firstItem="hgq-oB-PFO" firstAttribute="top" secondItem="j6D-ZH-SCP" secondAttribute="top" id="NZf-af-sje"/>
-                                                <constraint firstItem="hgq-oB-PFO" firstAttribute="bottom" secondItem="j6D-ZH-SCP" secondAttribute="bottom" id="TxL-Vh-L8l"/>
                                                 <constraint firstAttribute="bottom" secondItem="iFL-x4-xny" secondAttribute="bottom" constant="8" id="Y6V-Mp-vSR"/>
-                                                <constraint firstItem="hgq-oB-PFO" firstAttribute="leading" secondItem="6Sd-TE-USB" secondAttribute="leadingMargin" id="Zd1-Oh-kV7"/>
                                                 <constraint firstAttribute="centerX" secondItem="FfD-5g-n4D" secondAttribute="centerX" id="l3h-cC-jpC"/>
-                                                <constraint firstItem="FfD-5g-n4D" firstAttribute="leading" secondItem="hgq-oB-PFO" secondAttribute="trailing" constant="11" id="nvM-0D-Wwk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -709,56 +682,49 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zeT-j9-71q" id="pjv-DK-ZIF">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLc-zB-dGb" customClass="KAProgressLabel">
-                                                    <rect key="frame" x="16" y="198" width="44" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="hAk-2F-fj0"/>
-                                                        <constraint firstAttribute="width" constant="44" id="y8h-Xy-0m9"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxb-RD-tt9" customClass="KAProgressLabel">
-                                                    <rect key="frame" x="138" y="198" width="44" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="8oV-xA-d4s"/>
-                                                        <constraint firstAttribute="width" constant="44" id="rrX-gk-zeK"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5O-Ag-bUu" customClass="KAProgressLabel">
-                                                    <rect key="frame" x="260" y="198" width="44" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="B9a-D3-aJP"/>
-                                                        <constraint firstAttribute="width" constant="44" id="noM-vx-lzT"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D55-Rl-J0M" customClass="KAProgressLabel">
-                                                    <rect key="frame" x="85" y="20" width="150" height="150"/>
+                                                    <rect key="frame" x="70" y="20" width="180" height="180"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="Mbc-ML-TG0"/>
-                                                        <constraint firstAttribute="height" constant="150" id="qcO-n2-NDf"/>
+                                                        <constraint firstAttribute="width" constant="180" id="Mbc-ML-TG0"/>
+                                                        <constraint firstAttribute="height" constant="180" id="qcO-n2-NDf"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6D-ZH-SCP">
+                                                    <rect key="frame" x="262" y="95" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="DIq-Jf-xIU"/>
+                                                        <constraint firstAttribute="height" constant="30" id="nP0-EY-IOf"/>
+                                                    </constraints>
+                                                    <state key="normal" title="&gt;" image="arrowForward.png"/>
+                                                    <connections>
+                                                        <action selector="nextGoalButtonTap:" destination="6Lk-Xg-R2n" eventType="touchUpInside" id="5R3-T1-TbE"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgq-oB-PFO">
+                                                    <rect key="frame" x="32" y="95" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="FYi-Pa-mrL"/>
+                                                        <constraint firstAttribute="height" constant="30" id="WeZ-W1-AcD"/>
+                                                    </constraints>
+                                                    <state key="normal" title="&lt;" image="arrowBack.png">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="previousGoalButtonTap:" destination="6Lk-Xg-R2n" eventType="touchUpInside" id="fg0-aw-fGP"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="j6D-ZH-SCP" secondAttribute="trailing" constant="20" id="5WQ-SG-Upn"/>
                                                 <constraint firstItem="D55-Rl-J0M" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="top" constant="20" id="7Gu-Vj-lKk"/>
-                                                <constraint firstItem="mLc-zB-dGb" firstAttribute="leading" secondItem="pjv-DK-ZIF" secondAttribute="leadingMargin" constant="8" id="K6D-Me-q8e"/>
-                                                <constraint firstAttribute="bottom" secondItem="dxb-RD-tt9" secondAttribute="bottom" constant="8" id="OHi-jZ-PAe"/>
-                                                <constraint firstAttribute="bottom" secondItem="mLc-zB-dGb" secondAttribute="bottom" constant="8" id="bDL-2K-Ui8"/>
+                                                <constraint firstItem="j6D-ZH-SCP" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="topMargin" constant="87" id="WGI-Nv-3pg"/>
+                                                <constraint firstItem="hgq-oB-PFO" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="topMargin" constant="87" id="XaJ-QB-m2G"/>
                                                 <constraint firstAttribute="centerX" secondItem="D55-Rl-J0M" secondAttribute="centerX" id="bOW-7g-gut"/>
-                                                <constraint firstAttribute="bottom" secondItem="l5O-Ag-bUu" secondAttribute="bottom" constant="8" id="fUQ-vx-51e"/>
-                                                <constraint firstAttribute="centerX" secondItem="dxb-RD-tt9" secondAttribute="centerX" id="ora-4E-hdA"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="l5O-Ag-bUu" secondAttribute="trailing" constant="8" id="uKy-4n-xXp"/>
+                                                <constraint firstItem="hgq-oB-PFO" firstAttribute="leading" secondItem="pjv-DK-ZIF" secondAttribute="leadingMargin" constant="24" id="nXg-qf-X9b"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -807,9 +773,6 @@
                         <outlet property="previousGoalButton" destination="hgq-oB-PFO" id="ggh-Ve-dAF"/>
                         <outlet property="priceLabel" destination="iFL-x4-xny" id="4XN-dp-9eX"/>
                         <outlet property="totalLabel" destination="9dF-2W-VfA" id="cVY-R8-ybW"/>
-                        <outletCollection property="smallCircleLabals" destination="mLc-zB-dGb" id="aMw-hN-eYS"/>
-                        <outletCollection property="smallCircleLabals" destination="dxb-RD-tt9" id="uJn-Nc-GXy"/>
-                        <outletCollection property="smallCircleLabals" destination="l5O-Ag-bUu" id="ffJ-kx-EOu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KL1-nP-oyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1027,6 +990,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowBack.png" width="60" height="60"/>
+        <image name="arrowForward.png" width="60" height="60"/>
         <image name="bg.png" width="640" height="1136"/>
         <image name="emalPic.png" width="30" height="30"/>
         <image name="loginPic.png" width="15" height="15"/>
