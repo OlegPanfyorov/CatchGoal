@@ -27,6 +27,15 @@
     self.navigationController.navigationBarHidden = NO;
     [self performSelector:@selector(generateNewCell) withObject:nil];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+
+}
+
+-(UIStatusBarStyle) preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {

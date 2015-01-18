@@ -58,8 +58,8 @@
      UIControlEventTouchDragOutside |
      UIControlEventTouchDragExit |
      UIControlEventTouchUpOutside];
-    [self underlineString:@"Восстановить пароль" button:self.restoreButton];
-    [self underlineString:@"Регистрация" button:self.registrationButton];
+  //  [self underlineString:@"Забыли пароль?" button:self.restoreButton];
+  //  [self underlineString:@"Регистрация" button:self.registrationButton];
     
 
 }
