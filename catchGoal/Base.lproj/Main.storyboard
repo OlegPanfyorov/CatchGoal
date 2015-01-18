@@ -699,7 +699,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В этом месяце:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLU-nV-QXj">
-                                                    <rect key="frame" x="18" y="259" width="146" height="21"/>
+                                                    <rect key="frame" x="18" y="255" width="146" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="2ii-cL-n4l"/>
                                                         <constraint firstAttribute="width" constant="146" id="ht7-BO-6Dc"/>
@@ -758,9 +758,9 @@
                                                 <constraint firstItem="D55-Rl-J0M" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="top" constant="22" id="7Gu-Vj-lKk"/>
                                                 <constraint firstAttribute="trailing" secondItem="QIj-U8-m6h" secondAttribute="trailing" id="C2H-JA-Xo4"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="XFK-0L-fNp" secondAttribute="trailing" constant="10" id="D7e-MR-jt0"/>
-                                                <constraint firstItem="fLU-nV-QXj" firstAttribute="bottom" secondItem="pjv-DK-ZIF" secondAttribute="bottomMargin" constant="3" id="HPL-AP-s2u"/>
+                                                <constraint firstItem="fLU-nV-QXj" firstAttribute="bottom" secondItem="pjv-DK-ZIF" secondAttribute="bottomMargin" constant="-1" id="HPL-AP-s2u"/>
                                                 <constraint firstItem="XFK-0L-fNp" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="top" constant="222" id="LMw-XX-32q"/>
-                                                <constraint firstItem="fLU-nV-QXj" firstAttribute="top" secondItem="QIj-U8-m6h" secondAttribute="bottom" constant="8" id="QeF-u7-nQJ"/>
+                                                <constraint firstItem="fLU-nV-QXj" firstAttribute="top" secondItem="QIj-U8-m6h" secondAttribute="bottom" constant="4" id="QeF-u7-nQJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="MU3-n8-xdQ" secondAttribute="trailing" id="Qpt-3q-2s5"/>
                                                 <constraint firstItem="j6D-ZH-SCP" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="topMargin" constant="89" id="WGI-Nv-3pg"/>
                                                 <constraint firstItem="hgq-oB-PFO" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="topMargin" constant="89" id="XaJ-QB-m2G"/>
@@ -827,7 +827,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KL1-nP-oyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2320" y="436"/>
+            <point key="canvasLocation" x="2333" y="448"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="bGP-Mk-E1c">
