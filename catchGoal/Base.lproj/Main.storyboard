@@ -70,10 +70,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EAC-af-0Ch">
-                                <rect key="frame" x="33" y="207" width="254" height="50"/>
+                                <rect key="frame" x="33" y="207" width="254" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Bwo-ZN-E74"/>
+                                    <constraint firstAttribute="height" constant="44" id="Bwo-ZN-E74"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
@@ -83,7 +83,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ax-Jj-Hoy">
-                                <rect key="frame" x="87" y="267" width="147" height="30"/>
+                                <rect key="frame" x="87" y="261" width="147" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="147" id="Rie-Bg-Ziz"/>
                                     <constraint firstAttribute="height" constant="30" id="jo3-pC-G6v"/>
@@ -98,7 +98,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WH5-sl-Amc">
-                                <rect key="frame" x="109" y="286" width="102" height="50"/>
+                                <rect key="frame" x="109" y="280" width="102" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="06S-9T-Hvc"/>
                                     <constraint firstAttribute="height" constant="50" id="BWd-jO-AJx"/>
@@ -227,7 +227,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
                                         <connections>
                                             <outlet property="delegate" destination="Dge-2g-Qbv" id="Fcs-P3-HJi"/>
                                         </connections>
