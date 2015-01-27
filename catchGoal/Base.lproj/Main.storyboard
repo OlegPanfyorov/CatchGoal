@@ -1168,7 +1168,7 @@
                                                     <color key="textColor" red="0.69803921570000005" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Zp-UH-r5h">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoPic.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Zp-UH-r5h">
                                                     <rect key="frame" x="8" y="37" width="304" height="112"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -1230,6 +1230,7 @@
         <image name="loginPic.png" width="15" height="15"/>
         <image name="logo.png" width="430" height="70"/>
         <image name="passPic.png" width="15" height="15"/>
+        <image name="photoPic.png" width="180" height="137"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
