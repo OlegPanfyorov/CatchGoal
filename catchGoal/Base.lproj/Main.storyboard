@@ -36,6 +36,7 @@
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -1153,6 +1154,39 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="150" id="g9u-Yd-oEJ" customClass="addAndEditGoalCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g9u-Yd-oEJ" id="sRb-tQ-TQd">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фото" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0D-b5-BNz">
+                                                    <rect key="frame" x="8" y="9" width="304" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="1uj-CK-1eU"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                                    <color key="textColor" red="0.69803921570000005" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Zp-UH-r5h">
+                                                    <rect key="frame" x="8" y="37" width="304" height="112"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="112" id="jR5-B8-B5C"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2Zp-UH-r5h" firstAttribute="leading" secondItem="sRb-tQ-TQd" secondAttribute="leading" constant="8" id="39J-GF-uA4"/>
+                                                <constraint firstAttribute="bottom" secondItem="2Zp-UH-r5h" secondAttribute="bottom" id="NVY-An-TEE"/>
+                                                <constraint firstItem="C0D-b5-BNz" firstAttribute="top" secondItem="sRb-tQ-TQd" secondAttribute="top" constant="9" id="Xvn-kP-paK"/>
+                                                <constraint firstItem="C0D-b5-BNz" firstAttribute="leading" secondItem="sRb-tQ-TQd" secondAttribute="leading" constant="8" id="eNQ-vm-gM7"/>
+                                                <constraint firstAttribute="trailing" secondItem="C0D-b5-BNz" secondAttribute="trailing" constant="8" id="qOi-Nf-E9W"/>
+                                                <constraint firstAttribute="trailing" secondItem="2Zp-UH-r5h" secondAttribute="trailing" constant="8" id="ui3-9P-Cb6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1167,7 +1201,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dzf-8r-INz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="1107"/>
+            <point key="canvasLocation" x="1580" y="1102"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ILm-xW-0oo">
