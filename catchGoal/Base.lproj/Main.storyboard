@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C99d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C106a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -21,6 +22,9 @@
             <string>Roboto-Medium</string>
         </mutableArray>
         <mutableArray key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
@@ -447,7 +451,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8Ox-TI-ROu">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="BzT-DL-4Vx" kind="modal" identifier="newGoal" modalTransitionStyle="coverVertical" id="WU3-WY-Ffm"/>
+                                <segue destination="GGm-5O-CVc" kind="modal" id="EZD-XF-P1h"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1032,6 +1036,138 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5M-LD-l3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="43" y="448"/>
+        </scene>
+        <!--New Goal Table View Controller-->
+        <scene sceneID="fyK-hS-cJB">
+            <objects>
+                <tableViewController id="GGm-5O-CVc" customClass="NewGoalTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jnp-nL-0Mf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="Section-1" id="UDi-Az-5xu">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="qQX-O8-fTv" customClass="addAndEditGoalCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qQX-O8-fTv" id="9tF-Yz-hnQ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название цели" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHJ-in-Oxd">
+                                                    <rect key="frame" x="8" y="9" width="304" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="bpL-ra-LaK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                                    <color key="textColor" red="0.69803921570000005" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TAk-MH-F5y">
+                                                    <rect key="frame" x="8" y="33" width="304" height="44"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="0Kd-Ai-Pva"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="NHJ-in-Oxd" secondAttribute="trailing" constant="8" id="3vP-yl-qHG"/>
+                                                <constraint firstAttribute="bottom" secondItem="TAk-MH-F5y" secondAttribute="bottom" id="8od-zw-827"/>
+                                                <constraint firstItem="NHJ-in-Oxd" firstAttribute="top" secondItem="9tF-Yz-hnQ" secondAttribute="top" constant="9" id="H7h-jh-d8b"/>
+                                                <constraint firstAttribute="trailing" secondItem="TAk-MH-F5y" secondAttribute="trailing" constant="8" id="YyQ-94-7Lq"/>
+                                                <constraint firstItem="NHJ-in-Oxd" firstAttribute="leading" secondItem="9tF-Yz-hnQ" secondAttribute="leading" constant="8" id="sV3-2s-non"/>
+                                                <constraint firstItem="TAk-MH-F5y" firstAttribute="leading" secondItem="9tF-Yz-hnQ" secondAttribute="leading" constant="8" id="zr8-cp-PlJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96862745098039216" green="0.98039215686274506" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="ebh-Gc-0RV" customClass="addAndEditGoalCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ebh-Gc-0RV" id="DQh-8i-UpV">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сумма" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kae-Es-vrN">
+                                                    <rect key="frame" x="8" y="9" width="304" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="j6j-bu-biI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                                    <color key="textColor" red="0.69803921570000005" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="chz-wd-zkK">
+                                                    <rect key="frame" x="8" y="33" width="304" height="44"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="4Df-uj-QU4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="chz-wd-zkK" firstAttribute="leading" secondItem="DQh-8i-UpV" secondAttribute="leading" constant="8" id="2SJ-qf-t2h"/>
+                                                <constraint firstAttribute="trailing" secondItem="chz-wd-zkK" secondAttribute="trailing" constant="8" id="6Ow-LN-PAX"/>
+                                                <constraint firstItem="Kae-Es-vrN" firstAttribute="leading" secondItem="DQh-8i-UpV" secondAttribute="leading" constant="8" id="M2j-KW-FXn"/>
+                                                <constraint firstAttribute="trailing" secondItem="Kae-Es-vrN" secondAttribute="trailing" constant="8" id="u60-6X-mb4"/>
+                                                <constraint firstAttribute="bottom" secondItem="chz-wd-zkK" secondAttribute="bottom" id="xcr-hV-0ao"/>
+                                                <constraint firstItem="Kae-Es-vrN" firstAttribute="top" secondItem="DQh-8i-UpV" secondAttribute="top" constant="9" id="xsj-LM-lKX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="LiN-yG-5kB" customClass="addAndEditGoalCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LiN-yG-5kB" id="vEz-NV-MDj">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Финальная дата" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVY-LW-Yiw">
+                                                    <rect key="frame" x="8" y="9" width="304" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="lsV-s3-lOH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                                    <color key="textColor" red="0.69803921570000005" green="0.69411764710000001" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1rq-q5-XeZ">
+                                                    <rect key="frame" x="8" y="33" width="304" height="44"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="msa-RN-mgb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1rq-q5-XeZ" firstAttribute="leading" secondItem="vEz-NV-MDj" secondAttribute="leading" constant="8" id="Rg2-m7-qUc"/>
+                                                <constraint firstAttribute="bottom" secondItem="1rq-q5-XeZ" secondAttribute="bottom" id="ZTX-zz-2Vr"/>
+                                                <constraint firstItem="lVY-LW-Yiw" firstAttribute="leading" secondItem="vEz-NV-MDj" secondAttribute="leading" constant="8" id="dGJ-K8-JoX"/>
+                                                <constraint firstAttribute="trailing" secondItem="1rq-q5-XeZ" secondAttribute="trailing" constant="8" id="gWY-O4-CGZ"/>
+                                                <constraint firstItem="lVY-LW-Yiw" firstAttribute="top" secondItem="vEz-NV-MDj" secondAttribute="top" constant="9" id="j08-Ta-XFC"/>
+                                                <constraint firstAttribute="trailing" secondItem="lVY-LW-Yiw" secondAttribute="trailing" constant="8" id="vBT-xE-9hE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="GGm-5O-CVc" id="MP2-zB-xGY"/>
+                            <outlet property="delegate" destination="GGm-5O-CVc" id="Q9X-nj-VFE"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="goalName" destination="TAk-MH-F5y" id="ZH9-qj-rqe"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dzf-8r-INz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1580" y="1107"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ILm-xW-0oo">

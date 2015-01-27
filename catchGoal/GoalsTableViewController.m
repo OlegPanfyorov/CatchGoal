@@ -31,7 +31,7 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

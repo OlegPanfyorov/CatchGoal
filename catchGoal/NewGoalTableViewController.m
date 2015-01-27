@@ -16,10 +16,15 @@
     DataSingletone *singletone;
 }
 
+@property (weak, nonatomic) IBOutlet UITextField *goalName;
+
+
+//////////////// Old Property
+
 @property (strong, nonatomic) BGDatePicker *datePicker;
 @property (strong, nonatomic) UIBarButtonItem *cameraItem;
 
-@property (weak, nonatomic) IBOutlet UITextField *goalName;
+//@property (weak, nonatomic) IBOutlet UITextField *goalName;
 @property (weak, nonatomic) IBOutlet UITextField *totalCost;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldDeadline;
 @property (weak, nonatomic) IBOutlet UITextView *commentView;
@@ -32,6 +37,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor colorWithRed:0.96 green:0.98 blue:0.99 alpha:1];
+
+   
     
     singletone = [DataSingletone sharedModel];
     

@@ -49,6 +49,7 @@
 		D3494B6C1A6C0FE60007DD0C /* NewGoalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3494B6B1A6C0FE60007DD0C /* NewGoalTableViewController.m */; };
 		D3494B6F1A6C10460007DD0C /* BGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D3494B6E1A6C10460007DD0C /* BGDatePicker.m */; };
 		D3494B711A6C14110007DD0C /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3494B701A6C14110007DD0C /* NotificationCenter.framework */; };
+		DA6308981A77C13D00F7AB08 /* addAndEditGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6308971A77C13D00F7AB08 /* addAndEditGoalCell.m */; };
 		DABF0E5C1A6AD96800105669 /* KAProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DABF0E591A6AD96800105669 /* KAProgressLabel.m */; };
 		DABF0E5D1A6AD96800105669 /* TPPropertyAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DABF0E5B1A6AD96800105669 /* TPPropertyAnimation.m */; };
 		DAE448771A6B15F20041F449 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE448741A6B15EF0041F449 /* Roboto-Medium.ttf */; };
@@ -138,6 +139,8 @@
 		D3494B6D1A6C10460007DD0C /* BGDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGDatePicker.h; sourceTree = "<group>"; };
 		D3494B6E1A6C10460007DD0C /* BGDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGDatePicker.m; sourceTree = "<group>"; };
 		D3494B701A6C14110007DD0C /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		DA6308961A77C13D00F7AB08 /* addAndEditGoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addAndEditGoalCell.h; sourceTree = "<group>"; };
+		DA6308971A77C13D00F7AB08 /* addAndEditGoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addAndEditGoalCell.m; sourceTree = "<group>"; };
 		DABF0E581A6AD96800105669 /* KAProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAProgressLabel.h; sourceTree = "<group>"; };
 		DABF0E591A6AD96800105669 /* KAProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAProgressLabel.m; sourceTree = "<group>"; };
 		DABF0E5A1A6AD96800105669 /* TPPropertyAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPropertyAnimation.h; sourceTree = "<group>"; };
@@ -270,6 +273,7 @@
 		790B7F431A69C5AB009C1F1B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DA6308951A77C0E600F7AB08 /* Cells */,
 				DAE448731A6B15C20041F449 /* Font */,
 				DAE448701A6B0C000041F449 /* Images */,
 				DABF0E571A6AD96800105669 /* KAProgressLabel */,
@@ -391,6 +395,15 @@
 				D3494B6B1A6C0FE60007DD0C /* NewGoalTableViewController.m */,
 			);
 			name = "New Goal";
+			sourceTree = "<group>";
+		};
+		DA6308951A77C0E600F7AB08 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DA6308961A77C13D00F7AB08 /* addAndEditGoalCell.h */,
+				DA6308971A77C13D00F7AB08 /* addAndEditGoalCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		DABF0E571A6AD96800105669 /* KAProgressLabel */ = {
@@ -547,6 +560,7 @@
 				794465D61A6A5CE400F00F63 /* StartScreensMainViewController.m in Sources */,
 				790B7F4B1A69C5DB009C1F1B /* Goal.m in Sources */,
 				790B7F5B1A69CA3E009C1F1B /* LaunchScreenViewController.m in Sources */,
+				DA6308981A77C13D00F7AB08 /* addAndEditGoalCell.m in Sources */,
 				790B7F521A69CA00009C1F1B /* LoginViewController.m in Sources */,
 				790B7F221A69C3AE009C1F1B /* AppDelegate.m in Sources */,
 				8B0471A51A6A2EE100CE1F06 /* GoalsTableViewController.m in Sources */,
