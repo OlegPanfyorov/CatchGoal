@@ -45,9 +45,7 @@
 
     
     singletone = [DataSingletone sharedModel];
-    
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    
+        
     datePicker =
     [[BGDatePicker alloc]initWithDateFormatString:@"dd.MM.yyyy"
                                      forTextField:textFieldDeadline
@@ -92,6 +90,9 @@
 }
 
 #pragma mark - UITableView
+
+
+
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     

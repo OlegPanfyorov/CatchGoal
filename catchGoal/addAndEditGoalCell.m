@@ -18,7 +18,7 @@
             UITextField* field = (UITextField*)view;
             
             field.layer.cornerRadius = 5.f;
-            field.layer.borderColor = [UIColor colorWithRed:0.76 green:0.93 blue:0.71 alpha:1].CGColor ;
+            field.layer.borderColor = [UIColor colorWithRed:0.89 green:0.89 blue:0.9 alpha:1].CGColor ;
             field.layer.borderWidth = 1.f;
             field.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 44)];
             field.leftViewMode = UITextFieldViewModeAlways;

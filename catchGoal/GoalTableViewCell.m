@@ -26,7 +26,12 @@
                                            NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
                                                [UIColor colorWithRed:0.42 green:0.82 blue:0.28 alpha:1],
                                            }];
-
+    
+    self.backgroundColor = [UIColor colorWithRed:0.96 green:0.98 blue:0.99 alpha:1];
+    
+    self.progressLabel.backgroundColor = [UIColor whiteColor];
+    self.progressLabel.layer.cornerRadius = self.progressLabel.frame.size.height / 2;
+    self.progressLabel.clipsToBounds = YES;
 
 }
 @end

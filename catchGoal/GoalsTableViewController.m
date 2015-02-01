@@ -24,7 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    self.tableView.backgroundColor = [UIColor colorWithRed:0.96 green:0.98 blue:0.99 alpha:1];
     self.navigationController.navigationBarHidden = NO;
     [self performSelector:@selector(generateNewCell) withObject:nil];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
