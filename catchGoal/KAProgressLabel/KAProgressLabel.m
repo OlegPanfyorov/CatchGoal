@@ -202,7 +202,7 @@ UIColor *UIColorDefaultForColorInProgressLabelColorTableKey(ProgressLabelColorTa
     insideRect.origin.y += _backBorderWidth / 2;
     insideRect.size.width -= _backBorderWidth;
     insideRect.size.height -= _backBorderWidth;
-    insideRect.size.height *= _progress;
+    insideRect.size.width *= _progress;
     if (!clockWise)
     {
         insideRect.origin.y += rect.size.height - insideRect.size.height - _backBorderWidth;

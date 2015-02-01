@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C106a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -380,8 +380,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uei-FB-qvn" id="PX5-ds-cAF">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iPad Air 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzf-41-UkP">
-                                            <rect key="frame" x="15" y="24" width="205" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="iPad Air 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzf-41-UkP">
+                                            <rect key="frame" x="15" y="25" width="205" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="205" id="FPo-5U-AP2"/>
                                                 <constraint firstAttribute="height" constant="21" id="Lnn-R2-tyU"/>
@@ -390,13 +390,8 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="E0W-Pr-cD2">
-                                            <rect key="frame" x="15" y="82" width="288" height="2"/>
-                                            <color key="progressTintColor" red="0.39607843139999999" green="0.79215686269999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="trackTintColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        </progressView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwo-Xe-RsV">
-                                            <rect key="frame" x="238" y="20" width="74" height="54"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="18%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwo-Xe-RsV">
+                                            <rect key="frame" x="238" y="21" width="74" height="54"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="74" id="F2S-8s-41F"/>
                                                 <constraint firstAttribute="height" constant="54" id="FyP-2G-N60"/>
@@ -405,8 +400,8 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$499" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXy-cC-Tmc">
-                                            <rect key="frame" x="15" y="52" width="205" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$499" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXy-cC-Tmc">
+                                            <rect key="frame" x="15" y="53" width="205" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="205" id="EVm-Hl-UWj"/>
                                                 <constraint firstAttribute="height" constant="21" id="XBS-CQ-ajU"/>
@@ -415,21 +410,31 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggD-lf-jg5" customClass="KAProgressLabel">
+                                            <rect key="frame" x="15" y="79" width="290" height="4"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="4" id="W4q-im-djC"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="lXy-cC-Tmc" firstAttribute="leading" secondItem="PX5-ds-cAF" secondAttribute="leadingMargin" constant="7" id="3kA-lU-90N"/>
                                         <constraint firstItem="lXy-cC-Tmc" firstAttribute="top" secondItem="Lzf-41-UkP" secondAttribute="bottom" constant="7" id="K6H-oQ-184"/>
                                         <constraint firstItem="Hwo-Xe-RsV" firstAttribute="top" secondItem="PX5-ds-cAF" secondAttribute="topMargin" constant="12" id="Qiy-lN-NLZ"/>
-                                        <constraint firstAttribute="bottom" secondItem="E0W-Pr-cD2" secondAttribute="bottom" constant="4" id="Usr-6W-k8T"/>
+                                        <constraint firstAttribute="trailing" secondItem="ggD-lf-jg5" secondAttribute="trailing" constant="15" id="bfK-Xr-4Ne"/>
                                         <constraint firstItem="Lzf-41-UkP" firstAttribute="top" secondItem="PX5-ds-cAF" secondAttribute="topMargin" constant="16" id="eZD-kn-R8k"/>
-                                        <constraint firstAttribute="trailing" secondItem="E0W-Pr-cD2" secondAttribute="trailing" constant="17" id="hnd-ti-11D"/>
-                                        <constraint firstItem="E0W-Pr-cD2" firstAttribute="leading" secondItem="PX5-ds-cAF" secondAttribute="leading" constant="15" id="kJK-8f-kdq"/>
                                         <constraint firstItem="Hwo-Xe-RsV" firstAttribute="trailing" secondItem="PX5-ds-cAF" secondAttribute="trailingMargin" id="nts-oi-Nwg"/>
+                                        <constraint firstAttribute="bottom" secondItem="ggD-lf-jg5" secondAttribute="bottom" constant="5" id="sSc-7S-wZu"/>
                                         <constraint firstItem="Lzf-41-UkP" firstAttribute="leading" secondItem="PX5-ds-cAF" secondAttribute="leadingMargin" constant="7" id="uGU-Bb-JKc"/>
+                                        <constraint firstItem="ggD-lf-jg5" firstAttribute="leading" secondItem="PX5-ds-cAF" secondAttribute="leading" constant="15" id="xUD-di-ZpJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="lineProgressView" destination="E0W-Pr-cD2" id="0Sd-m0-ZwZ"/>
+                                    <outlet property="lineProgressView" destination="ggD-lf-jg5" id="qVS-e9-0fj"/>
                                     <outlet property="nameLabel" destination="Lzf-41-UkP" id="PtI-wt-eji"/>
                                     <outlet property="priceLabel" destination="lXy-cC-Tmc" id="mgl-86-yge"/>
                                     <outlet property="progressLabel" destination="Hwo-Xe-RsV" id="5Jx-JY-JVq"/>
@@ -461,7 +466,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jwR-Pt-K35" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1929" y="448"/>
+            <point key="canvasLocation" x="1929" y="464"/>
         </scene>
         <!--Detail Table View Controller-->
         <scene sceneID="fHd-zK-bZn">

@@ -156,7 +156,7 @@
                                       [UIColor colorWithRed:0 green:0.69 blue:0.96 alpha:1],
                                   }];
     
-    [self.circleProgressLabel setProgress:50.f/100.f timing:TPPropertyAnimationTimingEaseIn duration:2.f delay:0];
+    [self.circleProgressLabel setProgress:self.progress / 100 timing:TPPropertyAnimationTimingEaseOut duration:2.f delay:0.3];
 }
 
 
