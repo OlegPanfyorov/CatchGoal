@@ -31,6 +31,8 @@
     
     self.progressLabel.backgroundColor = [UIColor whiteColor];
     self.progressLabel.layer.cornerRadius = self.progressLabel.frame.size.height / 2;
+    self.progressLabel.layer.borderWidth = 1.f;
+    self.progressLabel.layer.borderColor = [UIColor colorWithRed:0.33 green:0.64 blue:0.9 alpha:0.25].CGColor;
     self.progressLabel.clipsToBounds = YES;
 
 }

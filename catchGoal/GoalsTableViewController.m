@@ -50,10 +50,11 @@
 
 - (void)generateNewCell {
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 2; i++) {
+        
         Goal *goal = [Goal new];
-        int iPhoneNumber = arc4random() % 4 + 2;
-        int totalPrice = (arc4random() % 10 + 1);
+        int iPhoneNumber = arc4random_uniform(6) + 2;
+        int totalPrice = arc4random_uniform(25001);
         int progress = arc4random_uniform(101);
         goal.name = [NSString stringWithFormat:@"iPhone %d", iPhoneNumber];
         goal.price = [NSNumber numberWithInt:totalPrice];
