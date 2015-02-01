@@ -400,8 +400,8 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$499" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXy-cC-Tmc">
-                                            <rect key="frame" x="15" y="53" width="205" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$499" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXy-cC-Tmc">
+                                            <rect key="frame" x="15" y="52" width="205" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="205" id="EVm-Hl-UWj"/>
                                                 <constraint firstAttribute="height" constant="21" id="XBS-CQ-ajU"/>

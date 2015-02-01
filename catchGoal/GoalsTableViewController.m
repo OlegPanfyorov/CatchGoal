@@ -31,7 +31,12 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+
+}
+
+-(void) viewWillAppear:(BOOL)animated {
     
+    [self.tableView reloadData];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -72,11 +77,11 @@
     
     static NSString *identifier = @"cell";
     GoalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    [cell.lineProgressView setProgress:0];
     Goal *goal = [DataSingletone sharedModel].goalsArray[indexPath.row];
     cell.nameLabel.text = goal.name;
     cell.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
     cell.progressLabel.text = [NSString stringWithFormat:@"%0.f%%", self.progress];
-    
     CGFloat progress = self.progress / 100;
     
     [cell.lineProgressView setProgress:progress timing:TPPropertyAnimationTimingEaseOut duration:1.0 delay:0.5];
