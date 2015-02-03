@@ -1043,7 +1043,7 @@
                                                         <constraint firstAttribute="height" constant="112" id="jR5-B8-B5C"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Фото" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0D-b5-BNz">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фото" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0D-b5-BNz">
                                                     <rect key="frame" x="8" y="8" width="304" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="1uj-CK-1eU"/>
@@ -1056,7 +1056,7 @@
                                             <constraints>
                                                 <constraint firstItem="2Zp-UH-r5h" firstAttribute="leading" secondItem="sRb-tQ-TQd" secondAttribute="leading" constant="8" id="39J-GF-uA4"/>
                                                 <constraint firstAttribute="bottom" secondItem="2Zp-UH-r5h" secondAttribute="bottom" id="NVY-An-TEE"/>
-                                                <constraint firstItem="C0D-b5-BNz" firstAttribute="top" secondItem="sRb-tQ-TQd" secondAttribute="top" constant="9" id="Xvn-kP-paK"/>
+                                                <constraint firstItem="C0D-b5-BNz" firstAttribute="top" secondItem="sRb-tQ-TQd" secondAttribute="top" constant="8" id="Xvn-kP-paK"/>
                                                 <constraint firstItem="C0D-b5-BNz" firstAttribute="leading" secondItem="sRb-tQ-TQd" secondAttribute="leading" constant="8" id="eNQ-vm-gM7"/>
                                                 <constraint firstAttribute="trailing" secondItem="C0D-b5-BNz" secondAttribute="trailing" constant="8" id="qOi-Nf-E9W"/>
                                                 <constraint firstAttribute="trailing" secondItem="2Zp-UH-r5h" secondAttribute="trailing" constant="8" id="ui3-9P-Cb6"/>
