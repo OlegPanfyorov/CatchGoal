@@ -53,10 +53,9 @@
     for (int i = 0; i < 5; i++) {
         
         Goal *goal = [Goal new];
-        int iPhoneNumber = arc4random_uniform(6) + 2;
         int totalPrice = arc4random_uniform(25001);
         int progress = arc4random_uniform(101);
-        goal.name = [NSString stringWithFormat:@"Купить новый автомобиль %d", iPhoneNumber];
+        goal.name = [NSString stringWithFormat:@"Купить новый автомобиль"];
         goal.price = [NSNumber numberWithInt:totalPrice];
         goal.perMonth = @100;
         goal.progress = [NSNumber numberWithInt:progress];
