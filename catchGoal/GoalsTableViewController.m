@@ -147,7 +147,6 @@
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         detailTableViewController.selectedItemInArray = indexPath.row;
         
-        //NSLog(@"GOAL:\n name: %@,\n price %@,\n perMonth: %@,\n progress: %@,\n goalImage: %@,\n startDate: %@,\n finalDate: %@,\n complited: %@", goal.name, goal.price, goal.perMonth, goal.progress, goal.goalImage, goal.startDate, goal.finalDate, goal.complited ? @"NO" : @"YES");
     }
     
 }
