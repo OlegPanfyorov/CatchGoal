@@ -423,11 +423,11 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="ggD-lf-jg5" firstAttribute="leading" secondItem="tZU-hv-Gez" secondAttribute="leading" constant="6" id="4sJ-oh-SRg"/>
+                                                <constraint firstItem="ggD-lf-jg5" firstAttribute="leading" secondItem="tZU-hv-Gez" secondAttribute="leading" priority="800" constant="6" id="4sJ-oh-SRg"/>
                                                 <constraint firstAttribute="trailing" secondItem="1JG-nW-qMS" secondAttribute="trailing" constant="6" id="8h2-ec-EzY"/>
                                                 <constraint firstItem="lXy-cC-Tmc" firstAttribute="leading" secondItem="tZU-hv-Gez" secondAttribute="leading" constant="6" id="AyT-kJ-oXQ"/>
                                                 <constraint firstItem="Lzf-41-UkP" firstAttribute="top" secondItem="tZU-hv-Gez" secondAttribute="top" constant="7" id="NiA-r5-5Th"/>
-                                                <constraint firstAttribute="trailing" secondItem="ggD-lf-jg5" secondAttribute="trailing" constant="6" id="RD1-Uy-rca"/>
+                                                <constraint firstAttribute="trailing" secondItem="ggD-lf-jg5" secondAttribute="trailing" priority="800" constant="6" id="RD1-Uy-rca"/>
                                                 <constraint firstItem="Lzf-41-UkP" firstAttribute="leading" secondItem="tZU-hv-Gez" secondAttribute="leading" constant="6" id="X9C-BH-xCt"/>
                                                 <constraint firstAttribute="bottom" secondItem="ggD-lf-jg5" secondAttribute="bottom" constant="6" id="eam-Tm-SUW"/>
                                                 <constraint firstItem="lXy-cC-Tmc" firstAttribute="top" secondItem="Lzf-41-UkP" secondAttribute="bottom" constant="1" id="gnJ-H2-uTE"/>
@@ -438,8 +438,8 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="tZU-hv-Gez" secondAttribute="bottom" id="M85-7q-TLd"/>
-                                        <constraint firstItem="tZU-hv-Gez" firstAttribute="leading" secondItem="PX5-ds-cAF" secondAttribute="leading" constant="10" id="beZ-lM-cSB"/>
-                                        <constraint firstAttribute="trailing" secondItem="tZU-hv-Gez" secondAttribute="trailing" constant="10" id="ivB-97-dUt"/>
+                                        <constraint firstItem="tZU-hv-Gez" firstAttribute="leading" secondItem="PX5-ds-cAF" secondAttribute="leading" priority="800" constant="10" id="beZ-lM-cSB"/>
+                                        <constraint firstAttribute="trailing" secondItem="tZU-hv-Gez" secondAttribute="trailing" priority="800" constant="10" id="ivB-97-dUt"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
