@@ -380,7 +380,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZU-hv-Gez">
-                                            <rect key="frame" x="10" y="8" width="300" height="68"/>
+                                            <rect key="frame" x="10" y="3" width="300" height="68"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iPad Air 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzf-41-UkP">
                                                     <rect key="frame" x="6" y="7" width="235" height="21"/>
@@ -437,7 +437,7 @@
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="tZU-hv-Gez" firstAttribute="top" secondItem="PX5-ds-cAF" secondAttribute="top" constant="8" id="R5i-TF-UEu"/>
+                                        <constraint firstAttribute="bottom" secondItem="tZU-hv-Gez" secondAttribute="bottom" id="M85-7q-TLd"/>
                                         <constraint firstItem="tZU-hv-Gez" firstAttribute="leading" secondItem="PX5-ds-cAF" secondAttribute="leading" constant="10" id="beZ-lM-cSB"/>
                                         <constraint firstAttribute="trailing" secondItem="tZU-hv-Gez" secondAttribute="trailing" constant="10" id="ivB-97-dUt"/>
                                     </constraints>
