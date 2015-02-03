@@ -17,10 +17,9 @@
     self.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
     
     self.containerView.layer.cornerRadius = 5.f;
-    self.containerView.layer.borderColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1].CGColor;
+    self.containerView.layer.borderColor = [UIColor colorWithRed:0.91 green:0.91 blue:0.91 alpha:1].CGColor;
     self.containerView.layer.borderWidth = 1.f;
 
-    
     self.lineProgressView.progressType = ProgressLabelRect;
     self.lineProgressView.backBorderWidth = 0.0;
     self.lineProgressView.frontBorderWidth = 0.0;
