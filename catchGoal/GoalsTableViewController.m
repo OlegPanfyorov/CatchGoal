@@ -137,20 +137,8 @@
         UITableViewCell *cell = (UITableViewCell *)sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         detailTableViewController.selectedItemInArray = indexPath.row;
-        detailTableViewController.goalsArray = [DataSingletone sharedModel].goalsArray;
         
-        Goal *goal = [DataSingletone sharedModel].goalsArray[indexPath.row];
-        detailTableViewController.nameLabel.text = goal.name;
-        detailTableViewController.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
-        detailTableViewController.perMonthLabel.text = [NSString stringWithFormat:@"%@ p", goal.perMonth];
-        detailTableViewController.totalLabel.text = [NSString stringWithFormat:@"%@", goal.progress];
-        detailTableViewController.progress = [goal.progress floatValue];
-    
-        
-        NSLog(@"GOAL:\n name: %@,\n price %@,\n perMonth: %@,\n progress: %@,\n goalImage: %@,\n startDate: %@,\n finalDate: %@,\n complited: %@", goal.name, goal.price, goal.perMonth, goal.progress, goal.goalImage, goal.startDate, goal.finalDate, goal.complited ? @"NO" : @"YES");
-        
-
-        
+        //NSLog(@"GOAL:\n name: %@,\n price %@,\n perMonth: %@,\n progress: %@,\n goalImage: %@,\n startDate: %@,\n finalDate: %@,\n complited: %@", goal.name, goal.price, goal.perMonth, goal.progress, goal.goalImage, goal.startDate, goal.finalDate, goal.complited ? @"NO" : @"YES");
     }
     
 }

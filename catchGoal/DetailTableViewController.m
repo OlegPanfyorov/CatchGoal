@@ -21,10 +21,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    Goal *goal = [DataSingletone sharedModel].goalsArray[_selectedItemInArray];
+    self.nameLabel.text = goal.name;
+    self.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
+    self.perMonthLabel.text = [NSString stringWithFormat:@"%@ p", goal.perMonth];
+    self.totalLabel.text = [NSString stringWithFormat:@"%@", goal.progress];
+    self.progressMoney.text = [self calculateProgressInMoney:goal.price goalProgress:goal.progress];
+    self.progress = [goal.progress floatValue];
+    
     // Delete separators
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     [self canGoToPreviousOrNextGoal];
+    
     
     [self setupCirculeIndicator];
     //[self setupSmallCircleLabels];
@@ -48,7 +58,7 @@
         self.previousGoalButton.hidden = NO;
     }
     
-    if (self.selectedItemInArray + 2 > [self.goalsArray count]) {
+    if (self.selectedItemInArray + 2 > [[DataSingletone sharedModel].goalsArray count]) {
         self.nextGoalButton.hidden = YES;
     } else {
         self.nextGoalButton.hidden = NO;
@@ -63,7 +73,7 @@
 
     [self canGoToPreviousOrNextGoal];
     
-    Goal *goal = self.goalsArray[self.selectedItemInArray];
+    Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
     self.nameLabel.text = goal.name;
     self.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
     self.perMonthLabel.text = [NSString stringWithFormat:@"%@", goal.perMonth];
@@ -98,11 +108,12 @@
 
     [self canGoToPreviousOrNextGoal];
     
-    Goal *goal = self.goalsArray[self.selectedItemInArray];
+    Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
     self.nameLabel.text = goal.name;
     self.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
     self.perMonthLabel.text = [NSString stringWithFormat:@"%@", goal.perMonth];
     self.totalLabel.text = [NSString stringWithFormat:@"%@", goal.progress];
+    self.progressMoney.text = [self calculateProgressInMoney:goal.price goalProgress:goal.progress];
     self.progress = goal.progress.floatValue;
     [self setupCirculeIndicator];
 }
@@ -161,7 +172,7 @@
 
 - (void) setupCirculeIndicator {
     
-        [self.circleProgressLabel setProgress:0];
+    [self.circleProgressLabel setProgress:0];
     self.circleProgressLabel.progressLabelVCBlock = ^(KAProgressLabel *label, CGFloat progress) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [label setText:[NSString stringWithFormat:@"%.0f%%", (progress*100)]];
@@ -173,7 +184,6 @@
     
     [self.circleProgressLabel setBackBorderWidth: 7.5];
     [self.circleProgressLabel setFrontBorderWidth: 7.5];
-    
     
     [self.circleProgressLabel setColorTable: @{
                                   NSStringFromProgressLabelColorTableKey(ProgressLabelTrackColor):
