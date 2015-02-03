@@ -11,6 +11,8 @@
 @implementation addAndEditGoalCell
 
 - (void)awakeFromNib {
+    
+    self.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
 
     for (UIView* view in self.contentView.subviews) {
         
@@ -18,7 +20,7 @@
             UITextField* field = (UITextField*)view;
             
             field.layer.cornerRadius = 5.f;
-            field.layer.borderColor = [UIColor colorWithRed:0.89 green:0.89 blue:0.9 alpha:1].CGColor ;
+            field.layer.borderColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1].CGColor;
             field.layer.borderWidth = 1.f;
             field.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 44)];
             field.leftViewMode = UITextFieldViewModeAlways;
@@ -28,7 +30,7 @@
             
             imageView.layer.cornerRadius = 5.f;
             imageView.layer.borderWidth = 1.f;
-            imageView.layer.borderColor = [UIColor colorWithRed:0.76 green:0.93 blue:0.71 alpha:1].CGColor ;
+            imageView.layer.borderColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1].CGColor;
 
         }
         

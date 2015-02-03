@@ -41,7 +41,7 @@
 
 
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.backgroundColor = [UIColor colorWithRed:0.96 green:0.98 blue:0.99 alpha:1];
+    self.tableView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
 
     
     singletone = [DataSingletone sharedModel];
