@@ -458,7 +458,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Goals" id="KXk-EU-Scg">
-                        <barButtonItem key="leftBarButtonItem" title="Log out" id="GbK-Ah-ktw">
+                        <barButtonItem key="leftBarButtonItem" image="logout.png" id="GbK-Ah-ktw">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="logOutPressed:" destination="hai-iT-SiB" id="1jC-Ff-3tR"/>
@@ -1110,6 +1110,7 @@
         <image name="emalPic.png" width="30" height="30"/>
         <image name="loginPic.png" width="15" height="15"/>
         <image name="logo.png" width="430" height="70"/>
+        <image name="logout.png" width="32" height="32"/>
         <image name="passPic.png" width="15" height="15"/>
         <image name="photoPic.png" width="90" height="68"/>
         <image name="testPic2.png" width="90" height="90"/>
