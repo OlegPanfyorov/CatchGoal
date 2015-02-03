@@ -85,9 +85,28 @@
     cell.priceLabel.text = [NSString stringWithFormat:@"%@ собрано", goal.price];
     
     cell.image.image = [UIImage imageNamed:[NSString stringWithFormat:@"testPic%d", arc4random_uniform(3) + 1]];
-    CGFloat progress = self.progress / 100;
+    
+    CGFloat progress = (float)arc4random_uniform(101) / 100;
     
     [cell.lineProgressView setProgress:progress timing:TPPropertyAnimationTimingEaseOut duration:1.0 delay:0.5];
+    
+    if (progress > 0.5f) {
+        [cell.lineProgressView setColorTable: @{
+                                                NSStringFromProgressLabelColorTableKey(ProgressLabelFillColor):
+                                                    [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1],
+                                                NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
+                                                    [UIColor colorWithRed:1 green:0.39 blue:0.33 alpha:1],
+                                                }];
+    } else {
+        [cell.lineProgressView setColorTable: @{
+                                                NSStringFromProgressLabelColorTableKey(ProgressLabelFillColor):
+                                                    [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1],
+                                                NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
+                                                    [UIColor colorWithRed:0.42 green:0.82 blue:0.28 alpha:1],
+                                                }];
+
+        
+    }
     
     return cell;
 }
