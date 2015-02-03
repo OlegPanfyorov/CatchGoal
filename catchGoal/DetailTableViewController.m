@@ -25,7 +25,7 @@
     Goal *goal = [DataSingletone sharedModel].goalsArray[_selectedItemInArray];
     self.nameLabel.text = goal.name;
     self.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
-    self.perMonthLabel.text = [NSString stringWithFormat:@"%@ p", goal.perMonth];
+    self.perMonthLabel.text = [NSString stringWithFormat:@"%@", goal.perMonth];
     self.totalLabel.text = [NSString stringWithFormat:@"%@", goal.progress];
     self.progressMoney.text = [self calculateProgressInMoney:goal.price goalProgress:goal.progress];
     self.progress = [goal.progress floatValue];

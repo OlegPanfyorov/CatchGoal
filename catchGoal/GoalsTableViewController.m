@@ -59,6 +59,7 @@
     
     [DataSingletone sharedModel].goalsArray = [NSMutableArray new];
     
+
     for (int i = 0; i < 15; i++) {
         
         Goal *goal = [Goal new];
