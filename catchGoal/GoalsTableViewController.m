@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.backgroundColor = [UIColor colorWithRed:0.96 green:0.98 blue:0.99 alpha:1];
+    self.tableView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
     self.navigationController.navigationBarHidden = NO;
     [self performSelector:@selector(generateNewCell) withObject:nil];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -50,13 +50,13 @@
 
 - (void)generateNewCell {
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 5; i++) {
         
         Goal *goal = [Goal new];
         int iPhoneNumber = arc4random_uniform(6) + 2;
         int totalPrice = arc4random_uniform(25001);
         int progress = arc4random_uniform(101);
-        goal.name = [NSString stringWithFormat:@"iPhone %d", iPhoneNumber];
+        goal.name = [NSString stringWithFormat:@"Название цели %d", iPhoneNumber];
         goal.price = [NSNumber numberWithInt:totalPrice];
         goal.perMonth = @100;
         goal.progress = [NSNumber numberWithInt:progress];
@@ -82,8 +82,9 @@
     [cell.lineProgressView setProgress:0];
     Goal *goal = [DataSingletone sharedModel].goalsArray[indexPath.row];
     cell.nameLabel.text = goal.name;
-    cell.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
-    cell.progressLabel.text = [NSString stringWithFormat:@"%0.f%%", self.progress];
+    cell.priceLabel.text = [NSString stringWithFormat:@"%@ собрано", goal.price];
+    
+    cell.image.image = [UIImage imageNamed:[NSString stringWithFormat:@"testPic%d", arc4random_uniform(3) + 1]];
     CGFloat progress = self.progress / 100;
     
     [cell.lineProgressView setProgress:progress timing:TPPropertyAnimationTimingEaseOut duration:1.0 delay:0.5];

@@ -14,6 +14,13 @@
 
 - (void)awakeFromNib {
     
+    self.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
+    
+    self.containerView.layer.cornerRadius = 5.f;
+    self.containerView.layer.borderColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1].CGColor;
+    self.containerView.layer.borderWidth = 1.f;
+
+    
     self.lineProgressView.progressType = ProgressLabelRect;
     self.lineProgressView.backBorderWidth = 0.0;
     self.lineProgressView.frontBorderWidth = 0.0;
@@ -22,18 +29,16 @@
     
     [self.lineProgressView setColorTable: @{
                                            NSStringFromProgressLabelColorTableKey(ProgressLabelFillColor):
-                                               [UIColor colorWithRed:0.89 green:0.89 blue:0.9 alpha:1],
+                                               [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1],
                                            NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
                                                [UIColor colorWithRed:0.42 green:0.82 blue:0.28 alpha:1],
                                            }];
     
-    self.backgroundColor = [UIColor colorWithRed:0.96 green:0.98 blue:0.99 alpha:1];
     
-    self.progressLabel.backgroundColor = [UIColor whiteColor];
-    self.progressLabel.layer.cornerRadius = self.progressLabel.frame.size.height / 2;
-    self.progressLabel.layer.borderWidth = 1.f;
-    self.progressLabel.layer.borderColor = [UIColor colorWithRed:0.33 green:0.64 blue:0.9 alpha:0.25].CGColor;
-    self.progressLabel.clipsToBounds = YES;
+    self.image.backgroundColor = [UIColor whiteColor];
+    self.image.layer.cornerRadius = self.image.frame.size.height / 2;
+
+    self.image.clipsToBounds = YES;
 
 }
 @end

@@ -12,8 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *progressLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
 
 @property (weak, nonatomic) IBOutlet KAProgressLabel *lineProgressView;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @end
