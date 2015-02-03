@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *previousGoalButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextGoalButton;
+@property (weak, nonatomic) IBOutlet UILabel *progressMoney;
 
 @end
 
@@ -26,7 +27,7 @@
     [self canGoToPreviousOrNextGoal];
     
     [self setupCirculeIndicator];
-    [self setupSmallCircleLabels];
+    //[self setupSmallCircleLabels];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -67,8 +68,30 @@
     self.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
     self.perMonthLabel.text = [NSString stringWithFormat:@"%@", goal.perMonth];
     self.totalLabel.text = [NSString stringWithFormat:@"%@", goal.progress];
+    self.progressMoney.text = [self calculateProgressInMoney:goal.price goalProgress:goal.progress];
+    self.progress = goal.progress.floatValue;
+    
+    [self setupCirculeIndicator];
 }
 
+- (NSString*) calculateProgressInMoney:(NSNumber*) goalPrice goalProgress:(NSNumber*) progress {
+    int price = goalPrice.intValue;
+    int goalProgress = progress.intValue;
+    int progressInMoney = price * goalProgress / 100;
+    
+    NSString *result = [NSString stringWithFormat:@"%d", progressInMoney];
+    return result;
+}
+//на будущее
+- (NSString*) myCurrencyIs {
+    NSLocale *theLocale = [NSLocale currentLocale];
+    NSString *currencySymbol = [theLocale objectForKey:NSLocaleCurrencySymbol];
+    NSLog(@"Currency Symbol : %@", currencySymbol);
+    NSString *currencyCode = [theLocale objectForKey:NSLocaleCurrencyCode];
+    NSLog(@"Currency Code : %@", currencyCode);
+    return currencyCode;
+}
+//
 - (IBAction)nextGoalButtonTap:(UIButton *)sender {
     
     self.selectedItemInArray++;
@@ -80,6 +103,8 @@
     self.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
     self.perMonthLabel.text = [NSString stringWithFormat:@"%@", goal.perMonth];
     self.totalLabel.text = [NSString stringWithFormat:@"%@", goal.progress];
+    self.progress = goal.progress.floatValue;
+    [self setupCirculeIndicator];
 }
 
 - (void) setupSmallCircleLabels {
@@ -136,6 +161,7 @@
 
 - (void) setupCirculeIndicator {
     
+        [self.circleProgressLabel setProgress:0];
     self.circleProgressLabel.progressLabelVCBlock = ^(KAProgressLabel *label, CGFloat progress) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [label setText:[NSString stringWithFormat:@"%.0f%%", (progress*100)]];

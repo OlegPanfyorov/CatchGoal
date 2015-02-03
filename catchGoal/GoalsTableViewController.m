@@ -53,15 +53,13 @@
     for (int i = 0; i < 5; i++) {
         
         Goal *goal = [Goal new];
-        int iPhoneNumber = arc4random_uniform(6) + 2;
-        int totalPrice = arc4random_uniform(25001);
+        int iPhoneNumber = arc4random() % 4 + 2;
+        int totalPrice = (arc4random() % 10 + 1) * 1000;
         int progress = arc4random_uniform(101);
-        goal.name = [NSString stringWithFormat:@"Название цели %d", iPhoneNumber];
+        goal.name = [NSString stringWithFormat:@"iPhone %d", iPhoneNumber];
         goal.price = [NSNumber numberWithInt:totalPrice];
         goal.perMonth = @100;
         goal.progress = [NSNumber numberWithInt:progress];
-        
-        self.progress = [goal.progress floatValue];
         
         [[DataSingletone sharedModel].goalsArray addObject:goal];
     }
@@ -86,11 +84,11 @@
     
     cell.image.image = [UIImage imageNamed:[NSString stringWithFormat:@"testPic%d", arc4random_uniform(3) + 1]];
     
-    CGFloat progress = (float)arc4random_uniform(101) / 100;
+    CGFloat progress = [goal.progress floatValue] / 100;
     
     [cell.lineProgressView setProgress:progress timing:TPPropertyAnimationTimingEaseOut duration:1.0 delay:0.5];
     
-    if (progress > 0.5f) {
+    if (progress < 0.5f) {
         [cell.lineProgressView setColorTable: @{
                                                 NSStringFromProgressLabelColorTableKey(ProgressLabelFillColor):
                                                     [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1],
@@ -137,10 +135,15 @@
         
         Goal *goal = [DataSingletone sharedModel].goalsArray[indexPath.row];
         detailTableViewController.nameLabel.text = goal.name;
-        detailTableViewController.priceLabel.text = [NSString stringWithFormat:@"$%@", goal.price];
-        detailTableViewController.perMonthLabel.text = [NSString stringWithFormat:@"$%@", goal.perMonth];
+        detailTableViewController.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
+        detailTableViewController.perMonthLabel.text = [NSString stringWithFormat:@"%@ p", goal.perMonth];
         detailTableViewController.totalLabel.text = [NSString stringWithFormat:@"%@", goal.progress];
-        detailTableViewController.progress = self.progress;
+        detailTableViewController.progress = [goal.progress floatValue];
+    
+        
+        NSLog(@"GOAL:\n name: %@,\n price %@,\n perMonth: %@,\n progress: %@,\n goalImage: %@,\n startDate: %@,\n finalDate: %@,\n complited: %@", goal.name, goal.price, goal.perMonth, goal.progress, goal.goalImage, goal.startDate, goal.finalDate, goal.complited ? @"NO" : @"YES");
+        
+
         
     }
     

@@ -494,7 +494,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RQw-Nl-ffd" id="6Sd-TE-USB">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$499" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFL-x4-xny">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFL-x4-xny">
                                                     <rect key="frame" x="60" y="45" width="200" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="f8l-O8-NQY"/>
@@ -718,7 +718,8 @@
                         <outlet property="nameLabel" destination="FfD-5g-n4D" id="RSC-XH-Iqj"/>
                         <outlet property="nextGoalButton" destination="j6D-ZH-SCP" id="vQs-Zw-N43"/>
                         <outlet property="previousGoalButton" destination="hgq-oB-PFO" id="ggh-Ve-dAF"/>
-                        <outlet property="priceLabel" destination="iFL-x4-xny" id="4XN-dp-9eX"/>
+                        <outlet property="priceLabel" destination="iFL-x4-xny" id="wEu-65-LR6"/>
+                        <outlet property="progressMoney" destination="uhY-NU-txo" id="eio-Tx-jB0"/>
                         <outlet property="totalLabel" destination="9dF-2W-VfA" id="cVY-R8-ybW"/>
                     </connections>
                 </tableViewController>
