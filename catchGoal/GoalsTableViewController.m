@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self generateNewCell];
+    
     self.tableView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
     self.navigationController.navigationBarHidden = NO;
 
@@ -80,6 +82,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     
     static NSString *identifier = @"cell";
     GoalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];

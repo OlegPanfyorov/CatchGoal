@@ -38,6 +38,7 @@
     
     [self setupCirculeIndicator];
     //[self setupSmallCircleLabels];
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -192,7 +193,7 @@
                                       [UIColor colorWithRed:0 green:0.69 blue:0.96 alpha:1],
                                   }];
     
-    [self.circleProgressLabel setProgress:self.progress / 100 timing:TPPropertyAnimationTimingEaseOut duration:2.f delay:0.3];
+    [self.circleProgressLabel setProgress:self.progress / 100 timing:TPPropertyAnimationTimingEaseOut duration:2.f delay:0.0];
 }
 
 
