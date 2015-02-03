@@ -27,7 +27,7 @@
     
     [self generateNewCell];
     
-    UIEdgeInsets inset = {6,0,10,0};
+    UIEdgeInsets inset = {1,0,10,0};
     
     self.tableView.contentInset = inset;
     
