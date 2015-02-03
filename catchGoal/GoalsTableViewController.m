@@ -27,12 +27,13 @@
     
     self.tableView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
     self.navigationController.navigationBarHidden = NO;
-    [self performSelector:@selector(generateNewCell) withObject:nil];
+
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-
+    
+    [self generateNewCell]; 
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -49,7 +50,9 @@
 }
 
 - (void)generateNewCell {
-
+    
+    [DataSingletone sharedModel].goalsArray = [NSMutableArray new];
+    
     for (int i = 0; i < 5; i++) {
         
         Goal *goal = [Goal new];
@@ -71,6 +74,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"%zd", [[DataSingletone sharedModel].goalsArray count]);
     
     return  [[DataSingletone sharedModel].goalsArray count];
 }
