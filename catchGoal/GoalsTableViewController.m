@@ -27,9 +27,9 @@
     
     [self generateNewCell];
     
+    UIEdgeInsets inset = {6,0,10,0};
     
-    
-   // self.tableView.contentInset =
+    self.tableView.contentInset = inset;
     
     self.tableView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
     self.navigationController.navigationBarHidden = NO;
@@ -59,7 +59,7 @@
     
     [DataSingletone sharedModel].goalsArray = [NSMutableArray new];
     
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 15; i++) {
         
         Goal *goal = [Goal new];
 
