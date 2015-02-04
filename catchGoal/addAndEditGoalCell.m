@@ -20,19 +20,12 @@
             UITextField* field = (UITextField*)view;
             
             field.layer.cornerRadius = 5.f;
-            field.layer.borderColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1].CGColor;
+            field.layer.borderColor = [UIColor colorWithRed:0.87 green:0.87 blue:0.87 alpha:1].CGColor;
             field.layer.borderWidth = 1.f;
-            field.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 44)];
+            field.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 35, 44)];
             field.leftViewMode = UITextFieldViewModeAlways;
             
-        } else if ([view isKindOfClass:[UIImageView class]]) {
-            UIImageView* imageView = (UIImageView*)view;
-            
-            imageView.layer.cornerRadius = 5.f;
-            imageView.layer.borderWidth = 1.f;
-            imageView.layer.borderColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1].CGColor;
-
-        }
+        } 
         
         
     }

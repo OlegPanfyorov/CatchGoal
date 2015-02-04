@@ -60,7 +60,7 @@
     [DataSingletone sharedModel].goalsArray = [NSMutableArray new];
     
 
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i < 5; i++) {
         
         Goal *goal = [Goal new];
 
@@ -81,7 +81,6 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"%zd", [[DataSingletone sharedModel].goalsArray count]);
     
     return  [[DataSingletone sharedModel].goalsArray count];
 }

@@ -64,6 +64,11 @@
 		DA9E2FEC1A80E56100BC08B2 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA9E2FE81A80E55A00BC08B2 /* OpenSans-Semibold.ttf */; };
 		DABF0E5C1A6AD96800105669 /* KAProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DABF0E591A6AD96800105669 /* KAProgressLabel.m */; };
 		DABF0E5D1A6AD96800105669 /* TPPropertyAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DABF0E5B1A6AD96800105669 /* TPPropertyAnimation.m */; };
+		DAE391E21A82236C00B60CC2 /* goalName.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE391E11A82236C00B60CC2 /* goalName.png */; };
+		DAE391E41A82262D00B60CC2 /* goalTotalSum.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE391E31A82262D00B60CC2 /* goalTotalSum.png */; };
+		DAE391E61A822A0C00B60CC2 /* goalCurrentSum.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE391E51A822A0C00B60CC2 /* goalCurrentSum.png */; };
+		DAE391E81A822AC400B60CC2 /* goalExpDate.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE391E71A822AC400B60CC2 /* goalExpDate.png */; };
+		DAE391EA1A82345500B60CC2 /* goalPic.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE391E91A82345500B60CC2 /* goalPic.png */; };
 		DAE448771A6B15F20041F449 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE448741A6B15EF0041F449 /* Roboto-Medium.ttf */; };
 		DAE448781A6B15F20041F449 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE448741A6B15EF0041F449 /* Roboto-Medium.ttf */; };
 		DAE448791A6B15F40041F449 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAE448751A6B15EF0041F449 /* Roboto-Regular.ttf */; };
@@ -167,6 +172,11 @@
 		DABF0E591A6AD96800105669 /* KAProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAProgressLabel.m; sourceTree = "<group>"; };
 		DABF0E5A1A6AD96800105669 /* TPPropertyAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPropertyAnimation.h; sourceTree = "<group>"; };
 		DABF0E5B1A6AD96800105669 /* TPPropertyAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPropertyAnimation.m; sourceTree = "<group>"; };
+		DAE391E11A82236C00B60CC2 /* goalName.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goalName.png; sourceTree = "<group>"; };
+		DAE391E31A82262D00B60CC2 /* goalTotalSum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goalTotalSum.png; sourceTree = "<group>"; };
+		DAE391E51A822A0C00B60CC2 /* goalCurrentSum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goalCurrentSum.png; sourceTree = "<group>"; };
+		DAE391E71A822AC400B60CC2 /* goalExpDate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goalExpDate.png; sourceTree = "<group>"; };
+		DAE391E91A82345500B60CC2 /* goalPic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goalPic.png; sourceTree = "<group>"; };
 		DAE448741A6B15EF0041F449 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		DAE448751A6B15EF0041F449 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		DAE448761A6B15EF0041F449 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
@@ -446,6 +456,11 @@
 		DAE448701A6B0C000041F449 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DAE391E91A82345500B60CC2 /* goalPic.png */,
+				DAE391E11A82236C00B60CC2 /* goalName.png */,
+				DAE391E31A82262D00B60CC2 /* goalTotalSum.png */,
+				DAE391E51A822A0C00B60CC2 /* goalCurrentSum.png */,
+				DAE391E71A822AC400B60CC2 /* goalExpDate.png */,
 				DA1FCC811A81024800CA44C7 /* testPic1.png */,
 				DA1FCC821A81024800CA44C7 /* testPic2.png */,
 				DA1FCC831A81024800CA44C7 /* testPic3.png */,
@@ -557,16 +572,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE391E61A822A0C00B60CC2 /* goalCurrentSum.png in Resources */,
 				DA1C35DE1A8124C000A3A931 /* logout@2x.png in Resources */,
+				DAE391E21A82236C00B60CC2 /* goalName.png in Resources */,
 				DAE4488A1A6B2B5C0041F449 /* bg.png in Resources */,
 				DA1FCC851A81024800CA44C7 /* testPic2.png in Resources */,
 				DA63089A1A77CAF300F7AB08 /* photoPic@2x.png in Resources */,
 				DAE448791A6B15F40041F449 /* Roboto-Regular.ttf in Resources */,
+				DAE391EA1A82345500B60CC2 /* goalPic.png in Resources */,
 				DA1FCC861A81024800CA44C7 /* testPic3.png in Resources */,
 				DAE448771A6B15F20041F449 /* Roboto-Medium.ttf in Resources */,
 				DAFB806B1A6C4EFA006F28DF /* arrowForward.png in Resources */,
 				DA9E2FE91A80E55D00BC08B2 /* OpenSans-Regular.ttf in Resources */,
 				DAE448821A6B1F3F0041F449 /* loginPic@2x.png in Resources */,
+				DAE391E81A822AC400B60CC2 /* goalExpDate.png in Resources */,
 				790B7F281A69C3AE009C1F1B /* Main.storyboard in Resources */,
 				DAE4488C1A6B3FE30041F449 /* emalPic.png in Resources */,
 				DA1FCC841A81024800CA44C7 /* testPic1.png in Resources */,
@@ -575,6 +594,7 @@
 				DAFB806E1A6C4FB9006F28DF /* arrowBack.png in Resources */,
 				DAE448841A6B219B0041F449 /* logo.png in Resources */,
 				DAE4487F1A6B1A010041F449 /* passPic@2x.png in Resources */,
+				DAE391E41A82262D00B60CC2 /* goalTotalSum.png in Resources */,
 				790B7F2A1A69C3AE009C1F1B /* Images.xcassets in Resources */,
 				DA9E2FEB1A80E56000BC08B2 /* OpenSans-Semibold.ttf in Resources */,
 				DA1C35E01A8125BC00A3A931 /* logout@3x.png in Resources */,

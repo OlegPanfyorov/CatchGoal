@@ -38,7 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
+    self.picture.layer.cornerRadius = self.picture.frame.size.width / 2;
 
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
@@ -91,34 +91,6 @@
 
 #pragma mark - UITableView
 
-
-
-
--(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
-    NSString *title;
-    
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    dateFormatter.dateFormat = @"dd.MM.yyyy";
-    
-    switch (section) {
-        case 0:
-            return title =
-            [NSString stringWithFormat:@"Старт: %@",
-             [dateFormatter stringFromDate:[NSDate date]]];
-            break;
-        case 1:
-            return title = @"Комментарий";
-            break;
-        case 2:
-            return title = @"Фотография";
-            break;
-        default:
-            break;
-    }
-    
-    return title;
-}
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
