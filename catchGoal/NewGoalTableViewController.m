@@ -38,6 +38,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIButton* saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [saveButton addTarget:self action:@selector(addNewGoal) forControlEvents:UIControlEventTouchUpInside];
+    saveButton.frame = CGRectMake(0, self.tableView.frame.size.height - 140, self.view.frame.size.width, 80);
+    saveButton.backgroundColor = [UIColor colorWithRed:0.71 green:0.95 blue:0.58 alpha:1];
+    [saveButton setTitle:@"Сохранить" forState:UIControlStateNormal];
+    [saveButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    [self.view addSubview:saveButton];
+    
+
+  
+    
+    self.tableView.alwaysBounceVertical = NO;
+    
     self.picture.layer.cornerRadius = self.picture.frame.size.width / 2;
 
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -61,13 +75,9 @@
                                                  target:self
                                                  action:@selector(cancelToBack)];
     
-    UIBarButtonItem *saveItem =
-    [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave
-                                                 target:self
-                                                 action:@selector(addNewGoal)];
+
     
     self.navigationItem.leftBarButtonItem = cancelItem;
-    self.navigationItem.rightBarButtonItem = saveItem;
 }
 
 - (void)didReceiveMemoryWarning {

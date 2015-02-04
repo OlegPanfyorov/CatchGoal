@@ -39,7 +39,11 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
-    [self generateNewCell]; 
+    [self generateNewCell];
+    
+
+    
+    
 }
 
 -(void) viewWillAppear:(BOOL)animated {
