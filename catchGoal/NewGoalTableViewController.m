@@ -40,7 +40,7 @@
     
     UIButton* saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [saveButton addTarget:self action:@selector(addNewGoal) forControlEvents:UIControlEventTouchUpInside];
-    saveButton.frame = CGRectMake(0, self.tableView.frame.size.height - 140, self.view.frame.size.width, 80);
+    saveButton.frame = CGRectMake(0, self.tableView.bounds.size.height - 128, self.view.frame.size.width, 65);
     saveButton.backgroundColor = [UIColor colorWithRed:0.71 green:0.95 blue:0.58 alpha:1];
     [saveButton setTitle:@"Сохранить" forState:UIControlStateNormal];
     [saveButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -78,6 +78,12 @@
 
     
     self.navigationItem.leftBarButtonItem = cancelItem;
+    
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {
