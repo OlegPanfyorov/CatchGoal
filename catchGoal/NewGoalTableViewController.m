@@ -55,9 +55,6 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     
     [self.view addSubview:saveButton];
     
-
-  
-    
     self.tableView.alwaysBounceVertical = NO;
     
     self.picture.layer.cornerRadius = self.picture.frame.size.width / 2;

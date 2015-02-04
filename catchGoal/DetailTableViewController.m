@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.alwaysBounceVertical = NO;
+
     Goal *goal = [DataSingletone sharedModel].goalsArray[_selectedItemInArray];
     self.nameLabel.text = goal.name;
     self.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];

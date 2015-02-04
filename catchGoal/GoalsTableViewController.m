@@ -41,6 +41,7 @@
     
     [self generateNewCell];
     
+    self.tableView.alwaysBounceVertical = NO;
 
     
     
