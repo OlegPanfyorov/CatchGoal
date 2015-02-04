@@ -727,7 +727,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KL1-nP-oyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2333" y="444"/>
+            <point key="canvasLocation" x="2339" y="458"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="bGP-Mk-E1c">
@@ -928,6 +928,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.21568627450980393" green="0.53333333333333333" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="UDi-Az-5xu">
                                 <cells>
@@ -1094,7 +1095,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dzf-8r-INz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2333" y="1106"/>
+            <point key="canvasLocation" x="2339" y="1110"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ILm-xW-0oo">

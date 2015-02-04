@@ -6,9 +6,14 @@
 //  Copyright (c) 2015 iosDevCourse. All rights reserved.
 //
 
+#define kNavBarColorBlue [UIColor colorWithRed:0.32 green:0.64 blue:0.9 alpha:1]
+#define kNavBarColorGreen [UIColor colorWithRed:0.52 green:0.98 blue:0.49 alpha:1]
+
 #import "NewGoalTableViewController.h"
 #import "BGDatePicker.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+
+static NSInteger const kNavAndStatusBarHeight = 64;
 
 @interface NewGoalTableViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -40,10 +45,13 @@
     
     UIButton* saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [saveButton addTarget:self action:@selector(addNewGoal) forControlEvents:UIControlEventTouchUpInside];
-    saveButton.frame = CGRectMake(0, self.tableView.bounds.size.height - 128, self.view.frame.size.width, 65);
-    saveButton.backgroundColor = [UIColor colorWithRed:0.52 green:0.98 blue:0.49 alpha:1];
+
+    saveButton.frame = CGRectMake(0, self.tableView.frame.size.height - kNavAndStatusBarHeight * 2, self.view.frame.size.width, kNavAndStatusBarHeight);
+    saveButton.backgroundColor = kNavBarColorBlue;
+
     [saveButton setTitle:@"Сохранить" forState:UIControlStateNormal];
     [saveButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [saveButton.titleLabel setFont:[UIFont boldSystemFontOfSize:18]];
     
     [self.view addSubview:saveButton];
     
