@@ -40,11 +40,11 @@
 		794465D31A6A536800F00F63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794465D21A6A536800F00F63 /* UIKit.framework */; };
 		794465D61A6A5CE400F00F63 /* StartScreensMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 794465D51A6A5CE400F00F63 /* StartScreensMainViewController.m */; };
 		79548FFD1A6C37BB005AE681 /* DataSingletone.m in Sources */ = {isa = PBXBuildFile; fileRef = 79548FFC1A6C37BB005AE681 /* DataSingletone.m */; };
+		79ABEEC31A827D9A00DCE5F0 /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79ABEEC21A827D9A00DCE5F0 /* RMDateSelectionViewController.m */; };
 		8B0471A51A6A2EE100CE1F06 /* GoalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0471A41A6A2EE100CE1F06 /* GoalsTableViewController.m */; };
 		8B6A205E1A6AB22100C4FDFE /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */; };
 		8B9E33421A6A32A400CA3778 /* GoalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */; };
 		D3494B6C1A6C0FE60007DD0C /* NewGoalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3494B6B1A6C0FE60007DD0C /* NewGoalTableViewController.m */; };
-		D3494B6F1A6C10460007DD0C /* BGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D3494B6E1A6C10460007DD0C /* BGDatePicker.m */; };
 		D3494B711A6C14110007DD0C /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3494B701A6C14110007DD0C /* NotificationCenter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DA1C35DE1A8124C000A3A931 /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1C35DD1A8124C000A3A931 /* logout@2x.png */; };
 		DA1C35E01A8125BC00A3A931 /* logout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1C35DF1A8125BC00A3A931 /* logout@3x.png */; };
@@ -142,6 +142,8 @@
 		794465D51A6A5CE400F00F63 /* StartScreensMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreensMainViewController.m; sourceTree = "<group>"; };
 		79548FFB1A6C37BB005AE681 /* DataSingletone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSingletone.h; sourceTree = "<group>"; };
 		79548FFC1A6C37BB005AE681 /* DataSingletone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSingletone.m; sourceTree = "<group>"; };
+		79ABEEC11A827D9A00DCE5F0 /* RMDateSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDateSelectionViewController.h; sourceTree = "<group>"; };
+		79ABEEC21A827D9A00DCE5F0 /* RMDateSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDateSelectionViewController.m; sourceTree = "<group>"; };
 		8B0471A31A6A2EE100CE1F06 /* GoalsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalsTableViewController.h; sourceTree = "<group>"; };
 		8B0471A41A6A2EE100CE1F06 /* GoalsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalsTableViewController.m; sourceTree = "<group>"; };
 		8B6A205C1A6AB22100C4FDFE /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
@@ -150,8 +152,6 @@
 		8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalTableViewCell.m; sourceTree = "<group>"; };
 		D3494B6A1A6C0FE60007DD0C /* NewGoalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGoalTableViewController.h; sourceTree = "<group>"; };
 		D3494B6B1A6C0FE60007DD0C /* NewGoalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGoalTableViewController.m; sourceTree = "<group>"; };
-		D3494B6D1A6C10460007DD0C /* BGDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGDatePicker.h; sourceTree = "<group>"; };
-		D3494B6E1A6C10460007DD0C /* BGDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGDatePicker.m; sourceTree = "<group>"; };
 		D3494B701A6C14110007DD0C /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		DA1C35DD1A8124C000A3A931 /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@2x.png"; sourceTree = "<group>"; };
 		DA1C35DF1A8125BC00A3A931 /* logout@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@3x.png"; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 		790B7F1B1A69C3AE009C1F1B /* catchGoal */ = {
 			isa = PBXGroup;
 			children = (
-				790B7F421A69C5A0009C1F1B /* Frameworks */,
+				790B7F421A69C5A0009C1F1B /* Frameworks\Libraries */,
 				790B7F431A69C5AB009C1F1B /* UI */,
 				790B7F441A69C5B4009C1F1B /* API */,
 				790B7F481A69C5CE009C1F1B /* Models */,
@@ -294,7 +294,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		790B7F421A69C5A0009C1F1B /* Frameworks */ = {
+		790B7F421A69C5A0009C1F1B /* Frameworks\Libraries */ = {
 			isa = PBXGroup;
 			children = (
 				DA9D5F821A8162C200820E47 /* LocalAuthentication.framework */,
@@ -304,8 +304,9 @@
 				794465C81A6A532D00F00F63 /* MobileCoreServices.framework */,
 				D3494B701A6C14110007DD0C /* NotificationCenter.framework */,
 				794465B31A6A529900F00F63 /* parse need. */,
+				79ABEEC01A827D8F00DCE5F0 /* Datepicker */,
 			);
-			name = Frameworks;
+			name = "Frameworks\\Libraries";
 			sourceTree = "<group>";
 		};
 		790B7F431A69C5AB009C1F1B /* UI */ = {
@@ -402,6 +403,15 @@
 			name = "parse need.";
 			sourceTree = "<group>";
 		};
+		79ABEEC01A827D8F00DCE5F0 /* Datepicker */ = {
+			isa = PBXGroup;
+			children = (
+				79ABEEC11A827D9A00DCE5F0 /* RMDateSelectionViewController.h */,
+				79ABEEC21A827D9A00DCE5F0 /* RMDateSelectionViewController.m */,
+			);
+			name = Datepicker;
+			sourceTree = "<group>";
+		};
 		8B0471A21A6A2E9100CE1F06 /* Goals */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,8 +435,6 @@
 		D3494B691A6C0FC40007DD0C /* New Goal */ = {
 			isa = PBXGroup;
 			children = (
-				D3494B6D1A6C10460007DD0C /* BGDatePicker.h */,
-				D3494B6E1A6C10460007DD0C /* BGDatePicker.m */,
 				D3494B6A1A6C0FE60007DD0C /* NewGoalTableViewController.h */,
 				D3494B6B1A6C0FE60007DD0C /* NewGoalTableViewController.m */,
 			);
@@ -630,13 +638,13 @@
 				8B0471A51A6A2EE100CE1F06 /* GoalsTableViewController.m in Sources */,
 				790B7F581A69CA2C009C1F1B /* ForgotPasswordViewController.m in Sources */,
 				790B7F1F1A69C3AE009C1F1B /* main.m in Sources */,
+				79ABEEC31A827D9A00DCE5F0 /* RMDateSelectionViewController.m in Sources */,
 				790B7F471A69C5C8009C1F1B /* Constants.m in Sources */,
 				8B9E33421A6A32A400CA3778 /* GoalTableViewCell.m in Sources */,
 				DABF0E5C1A6AD96800105669 /* KAProgressLabel.m in Sources */,
 				79548FFD1A6C37BB005AE681 /* DataSingletone.m in Sources */,
 				D3494B6C1A6C0FE60007DD0C /* NewGoalTableViewController.m in Sources */,
 				790B7F551A69CA0D009C1F1B /* RegistrationViewController.m in Sources */,
-				D3494B6F1A6C10460007DD0C /* BGDatePicker.m in Sources */,
 				DABF0E5D1A6AD96800105669 /* TPPropertyAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

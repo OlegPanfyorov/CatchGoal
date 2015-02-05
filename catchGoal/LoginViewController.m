@@ -178,6 +178,7 @@
     [PFUser logInWithUsernameInBackground:login password:password block:^(PFUser *user, NSError *error) {
         if (user) {
             NSLog(@"successful login");
+            
             GoalsTableViewController  *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
             [self.navigationController pushViewController:mainVC animated:YES];
 

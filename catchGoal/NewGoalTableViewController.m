@@ -10,8 +10,8 @@
 #define kNavBarColorGreen [UIColor colorWithRed:0.52 green:0.98 blue:0.49 alpha:1]
 
 #import "NewGoalTableViewController.h"
-#import "BGDatePicker.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "RMDateSelectionViewController.h"
 
 static NSInteger const kNavAndStatusBarHeight = 64;
 
@@ -22,69 +22,84 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *goalName;
-
-
-//////////////// Old Property
-
-@property (strong, nonatomic) BGDatePicker *datePicker;
-@property (strong, nonatomic) UIBarButtonItem *cameraItem;
-
-//@property (weak, nonatomic) IBOutlet UITextField *goalName;
 @property (weak, nonatomic) IBOutlet UITextField *totalCost;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldDeadline;
-@property (weak, nonatomic) IBOutlet UITextView *commentView;
-@property (weak, nonatomic) IBOutlet UIImageView *picture;
+@property (weak, nonatomic) IBOutlet UITextField *progressInMoney;
+@property (weak, nonatomic) IBOutlet UITextField *finalDate;
+@property (weak, nonatomic) IBOutlet UIImageView *photo;
 
 @end
 
 @implementation NewGoalTableViewController
-@synthesize datePicker, textFieldDeadline, cameraItem, picture, goalName, totalCost, commentView;
+@synthesize photo, goalName, totalCost;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     UIButton* saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [saveButton addTarget:self action:@selector(addNewGoal) forControlEvents:UIControlEventTouchUpInside];
-
     saveButton.frame = CGRectMake(0, self.tableView.frame.size.height - kNavAndStatusBarHeight * 2, self.view.frame.size.width, kNavAndStatusBarHeight);
     saveButton.backgroundColor = kNavBarColorBlue;
-
     [saveButton setTitle:@"Сохранить" forState:UIControlStateNormal];
     [saveButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [saveButton.titleLabel setFont:[UIFont boldSystemFontOfSize:18]];
-    
     [self.view addSubview:saveButton];
     
     self.tableView.alwaysBounceVertical = NO;
-    
-    self.picture.layer.cornerRadius = self.picture.frame.size.width / 2;
-
+    self.photo.layer.cornerRadius = self.photo.frame.size.width / 2;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
-
-    
-    singletone = [DataSingletone sharedModel];
         
-    datePicker =
-    [[BGDatePicker alloc]initWithDateFormatString:@"dd.MM.yyyy"
-                                     forTextField:textFieldDeadline
-                               withDatePickerMode:UIDatePickerModeDateAndTime];
-    
-    datePicker.date = [NSDate date];
-    
-    textFieldDeadline.inputView = datePicker;
-    textFieldDeadline.inputAccessoryView = datePicker.toolbar;
-    
     UIBarButtonItem *cancelItem =
     [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                  target:self
                                                  action:@selector(cancelToBack)];
-    
-
-    
     self.navigationItem.leftBarButtonItem = cancelItem;
-    
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    
+    //hide keyboard on BG tap
+    UITapGestureRecognizer *singleTap;
+    singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                        action:@selector(showDatePicker)];
+    singleTap.numberOfTapsRequired = 1;
+    self.view.userInteractionEnabled = TRUE;
+    [self.finalDate addGestureRecognizer:singleTap];
+    
+}
+
+-(void) showDatePicker {
+    RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController dateSelectionController];
+    
+    dateSelectionVC.hideNowButton = YES;
+    
+    //You can enable or disable bouncing and motion effects
+    dateSelectionVC.disableBouncingWhenShowing = YES;
+    dateSelectionVC.disableMotionEffects = YES;
+    //You can access the actual UIDatePicker via the datePicker property
+    dateSelectionVC.datePicker.datePickerMode = UIDatePickerModeDate;
+    dateSelectionVC.datePicker.minuteInterval = 5;
+    NSDate *datePlusMonth = [NSDate date];
+    datePlusMonth = [datePlusMonth dateByAddingTimeInterval:(30 * 24 * 60 * 60)];
+    dateSelectionVC.datePicker.date = datePlusMonth;
+
+    [dateSelectionVC showWithSelectionHandler:^(RMDateSelectionViewController *vc, NSDate *aDate) {
+        NSLog(@"Successfully selected date: %@ (With block)", aDate);
+        self.finalDate.text = [self convertDateToString:aDate];
+    } andCancelHandler:^(RMDateSelectionViewController *vc) {
+        NSLog(@"Date selection was canceled (with block)");
+        self.finalDate.text = [self convertDateToString:datePlusMonth];
+    }];
+}
+
+-(NSString*) convertDateToString:(NSDate*) date {
+    
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"dd MMM, yyyy"];
+    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    format.locale = usLocale;
+    NSString *theDate = [format stringFromDate:date];
+    NSLog(@"%@", date);
+    
+    return theDate;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -94,6 +109,37 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UITextFieldDelegate
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField {
+    
+    switch (textField.tag) {
+        case 0:
+            [self.totalCost becomeFirstResponder];
+            break;
+        case 1:
+            [self.progressInMoney becomeFirstResponder];
+            break;
+        case 2:
+            [textField resignFirstResponder];
+            [self.finalDate becomeFirstResponder];
+            break;
+        case 3:
+            [textField resignFirstResponder];
+            break;
+        default:
+            break;
+    }
+    [textField resignFirstResponder];
+    return YES;
+}
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (textField.tag == 3) {
+        [self.finalDate resignFirstResponder];
+        [self showDatePicker];
+    }
 }
 
 #pragma mark - Actions
@@ -112,57 +158,6 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 
 #pragma mark - UITableView
 
-
--(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    
-    cameraItem =
-    [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCamera
-                                                 target:self
-                                                 action:@selector(choosePictureFromAlbumDevice)];
-    
-    UIToolbar *smallToolbar =
-    [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.tableView.sectionFooterHeight, self.tableView.frame.size.width)];
-    
-    smallToolbar.items = [NSArray arrayWithObjects:cameraItem, nil];
-    
-    return section == 2 ? smallToolbar : nil;
-}
-
-
--(void)choosePictureFromAlbumDevice {
-    
-    if ([UIImagePickerController isSourceTypeAvailable:
-         UIImagePickerControllerSourceTypePhotoLibrary]) {
-        
-        UIImagePickerController *imagePicker =
-        [UIImagePickerController new];
-        
-        imagePicker.delegate = self;
-        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        imagePicker.mediaTypes = [NSArray arrayWithObjects:(NSString*)kUTTypeImage, nil];
-        
-        imagePicker.allowsEditing = NO;
-        
-        [self presentViewController:imagePicker animated:YES completion:nil];
-    }
-}
-
--(void)imagePickerController:(UIImagePickerController *)picker
-didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
-    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    if ([mediaType isEqualToString:(NSString*)kUTTypeImage]) {
-        
-        UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-        picture.image = image;
-    }
-    
-    NSArray *newGoalInfo = [NSArray arrayWithObjects: goalName, totalCost, commentView, picture, nil];
-    
-    [singletone.goalsArray addObjectsFromArray:newGoalInfo];
-    
-}
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     

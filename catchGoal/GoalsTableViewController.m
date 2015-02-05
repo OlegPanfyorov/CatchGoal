@@ -25,25 +25,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self generateNewCell];
-    
     UIEdgeInsets inset = {1,0,10,0};
     
     self.tableView.contentInset = inset;
-    
     self.tableView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
     self.navigationController.navigationBarHidden = NO;
-
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.tableView.alwaysBounceVertical = NO;
     
     [self generateNewCell];
-    
-    self.tableView.alwaysBounceVertical = NO;
-
-    
     
 }
 

@@ -966,6 +966,9 @@
                                                     <color key="textColor" red="0.32549019610000002" green="0.41568627450000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="GGm-5O-CVc" id="Bou-xs-DfN"/>
+                                                    </connections>
                                                 </textField>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalName.png" translatesAutoresizingMaskIntoConstraints="NO" id="GCT-DJ-hHg">
                                                     <rect key="frame" x="23" y="23" width="9" height="13"/>
@@ -989,7 +992,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xic-06-1k4" id="E6k-wQ-oPx">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Сумма" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rJv-Vu-wYz">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Сумма" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rJv-Vu-wYz">
                                                     <rect key="frame" x="10" y="7" width="300" height="44"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -997,7 +1000,10 @@
                                                     </constraints>
                                                     <color key="textColor" red="0.32549019610000002" green="0.41568627450000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="GGm-5O-CVc" id="Npa-AV-Qal"/>
+                                                    </connections>
                                                 </textField>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalTotalSum.png" translatesAutoresizingMaskIntoConstraints="NO" id="vTq-y2-wAA">
                                                     <rect key="frame" x="23" y="24" width="9" height="12"/>
@@ -1021,16 +1027,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3NY-N2-CB6" id="xyI-wf-eci">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Текущие накопления" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="b6x-Wa-28V">
-                                                    <rect key="frame" x="10" y="6" width="300" height="44"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="ZBm-eQ-QnC"/>
-                                                    </constraints>
-                                                    <color key="textColor" red="0.32549019610000002" green="0.41568627450000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
-                                                </textField>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalCurrentSum.png" translatesAutoresizingMaskIntoConstraints="NO" id="HE2-cw-hUD">
                                                     <rect key="frame" x="23" y="23" width="13" height="12"/>
                                                     <constraints>
@@ -1038,6 +1034,19 @@
                                                         <constraint firstAttribute="height" constant="12" id="xz5-FP-KCq"/>
                                                     </constraints>
                                                 </imageView>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Текущие накопления" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="b6x-Wa-28V">
+                                                    <rect key="frame" x="10" y="6" width="300" height="44"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="ZBm-eQ-QnC"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="0.32549019610000002" green="0.41568627450000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="GGm-5O-CVc" id="GbY-T7-uwR"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="HE2-cw-hUD" firstAttribute="top" secondItem="xyI-wf-eci" secondAttribute="topMargin" constant="15" id="A6Z-g7-NdO"/>
@@ -1053,7 +1062,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hn4-Iy-hkg" id="OYp-zI-HUK">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Дата достижения" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yY7-oC-Det">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Дата достижения" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yY7-oC-Det">
                                                     <rect key="frame" x="10" y="6" width="300" height="44"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -1062,6 +1071,9 @@
                                                     <color key="textColor" red="0.32549019610000002" green="0.41568627450000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="GGm-5O-CVc" id="BYR-gU-5k2"/>
+                                                    </connections>
                                                 </textField>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalExpDate.png" translatesAutoresizingMaskIntoConstraints="NO" id="tsv-8q-M8L">
                                                     <rect key="frame" x="23" y="23" width="13" height="13"/>
@@ -1090,7 +1102,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="umQ-ks-P6U"/>
                     <connections>
-                        <outlet property="picture" destination="9Hk-pF-Fvv" id="Jfr-JL-M1z"/>
+                        <outlet property="finalDate" destination="yY7-oC-Det" id="SaN-i4-2r0"/>
+                        <outlet property="goalName" destination="Ofy-L6-2LN" id="sfZ-Cb-SNK"/>
+                        <outlet property="photo" destination="9Hk-pF-Fvv" id="4m2-yW-NyM"/>
+                        <outlet property="progressInMoney" destination="b6x-Wa-28V" id="i2C-Oc-vye"/>
+                        <outlet property="totalCost" destination="rJv-Vu-wYz" id="wTd-st-iUa"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dzf-8r-INz" userLabel="First Responder" sceneMemberID="firstResponder"/>
