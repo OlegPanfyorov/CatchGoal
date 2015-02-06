@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -1027,13 +1027,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3NY-N2-CB6" id="xyI-wf-eci">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalCurrentSum.png" translatesAutoresizingMaskIntoConstraints="NO" id="HE2-cw-hUD">
-                                                    <rect key="frame" x="23" y="23" width="13" height="12"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="13" id="10N-s3-oPn"/>
-                                                        <constraint firstAttribute="height" constant="12" id="xz5-FP-KCq"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Текущие накопления" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="b6x-Wa-28V">
                                                     <rect key="frame" x="10" y="6" width="300" height="44"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1047,6 +1040,13 @@
                                                         <outlet property="delegate" destination="GGm-5O-CVc" id="GbY-T7-uwR"/>
                                                     </connections>
                                                 </textField>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalCurrentSum.png" translatesAutoresizingMaskIntoConstraints="NO" id="HE2-cw-hUD">
+                                                    <rect key="frame" x="23" y="23" width="13" height="12"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="13" id="10N-s3-oPn"/>
+                                                        <constraint firstAttribute="height" constant="12" id="xz5-FP-KCq"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="HE2-cw-hUD" firstAttribute="top" secondItem="xyI-wf-eci" secondAttribute="topMargin" constant="15" id="A6Z-g7-NdO"/>
