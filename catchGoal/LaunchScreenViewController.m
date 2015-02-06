@@ -19,11 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-}
-- (void) viewWillAppear:(BOOL)animated {
     
     PFUser *currentUser = [PFUser currentUser];
+    
     if (currentUser) {
         // do stuff with the user
         GoalsTableViewController  *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
@@ -34,6 +32,11 @@
         LoginViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
         [self.navigationController pushViewController:loginVC animated:YES];
     }
+    
+}
+- (void) viewWillAppear:(BOOL)animated {
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
