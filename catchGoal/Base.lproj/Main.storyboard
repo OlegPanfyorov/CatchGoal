@@ -523,25 +523,15 @@
                                                         <constraint firstAttribute="height" constant="1" id="mjr-0z-JYR"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZbF-Sr-rDR">
-                                                    <rect key="frame" x="18" y="8" width="56" height="56"/>
-                                                    <color key="backgroundColor" red="1" green="0.89495623430000004" blue="0.60548074929999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="56" id="1fE-TE-NNp"/>
-                                                        <constraint firstAttribute="height" constant="56" id="tOz-iv-vbH"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="FfD-5g-n4D" firstAttribute="top" secondItem="6Sd-TE-USB" secondAttribute="top" constant="16" id="2jT-mA-8d0"/>
-                                                <constraint firstItem="ZbF-Sr-rDR" firstAttribute="top" secondItem="6Sd-TE-USB" secondAttribute="topMargin" id="9qu-0y-bWj"/>
                                                 <constraint firstAttribute="centerX" secondItem="iFL-x4-xny" secondAttribute="centerX" id="C6D-lN-GbT"/>
                                                 <constraint firstAttribute="trailing" secondItem="3bR-qS-d2j" secondAttribute="trailing" id="Qej-l2-8Xl"/>
                                                 <constraint firstAttribute="bottom" secondItem="iFL-x4-xny" secondAttribute="bottom" constant="6" id="Y6V-Mp-vSR"/>
                                                 <constraint firstItem="3bR-qS-d2j" firstAttribute="leading" secondItem="6Sd-TE-USB" secondAttribute="leading" id="cTA-z5-Hhj"/>
                                                 <constraint firstAttribute="bottom" secondItem="3bR-qS-d2j" secondAttribute="bottom" id="ifh-9o-QaS"/>
                                                 <constraint firstAttribute="centerX" secondItem="FfD-5g-n4D" secondAttribute="centerX" id="l3h-cC-jpC"/>
-                                                <constraint firstItem="ZbF-Sr-rDR" firstAttribute="leading" secondItem="6Sd-TE-USB" secondAttribute="leadingMargin" constant="10" id="mR5-0A-G61"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

@@ -35,6 +35,7 @@
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.tableView.alwaysBounceVertical = NO;
     
+
     [self generateNewCell];
     
 }
@@ -42,6 +43,15 @@
 -(void) viewWillAppear:(BOOL)animated {
     
     [self.tableView reloadData];
+}
+
+- (NSString*) calculateProgressInMoney:(NSNumber*) goalPrice goalProgress:(NSNumber*) progress {
+    int price = goalPrice.intValue;
+    int goalProgress = progress.intValue;
+    int progressInMoney = price * goalProgress / 100;
+    
+    NSString *result = [NSString stringWithFormat:@"%d", progressInMoney];
+    return result;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -69,6 +79,7 @@
         goal.price = [NSNumber numberWithInt:totalPrice];
         goal.perMonth = @100;
         goal.progress = [NSNumber numberWithInt:progress];
+
         
         [[DataSingletone sharedModel].goalsArray addObject:goal];
     }
@@ -90,8 +101,11 @@
     [cell.lineProgressView setProgress:0];
     Goal *goal = [DataSingletone sharedModel].goalsArray[indexPath.row];
     cell.nameLabel.text = goal.name;
-    cell.priceLabel.text = [NSString stringWithFormat:@"%@ собрано", goal.price];
     
+    NSString* progressInMoney = [self calculateProgressInMoney:goal.price goalProgress:goal.progress];
+    
+    cell.priceLabel.text = [NSString stringWithFormat:@"%@ собрано из %@ руб.", progressInMoney, goal.price];
+
     cell.image.image = [UIImage imageNamed:[NSString stringWithFormat:@"testPic%d", arc4random_uniform(3) + 1]];
     
     CGFloat progress = [goal.progress floatValue] / 100;
