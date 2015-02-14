@@ -67,8 +67,8 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 }
 
 -(void) showDatePicker {
-    RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController dateSelectionController];
     
+    RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController dateSelectionController];
     dateSelectionVC.hideNowButton = YES;
     
     //You can enable or disable bouncing and motion effects
