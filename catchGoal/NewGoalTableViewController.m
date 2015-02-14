@@ -12,6 +12,8 @@
 #import "NewGoalTableViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "RMDateSelectionViewController.h"
+#import "UIActionSheet+BlockExtensions.h"
+#import "Goal.h"
 
 static NSInteger const kNavAndStatusBarHeight = 64;
 
@@ -24,13 +26,16 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 @property (weak, nonatomic) IBOutlet UITextField *goalName;
 @property (weak, nonatomic) IBOutlet UITextField *totalCost;
 @property (weak, nonatomic) IBOutlet UITextField *progressInMoney;
-@property (weak, nonatomic) IBOutlet UITextField *finalDate;
-@property (weak, nonatomic) IBOutlet UIImageView *photo;
+@property (weak, nonatomic) IBOutlet UITextField *finalDateTextField;
+@property (weak, nonatomic) IBOutlet UIButton *choosePhotoButton;
+@property (strong, nonatomic) NSDate *finalDate;
+
+- (IBAction)choosePhotoButtonClicked:(id)sender;
 
 @end
 
 @implementation NewGoalTableViewController
-@synthesize photo, goalName, totalCost;
+@synthesize goalName, totalCost;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,7 +50,6 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     [self.view addSubview:saveButton];
     
     self.tableView.alwaysBounceVertical = NO;
-    self.photo.layer.cornerRadius = self.photo.frame.size.width / 2;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
         
@@ -56,14 +60,29 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     self.navigationItem.leftBarButtonItem = cancelItem;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
-    //hide keyboard on BG tap
+    //show datapicker
     UITapGestureRecognizer *singleTap;
     singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                         action:@selector(showDatePicker)];
     singleTap.numberOfTapsRequired = 1;
-    self.view.userInteractionEnabled = TRUE;
-    [self.finalDate addGestureRecognizer:singleTap];
+    [self.finalDateTextField addGestureRecognizer:singleTap];
     
+    //hide keyboard on BG tap
+    UITapGestureRecognizer *hideKeyboard;
+    hideKeyboard = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                        action:@selector(hideKeyboard)];
+    hideKeyboard.numberOfTapsRequired = 1;
+    self.view.userInteractionEnabled = TRUE;
+    [self.view addGestureRecognizer:hideKeyboard];
+    
+    self.choosePhotoButton.layer.cornerRadius = self.choosePhotoButton.frame.size.height / 2;
+}
+
+- (void)hideKeyboard {
+    [self.goalName resignFirstResponder];
+    [self.totalCost resignFirstResponder];
+    [self.progressInMoney resignFirstResponder];
+    [self.finalDateTextField resignFirstResponder];
 }
 
 -(void) showDatePicker {
@@ -83,10 +102,12 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 
     [dateSelectionVC showWithSelectionHandler:^(RMDateSelectionViewController *vc, NSDate *aDate) {
         NSLog(@"Successfully selected date: %@ (With block)", aDate);
-        self.finalDate.text = [self convertDateToString:aDate];
+        self.finalDate = aDate;
+        self.finalDateTextField.text = [self convertDateToString:aDate];
     } andCancelHandler:^(RMDateSelectionViewController *vc) {
         NSLog(@"Date selection was canceled (with block)");
-        self.finalDate.text = [self convertDateToString:datePlusMonth];
+        self.finalDate = datePlusMonth;
+        self.finalDateTextField.text = [self convertDateToString:datePlusMonth];
     }];
 }
 
@@ -100,6 +121,13 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     NSLog(@"%@", date);
     
     return theDate;
+}
+
+-(NSNumber*) convertStringToNSNumber:(NSString*) string {
+    NSNumberFormatter *number = [[NSNumberFormatter alloc] init];
+    number.numberStyle = NSNumberFormatterDecimalStyle;
+    
+    return [number numberFromString:string];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -124,7 +152,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
             break;
         case 2:
             [textField resignFirstResponder];
-            [self.finalDate becomeFirstResponder];
+            [self.finalDateTextField becomeFirstResponder];
             break;
         case 3:
             [textField resignFirstResponder];
@@ -137,7 +165,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     if (textField.tag == 3) {
-        [self.finalDate resignFirstResponder];
+        [self.finalDateTextField resignFirstResponder];
         [self showDatePicker];
     }
 }
@@ -145,15 +173,32 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 #pragma mark - Actions
 
 -(void)addNewGoal {
+    Goal *goal = [Goal new];
+    goal.name = self.goalName.text;
+    goal.startDate = [NSDate date];
+    goal.finalDate = self.finalDate;
+    if (self.choosePhotoButton.currentImage) {
+        goal.goalImage = [self.choosePhotoButton imageForState:UIControlStateNormal];
+    } else {
+        goal.goalImage = [UIImage imageNamed:@"no_photo"];
+    }
+    goal.complited = NO;
+    goal.price = [self convertStringToNSNumber:self.totalCost.text];
+    goal.progress = [self convertStringToNSNumber:self.progressInMoney.text];
+    goal.perMonth = @100;
+    [[DataSingletone sharedModel].goalsArray addObject:goal];
     
     NSLog(@"New Goal was created");
-    
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)cancelToBack {
     
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)choosePhotoButtonClicked:(id)sender {
+    [self showActionSheetToChooseSourceAndMakeImagePickerWithEditing:YES];
 }
 
 #pragma mark - UITableView
@@ -164,27 +209,89 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+#pragma mark - UIImagePicker
+
+- (void)showActionSheetToChooseSourceAndMakeImagePickerWithEditing:(BOOL)edited {
+    UIActionSheet *sheet = nil;
     
-    return 44.0;
+    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
+        sheet = [[UIActionSheet alloc] initWithTitle:nil
+                                     completionBlock:
+                 ^(NSUInteger buttonIndex, UIActionSheet *actionSheet) {
+                     UIImagePickerController *imgPicker = [[UIImagePickerController alloc] init];
+                     imgPicker.allowsEditing = edited;
+                     [imgPicker setDelegate:(id)self];
+                     
+                     switch (buttonIndex) {
+                         case 0:
+                             imgPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                             [self presentViewController:imgPicker animated:YES completion:nil];
+                             break;
+                             
+                         case 1:
+                             imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                             [self presentViewController:imgPicker animated:YES completion:nil];
+                             break;
+                         case 2:
+                             [self deletePhoto];
+                             break;
+                             
+                         default:
+                             break;
+                     }
+                 }
+                                   cancelButtonTitle:@"Отмена"
+                              destructiveButtonTitle:nil
+                                   otherButtonTitles:@"Камера",@"Галерея", @"Удалить", nil];
+    } else {
+        sheet = [[UIActionSheet alloc] initWithTitle:nil
+                                     completionBlock:
+                 ^(NSUInteger buttonIndex, UIActionSheet *actionSheet) {
+                     UIImagePickerController *imgPicker = [[UIImagePickerController alloc] init];
+                     imgPicker.allowsEditing = YES;
+                     [imgPicker setDelegate:(id)self];
+                     
+                     switch (buttonIndex) {
+                         case 0:
+                             imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                             [self presentViewController:imgPicker animated:YES completion:nil];
+                             break;
+                         case 1:
+                             [self deletePhoto];
+                             break;
+                         default:
+                             break;
+                     }
+                 }
+                                   cancelButtonTitle:@"Отмена"
+                              destructiveButtonTitle:nil
+                                   otherButtonTitles:@"Галерея", @"Удалить", nil];
+    }
+    
+    [sheet showInView:self.view];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section {
- 
-    return 16.0;
+#pragma mark - UIImagePickerControllerDelegate
+
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage]; //
+    NSLog(@"%@", NSStringFromCGSize(image.size));
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self setGoalButtonImage:image];
+    }];
+    
 }
-*/
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void) deletePhoto {
+    [self setGoalButtonImage:[UIImage imageNamed:@"goalPic"]];
 }
-*/
+
+-(void) setGoalButtonImage:(UIImage*) image {
+    [self.choosePhotoButton setImage:image forState:UIControlStateNormal];
+    [self.choosePhotoButton setImage:image forState:UIControlStateHighlighted];
+    self.choosePhotoButton.layer.cornerRadius = self.choosePhotoButton.frame.size.height / 2;
+}
 
 @end

@@ -15,8 +15,8 @@
 @property (strong, nonatomic) NSNumber *perMonth;
 @property (strong, nonatomic) NSNumber *progress;
 @property (strong, nonatomic) UIImage *goalImage;
-@property (assign, nonatomic) NSDate *startDate;
-@property (assign, nonatomic) NSDate *finalDate;
+@property (strong, nonatomic) NSDate *startDate;
+@property (strong, nonatomic) NSDate *finalDate;
 @property (assign, nonatomic) BOOL complited;
 
 -(id) initWithItem:(PFObject*) item;

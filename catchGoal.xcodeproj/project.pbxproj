@@ -19,6 +19,8 @@
 		790B7F551A69CA0D009C1F1B /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 790B7F541A69CA0D009C1F1B /* RegistrationViewController.m */; };
 		790B7F581A69CA2C009C1F1B /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 790B7F571A69CA2C009C1F1B /* ForgotPasswordViewController.m */; };
 		790B7F5B1A69CA3E009C1F1B /* LaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 790B7F5A1A69CA3E009C1F1B /* LaunchScreenViewController.m */; };
+		7942FE311A8FD1E00035F411 /* UIActionSheet+BlockExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7942FE301A8FD1E00035F411 /* UIActionSheet+BlockExtensions.m */; };
+		7942FE331A8FF3360035F411 /* no_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7942FE321A8FF3360035F411 /* no_photo.png */; };
 		794465A81A6A523A00F00F63 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 794465A71A6A523A00F00F63 /* libsqlite3.0.dylib */; };
 		794465AE1A6A529600F00F63 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794465A91A6A529600F00F63 /* Parse.framework */; };
 		794465AF1A6A529600F00F63 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794465AA1A6A529600F00F63 /* ParseUI.framework */; };
@@ -119,6 +121,9 @@
 		790B7F571A69CA2C009C1F1B /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		790B7F591A69CA3E009C1F1B /* LaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenViewController.h; sourceTree = "<group>"; };
 		790B7F5A1A69CA3E009C1F1B /* LaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenViewController.m; sourceTree = "<group>"; };
+		7942FE2F1A8FD1E00035F411 /* UIActionSheet+BlockExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+BlockExtensions.h"; sourceTree = "<group>"; };
+		7942FE301A8FD1E00035F411 /* UIActionSheet+BlockExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+BlockExtensions.m"; sourceTree = "<group>"; };
+		7942FE321A8FF3360035F411 /* no_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_photo.png; sourceTree = "<group>"; };
 		794465A71A6A523A00F00F63 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		794465A91A6A529600F00F63 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		794465AA1A6A529600F00F63 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
@@ -305,6 +310,8 @@
 				D3494B701A6C14110007DD0C /* NotificationCenter.framework */,
 				794465B31A6A529900F00F63 /* parse need. */,
 				79ABEEC01A827D8F00DCE5F0 /* Datepicker */,
+				7942FE2F1A8FD1E00035F411 /* UIActionSheet+BlockExtensions.h */,
+				7942FE301A8FD1E00035F411 /* UIActionSheet+BlockExtensions.m */,
 			);
 			name = "Frameworks\\Libraries";
 			sourceTree = "<group>";
@@ -464,6 +471,7 @@
 		DAE448701A6B0C000041F449 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7942FE321A8FF3360035F411 /* no_photo.png */,
 				DAE391E91A82345500B60CC2 /* goalPic.png */,
 				DAE391E11A82236C00B60CC2 /* goalName.png */,
 				DAE391E31A82262D00B60CC2 /* goalTotalSum.png */,
@@ -599,6 +607,7 @@
 				DA1FCC841A81024800CA44C7 /* testPic1.png in Resources */,
 				790B7F2D1A69C3AE009C1F1B /* LaunchScreen.xib in Resources */,
 				DAE4487B1A6B15F70041F449 /* Roboto-Light.ttf in Resources */,
+				7942FE331A8FF3360035F411 /* no_photo.png in Resources */,
 				DAFB806E1A6C4FB9006F28DF /* arrowBack.png in Resources */,
 				DAE448841A6B219B0041F449 /* logo.png in Resources */,
 				DAE4487F1A6B1A010041F449 /* passPic@2x.png in Resources */,
@@ -640,6 +649,7 @@
 				790B7F1F1A69C3AE009C1F1B /* main.m in Sources */,
 				79ABEEC31A827D9A00DCE5F0 /* RMDateSelectionViewController.m in Sources */,
 				790B7F471A69C5C8009C1F1B /* Constants.m in Sources */,
+				7942FE311A8FD1E00035F411 /* UIActionSheet+BlockExtensions.m in Sources */,
 				8B9E33421A6A32A400CA3778 /* GoalTableViewCell.m in Sources */,
 				DABF0E5C1A6AD96800105669 /* KAProgressLabel.m in Sources */,
 				79548FFD1A6C37BB005AE681 /* DataSingletone.m in Sources */,

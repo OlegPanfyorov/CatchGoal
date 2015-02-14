@@ -9,11 +9,16 @@
 #import "DetailTableViewController.h"
 #import "Goal.h"
 
+#define CURRENCY_SYMBOL [[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol]
+
 @interface DetailTableViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *goalImage;
 @property (weak, nonatomic) IBOutlet UIButton *previousGoalButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextGoalButton;
 @property (weak, nonatomic) IBOutlet UILabel *progressMoney;
+@property (weak, nonatomic) IBOutlet UILabel *startDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *finalDateLabel;
 
 @end
 
@@ -23,24 +28,27 @@
     [super viewDidLoad];
     
     self.tableView.alwaysBounceVertical = NO;
-
-    Goal *goal = [DataSingletone sharedModel].goalsArray[_selectedItemInArray];
-    self.nameLabel.text = goal.name;
-    self.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
-    self.perMonthLabel.text = [NSString stringWithFormat:@"%@", goal.perMonth];
-    self.totalLabel.text = [NSString stringWithFormat:@"%@", goal.progress];
-    self.progressMoney.text = [self calculateProgressInMoney:goal.price goalProgress:goal.progress];
-    self.progress = [goal.progress floatValue];
+    
+    [self setupGoalInfo];
     
     // Delete separators
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    
     [self canGoToPreviousOrNextGoal];
-    
-    
     [self setupCirculeIndicator];
-    //[self setupSmallCircleLabels];
-    
+}
+
+- (void) setupGoalInfo {
+    Goal *goal = [DataSingletone sharedModel].goalsArray[_selectedItemInArray];
+    self.nameLabel.text = goal.name;
+    self.priceLabel.text = [NSString stringWithFormat:@"%@ %@", goal.price, CURRENCY_SYMBOL];
+    self.progressMoney.text = [NSString stringWithFormat:@"%@ %@", goal.progress, CURRENCY_SYMBOL];
+    self.progressPercent = [goal.progress floatValue] / [goal.price floatValue];
+    self.startDateLabel.text = [NSString stringWithFormat:@"Начало: %@", [self convertDateToString:goal.startDate]];
+    self.finalDateLabel.text = [NSString stringWithFormat:@"Финал: %@", [self convertDateToString:goal.finalDate]];
+    self.goalImage.image = goal.goalImage;
+    self.goalImage.layer.cornerRadius = self.goalImage.frame.size.height / 2;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -71,107 +79,30 @@
 #pragma mark - Actions
 
 - (IBAction)previousGoalButtonTap:(UIButton *)sender {
-    
-    self.selectedItemInArray--;
 
+    self.selectedItemInArray--;
     [self canGoToPreviousOrNextGoal];
-    
-    Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
-    self.nameLabel.text = goal.name;
-    self.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
-    self.perMonthLabel.text = [NSString stringWithFormat:@"%@", goal.perMonth];
-    self.totalLabel.text = [NSString stringWithFormat:@"%@", goal.progress];
-    self.progressMoney.text = [self calculateProgressInMoney:goal.price goalProgress:goal.progress];
-    self.progress = goal.progress.floatValue;
-    
+    [self setupGoalInfo];
     [self setupCirculeIndicator];
 }
 
-- (NSString*) calculateProgressInMoney:(NSNumber*) goalPrice goalProgress:(NSNumber*) progress {
-    int price = goalPrice.intValue;
-    int goalProgress = progress.intValue;
-    int progressInMoney = price * goalProgress / 100;
-    
-    NSString *result = [NSString stringWithFormat:@"%d", progressInMoney];
-    return result;
-}
-//на будущее
-- (NSString*) myCurrencyIs {
-    NSLocale *theLocale = [NSLocale currentLocale];
-    NSString *currencySymbol = [theLocale objectForKey:NSLocaleCurrencySymbol];
-    NSLog(@"Currency Symbol : %@", currencySymbol);
-    NSString *currencyCode = [theLocale objectForKey:NSLocaleCurrencyCode];
-    NSLog(@"Currency Code : %@", currencyCode);
-    return currencyCode;
-}
-//
+
 - (IBAction)nextGoalButtonTap:(UIButton *)sender {
     
     self.selectedItemInArray++;
-
     [self canGoToPreviousOrNextGoal];
-    
-    Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
-    self.nameLabel.text = goal.name;
-    self.priceLabel.text = [NSString stringWithFormat:@"%@", goal.price];
-    self.perMonthLabel.text = [NSString stringWithFormat:@"%@", goal.perMonth];
-    self.totalLabel.text = [NSString stringWithFormat:@"%@", goal.progress];
-    self.progressMoney.text = [self calculateProgressInMoney:goal.price goalProgress:goal.progress];
-    self.progress = goal.progress.floatValue;
+    [self setupGoalInfo];
     [self setupCirculeIndicator];
 }
 
-- (void) setupSmallCircleLabels {
-    
-    for (KAProgressLabel* object in self.smallCircleLabals) {
-        object.progressLabelVCBlock = ^(KAProgressLabel *label, CGFloat progress) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [label setText:[NSString stringWithFormat:@"%.0f%%", (progress*100)]];
-                [label setTextColor:[UIColor darkGrayColor]];
-                [label setFont:[UIFont systemFontOfSize:12.f]];
-            });
-        };
-        
-        [object setBackBorderWidth: 3.0];
-        [object setFrontBorderWidth: 3.0];
-        
-        
-        [object setColorTable: @{
-                                            NSStringFromProgressLabelColorTableKey(ProgressLabelTrackColor):
-                                                [UIColor colorWithRed:0.89 green:0.89 blue:0.9 alpha:1],
-                                            NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
-                                                [UIColor colorWithRed:1 green:0.26 blue:0.3 alpha:1],
-                                            }];
-        
-        switch (object.tag) {
-            case 0:
-                [object setProgress:50.f/100.f timing:TPPropertyAnimationTimingEaseIn duration:2.f delay:0];
-                break;
-            case 1:
-                [object setProgress:75.f/100.f timing:TPPropertyAnimationTimingEaseIn duration:2.f delay:0];
-                [object setColorTable: @{
-                                         NSStringFromProgressLabelColorTableKey(ProgressLabelTrackColor):
-                                             [UIColor colorWithRed:0.89 green:0.89 blue:0.9 alpha:1],
-                                         NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
-                                             [UIColor colorWithRed:0.97 green:0.88 blue:0.45 alpha:1],
-                                         }];
-                break;
-            case 2:
-                [object setProgress:30.f/100.f timing:TPPropertyAnimationTimingEaseIn duration:2.f delay:0];
-                [object setColorTable: @{
-                                         NSStringFromProgressLabelColorTableKey(ProgressLabelTrackColor):
-                                             [UIColor colorWithRed:0.89 green:0.89 blue:0.9 alpha:1],
-                                         NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
-                                             [UIColor greenColor],
-                                         }];
-                break;
-                
-            default:
-                break;
-        }
-        
-    }
+
+-(NSString*) convertDateToString:(NSDate*) dateToConvert {
+    NSDateFormatter *dateFormater = [[NSDateFormatter alloc]init];
+    [dateFormater setDateFormat:@"dd.MM.yyyy"]; // Date formater
+    NSString *date = [dateFormater stringFromDate:dateToConvert]; // Convert date to string
+    return date;
 }
+
 
 - (void) setupCirculeIndicator {
     
@@ -184,7 +115,6 @@
             
         });
     };
-    
     [self.circleProgressLabel setBackBorderWidth: 7.5];
     [self.circleProgressLabel setFrontBorderWidth: 7.5];
     
@@ -194,8 +124,7 @@
                                   NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
                                       [UIColor colorWithRed:0 green:0.69 blue:0.96 alpha:1],
                                   }];
-    
-    [self.circleProgressLabel setProgress:self.progress / 100 timing:TPPropertyAnimationTimingEaseOut duration:2.f delay:0.0];
+    [self.circleProgressLabel setProgress:self.progressPercent timing:TPPropertyAnimationTimingEaseOut duration:2.f delay:0.0];
 }
 
 

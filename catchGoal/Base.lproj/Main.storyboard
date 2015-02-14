@@ -523,7 +523,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="mjr-0z-JYR"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZbF-Sr-rDR">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZbF-Sr-rDR">
                                                     <rect key="frame" x="18" y="8" width="56" height="56"/>
                                                     <color key="backgroundColor" red="1" green="0.89495623430000004" blue="0.60548074929999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -585,7 +585,7 @@
                                                         <action selector="previousGoalButtonTap:" destination="6Lk-Xg-R2n" eventType="touchUpInside" id="fg0-aw-fGP"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Срок: 24.12.2014" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFK-0L-fNp">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Финал: 24.12.2014" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFK-0L-fNp">
                                                     <rect key="frame" x="182" y="223" width="120" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="jjA-Yj-1gg"/>
@@ -616,7 +616,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Всего накоплено" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNz-aJ-YP0">
-                                                    <rect key="frame" x="110" y="134" width="101" height="21"/>
+                                                    <rect key="frame" x="110" y="69" width="101" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="5P7-SC-KL5"/>
                                                         <constraint firstAttribute="width" constant="101" id="xHX-Ss-nZp"/>
@@ -640,7 +640,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18750 р." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhY-NU-txo">
-                                                    <rect key="frame" x="89" y="63" width="143" height="27"/>
+                                                    <rect key="frame" x="89" y="138" width="143" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="kml-X1-eNt"/>
                                                         <constraint firstAttribute="width" constant="143" id="oVT-vO-jVW"/>
@@ -661,7 +661,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="MU3-n8-xdQ" secondAttribute="trailing" id="Qpt-3q-2s5"/>
                                                 <constraint firstItem="j6D-ZH-SCP" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="topMargin" constant="90" id="WGI-Nv-3pg"/>
                                                 <constraint firstItem="hgq-oB-PFO" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="topMargin" constant="90" id="XaJ-QB-m2G"/>
-                                                <constraint firstItem="uhY-NU-txo" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="top" constant="63" id="YQB-Hc-0D0"/>
+                                                <constraint firstItem="uhY-NU-txo" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="top" constant="138" id="YQB-Hc-0D0"/>
                                                 <constraint firstItem="M9N-O5-PuY" firstAttribute="leading" secondItem="pjv-DK-ZIF" secondAttribute="leadingMargin" constant="10" id="Yas-oX-qHH"/>
                                                 <constraint firstItem="fLU-nV-QXj" firstAttribute="leading" secondItem="pjv-DK-ZIF" secondAttribute="leadingMargin" constant="10" id="b0s-8q-47z"/>
                                                 <constraint firstAttribute="centerX" secondItem="D55-Rl-J0M" secondAttribute="centerX" id="bOW-7g-gut"/>
@@ -672,7 +672,7 @@
                                                 <constraint firstAttribute="centerX" secondItem="hNz-aJ-YP0" secondAttribute="centerX" id="meB-ep-fk4"/>
                                                 <constraint firstItem="hgq-oB-PFO" firstAttribute="leading" secondItem="pjv-DK-ZIF" secondAttribute="leadingMargin" constant="10" id="nXg-qf-X9b"/>
                                                 <constraint firstItem="MU3-n8-xdQ" firstAttribute="leading" secondItem="pjv-DK-ZIF" secondAttribute="leading" id="vRE-Cg-kAL"/>
-                                                <constraint firstItem="hNz-aJ-YP0" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="topMargin" constant="126" id="xtR-4C-n5Z"/>
+                                                <constraint firstItem="hNz-aJ-YP0" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="topMargin" constant="61" id="xtR-4C-n5Z"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -682,12 +682,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LUH-ju-656" id="wYb-Qk-v3C">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$180" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dF-2W-VfA">
-                                                    <rect key="frame" x="378" y="13" width="214" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заметки" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e21-AE-pvY">
                                                     <rect key="frame" x="18" y="11" width="200" height="21"/>
                                                     <constraints>
@@ -717,12 +711,14 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="circleProgressLabel" destination="D55-Rl-J0M" id="Tia-W7-2So"/>
+                        <outlet property="finalDateLabel" destination="XFK-0L-fNp" id="Vls-iB-V8V"/>
+                        <outlet property="goalImage" destination="ZbF-Sr-rDR" id="3ka-xR-r5s"/>
                         <outlet property="nameLabel" destination="FfD-5g-n4D" id="RSC-XH-Iqj"/>
                         <outlet property="nextGoalButton" destination="j6D-ZH-SCP" id="vQs-Zw-N43"/>
                         <outlet property="previousGoalButton" destination="hgq-oB-PFO" id="ggh-Ve-dAF"/>
                         <outlet property="priceLabel" destination="iFL-x4-xny" id="wEu-65-LR6"/>
                         <outlet property="progressMoney" destination="uhY-NU-txo" id="eio-Tx-jB0"/>
-                        <outlet property="totalLabel" destination="9dF-2W-VfA" id="cVY-R8-ybW"/>
+                        <outlet property="startDateLabel" destination="M9N-O5-PuY" id="Mbq-wv-nOA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KL1-nP-oyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -937,19 +933,16 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qQX-O8-fTv" id="9tF-Yz-hnQ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalPic.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Hk-pF-Fvv">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eus-si-brp" userLabel="choosePhoto">
                                                     <rect key="frame" x="120" y="13" width="80" height="80"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="4Bm-hp-NkT"/>
-                                                        <constraint firstAttribute="height" constant="80" id="YNC-Rc-LU2"/>
-                                                    </constraints>
-                                                </imageView>
+                                                    <state key="normal" backgroundImage="goalPic.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="choosePhotoButtonClicked:" destination="GGm-5O-CVc" eventType="touchUpInside" id="kMB-FX-YNZ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="9Hk-pF-Fvv" firstAttribute="top" secondItem="9tF-Yz-hnQ" secondAttribute="topMargin" constant="5" id="bCc-YR-Z6v"/>
-                                                <constraint firstAttribute="centerX" secondItem="9Hk-pF-Fvv" secondAttribute="centerX" id="s3I-v2-8O6"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="51" id="h1N-vq-gsP" customClass="addAndEditGoalCell">
@@ -1102,9 +1095,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="umQ-ks-P6U"/>
                     <connections>
-                        <outlet property="finalDate" destination="yY7-oC-Det" id="SaN-i4-2r0"/>
+                        <outlet property="choosePhotoButton" destination="eus-si-brp" id="oXE-ka-PyO"/>
+                        <outlet property="finalDateTextField" destination="yY7-oC-Det" id="Owm-VP-fYi"/>
                         <outlet property="goalName" destination="Ofy-L6-2LN" id="sfZ-Cb-SNK"/>
-                        <outlet property="photo" destination="9Hk-pF-Fvv" id="4m2-yW-NyM"/>
                         <outlet property="progressInMoney" destination="b6x-Wa-28V" id="i2C-Oc-vye"/>
                         <outlet property="totalCost" destination="rJv-Vu-wYz" id="wTd-st-iUa"/>
                     </connections>

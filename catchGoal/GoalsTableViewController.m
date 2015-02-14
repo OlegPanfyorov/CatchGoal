@@ -35,7 +35,7 @@
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.tableView.alwaysBounceVertical = NO;
     
-    [self generateNewCell];
+    //[self generateNewCell];
     
 }
 
@@ -53,49 +53,37 @@
 }
 
 - (void)generateNewCell {
-    
     [DataSingletone sharedModel].goalsArray = [NSMutableArray new];
-    
-
     for (int i = 0; i < 5; i++) {
-        
         Goal *goal = [Goal new];
-
         int iPhoneNumber = arc4random() % 4 + 2;
         int totalPrice = (arc4random() % 10 + 1) * 1000;
         int progress = arc4random_uniform(101);
         goal.name = [NSString stringWithFormat:@"iPhone %d", iPhoneNumber];
-
         goal.price = [NSNumber numberWithInt:totalPrice];
         goal.perMonth = @100;
         goal.progress = [NSNumber numberWithInt:progress];
-        
         [[DataSingletone sharedModel].goalsArray addObject:goal];
     }
 }
 
-
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return  [[DataSingletone sharedModel].goalsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     
     static NSString *identifier = @"cell";
     GoalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     [cell.lineProgressView setProgress:0];
     Goal *goal = [DataSingletone sharedModel].goalsArray[indexPath.row];
     cell.nameLabel.text = goal.name;
-    cell.priceLabel.text = [NSString stringWithFormat:@"%@ собрано", goal.price];
+    cell.priceLabel.text = [NSString stringWithFormat:@"%@ собрано", goal.progress];
+    cell.image.image = goal.goalImage;
     
-    cell.image.image = [UIImage imageNamed:[NSString stringWithFormat:@"testPic%d", arc4random_uniform(3) + 1]];
-    
-    CGFloat progress = [goal.progress floatValue] / 100;
-    
+    CGFloat progress = [goal.progress floatValue] / [goal.price floatValue];
     [cell.lineProgressView setProgress:progress timing:TPPropertyAnimationTimingEaseOut duration:1.0 delay:0.5];
     
     if (progress < 0.5f) {
@@ -112,16 +100,12 @@
                                                 NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
                                                     [UIColor colorWithRed:0.42 green:0.82 blue:0.28 alpha:1],
                                                 }];
-        
-
-        
+  
     }
-    
     return cell;
 }
 
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender {
-    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [PFUser logOut];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -137,7 +121,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"showDetailSegue"]) {
-        
         DetailTableViewController *detailTableViewController = (DetailTableViewController *)segue.destinationViewController;
         UITableViewCell *cell = (UITableViewCell *)sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];

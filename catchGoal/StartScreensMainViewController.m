@@ -41,6 +41,9 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
+- (void)hideKeyboard {
+}
+
 - (void)keyboardWillShow: (NSNotification *)notif {
     
     CGFloat height = [[notif.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
