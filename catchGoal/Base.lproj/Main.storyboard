@@ -933,8 +933,12 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qQX-O8-fTv" id="9tF-Yz-hnQ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eus-si-brp" userLabel="choosePhoto">
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eus-si-brp" userLabel="choosePhoto">
                                                     <rect key="frame" x="120" y="13" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="SjG-iE-ayx"/>
+                                                        <constraint firstAttribute="height" constant="80" id="dKC-jx-hgE"/>
+                                                    </constraints>
                                                     <state key="normal" backgroundImage="goalPic.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -943,6 +947,10 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="eus-si-brp" secondAttribute="centerX" id="aBa-fF-kmO"/>
+                                                <constraint firstItem="eus-si-brp" firstAttribute="top" secondItem="9tF-Yz-hnQ" secondAttribute="top" constant="13" id="o8O-2D-eJT"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="51" id="h1N-vq-gsP" customClass="addAndEditGoalCell">
