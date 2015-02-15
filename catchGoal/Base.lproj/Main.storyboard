@@ -511,10 +511,6 @@
                                                 <constraint firstAttribute="height" constant="30" id="nP0-EY-IOf"/>
                                             </constraints>
                                             <state key="normal" title="&gt;" image="arrowForward.png"/>
-                                            <connections>
-                                                <action selector="nextGoalButtonTap:" destination="6Lk-Xg-R2n" eventType="touchUpInside" id="5R3-T1-TbE"/>
-                                                <action selector="nextGoalButtonTap:" destination="zeT-j9-71q" eventType="touchUpInside" id="fr6-IQ-NQD"/>
-                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Финал: 24.12.2014" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFK-0L-fNp">
                                             <rect key="frame" x="182" y="282" width="120" height="21"/>
@@ -594,10 +590,6 @@
                                                 <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <connections>
-                                                <action selector="previousGoalButtonTap:" destination="zeT-j9-71q" eventType="touchUpInside" id="FPX-pH-467"/>
-                                                <action selector="previousGoalButtonTap:" destination="6Lk-Xg-R2n" eventType="touchUpInside" id="fg0-aw-fGP"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
