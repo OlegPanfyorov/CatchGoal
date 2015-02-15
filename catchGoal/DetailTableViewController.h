@@ -17,6 +17,6 @@
 @property (weak, nonatomic) IBOutlet KAProgressLabel *circleProgressLabel;
 
 @property (assign, nonatomic) NSInteger selectedItemInArray;
-@property (assign, nonatomic) CGFloat progressPercent;
+
 
 @end

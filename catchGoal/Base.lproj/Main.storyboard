@@ -36,8 +36,6 @@
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -366,7 +364,7 @@
             </objects>
             <point key="canvasLocation" x="1206" y="448"/>
         </scene>
-        <!--Goals-->
+        <!--Цели-->
         <scene sceneID="79i-Kz-w3G">
             <objects>
                 <tableViewController storyboardIdentifier="mainVC" id="hai-iT-SiB" customClass="GoalsTableViewController" sceneMemberID="viewController">
@@ -459,7 +457,7 @@
                             <outlet property="delegate" destination="hai-iT-SiB" id="hzo-rp-mVV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Goals" id="KXk-EU-Scg">
+                    <navigationItem key="navigationItem" title="Цели" id="KXk-EU-Scg">
                         <barButtonItem key="leftBarButtonItem" image="logout.png" id="GbK-Ah-ktw">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -545,7 +543,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="286" id="zeT-j9-71q">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="252" id="zeT-j9-71q">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zeT-j9-71q" id="pjv-DK-ZIF">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -595,16 +593,6 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В этом месяце:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLU-nV-QXj">
-                                                    <rect key="frame" x="18" y="256" width="146" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="2ii-cL-n4l"/>
-                                                        <constraint firstAttribute="width" constant="146" id="ht7-BO-6Dc"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Начало: 24.12.2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9N-O5-PuY">
                                                     <rect key="frame" x="18" y="223" width="115" height="21"/>
                                                     <constraints>
@@ -625,14 +613,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MU3-n8-xdQ">
-                                                    <rect key="frame" x="0.0" y="285" width="320" height="1"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="Vwi-oi-H2m"/>
-                                                    </constraints>
-                                                </view>
-                                                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIj-U8-m6h">
+                                                <view alpha="0.29999999999999999" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QIj-U8-m6h">
                                                     <rect key="frame" x="0.0" y="251" width="320" height="1"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -655,47 +636,18 @@
                                                 <constraint firstItem="D55-Rl-J0M" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="top" constant="23" id="7Gu-Vj-lKk"/>
                                                 <constraint firstAttribute="trailing" secondItem="QIj-U8-m6h" secondAttribute="trailing" id="C2H-JA-Xo4"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="XFK-0L-fNp" secondAttribute="trailing" constant="10" id="D7e-MR-jt0"/>
-                                                <constraint firstItem="fLU-nV-QXj" firstAttribute="bottom" secondItem="pjv-DK-ZIF" secondAttribute="bottomMargin" id="HPL-AP-s2u"/>
                                                 <constraint firstItem="XFK-0L-fNp" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="top" constant="223" id="LMw-XX-32q"/>
-                                                <constraint firstItem="fLU-nV-QXj" firstAttribute="top" secondItem="QIj-U8-m6h" secondAttribute="bottom" constant="4" id="QeF-u7-nQJ"/>
-                                                <constraint firstAttribute="trailing" secondItem="MU3-n8-xdQ" secondAttribute="trailing" id="Qpt-3q-2s5"/>
                                                 <constraint firstItem="j6D-ZH-SCP" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="topMargin" constant="90" id="WGI-Nv-3pg"/>
                                                 <constraint firstItem="hgq-oB-PFO" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="topMargin" constant="90" id="XaJ-QB-m2G"/>
                                                 <constraint firstItem="uhY-NU-txo" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="top" constant="138" id="YQB-Hc-0D0"/>
                                                 <constraint firstItem="M9N-O5-PuY" firstAttribute="leading" secondItem="pjv-DK-ZIF" secondAttribute="leadingMargin" constant="10" id="Yas-oX-qHH"/>
-                                                <constraint firstItem="fLU-nV-QXj" firstAttribute="leading" secondItem="pjv-DK-ZIF" secondAttribute="leadingMargin" constant="10" id="b0s-8q-47z"/>
                                                 <constraint firstAttribute="centerX" secondItem="D55-Rl-J0M" secondAttribute="centerX" id="bOW-7g-gut"/>
-                                                <constraint firstAttribute="bottom" secondItem="MU3-n8-xdQ" secondAttribute="bottom" constant="-1" id="fLb-8n-dkn"/>
                                                 <constraint firstItem="M9N-O5-PuY" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="top" constant="223" id="gBT-yd-G6K"/>
                                                 <constraint firstItem="QIj-U8-m6h" firstAttribute="leading" secondItem="pjv-DK-ZIF" secondAttribute="leading" id="i8N-KC-vSg"/>
                                                 <constraint firstAttribute="centerX" secondItem="uhY-NU-txo" secondAttribute="centerX" id="imM-Er-PkW"/>
                                                 <constraint firstAttribute="centerX" secondItem="hNz-aJ-YP0" secondAttribute="centerX" id="meB-ep-fk4"/>
                                                 <constraint firstItem="hgq-oB-PFO" firstAttribute="leading" secondItem="pjv-DK-ZIF" secondAttribute="leadingMargin" constant="10" id="nXg-qf-X9b"/>
-                                                <constraint firstItem="MU3-n8-xdQ" firstAttribute="leading" secondItem="pjv-DK-ZIF" secondAttribute="leading" id="vRE-Cg-kAL"/>
                                                 <constraint firstItem="hNz-aJ-YP0" firstAttribute="top" secondItem="pjv-DK-ZIF" secondAttribute="topMargin" constant="61" id="xtR-4C-n5Z"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="127" id="LUH-ju-656">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LUH-ju-656" id="wYb-Qk-v3C">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заметки" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e21-AE-pvY">
-                                                    <rect key="frame" x="18" y="11" width="200" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="5e9-0B-6kd"/>
-                                                        <constraint firstAttribute="width" constant="200" id="M6d-m7-XcN"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="e21-AE-pvY" firstAttribute="top" secondItem="wYb-Qk-v3C" secondAttribute="topMargin" constant="3" id="QNv-Gu-X1x"/>
-                                                <constraint firstItem="e21-AE-pvY" firstAttribute="leading" secondItem="wYb-Qk-v3C" secondAttribute="leadingMargin" constant="10" id="fst-Ga-gKZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -707,7 +659,13 @@
                             <outlet property="delegate" destination="6Lk-Xg-R2n" id="Ztm-6E-FV2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="tDh-WW-9vo"/>
+                    <navigationItem key="navigationItem" id="tDh-WW-9vo">
+                        <barButtonItem key="rightBarButtonItem" title="Add money" id="pPK-EL-l6t">
+                            <connections>
+                                <action selector="addMoneyClicked:" destination="6Lk-Xg-R2n" id="bUp-ds-8xt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="circleProgressLabel" destination="D55-Rl-J0M" id="Tia-W7-2So"/>

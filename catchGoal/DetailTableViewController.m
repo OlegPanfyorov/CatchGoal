@@ -11,7 +11,7 @@
 
 #define CURRENCY_SYMBOL [[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol]
 
-@interface DetailTableViewController ()
+@interface DetailTableViewController () <UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *goalImage;
 @property (weak, nonatomic) IBOutlet UIButton *previousGoalButton;
@@ -19,6 +19,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *progressMoney;
 @property (weak, nonatomic) IBOutlet UILabel *startDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *finalDateLabel;
+@property (assign, nonatomic) CGFloat progressPercent;
+@property (assign, nonatomic) int sumLeft;
+@property (assign, nonatomic) int addMoneySum;
+
+
+-(IBAction)addMoneyClicked:(UIBarButtonItem*)sender;
+
 
 @end
 
@@ -37,7 +44,10 @@
     
     [self canGoToPreviousOrNextGoal];
     [self setupCirculeIndicator];
+    
 }
+
+
 
 - (void) setupGoalInfo {
     Goal *goal = [DataSingletone sharedModel].goalsArray[_selectedItemInArray];
@@ -45,10 +55,15 @@
     self.priceLabel.text = [NSString stringWithFormat:@"%@ %@", goal.price, CURRENCY_SYMBOL];
     self.progressMoney.text = [NSString stringWithFormat:@"%@ %@", goal.progress, CURRENCY_SYMBOL];
     self.progressPercent = [goal.progress floatValue] / [goal.price floatValue];
+    self.sumLeft = [goal.price intValue] - [goal.progress intValue];
+    
     self.startDateLabel.text = [NSString stringWithFormat:@"Начало: %@", [self convertDateToString:goal.startDate]];
     self.finalDateLabel.text = [NSString stringWithFormat:@"Финал: %@", [self convertDateToString:goal.finalDate]];
     self.goalImage.image = goal.goalImage;
     self.goalImage.layer.cornerRadius = self.goalImage.frame.size.height / 2;
+    
+    NSLog(@"sumLeft %d", self.sumLeft);
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -95,6 +110,21 @@
     [self setupCirculeIndicator];
 }
 
+-(IBAction)addMoneyClicked:(UIBarButtonItem*)sender {
+    
+    NSLog(@"sumLeft %d", self.sumLeft);
+    UIAlertView *addMoney = [[UIAlertView alloc] initWithTitle:@"Внесите сумму:"
+                                                           message:[NSString stringWithFormat:@"До достижения цели осталось внести: %d %@", self.sumLeft, CURRENCY_SYMBOL]
+                                                          delegate:self
+                                                 cancelButtonTitle:@"Отмена"
+                                                 otherButtonTitles:@"Ок", nil];
+    
+    addMoney.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [[addMoney textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
+    [addMoney show];
+    //[[addMoney textFieldAtIndex:0] becomeFirstResponder];
+}
+
 
 -(NSString*) convertDateToString:(NSDate*) dateToConvert {
     NSDateFormatter *dateFormater = [[NSDateFormatter alloc]init];
@@ -125,6 +155,27 @@
                                       [UIColor colorWithRed:0 green:0.69 blue:0.96 alpha:1],
                                   }];
     [self.circleProgressLabel setProgress:self.progressPercent timing:TPPropertyAnimationTimingEaseOut duration:2.f delay:0.0];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView.alertViewStyle == UIAlertViewStylePlainTextInput && buttonIndex == 1) {
+        UITextField *textField = [alertView textFieldAtIndex:0];
+        self.addMoneySum = [textField.text intValue];
+        
+        // Make sure that the given number is between 1 and 100.
+        if (self.addMoneySum >= 1 && self.addMoneySum <= self.sumLeft) {
+            
+        } else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ошибка"
+                                                            message:[NSString stringWithFormat:@"Введенная Вами сумма не должна превышать %d %@", self.sumLeft, CURRENCY_SYMBOL]
+                                                           delegate:nil
+                                                  cancelButtonTitle:nil
+                                                  otherButtonTitles:@"Ок", nil];
+            [alert show];
+        }
+    }
 }
 
 

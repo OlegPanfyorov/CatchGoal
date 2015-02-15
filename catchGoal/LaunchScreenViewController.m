@@ -20,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+}
+- (void) viewWillAppear:(BOOL)animated {
+    
     PFUser *currentUser = [PFUser currentUser];
     
     if (currentUser) {
@@ -32,11 +35,6 @@
         LoginViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
         [self.navigationController pushViewController:loginVC animated:YES];
     }
-    
-}
-- (void) viewWillAppear:(BOOL)animated {
-    
-
 }
 
 - (void)didReceiveMemoryWarning {
