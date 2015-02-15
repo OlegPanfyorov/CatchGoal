@@ -8,6 +8,7 @@
 
 #import "DetailTableViewController.h"
 #import "Goal.h"
+#import "goalInfoCell.h"
 
 #define CURRENCY_SYMBOL [[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol]
 
@@ -37,10 +38,6 @@
     self.tableView.alwaysBounceVertical = NO;
     
     [self setupGoalInfo];
-    
-    // Delete separators
-    self.tableView.tableFooterView = [[UIView alloc] init];
-    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     
     [self canGoToPreviousOrNextGoal];
     [self setupCirculeIndicator];
@@ -176,6 +173,91 @@
             [alert show];
         }
     }
+}
+
+#pragma mark - UITableViewDelegate
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 1) {
+        return @"Операции";
+    }
+    
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return 303;
+    } else
+        
+        return 44;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return 1;
+    } else
+    
+    return 3;
+}
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == 0) {
+        Goal *goal = [DataSingletone sharedModel].goalsArray[indexPath.row];
+        
+        static NSString* infoCellIdentifier = @"infoCell";
+        
+        goalInfoCell* infoCell = [tableView dequeueReusableCellWithIdentifier:infoCellIdentifier];
+        
+        infoCell.goalName.text = goal.name;
+        infoCell.totalSum.text = [NSString stringWithFormat:@"%@ %@", goal.price, CURRENCY_SYMBOL];
+        infoCell.progressMoney.text = [NSString stringWithFormat:@"%@ %@", goal.progress, CURRENCY_SYMBOL];
+        infoCell.startDateLabel.text = [NSString stringWithFormat:@"Начало: %@", [self convertDateToString:goal.startDate]];
+        infoCell.finishDateLabel.text = [NSString stringWithFormat:@"Финал: %@", [self convertDateToString:goal.finalDate]];
+        infoCell.image.image = goal.goalImage;
+        
+        [infoCell.circleProgressLabel setProgress:0];
+        infoCell.circleProgressLabel.progressLabelVCBlock = ^(KAProgressLabel *label, CGFloat progress) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [label setText:[NSString stringWithFormat:@"%.0f%%", (progress*100)]];
+                [label setTextColor:[UIColor colorWithRed:0.42 green:0.82 blue:0.28 alpha:1]];
+                [label setFont:[UIFont systemFontOfSize:40.f]];
+                
+            });
+        };
+        [infoCell.circleProgressLabel setBackBorderWidth: 7.5];
+        [infoCell.circleProgressLabel setFrontBorderWidth: 7.5];
+        
+        [infoCell.circleProgressLabel setColorTable: @{
+                                                   NSStringFromProgressLabelColorTableKey(ProgressLabelTrackColor):
+                                                       [UIColor colorWithRed:0.89 green:0.89 blue:0.9 alpha:1],
+                                                   NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
+                                                       [UIColor colorWithRed:0 green:0.69 blue:0.96 alpha:1],
+                                                   }];
+        [infoCell.circleProgressLabel setProgress:self.progressPercent timing:TPPropertyAnimationTimingEaseOut duration:2.f delay:0.0];
+        
+        return infoCell;
+        
+    } else {
+        
+        static NSString* operationsCellIdentifier = @"operationsCell";
+        
+        goalInfoCell* operationsCell = [tableView dequeueReusableCellWithIdentifier:operationsCellIdentifier];
+        
+        return operationsCell;
+        
+    }
+    
+    return nil;
+
 }
 
 

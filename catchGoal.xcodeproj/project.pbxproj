@@ -53,6 +53,8 @@
 		DA1FCC841A81024800CA44C7 /* testPic1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1FCC811A81024800CA44C7 /* testPic1.png */; };
 		DA1FCC851A81024800CA44C7 /* testPic2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1FCC821A81024800CA44C7 /* testPic2.png */; };
 		DA1FCC861A81024800CA44C7 /* testPic3.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1FCC831A81024800CA44C7 /* testPic3.png */; };
+		DA2AD3D11A90F97F00BA7E4C /* goalInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2AD3D01A90F97F00BA7E4C /* goalInfoCell.m */; };
+		DA2AD3D81A90F9FD00BA7E4C /* goalOperationsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2AD3D71A90F9FD00BA7E4C /* goalOperationsCell.m */; };
 		DA375E6B1A81652400548755 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA375E6A1A81652400548755 /* CoreGraphics.framework */; };
 		DA6308981A77C13D00F7AB08 /* addAndEditGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6308971A77C13D00F7AB08 /* addAndEditGoalCell.m */; };
 		DA63089A1A77CAF300F7AB08 /* photoPic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6308991A77CAF300F7AB08 /* photoPic@2x.png */; };
@@ -163,6 +165,10 @@
 		DA1FCC811A81024800CA44C7 /* testPic1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPic1.png; sourceTree = "<group>"; };
 		DA1FCC821A81024800CA44C7 /* testPic2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPic2.png; sourceTree = "<group>"; };
 		DA1FCC831A81024800CA44C7 /* testPic3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPic3.png; sourceTree = "<group>"; };
+		DA2AD3CF1A90F97F00BA7E4C /* goalInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = goalInfoCell.h; sourceTree = "<group>"; };
+		DA2AD3D01A90F97F00BA7E4C /* goalInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = goalInfoCell.m; sourceTree = "<group>"; };
+		DA2AD3D61A90F9FD00BA7E4C /* goalOperationsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = goalOperationsCell.h; sourceTree = "<group>"; };
+		DA2AD3D71A90F9FD00BA7E4C /* goalOperationsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = goalOperationsCell.m; sourceTree = "<group>"; };
 		DA375E6A1A81652400548755 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DA6308961A77C13D00F7AB08 /* addAndEditGoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addAndEditGoalCell.h; sourceTree = "<group>"; };
 		DA6308971A77C13D00F7AB08 /* addAndEditGoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addAndEditGoalCell.m; sourceTree = "<group>"; };
@@ -448,9 +454,21 @@
 			name = "New Goal";
 			sourceTree = "<group>";
 		};
+		DA2AD3D21A90F98400BA7E4C /* Detail VC */ = {
+			isa = PBXGroup;
+			children = (
+				DA2AD3CF1A90F97F00BA7E4C /* goalInfoCell.h */,
+				DA2AD3D01A90F97F00BA7E4C /* goalInfoCell.m */,
+				DA2AD3D61A90F9FD00BA7E4C /* goalOperationsCell.h */,
+				DA2AD3D71A90F9FD00BA7E4C /* goalOperationsCell.m */,
+			);
+			name = "Detail VC";
+			sourceTree = "<group>";
+		};
 		DA6308951A77C0E600F7AB08 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				DA2AD3D21A90F98400BA7E4C /* Detail VC */,
 				DA6308961A77C13D00F7AB08 /* addAndEditGoalCell.h */,
 				DA6308971A77C13D00F7AB08 /* addAndEditGoalCell.m */,
 			);
@@ -637,6 +655,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA2AD3D81A90F9FD00BA7E4C /* goalOperationsCell.m in Sources */,
 				8B6A205E1A6AB22100C4FDFE /* DetailTableViewController.m in Sources */,
 				794465D61A6A5CE400F00F63 /* StartScreensMainViewController.m in Sources */,
 				790B7F4B1A69C5DB009C1F1B /* Goal.m in Sources */,
@@ -652,6 +671,7 @@
 				7942FE311A8FD1E00035F411 /* UIActionSheet+BlockExtensions.m in Sources */,
 				8B9E33421A6A32A400CA3778 /* GoalTableViewCell.m in Sources */,
 				DABF0E5C1A6AD96800105669 /* KAProgressLabel.m in Sources */,
+				DA2AD3D11A90F97F00BA7E4C /* goalInfoCell.m in Sources */,
 				79548FFD1A6C37BB005AE681 /* DataSingletone.m in Sources */,
 				D3494B6C1A6C0FE60007DD0C /* NewGoalTableViewController.m in Sources */,
 				790B7F551A69CA0D009C1F1B /* RegistrationViewController.m in Sources */,

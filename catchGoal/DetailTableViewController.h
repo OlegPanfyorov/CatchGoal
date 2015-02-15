@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface DetailTableViewController : UITableViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
