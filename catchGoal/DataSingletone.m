@@ -20,9 +20,12 @@
     return sharedMyModel;
 }
 
+
+
 - (id)init {
     if (self = [super init]) {
-        self.goalsArray = [NSMutableArray new];
+        
+        self.goalsArray = [NSMutableArray array];
 
     }
     return self;
@@ -30,19 +33,24 @@
 
 - (void)save {
     
-    NSMutableArray* array = [NSMutableArray new];
-    [array addObjectsFromArray:self.goalsArray];
-    
-    [[NSUserDefaults standardUserDefaults] rm_setCustomObject:array forKey:@"goalsArray"];
+    [[NSUserDefaults standardUserDefaults] rm_setCustomObject:self.goalsArray forKey:@"goalsArray"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 
 }
 
 - (void)load {
-    self.goalsArray = [[NSUserDefaults standardUserDefaults] rm_customObjectForKey:@"goalsArray"];
+    
+    if ([[NSUserDefaults standardUserDefaults] rm_customObjectForKey:@"goalsArray"]) {
+        self.goalsArray = [[NSUserDefaults standardUserDefaults] rm_customObjectForKey:@"goalsArray"];
+
+    }
+    
 }
 
 - (void)deleteAllGoals {
+    
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"goalsArray"];
+    self.goalsArray = nil;
+
 }
 @end

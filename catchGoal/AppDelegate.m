@@ -46,7 +46,6 @@
         
     });
     
-    
     [[DataSingletone sharedModel] load];
 
     return YES;

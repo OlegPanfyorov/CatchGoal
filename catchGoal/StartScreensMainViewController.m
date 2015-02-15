@@ -24,6 +24,7 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated  {
+    
     // Listen for keyboard appearances and disappearances
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
@@ -33,6 +34,7 @@
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    
     
 }
 - (void)viewWillDisappear:(BOOL)animated {

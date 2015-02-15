@@ -38,10 +38,8 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated {
-    
-  //  [[DataSingletone sharedModel] deleteAllGoals];
+        
     [self.tableView reloadData];
-
 
 }
 
@@ -103,13 +101,18 @@
                                                 }];
   
     }
+    
     return cell;
 }
 
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender {
+
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [PFUser logOut];
+        [[DataSingletone sharedModel] deleteAllGoals];
+
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             [self.navigationController popToRootViewControllerAnimated:YES];
         });
     });

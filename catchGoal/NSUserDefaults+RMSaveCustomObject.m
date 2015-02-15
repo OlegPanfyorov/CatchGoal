@@ -7,7 +7,6 @@
 //
 
 #import "NSUserDefaults+RMSaveCustomObject.h"
-
 @implementation NSUserDefaults (RMSaveCustomObject)
 
 -(void)rm_setCustomObject:(id)obj forKey:(NSString *)key {

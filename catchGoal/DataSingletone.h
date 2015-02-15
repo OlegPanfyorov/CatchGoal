@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NSUserDefaults+RMSaveCustomObject.h"
 #import "NSObject+RMArchivable.h"
+
 @interface DataSingletone : NSObject
 
 @property (strong, nonatomic) NSMutableArray* goalsArray;
