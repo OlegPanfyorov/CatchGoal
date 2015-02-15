@@ -88,13 +88,7 @@
         // Make sure that the given number is between 1 and 100.
         if (self.addMoneySum >= 1 && self.addMoneySum <= self.sumLeft) {
             
-            Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
-            
-            NSInteger newSum = [goal.progress integerValue] + self.addMoneySum;
-            goal.progress = [NSNumber numberWithInteger:newSum];
-            [[DataSingletone sharedModel] save];
-            [self.tableView reloadData];
-
+          
         } else{
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ошибка"
                                                             message:[NSString stringWithFormat:@"Введенная Вами сумма не должна превышать %d %@", self.sumLeft, CURRENCY_SYMBOL]
