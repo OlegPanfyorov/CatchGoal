@@ -19,5 +19,7 @@
 
 - (void)save;
 - (void)load;
+- (void)deleteAllGoals;
+
 
 @end
