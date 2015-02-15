@@ -11,7 +11,7 @@
 @implementation goalInfoCell
 
 - (void)awakeFromNib {
-    self.image.layer.cornerRadius = self.image.frame.size.height / 2;
+    self.goalImage.layer.cornerRadius = self.goalImage.frame.size.height / 2;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -19,5 +19,6 @@
 
     // Configure the view for the selected state
 }
+
 
 @end

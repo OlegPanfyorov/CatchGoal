@@ -14,12 +14,6 @@
 
 @interface DetailTableViewController () <UIAlertViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *goalImage;
-@property (weak, nonatomic) IBOutlet UIButton *previousGoalButton;
-@property (weak, nonatomic) IBOutlet UIButton *nextGoalButton;
-@property (weak, nonatomic) IBOutlet UILabel *progressMoney;
-@property (weak, nonatomic) IBOutlet UILabel *startDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *finalDateLabel;
 @property (assign, nonatomic) CGFloat progressPercent;
 @property (assign, nonatomic) int sumLeft;
 @property (assign, nonatomic) int addMoneySum;
@@ -36,31 +30,6 @@
     [super viewDidLoad];
     
     self.tableView.alwaysBounceVertical = NO;
-    
-    [self setupGoalInfo];
-    
-    [self canGoToPreviousOrNextGoal];
-    [self setupCirculeIndicator];
-    
-}
-
-
-
-- (void) setupGoalInfo {
-    Goal *goal = [DataSingletone sharedModel].goalsArray[_selectedItemInArray];
-    self.nameLabel.text = goal.name;
-    self.priceLabel.text = [NSString stringWithFormat:@"%@ %@", goal.price, CURRENCY_SYMBOL];
-    self.progressMoney.text = [NSString stringWithFormat:@"%@ %@", goal.progress, CURRENCY_SYMBOL];
-    self.progressPercent = [goal.progress floatValue] / [goal.price floatValue];
-    self.sumLeft = [goal.price intValue] - [goal.progress intValue];
-    
-    self.startDateLabel.text = [NSString stringWithFormat:@"Начало: %@", [self convertDateToString:goal.startDate]];
-    self.finalDateLabel.text = [NSString stringWithFormat:@"Финал: %@", [self convertDateToString:goal.finalDate]];
-    self.goalImage.image = goal.goalImage;
-    self.goalImage.layer.cornerRadius = self.goalImage.frame.size.height / 2;
-    
-    NSLog(@"sumLeft %d", self.sumLeft);
-    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -71,40 +40,18 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)canGoToPreviousOrNextGoal {
-    
-    // For previews button
-    if (self.selectedItemInArray == 0) {
-        self.previousGoalButton.hidden = YES;
-        // For next button
-    } else {
-        self.previousGoalButton.hidden = NO;
-    }
-    
-    if (self.selectedItemInArray + 2 > [[DataSingletone sharedModel].goalsArray count]) {
-        self.nextGoalButton.hidden = YES;
-    } else {
-        self.nextGoalButton.hidden = NO;
-    }
-}
-
 #pragma mark - Actions
 
 - (IBAction)previousGoalButtonTap:(UIButton *)sender {
 
     self.selectedItemInArray--;
-    [self canGoToPreviousOrNextGoal];
-    [self setupGoalInfo];
-    [self setupCirculeIndicator];
+    [self.tableView reloadData];
 }
-
 
 - (IBAction)nextGoalButtonTap:(UIButton *)sender {
     
     self.selectedItemInArray++;
-    [self canGoToPreviousOrNextGoal];
-    [self setupGoalInfo];
-    [self setupCirculeIndicator];
+    [self.tableView reloadData];
 }
 
 -(IBAction)addMoneyClicked:(UIBarButtonItem*)sender {
@@ -128,30 +75,6 @@
     [dateFormater setDateFormat:@"dd.MM.yyyy"]; // Date formater
     NSString *date = [dateFormater stringFromDate:dateToConvert]; // Convert date to string
     return date;
-}
-
-
-- (void) setupCirculeIndicator {
-    
-    [self.circleProgressLabel setProgress:0];
-    self.circleProgressLabel.progressLabelVCBlock = ^(KAProgressLabel *label, CGFloat progress) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [label setText:[NSString stringWithFormat:@"%.0f%%", (progress*100)]];
-            [label setTextColor:[UIColor colorWithRed:0.42 green:0.82 blue:0.28 alpha:1]];
-            [label setFont:[UIFont systemFontOfSize:40.f]];
-            
-        });
-    };
-    [self.circleProgressLabel setBackBorderWidth: 7.5];
-    [self.circleProgressLabel setFrontBorderWidth: 7.5];
-    
-    [self.circleProgressLabel setColorTable: @{
-                                  NSStringFromProgressLabelColorTableKey(ProgressLabelTrackColor):
-                                      [UIColor colorWithRed:0.89 green:0.89 blue:0.9 alpha:1],
-                                  NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
-                                      [UIColor colorWithRed:0 green:0.69 blue:0.96 alpha:1],
-                                  }];
-    [self.circleProgressLabel setProgress:self.progressPercent timing:TPPropertyAnimationTimingEaseOut duration:2.f delay:0.0];
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -211,21 +134,31 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        Goal *goal = [DataSingletone sharedModel].goalsArray[indexPath.row];
         
+        Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
         static NSString* infoCellIdentifier = @"infoCell";
-        
         goalInfoCell* infoCell = [tableView dequeueReusableCellWithIdentifier:infoCellIdentifier];
         
-        infoCell.goalName.text = goal.name;
-        infoCell.totalSum.text = [NSString stringWithFormat:@"%@ %@", goal.price, CURRENCY_SYMBOL];
+        if (self.selectedItemInArray == 0) {
+            infoCell.previousGoalButton.hidden = YES;
+            // For next button
+        } else {
+            infoCell.previousGoalButton.hidden = NO;
+        }
+        
+        if (self.selectedItemInArray + 2 > [[DataSingletone sharedModel].goalsArray count]) {
+            infoCell.nextGoalButton.hidden = YES;
+        } else {
+            infoCell.nextGoalButton.hidden = NO;
+        }
+        
+        infoCell.nameLabel.text = goal.name;
+        infoCell.priceLabel.text = [NSString stringWithFormat:@"%@ %@", goal.price, CURRENCY_SYMBOL];
         infoCell.progressMoney.text = [NSString stringWithFormat:@"%@ %@", goal.progress, CURRENCY_SYMBOL];
         infoCell.startDateLabel.text = [NSString stringWithFormat:@"Начало: %@", [self convertDateToString:goal.startDate]];
-        infoCell.finishDateLabel.text = [NSString stringWithFormat:@"Финал: %@", [self convertDateToString:goal.finalDate]];
-        infoCell.image.image = goal.goalImage;
-        
-
-        
+        infoCell.finalDateLabel.text = [NSString stringWithFormat:@"Финал: %@", [self convertDateToString:goal.finalDate]];
+        infoCell.goalImage.image = goal.goalImage;
+    
         [infoCell.circleProgressLabel setProgress:0];
         infoCell.circleProgressLabel.progressLabelVCBlock = ^(KAProgressLabel *label, CGFloat progress) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -247,12 +180,15 @@
                                                    }];
         [infoCell.circleProgressLabel setProgress:self.progressPercent timing:TPPropertyAnimationTimingEaseOut duration:2.f delay:0.0];
         
+        [infoCell.nextGoalButton addTarget:self action:@selector(nextGoalButtonTap:) forControlEvents:UIControlEventTouchUpInside];
+        [infoCell.previousGoalButton addTarget:self action:@selector(previousGoalButtonTap:) forControlEvents:UIControlEventTouchUpInside];
+        
         return infoCell;
         
     } else {
         
         static NSString* operationsCellIdentifier = @"operationsCell";
-        
+
         goalInfoCell* operationsCell = [tableView dequeueReusableCellWithIdentifier:operationsCellIdentifier];
         
         return operationsCell;

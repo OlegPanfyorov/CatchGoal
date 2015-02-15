@@ -513,6 +513,7 @@
                                             <state key="normal" title="&gt;" image="arrowForward.png"/>
                                             <connections>
                                                 <action selector="nextGoalButtonTap:" destination="6Lk-Xg-R2n" eventType="touchUpInside" id="5R3-T1-TbE"/>
+                                                <action selector="nextGoalButtonTap:" destination="zeT-j9-71q" eventType="touchUpInside" id="fr6-IQ-NQD"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Финал: 24.12.2014" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFK-0L-fNp">
@@ -594,6 +595,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
+                                                <action selector="previousGoalButtonTap:" destination="zeT-j9-71q" eventType="touchUpInside" id="FPX-pH-467"/>
                                                 <action selector="previousGoalButtonTap:" destination="6Lk-Xg-R2n" eventType="touchUpInside" id="fg0-aw-fGP"/>
                                             </connections>
                                         </button>
@@ -623,14 +625,14 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="circleProgressLabel" destination="D55-Rl-J0M" id="0N9-kg-G0L"/>
-                                    <outlet property="finishDateLabel" destination="XFK-0L-fNp" id="kGX-nI-gAn"/>
-                                    <outlet property="goalName" destination="FfD-5g-n4D" id="5Fn-Q2-dgN"/>
-                                    <outlet property="image" destination="ZbF-Sr-rDR" id="aBw-Wq-MnK"/>
-                                    <outlet property="nextButton" destination="j6D-ZH-SCP" id="yLO-No-K7q"/>
-                                    <outlet property="prevButton" destination="hgq-oB-PFO" id="giF-fj-uRl"/>
+                                    <outlet property="finalDateLabel" destination="XFK-0L-fNp" id="FAI-vS-cKD"/>
+                                    <outlet property="goalImage" destination="ZbF-Sr-rDR" id="db7-d4-hfB"/>
+                                    <outlet property="nameLabel" destination="FfD-5g-n4D" id="6cD-5S-lNb"/>
+                                    <outlet property="nextGoalButton" destination="j6D-ZH-SCP" id="ARS-iP-i9b"/>
+                                    <outlet property="previousGoalButton" destination="hgq-oB-PFO" id="Jlf-3i-WIJ"/>
+                                    <outlet property="priceLabel" destination="iFL-x4-xny" id="wz4-MJ-6ZD"/>
                                     <outlet property="progressMoney" destination="uhY-NU-txo" id="Qps-KX-kCQ"/>
                                     <outlet property="startDateLabel" destination="M9N-O5-PuY" id="fTg-QB-J0w"/>
-                                    <outlet property="totalSum" destination="iFL-x4-xny" id="FrR-vU-7Lu"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="operationsCell" rowHeight="44" id="r4l-1a-lCd" customClass="goalOperationsCell">

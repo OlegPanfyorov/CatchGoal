@@ -7,13 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @interface DetailTableViewController : UITableViewController
-
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *perMonthLabel;
-
-@property (weak, nonatomic) IBOutlet KAProgressLabel *circleProgressLabel;
 
 @property (assign, nonatomic) NSInteger selectedItemInArray;
 
