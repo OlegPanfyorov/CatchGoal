@@ -136,6 +136,7 @@
     if (indexPath.section == 0) {
         
         Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
+        self.progressPercent = [goal.progress floatValue] / [goal.price floatValue];
         static NSString* infoCellIdentifier = @"infoCell";
         goalInfoCell* infoCell = [tableView dequeueReusableCellWithIdentifier:infoCellIdentifier];
         
