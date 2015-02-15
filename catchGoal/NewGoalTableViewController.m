@@ -189,7 +189,10 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     [[DataSingletone sharedModel].goalsArray addObject:goal];
     [[DataSingletone sharedModel] save];
     NSLog(@"New Goal was created");
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+        [[DataSingletone sharedModel] load];
+    }];
+     
 }
 
 -(void)cancelToBack {

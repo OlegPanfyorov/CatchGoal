@@ -23,12 +23,19 @@
 - (id)init {
     if (self = [super init]) {
         self.goalsArray = [NSMutableArray new];
+
     }
     return self;
 }
+
 - (void)save {
-    [[NSUserDefaults standardUserDefaults] rm_setCustomObject:self.goalsArray forKey:@"goalsArray"];
+    NSMutableArray* array = [NSMutableArray new];
+    
+    [array addObjectsFromArray:self.goalsArray];
+    
+    [[NSUserDefaults standardUserDefaults] rm_setCustomObject:array forKey:@"goalsArray"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+
 }
 
 - (void)load {

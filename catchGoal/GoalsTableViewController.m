@@ -37,6 +37,7 @@
     
     //[self generateNewCell];
     
+    
 }
 
 -(void) viewWillAppear:(BOOL)animated {
