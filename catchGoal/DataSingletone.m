@@ -29,8 +29,8 @@
 }
 
 - (void)save {
-    NSMutableArray* array = [NSMutableArray new];
     
+    NSMutableArray* array = [NSMutableArray new];
     [array addObjectsFromArray:self.goalsArray];
     
     [[NSUserDefaults standardUserDefaults] rm_setCustomObject:array forKey:@"goalsArray"];

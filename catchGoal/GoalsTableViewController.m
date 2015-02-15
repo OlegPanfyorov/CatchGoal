@@ -34,15 +34,15 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.tableView.alwaysBounceVertical = NO;
-    
-    //[self generateNewCell];
-    
-    
+        
 }
 
 -(void) viewWillAppear:(BOOL)animated {
     
+  //  [[DataSingletone sharedModel] deleteAllGoals];
     [self.tableView reloadData];
+
+
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

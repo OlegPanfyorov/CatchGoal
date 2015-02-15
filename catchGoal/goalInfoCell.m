@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     self.goalImage.layer.cornerRadius = self.goalImage.frame.size.height / 2;
+    
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

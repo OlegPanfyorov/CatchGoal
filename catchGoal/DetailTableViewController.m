@@ -30,6 +30,7 @@
     [super viewDidLoad];
     
     self.tableView.alwaysBounceVertical = NO;
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -58,7 +59,7 @@
     
     NSLog(@"sumLeft %d", self.sumLeft);
     UIAlertView *addMoney = [[UIAlertView alloc] initWithTitle:@"Внесите сумму:"
-                                                           message:[NSString stringWithFormat:@"До достижения цели осталось внести: %d %@", self.sumLeft, CURRENCY_SYMBOL]
+                                                           message:[NSString stringWithFormat:@"До достижения цели осталось собрать: %d %@", self.sumLeft, CURRENCY_SYMBOL]
                                                           delegate:self
                                                  cancelButtonTitle:@"Отмена"
                                                  otherButtonTitles:@"Ок", nil];
@@ -87,6 +88,13 @@
         // Make sure that the given number is between 1 and 100.
         if (self.addMoneySum >= 1 && self.addMoneySum <= self.sumLeft) {
             
+            Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
+            
+            NSInteger newSum = [goal.progress integerValue] + self.addMoneySum;
+            goal.progress = [NSNumber numberWithInteger:newSum];
+            [[DataSingletone sharedModel] save];
+            [self.tableView reloadData];
+
         } else{
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ошибка"
                                                             message:[NSString stringWithFormat:@"Введенная Вами сумма не должна превышать %d %@", self.sumLeft, CURRENCY_SYMBOL]
@@ -139,6 +147,8 @@
         static NSString* infoCellIdentifier = @"infoCell";
         goalInfoCell* infoCell = [tableView dequeueReusableCellWithIdentifier:infoCellIdentifier];
         
+        self.sumLeft = [goal.price floatValue] - [goal.progress floatValue];
+        
         if (self.selectedItemInArray == 0) {
             infoCell.previousGoalButton.hidden = YES;
             // For next button
@@ -153,7 +163,9 @@
         }
         
         infoCell.nameLabel.text = goal.name;
-        infoCell.priceLabel.text = [NSString stringWithFormat:@"%@ %@", goal.price, CURRENCY_SYMBOL];
+        infoCell.priceLabel.text = [NSString stringWithFormat:@"%@ %@ собрано из %@", goal.progress, CURRENCY_SYMBOL, goal.price];
+        
+        
         infoCell.progressMoney.text = [NSString stringWithFormat:@"%@ %@", goal.progress, CURRENCY_SYMBOL];
         infoCell.startDateLabel.text = [NSString stringWithFormat:@"Начало: %@", [self convertDateToString:goal.startDate]];
         infoCell.finalDateLabel.text = [NSString stringWithFormat:@"Финал: %@", [self convertDateToString:goal.finalDate]];
@@ -183,6 +195,8 @@
         
         [infoCell.nextGoalButton addTarget:self action:@selector(nextGoalButtonTap:) forControlEvents:UIControlEventTouchUpInside];
         [infoCell.previousGoalButton addTarget:self action:@selector(previousGoalButtonTap:) forControlEvents:UIControlEventTouchUpInside];
+        
+
         
         return infoCell;
         
