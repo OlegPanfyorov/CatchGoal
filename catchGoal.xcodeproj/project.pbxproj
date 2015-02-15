@@ -42,6 +42,12 @@
 		794465D31A6A536800F00F63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794465D21A6A536800F00F63 /* UIKit.framework */; };
 		794465D61A6A5CE400F00F63 /* StartScreensMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 794465D51A6A5CE400F00F63 /* StartScreensMainViewController.m */; };
 		79548FFD1A6C37BB005AE681 /* DataSingletone.m in Sources */ = {isa = PBXBuildFile; fileRef = 79548FFC1A6C37BB005AE681 /* DataSingletone.m */; };
+		79736B891A91224D0046947E /* NSObject+RMArchivable.m in Sources */ = {isa = PBXBuildFile; fileRef = 79736B821A91224D0046947E /* NSObject+RMArchivable.m */; };
+		79736B8A1A91224D0046947E /* NSObject+RMCopyable.m in Sources */ = {isa = PBXBuildFile; fileRef = 79736B841A91224D0046947E /* NSObject+RMCopyable.m */; };
+		79736B8B1A91224D0046947E /* NSUserDefaults+RMSaveCustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 79736B861A91224D0046947E /* NSUserDefaults+RMSaveCustomObject.m */; };
+		79736B8C1A91224D0046947E /* RMMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 79736B881A91224D0046947E /* RMMapper.m */; };
+		79736B8E1A9124D20046947E /* addMoney@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79736B8D1A9124D20046947E /* addMoney@2x.png */; };
+		79736B901A9125260046947E /* addMoney@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79736B8F1A9125260046947E /* addMoney@3x.png */; };
 		79ABEEC31A827D9A00DCE5F0 /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79ABEEC21A827D9A00DCE5F0 /* RMDateSelectionViewController.m */; };
 		8B0471A51A6A2EE100CE1F06 /* GoalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0471A41A6A2EE100CE1F06 /* GoalsTableViewController.m */; };
 		8B6A205E1A6AB22100C4FDFE /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */; };
@@ -149,6 +155,16 @@
 		794465D51A6A5CE400F00F63 /* StartScreensMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreensMainViewController.m; sourceTree = "<group>"; };
 		79548FFB1A6C37BB005AE681 /* DataSingletone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSingletone.h; sourceTree = "<group>"; };
 		79548FFC1A6C37BB005AE681 /* DataSingletone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSingletone.m; sourceTree = "<group>"; };
+		79736B811A91224D0046947E /* NSObject+RMArchivable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RMArchivable.h"; sourceTree = "<group>"; };
+		79736B821A91224D0046947E /* NSObject+RMArchivable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RMArchivable.m"; sourceTree = "<group>"; };
+		79736B831A91224D0046947E /* NSObject+RMCopyable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RMCopyable.h"; sourceTree = "<group>"; };
+		79736B841A91224D0046947E /* NSObject+RMCopyable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RMCopyable.m"; sourceTree = "<group>"; };
+		79736B851A91224D0046947E /* NSUserDefaults+RMSaveCustomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+RMSaveCustomObject.h"; sourceTree = "<group>"; };
+		79736B861A91224D0046947E /* NSUserDefaults+RMSaveCustomObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+RMSaveCustomObject.m"; sourceTree = "<group>"; };
+		79736B871A91224D0046947E /* RMMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapper.h; sourceTree = "<group>"; };
+		79736B881A91224D0046947E /* RMMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMapper.m; sourceTree = "<group>"; };
+		79736B8D1A9124D20046947E /* addMoney@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addMoney@2x.png"; sourceTree = "<group>"; };
+		79736B8F1A9125260046947E /* addMoney@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addMoney@3x.png"; sourceTree = "<group>"; };
 		79ABEEC11A827D9A00DCE5F0 /* RMDateSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDateSelectionViewController.h; sourceTree = "<group>"; };
 		79ABEEC21A827D9A00DCE5F0 /* RMDateSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDateSelectionViewController.m; sourceTree = "<group>"; };
 		8B0471A31A6A2EE100CE1F06 /* GoalsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalsTableViewController.h; sourceTree = "<group>"; };
@@ -308,6 +324,7 @@
 		790B7F421A69C5A0009C1F1B /* Frameworks\Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				79736B801A9122380046947E /* NSUserDefaults */,
 				DA9D5F821A8162C200820E47 /* LocalAuthentication.framework */,
 				DA9D5F801A8161E500820E47 /* CoreFoundation.framework */,
 				DA9D5F7E1A81619800820E47 /* Foundation.framework */,
@@ -416,6 +433,21 @@
 			name = "parse need.";
 			sourceTree = "<group>";
 		};
+		79736B801A9122380046947E /* NSUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				79736B811A91224D0046947E /* NSObject+RMArchivable.h */,
+				79736B821A91224D0046947E /* NSObject+RMArchivable.m */,
+				79736B831A91224D0046947E /* NSObject+RMCopyable.h */,
+				79736B841A91224D0046947E /* NSObject+RMCopyable.m */,
+				79736B851A91224D0046947E /* NSUserDefaults+RMSaveCustomObject.h */,
+				79736B861A91224D0046947E /* NSUserDefaults+RMSaveCustomObject.m */,
+				79736B871A91224D0046947E /* RMMapper.h */,
+				79736B881A91224D0046947E /* RMMapper.m */,
+			);
+			name = NSUserDefaults;
+			sourceTree = "<group>";
+		};
 		79ABEEC01A827D8F00DCE5F0 /* Datepicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +521,8 @@
 		DAE448701A6B0C000041F449 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				79736B8D1A9124D20046947E /* addMoney@2x.png */,
+				79736B8F1A9125260046947E /* addMoney@3x.png */,
 				7942FE321A8FF3360035F411 /* no_photo.png */,
 				DAE391E91A82345500B60CC2 /* goalPic.png */,
 				DAE391E11A82236C00B60CC2 /* goalName.png */,
@@ -619,6 +653,8 @@
 				DAFB806B1A6C4EFA006F28DF /* arrowForward.png in Resources */,
 				DA9E2FE91A80E55D00BC08B2 /* OpenSans-Regular.ttf in Resources */,
 				DAE448821A6B1F3F0041F449 /* loginPic@2x.png in Resources */,
+				79736B901A9125260046947E /* addMoney@3x.png in Resources */,
+				79736B8E1A9124D20046947E /* addMoney@2x.png in Resources */,
 				DAE391E81A822AC400B60CC2 /* goalExpDate.png in Resources */,
 				790B7F281A69C3AE009C1F1B /* Main.storyboard in Resources */,
 				DAE4488C1A6B3FE30041F449 /* emalPic.png in Resources */,
@@ -657,13 +693,17 @@
 			files = (
 				DA2AD3D81A90F9FD00BA7E4C /* goalOperationsCell.m in Sources */,
 				8B6A205E1A6AB22100C4FDFE /* DetailTableViewController.m in Sources */,
+				79736B8C1A91224D0046947E /* RMMapper.m in Sources */,
 				794465D61A6A5CE400F00F63 /* StartScreensMainViewController.m in Sources */,
 				790B7F4B1A69C5DB009C1F1B /* Goal.m in Sources */,
+				79736B8A1A91224D0046947E /* NSObject+RMCopyable.m in Sources */,
 				790B7F5B1A69CA3E009C1F1B /* LaunchScreenViewController.m in Sources */,
 				DA6308981A77C13D00F7AB08 /* addAndEditGoalCell.m in Sources */,
 				790B7F521A69CA00009C1F1B /* LoginViewController.m in Sources */,
 				790B7F221A69C3AE009C1F1B /* AppDelegate.m in Sources */,
+				79736B8B1A91224D0046947E /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
 				8B0471A51A6A2EE100CE1F06 /* GoalsTableViewController.m in Sources */,
+				79736B891A91224D0046947E /* NSObject+RMArchivable.m in Sources */,
 				790B7F581A69CA2C009C1F1B /* ForgotPasswordViewController.m in Sources */,
 				790B7F1F1A69C3AE009C1F1B /* main.m in Sources */,
 				79ABEEC31A827D9A00DCE5F0 /* RMDateSelectionViewController.m in Sources */,

@@ -136,7 +136,6 @@
     if (indexPath.section == 0) {
         
         Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
-        self.progressPercent = [goal.progress floatValue] / [goal.price floatValue];
         static NSString* infoCellIdentifier = @"infoCell";
         goalInfoCell* infoCell = [tableView dequeueReusableCellWithIdentifier:infoCellIdentifier];
         
@@ -159,6 +158,7 @@
         infoCell.startDateLabel.text = [NSString stringWithFormat:@"Начало: %@", [self convertDateToString:goal.startDate]];
         infoCell.finalDateLabel.text = [NSString stringWithFormat:@"Финал: %@", [self convertDateToString:goal.finalDate]];
         infoCell.goalImage.image = goal.goalImage;
+        self.progressPercent = [goal.progress floatValue] / [goal.price floatValue];
     
         [infoCell.circleProgressLabel setProgress:0];
         infoCell.circleProgressLabel.progressLabelVCBlock = ^(KAProgressLabel *label, CGFloat progress) {
@@ -187,13 +187,9 @@
         return infoCell;
         
     } else {
-        
         static NSString* operationsCellIdentifier = @"operationsCell";
-
         goalInfoCell* operationsCell = [tableView dequeueReusableCellWithIdentifier:operationsCellIdentifier];
-        
         return operationsCell;
-        
     }
     
     return nil;

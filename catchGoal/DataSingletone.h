@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSUserDefaults+RMSaveCustomObject.h"
 
 @interface DataSingletone : NSObject
 
@@ -15,5 +16,8 @@
 + (DataSingletone *)sharedModel;
 
 -(id) init;
+
+- (void)save;
+- (void)load;
 
 @end

@@ -26,5 +26,16 @@
     }
     return self;
 }
+- (void)save {
+    [[NSUserDefaults standardUserDefaults] rm_setCustomObject:self.goalsArray forKey:@"goalsArray"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
+- (void)load {
+    self.goalsArray = [[NSUserDefaults standardUserDefaults] rm_customObjectForKey:@"goalsArray"];
+}
+
+- (void)deleteAllGoals {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"goalsArray"];
+}
 @end

@@ -187,7 +187,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     goal.progress = [self convertStringToNSNumber:self.progressInMoney.text];
     goal.perMonth = @100;
     [[DataSingletone sharedModel].goalsArray addObject:goal];
-    
+    [[DataSingletone sharedModel] save];
     NSLog(@"New Goal was created");
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
