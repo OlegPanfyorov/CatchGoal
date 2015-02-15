@@ -224,6 +224,8 @@
         infoCell.finishDateLabel.text = [NSString stringWithFormat:@"Финал: %@", [self convertDateToString:goal.finalDate]];
         infoCell.image.image = goal.goalImage;
         
+
+        
         [infoCell.circleProgressLabel setProgress:0];
         infoCell.circleProgressLabel.progressLabelVCBlock = ^(KAProgressLabel *label, CGFloat progress) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -233,6 +235,7 @@
                 
             });
         };
+        
         [infoCell.circleProgressLabel setBackBorderWidth: 7.5];
         [infoCell.circleProgressLabel setFrontBorderWidth: 7.5];
         

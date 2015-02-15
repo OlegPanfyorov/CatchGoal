@@ -626,6 +626,8 @@
                                     <outlet property="finishDateLabel" destination="XFK-0L-fNp" id="kGX-nI-gAn"/>
                                     <outlet property="goalName" destination="FfD-5g-n4D" id="5Fn-Q2-dgN"/>
                                     <outlet property="image" destination="ZbF-Sr-rDR" id="aBw-Wq-MnK"/>
+                                    <outlet property="nextButton" destination="j6D-ZH-SCP" id="yLO-No-K7q"/>
+                                    <outlet property="prevButton" destination="hgq-oB-PFO" id="giF-fj-uRl"/>
                                     <outlet property="progressMoney" destination="uhY-NU-txo" id="Qps-KX-kCQ"/>
                                     <outlet property="startDateLabel" destination="M9N-O5-PuY" id="fTg-QB-J0w"/>
                                     <outlet property="totalSum" destination="iFL-x4-xny" id="FrR-vU-7Lu"/>

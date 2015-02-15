@@ -16,5 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *startDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *finishDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *progressMoney;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (weak, nonatomic) IBOutlet UIButton *prevButton;
 
 @end
