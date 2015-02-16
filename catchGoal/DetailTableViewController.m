@@ -31,6 +31,8 @@
     
     self.tableView.alwaysBounceVertical = NO;
     
+
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -138,6 +140,9 @@
     if (indexPath.section == 0) {
         
         Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
+        
+        self.navigationItem.title = goal.name;
+        
         static NSString* infoCellIdentifier = @"infoCell";
         goalInfoCell* infoCell = [tableView dequeueReusableCellWithIdentifier:infoCellIdentifier];
         
