@@ -80,6 +80,8 @@
     Goal *goal = [DataSingletone sharedModel].goalsArray[indexPath.row];
     cell.nameLabel.text = goal.name;
     cell.priceLabel.text = [NSString stringWithFormat:@"%@ собрано", goal.progress];
+    
+    
     cell.image.image = goal.goalImage;
     
     CGFloat progress = [goal.progress floatValue] / [goal.price floatValue];

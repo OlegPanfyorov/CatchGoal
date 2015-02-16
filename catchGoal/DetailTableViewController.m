@@ -157,7 +157,7 @@
         }
         
         infoCell.nameLabel.text = goal.name;
-        infoCell.priceLabel.text = [NSString stringWithFormat:@"%@ %@ собрано из %@", goal.progress, CURRENCY_SYMBOL, goal.price];
+        infoCell.priceLabel.text = [NSString stringWithFormat:@"%@ %@ собрано из %@ %@", goal.progress, CURRENCY_SYMBOL, goal.price, CURRENCY_SYMBOL];
         
         
         infoCell.progressMoney.text = [NSString stringWithFormat:@"%@ %@", goal.progress, CURRENCY_SYMBOL];
@@ -171,13 +171,13 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [label setText:[NSString stringWithFormat:@"%.0f%%", (progress*100)]];
                 [label setTextColor:[UIColor colorWithRed:0.42 green:0.82 blue:0.28 alpha:1]];
-                [label setFont:[UIFont systemFontOfSize:40.f]];
+                [label setFont:[UIFont systemFontOfSize:50.f]];
                 
             });
         };
         
-        [infoCell.circleProgressLabel setBackBorderWidth: 7.5];
-        [infoCell.circleProgressLabel setFrontBorderWidth: 7.5];
+        [infoCell.circleProgressLabel setBackBorderWidth: 10];
+        [infoCell.circleProgressLabel setFrontBorderWidth: 10];
         
         [infoCell.circleProgressLabel setColorTable: @{
                                                    NSStringFromProgressLabelColorTableKey(ProgressLabelTrackColor):
