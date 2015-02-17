@@ -24,7 +24,6 @@
 
 - (id)init {
     if (self = [super init]) {
-
         self.goalsArray = [NSMutableArray array];
     }
     return self;

@@ -11,7 +11,7 @@
 @implementation goalOperationsCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    self.sumLabel.textColor = [UIColor colorWithRed:0.42 green:0.82 blue:0.28 alpha:1];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

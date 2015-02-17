@@ -8,7 +8,7 @@
         <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="progress" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="operations" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GoalOperations" inverseName="goal" inverseEntity="GoalOperations" syncable="YES"/>
+        <relationship name="operations" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="GoalOperations" inverseName="goal" inverseEntity="GoalOperations" syncable="YES"/>
     </entity>
     <entity name="GoalOperations" representedClassName="GoalOperations" syncable="YES">
         <attribute name="addDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -17,6 +17,6 @@
     </entity>
     <elements>
         <element name="Goal" positionX="0" positionY="0" width="128" height="163"/>
-        <element name="GoalOperations" positionX="-360" positionY="18" width="128" height="88"/>
+        <element name="GoalOperations" positionX="-281" positionY="38" width="128" height="88"/>
     </elements>
 </model>

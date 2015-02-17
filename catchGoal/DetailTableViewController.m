@@ -8,6 +8,7 @@
 
 #import "DetailTableViewController.h"
 #include "Goal.h"
+#import "GoalOperations.h"
 #import "goalInfoCell.h"
 #import "goalOperationsCell.h"
 
@@ -18,6 +19,7 @@
 @property (assign, nonatomic) CGFloat progressPercent;
 @property (assign, nonatomic) int sumLeft;
 @property (assign, nonatomic) int addMoneySum;
+@property (strong, nonatomic) NSMutableArray* goalOperationsArray;
 
 
 -(IBAction)addMoneyClicked:(UIBarButtonItem*)sender;
@@ -30,6 +32,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.alwaysBounceVertical = NO;
+    [self fetchAllGoalOperations];
+}
+
+- (void)fetchAllGoalOperations {
+    Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
+    self.goalOperationsArray = [NSMutableArray array];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"addDate" ascending:NO]];
+    NSArray *sortedOperatoins = [[goal.operations allObjects] sortedArrayUsingDescriptors:sortDescriptors];
+    self.goalOperationsArray = [NSMutableArray arrayWithArray:sortedOperatoins];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -43,14 +54,14 @@
 #pragma mark - Actions
 
 - (IBAction)previousGoalButtonTap:(UIButton *)sender {
-
     self.selectedItemInArray--;
+    [self fetchAllGoalOperations];
     [self.tableView reloadData];
 }
 
 - (IBAction)nextGoalButtonTap:(UIButton *)sender {
-    
     self.selectedItemInArray++;
+    [self fetchAllGoalOperations];
     [self.tableView reloadData];
 }
 
@@ -71,9 +82,10 @@
 
 -(NSString*) convertDateToString:(NSDate*) dateToConvert {
     NSDateFormatter *dateFormater = [[NSDateFormatter alloc]init];
-    [dateFormater setDateFormat:@"dd.MM.yyyy"]; // Date formater
-    NSString *date = [dateFormater stringFromDate:dateToConvert]; // Convert date to string
-    return date;
+    [dateFormater setDateFormat:@"dd.MM.yyyy : hh.mm"];
+    NSString *date = [dateFormater stringFromDate:dateToConvert];
+    NSString* subString = [date substringToIndex:10];
+    return subString;
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -86,7 +98,15 @@
         // Make sure that the given number is between 1 and 100.
         if (self.addMoneySum >= 1 && self.addMoneySum <= self.sumLeft) {
             
-          
+            Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
+            self.operations = [GoalOperations createEntity];
+            self.operations.addSum = [NSNumber numberWithInt: self.addMoneySum];
+            self.operations.addDate = [NSDate date];
+            [goal addOperationsObject:self.operations];
+            goal.progress = [NSNumber numberWithInt:self.addMoneySum + [goal.progress intValue]];
+            [self.goalOperationsArray insertObject:self.operations atIndex:0];
+            [[DataSingletone sharedModel] saveContext];
+            [self.tableView reloadData];
         } else{
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ошибка"
                                                             message:[NSString stringWithFormat:@"Введенная Вами сумма не должна превышать %d %@", self.sumLeft, CURRENCY_SYMBOL]
@@ -102,7 +122,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 1) {
-        return @"Операции";
+        return [NSString stringWithFormat:@"Операции (%lu)", (unsigned long)[self.goalOperationsArray count]];
     }
     return nil;
 }
@@ -119,17 +139,17 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
     if (section == 0) {
         return 1;
     } else
-    
-    return 3;
+        return [self.goalOperationsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
+
     if (indexPath.section == 0) {
-        Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
         self.navigationItem.title = goal.name;
         static NSString* infoCellIdentifier = @"infoCell";
         goalInfoCell* infoCell = [tableView dequeueReusableCellWithIdentifier:infoCellIdentifier];
@@ -182,7 +202,6 @@
                                                        [UIColor colorWithRed:0 green:0.69 blue:0.96 alpha:1],
                                                    }];
         [infoCell.circleProgressLabel setProgress:self.progressPercent timing:TPPropertyAnimationTimingEaseOut duration:2.f delay:0.0];
-        
         [infoCell.nextGoalButton addTarget:self action:@selector(nextGoalButtonTap:) forControlEvents:UIControlEventTouchUpInside];
         [infoCell.previousGoalButton addTarget:self action:@selector(previousGoalButtonTap:) forControlEvents:UIControlEventTouchUpInside];
 
@@ -191,14 +210,13 @@
     } else {
         static NSString* operationsCellIdentifier = @"operationsCell";
         goalOperationsCell* operationsCell = [tableView dequeueReusableCellWithIdentifier:operationsCellIdentifier];
-        operationsCell.sumLabel.text = @"35000";
-        operationsCell.dateLabel.text = @"NSDate";
+        self.operations = [self.goalOperationsArray objectAtIndex:indexPath.row];
+        operationsCell.sumLabel.text = [NSString stringWithFormat:@"%@ %@", [self.operations.addSum stringValue], CURRENCY_SYMBOL];
+        operationsCell.dateLabel.text = [self convertDateToString:self.operations.addDate];
         return operationsCell;
     }
-    
+
     return nil;
-
 }
-
 
 @end

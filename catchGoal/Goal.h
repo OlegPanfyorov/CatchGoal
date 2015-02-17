@@ -20,6 +20,15 @@
 @property (nonatomic, retain) NSNumber * price;
 @property (nonatomic, retain) NSNumber * progress;
 @property (nonatomic, retain) NSDate * startDate;
-@property (nonatomic, retain) GoalOperations *operations;
+@property (nonatomic, retain) NSSet *operations;
+
+@end
+
+@interface Goal (CoreDataGeneratedAccessors)
+
+- (void)addOperationsObject:(GoalOperations *)value;
+- (void)removeOperationsObject:(GoalOperations *)value;
+- (void)addOperations:(NSSet *)values;
+- (void)removeOperations:(NSSet *)values;
 
 @end
