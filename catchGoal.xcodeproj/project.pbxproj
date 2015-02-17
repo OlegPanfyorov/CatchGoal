@@ -50,8 +50,6 @@
 		D3494B6C1A6C0FE60007DD0C /* NewGoalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3494B6B1A6C0FE60007DD0C /* NewGoalTableViewController.m */; };
 		D3494B711A6C14110007DD0C /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3494B701A6C14110007DD0C /* NotificationCenter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DA0DB12A1A923FBC00AAB6AD /* GoalDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA0DB1281A923FBC00AAB6AD /* GoalDataModel.xcdatamodeld */; };
-		DA0DB1361A9242C900AAB6AD /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0DB1351A9242C900AAB6AD /* Goal.m */; };
-		DA0DB1391A9242CA00AAB6AD /* GoalOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0DB1381A9242CA00AAB6AD /* GoalOperations.m */; };
 		DA1A58F01A92226C00EA9DD3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1A58EF1A92226C00EA9DD3 /* CoreData.framework */; };
 		DA1C35DE1A8124C000A3A931 /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1C35DD1A8124C000A3A931 /* logout@2x.png */; };
 		DA1C35E01A8125BC00A3A931 /* logout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1C35DF1A8125BC00A3A931 /* logout@3x.png */; };
@@ -99,6 +97,8 @@
 		DA9E2FEC1A80E56100BC08B2 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA9E2FE81A80E55A00BC08B2 /* OpenSans-Semibold.ttf */; };
 		DABF0E5C1A6AD96800105669 /* KAProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DABF0E591A6AD96800105669 /* KAProgressLabel.m */; };
 		DABF0E5D1A6AD96800105669 /* TPPropertyAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DABF0E5B1A6AD96800105669 /* TPPropertyAnimation.m */; };
+		DAC1B7941A937FBF004F4C1E /* GoalOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC1B7931A937FBF004F4C1E /* GoalOperations.m */; };
+		DAC1B7971A937FC0004F4C1E /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC1B7961A937FC0004F4C1E /* Goal.m */; };
 		DAE391E21A82236C00B60CC2 /* goalName.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE391E11A82236C00B60CC2 /* goalName.png */; };
 		DAE391E41A82262D00B60CC2 /* goalTotalSum.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE391E31A82262D00B60CC2 /* goalTotalSum.png */; };
 		DAE391E61A822A0C00B60CC2 /* goalCurrentSum.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE391E51A822A0C00B60CC2 /* goalCurrentSum.png */; };
@@ -192,10 +192,6 @@
 		D3494B6B1A6C0FE60007DD0C /* NewGoalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGoalTableViewController.m; sourceTree = "<group>"; };
 		D3494B701A6C14110007DD0C /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		DA0DB1291A923FBC00AAB6AD /* GoalDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoalDataModel.xcdatamodel; sourceTree = "<group>"; };
-		DA0DB1341A9242C900AAB6AD /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
-		DA0DB1351A9242C900AAB6AD /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
-		DA0DB1371A9242CA00AAB6AD /* GoalOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalOperations.h; sourceTree = "<group>"; };
-		DA0DB1381A9242CA00AAB6AD /* GoalOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalOperations.m; sourceTree = "<group>"; };
 		DA1A58EF1A92226C00EA9DD3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DA1A59301A9222CC00EA9DD3 /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
 		DA1C35DD1A8124C000A3A931 /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@2x.png"; sourceTree = "<group>"; };
@@ -276,6 +272,10 @@
 		DABF0E591A6AD96800105669 /* KAProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAProgressLabel.m; sourceTree = "<group>"; };
 		DABF0E5A1A6AD96800105669 /* TPPropertyAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPropertyAnimation.h; sourceTree = "<group>"; };
 		DABF0E5B1A6AD96800105669 /* TPPropertyAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPPropertyAnimation.m; sourceTree = "<group>"; };
+		DAC1B7921A937FBF004F4C1E /* GoalOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalOperations.h; sourceTree = "<group>"; };
+		DAC1B7931A937FBF004F4C1E /* GoalOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalOperations.m; sourceTree = "<group>"; };
+		DAC1B7951A937FC0004F4C1E /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
+		DAC1B7961A937FC0004F4C1E /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
 		DAE391E11A82236C00B60CC2 /* goalName.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goalName.png; sourceTree = "<group>"; };
 		DAE391E31A82262D00B60CC2 /* goalTotalSum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goalTotalSum.png; sourceTree = "<group>"; };
 		DAE391E51A822A0C00B60CC2 /* goalCurrentSum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goalCurrentSum.png; sourceTree = "<group>"; };
@@ -562,10 +562,10 @@
 			isa = PBXGroup;
 			children = (
 				DA0DB1281A923FBC00AAB6AD /* GoalDataModel.xcdatamodeld */,
-				DA0DB1371A9242CA00AAB6AD /* GoalOperations.h */,
-				DA0DB1381A9242CA00AAB6AD /* GoalOperations.m */,
-				DA0DB1341A9242C900AAB6AD /* Goal.h */,
-				DA0DB1351A9242C900AAB6AD /* Goal.m */,
+				DAC1B7951A937FC0004F4C1E /* Goal.h */,
+				DAC1B7961A937FC0004F4C1E /* Goal.m */,
+				DAC1B7921A937FBF004F4C1E /* GoalOperations.h */,
+				DAC1B7931A937FBF004F4C1E /* GoalOperations.m */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -885,6 +885,7 @@
 				8B6A205E1A6AB22100C4FDFE /* DetailTableViewController.m in Sources */,
 				DA5CB91B1A924E2300A66BBF /* MagicalRecord+iCloud.m in Sources */,
 				DA5CB9101A924E2300A66BBF /* NSManagedObject+MagicalRecord.m in Sources */,
+				DAC1B7971A937FC0004F4C1E /* Goal.m in Sources */,
 				DA5CB91D1A924E2300A66BBF /* MagicalRecord+Setup.m in Sources */,
 				794465D61A6A5CE400F00F63 /* StartScreensMainViewController.m in Sources */,
 				DA5CB91F1A924E2300A66BBF /* MagicalRecord.m in Sources */,
@@ -895,6 +896,7 @@
 				790B7F521A69CA00009C1F1B /* LoginViewController.m in Sources */,
 				DA5CB9071A924E2300A66BBF /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				DA5CB91E1A924E2300A66BBF /* MagicalRecord+ShorthandSupport.m in Sources */,
+				DAC1B7941A937FBF004F4C1E /* GoalOperations.m in Sources */,
 				DA0DB12A1A923FBC00AAB6AD /* GoalDataModel.xcdatamodeld in Sources */,
 				DA5CB9131A924E2300A66BBF /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				790B7F221A69C3AE009C1F1B /* AppDelegate.m in Sources */,
@@ -903,9 +905,7 @@
 				790B7F1F1A69C3AE009C1F1B /* main.m in Sources */,
 				79ABEEC31A827D9A00DCE5F0 /* RMDateSelectionViewController.m in Sources */,
 				DA5CB90F1A924E2300A66BBF /* NSManagedObject+MagicalFinders.m in Sources */,
-				DA0DB1361A9242C900AAB6AD /* Goal.m in Sources */,
 				DA5CB9141A924E2300A66BBF /* NSManagedObjectContext+MagicalSaves.m in Sources */,
-				DA0DB1391A9242CA00AAB6AD /* GoalOperations.m in Sources */,
 				790B7F471A69C5C8009C1F1B /* Constants.m in Sources */,
 				DA5CB90C1A924E2300A66BBF /* NSString+MagicalDataImport.m in Sources */,
 				DA5CB9191A924E2300A66BBF /* MagicalRecord+Actions.m in Sources */,

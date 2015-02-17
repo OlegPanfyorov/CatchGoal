@@ -9,6 +9,7 @@
 #import "DetailTableViewController.h"
 #include "Goal.h"
 #import "goalInfoCell.h"
+#import "goalOperationsCell.h"
 
 #define CURRENCY_SYMBOL [[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol]
 
@@ -28,11 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.tableView.alwaysBounceVertical = NO;
-    
-
-    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -72,7 +69,6 @@
     //[[addMoney textFieldAtIndex:0] becomeFirstResponder];
 }
 
-
 -(NSString*) convertDateToString:(NSDate*) dateToConvert {
     NSDateFormatter *dateFormater = [[NSDateFormatter alloc]init];
     [dateFormater setDateFormat:@"dd.MM.yyyy"]; // Date formater
@@ -108,7 +104,6 @@
     if (section == 1) {
         return @"Операции";
     }
-    
     return nil;
 }
 
@@ -116,14 +111,12 @@
     if (indexPath.section == 0) {
         return 303;
     } else
-        
         return 44;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
@@ -133,21 +126,14 @@
     return 3;
 }
 
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        
         Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
-        
         self.navigationItem.title = goal.name;
-        
         static NSString* infoCellIdentifier = @"infoCell";
         goalInfoCell* infoCell = [tableView dequeueReusableCellWithIdentifier:infoCellIdentifier];
-        
         self.sumLeft = [goal.price floatValue] - [goal.progress floatValue];
-        
         if (self.selectedItemInArray == 0) {
             infoCell.previousGoalButton.hidden = YES;
             // For next button
@@ -199,13 +185,14 @@
         
         [infoCell.nextGoalButton addTarget:self action:@selector(nextGoalButtonTap:) forControlEvents:UIControlEventTouchUpInside];
         [infoCell.previousGoalButton addTarget:self action:@selector(previousGoalButtonTap:) forControlEvents:UIControlEventTouchUpInside];
-        
 
         return infoCell;
         
     } else {
         static NSString* operationsCellIdentifier = @"operationsCell";
-        goalInfoCell* operationsCell = [tableView dequeueReusableCellWithIdentifier:operationsCellIdentifier];
+        goalOperationsCell* operationsCell = [tableView dequeueReusableCellWithIdentifier:operationsCellIdentifier];
+        operationsCell.sumLabel.text = @"35000";
+        operationsCell.dateLabel.text = @"NSDate";
         return operationsCell;
     }
     

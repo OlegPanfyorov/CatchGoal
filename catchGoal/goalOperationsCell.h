@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface goalOperationsCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sumLabel;
 
 @end

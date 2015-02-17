@@ -2,7 +2,7 @@
 //  Goal.h
 //  catchGoal
 //
-//  Created by Roman Bogomolov on 16/02/15.
+//  Created by Roman Bogomolov on 17/02/15.
 //  Copyright (c) 2015 iosDevCourse. All rights reserved.
 //
 
@@ -13,13 +13,13 @@
 
 @interface Goal : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSDate * finalDate;
-@property (nonatomic, retain) NSDate * startDate;
 @property (nonatomic, retain) NSString * imagePath;
-@property (nonatomic, retain) NSNumber * progress;
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * perMonth;
 @property (nonatomic, retain) NSNumber * price;
-@property (nonatomic, retain) GoalOperations *opetations;
+@property (nonatomic, retain) NSNumber * progress;
+@property (nonatomic, retain) NSDate * startDate;
+@property (nonatomic, retain) GoalOperations *operations;
 
 @end
