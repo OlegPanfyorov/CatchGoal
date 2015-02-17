@@ -24,10 +24,7 @@
 
 - (id)init {
     if (self = [super init]) {
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
         self.goalsArray = [NSMutableArray array];
     }
     return self;
