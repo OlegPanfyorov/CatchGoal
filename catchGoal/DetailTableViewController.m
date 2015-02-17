@@ -7,7 +7,7 @@
 //
 
 #import "DetailTableViewController.h"
-#import "Goal.h"
+#include "Goal.h"
 #import "goalInfoCell.h"
 
 #define CURRENCY_SYMBOL [[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol]
@@ -58,7 +58,7 @@
 }
 
 -(IBAction)addMoneyClicked:(UIBarButtonItem*)sender {
-    
+ 
     NSLog(@"sumLeft %d", self.sumLeft);
     UIAlertView *addMoney = [[UIAlertView alloc] initWithTitle:@"Внесите сумму:"
                                                            message:[NSString stringWithFormat:@"До достижения цели осталось собрать: %d %@", self.sumLeft, CURRENCY_SYMBOL]
@@ -163,12 +163,17 @@
         
         infoCell.nameLabel.text = goal.name;
         infoCell.priceLabel.text = [NSString stringWithFormat:@"%@ %@ собрано из %@ %@", goal.progress, CURRENCY_SYMBOL, goal.price, CURRENCY_SYMBOL];
-        
-        
         infoCell.progressMoney.text = [NSString stringWithFormat:@"%@ %@", goal.progress, CURRENCY_SYMBOL];
         infoCell.startDateLabel.text = [NSString stringWithFormat:@"Начало: %@", [self convertDateToString:goal.startDate]];
         infoCell.finalDateLabel.text = [NSString stringWithFormat:@"Финал: %@", [self convertDateToString:goal.finalDate]];
-        infoCell.goalImage.image = goal.goalImage;
+        
+        NSData *goalImage = [NSData dataWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:goal.imagePath]];
+        if (goal.imagePath) {
+            infoCell.goalImage.image = [UIImage imageWithData:goalImage];
+        } else {
+            infoCell.goalImage.image = [UIImage imageNamed:@"no_photo"];
+        }
+        
         self.progressPercent = [goal.progress floatValue] / [goal.price floatValue];
     
         [infoCell.circleProgressLabel setProgress:0];
@@ -196,7 +201,6 @@
         [infoCell.previousGoalButton addTarget:self action:@selector(previousGoalButtonTap:) forControlEvents:UIControlEventTouchUpInside];
         
 
-        
         return infoCell;
         
     } else {

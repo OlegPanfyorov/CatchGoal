@@ -14,6 +14,7 @@
 #import "RMDateSelectionViewController.h"
 #import "UIActionSheet+BlockExtensions.h"
 #import "Goal.h"
+#import "GoalOperations.h"
 
 static NSInteger const kNavAndStatusBarHeight = 64;
 
@@ -29,6 +30,9 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 @property (weak, nonatomic) IBOutlet UITextField *finalDateTextField;
 @property (weak, nonatomic) IBOutlet UIButton *choosePhotoButton;
 @property (strong, nonatomic) NSDate *finalDate;
+@property (strong, nonatomic) NSString *imagePath;
+
+
 
 - (IBAction)choosePhotoButtonClicked:(id)sender;
 
@@ -173,30 +177,26 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 #pragma mark - Actions
 
 -(void)addNewGoal {
-    Goal *goal = [Goal new];
-    goal.name = self.goalName.text;
-    goal.startDate = [NSDate date];
-    goal.finalDate = self.finalDate;
-    if (self.choosePhotoButton.currentImage) {
-        goal.goalImage = [self.choosePhotoButton imageForState:UIControlStateNormal];
-    } else {
-        goal.goalImage = [UIImage imageNamed:@"no_photo"];
-    }
-    goal.complited = NO;
-    goal.price = [self convertStringToNSNumber:self.totalCost.text];
-    goal.progress = [self convertStringToNSNumber:self.progressInMoney.text];
-    goal.perMonth = @100;
-    [[DataSingletone sharedModel].goalsArray addObject:goal];
-    [[DataSingletone sharedModel] save];
-    [[DataSingletone sharedModel] load];
-
-    NSLog(@"New Goal was created");
+    self.goal = [Goal createEntity];
+    self.goal.name = self.goalName.text;
+    self.goal.price = [self convertStringToNSNumber:self.totalCost.text];
+    self.goal.progress = [self convertStringToNSNumber:self.progressInMoney.text];
+    self.goal.startDate = [NSDate date];
+    self.goal.finalDate = self.finalDate;
+    self.goal.imagePath = self.imagePath;
+    [[DataSingletone sharedModel].goalsArray addObject:self.goal];
+    [[DataSingletone sharedModel] saveContext];
+    
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-     
+}
+
+- (void)setImageForGoal:(UIImage*)image {
+    self.choosePhotoButton.imageView.image = image;
 }
 
 -(void)cancelToBack {
-    
+  //  [self.goal deleteEntity];
+
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -278,17 +278,24 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage]; //
-    NSLog(@"%@", NSStringFromCGSize(image.size));
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        [self setGoalButtonImage:image];
-    }];
+    NSData *imgData   = UIImageJPEGRepresentation(image, 0.5);
+    NSString *name    = [[NSUUID UUID] UUIDString];
+    NSString *path	  = [NSString stringWithFormat:@"Documents/%@.jpg", name];
+    NSString *jpgPath = [NSHomeDirectory() stringByAppendingPathComponent:path];
+    [imgData writeToFile:jpgPath atomically:YES];
     
+    self.imagePath = path;
+    [self setGoalButtonImage:image];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void) deletePhoto {
-    [self setGoalButtonImage:[UIImage imageNamed:@"goalPic"]];
+    [self setGoalButtonImage:[UIImage imageNamed:@"no_photo"]];
+    self.imagePath = NULL;
+
 }
 
 -(void) setGoalButtonImage:(UIImage*) image {

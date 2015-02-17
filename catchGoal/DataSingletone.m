@@ -24,33 +24,18 @@
 
 - (id)init {
     if (self = [super init]) {
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         self.goalsArray = [NSMutableArray array];
-
     }
     return self;
 }
 
-- (void)save {
-    
-    [[NSUserDefaults standardUserDefaults] rm_setCustomObject:self.goalsArray forKey:@"goalsArray"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-
+- (void) saveContext {
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
-- (void)load {
-    
-    if ([[NSUserDefaults standardUserDefaults] rm_customObjectForKey:@"goalsArray"]) {
-        self.goalsArray = [[NSUserDefaults standardUserDefaults] rm_customObjectForKey:@"goalsArray"];
 
-    }
-    
-}
-
-- (void)deleteAllGoals {
-    
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"goalsArray"];
-    self.goalsArray = nil;
-
-}
 @end

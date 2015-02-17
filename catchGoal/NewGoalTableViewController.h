@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class Goal;
 @interface NewGoalTableViewController : UITableViewController
+
+@property (nonatomic, strong) Goal *goal;
 
 @end

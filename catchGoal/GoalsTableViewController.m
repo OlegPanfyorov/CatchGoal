@@ -34,14 +34,18 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.tableView.alwaysBounceVertical = NO;
-        
+
 }
 
 -(void) viewWillAppear:(BOOL)animated {
-        
+    [super viewWillAppear:animated];
+
+  
     [self.tableView reloadData];
 
 }
+
+
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
@@ -51,20 +55,7 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)generateNewCell {
-    [DataSingletone sharedModel].goalsArray = [NSMutableArray new];
-    for (int i = 0; i < 5; i++) {
-        Goal *goal = [Goal new];
-        int iPhoneNumber = arc4random() % 4 + 2;
-        int totalPrice = (arc4random() % 10 + 1) * 1000;
-        int progress = arc4random_uniform(101);
-        goal.name = [NSString stringWithFormat:@"iPhone %d", iPhoneNumber];
-        goal.price = [NSNumber numberWithInt:totalPrice];
-        goal.perMonth = @100;
-        goal.progress = [NSNumber numberWithInt:progress];
-        [[DataSingletone sharedModel].goalsArray addObject:goal];
-    }
-}
+
 
 #pragma mark - UITableViewDataSource
 
@@ -77,14 +68,22 @@
     static NSString *identifier = @"cell";
     GoalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     [cell.lineProgressView setProgress:0];
+    
     Goal *goal = [DataSingletone sharedModel].goalsArray[indexPath.row];
     cell.nameLabel.text = goal.name;
     cell.priceLabel.text = [NSString stringWithFormat:@"%@ собрано", goal.progress];
     
+    NSData *goalImage = [NSData dataWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:goal.imagePath]];
     
-    cell.image.image = goal.goalImage;
+    if (goal.imagePath) {
+        cell.image.image = [UIImage imageWithData:goalImage];
+    } else {
+        cell.image.image = [UIImage imageNamed:@"no_photo"];
+    }
+    
     
     CGFloat progress = [goal.progress floatValue] / [goal.price floatValue];
+    
     [cell.lineProgressView setProgress:progress timing:TPPropertyAnimationTimingEaseOut duration:1.0 delay:0.5];
     
     if (progress < 0.5f) {
@@ -111,8 +110,7 @@
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [PFUser logOut];
-        [[DataSingletone sharedModel] deleteAllGoals];
-
+     
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [self.navigationController popToRootViewControllerAnimated:YES];

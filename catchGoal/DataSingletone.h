@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSUserDefaults+RMSaveCustomObject.h"
-#import "NSObject+RMArchivable.h"
+
 
 @interface DataSingletone : NSObject
 
@@ -18,9 +17,6 @@
 
 -(id) init;
 
-- (void)save;
-- (void)load;
-- (void)deleteAllGoals;
-
+- (void) saveContext;
 
 @end

@@ -9,6 +9,11 @@
 #ifndef catchGoal_catchGoal_Prefix_pch
 #define catchGoal_catchGoal_Prefix_pch
 
+
+
+#define MR_SHORTHAND
+#import "CoreData+MagicalRecord.h"
+
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>

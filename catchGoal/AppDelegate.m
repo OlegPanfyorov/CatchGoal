@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "NSUserDefaults+RMSaveCustomObject.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"GoalDataModel"];
     
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
         
@@ -46,8 +46,10 @@
         
     });
     
-    [[DataSingletone sharedModel] load];
-
+    [DataSingletone sharedModel].goalsArray = [[Goal MR_findAll] mutableCopy];
+    //[Goal MR_truncateAll];
+    
+    
     return YES;
 }
 
@@ -72,6 +74,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [MagicalRecord cleanUp];
 }
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {

@@ -1,26 +1,25 @@
 //
 //  Goal.h
-//  catchCoal
+//  catchGoal
 //
-//  Created by Oleg Panforov on 1/16/15.
-//  Copyright (c) 2015 Oleg Panforov. All rights reserved.
+//  Created by Roman Bogomolov on 16/02/15.
+//  Copyright (c) 2015 iosDevCourse. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Goal : NSObject
+@class GoalOperations;
 
-@property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSNumber *price;
-@property (strong, nonatomic) NSNumber *perMonth;
-@property (strong, nonatomic) NSNumber *progress;
-@property (strong, nonatomic) UIImage *goalImage;
-@property (strong, nonatomic) NSDate *startDate;
-@property (strong, nonatomic) NSDate *finalDate;
-@property (assign, nonatomic) BOOL complited;
+@interface Goal : NSManagedObject
 
--(id) initWithItem:(PFObject*) item;
-
-
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSDate * finalDate;
+@property (nonatomic, retain) NSDate * startDate;
+@property (nonatomic, retain) NSString * imagePath;
+@property (nonatomic, retain) NSNumber * progress;
+@property (nonatomic, retain) NSNumber * perMonth;
+@property (nonatomic, retain) NSNumber * price;
+@property (nonatomic, retain) GoalOperations *opetations;
 
 @end
