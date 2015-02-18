@@ -111,7 +111,9 @@
             [[DataSingletone sharedModel] saveContext];
             
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
-            [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView beginUpdates];
+            [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView endUpdates];
 
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.37 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
