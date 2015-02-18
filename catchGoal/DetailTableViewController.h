@@ -11,9 +11,7 @@
 @class Goal;
 
 @interface DetailTableViewController : UITableViewController
-
 @property (assign, nonatomic) NSInteger selectedItemInArray;
 @property (strong, nonatomic) GoalOperations* operations;
 @property (nonatomic, strong) Goal *goal;
-
 @end

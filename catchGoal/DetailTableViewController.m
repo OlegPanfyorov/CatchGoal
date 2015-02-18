@@ -21,9 +21,7 @@
 @property (assign, nonatomic) int addMoneySum;
 @property (strong, nonatomic) NSMutableArray* goalOperationsArray;
 
-
 -(IBAction)addMoneyClicked:(UIBarButtonItem*)sender;
-
 
 @end
 
@@ -31,8 +29,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-
     self.tableView.alwaysBounceVertical = NO;
     [self fetchAllGoalOperations];
 }
@@ -240,8 +236,7 @@
     return nil;
 }
 
--(void)viewDidLayoutSubviews
-{
+-(void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
     UIEdgeInsets insets = {28,0,0,0};
@@ -263,12 +258,10 @@
     if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
         [cell setSeparatorInset:UIEdgeInsetsZero];
     }
-    
     // Prevent the cell from inheriting the Table View's margin settings
     if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
         [cell setPreservesSuperviewLayoutMargins:NO];
     }
-    
     // Explictly set your cell's layout margins
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];

@@ -10,5 +10,4 @@
 
 @interface GoalsTableViewController : UITableViewController
 
-
 @end

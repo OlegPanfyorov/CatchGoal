@@ -52,7 +52,6 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     [saveButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [saveButton.titleLabel setFont:[UIFont boldSystemFontOfSize:18]];
     [self.view addSubview:saveButton];
-    
     self.tableView.alwaysBounceVertical = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
@@ -123,14 +122,12 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     format.locale = usLocale;
     NSString *theDate = [format stringFromDate:date];
     NSLog(@"%@", date);
-    
     return theDate;
 }
 
 -(NSNumber*) convertStringToNSNumber:(NSString*) string {
     NSNumberFormatter *number = [[NSNumberFormatter alloc] init];
     number.numberStyle = NSNumberFormatterDecimalStyle;
-    
     return [number numberFromString:string];
 }
 
@@ -195,8 +192,6 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 }
 
 -(void)cancelToBack {
-  //  [self.goal deleteEntity];
-
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -208,7 +203,6 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -277,25 +271,20 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 #pragma mark - UIImagePickerControllerDelegate
 
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-    
     NSData *imgData   = UIImageJPEGRepresentation(image, 0.5);
     NSString *name    = [[NSUUID UUID] UUIDString];
     NSString *path	  = [NSString stringWithFormat:@"Documents/%@.jpg", name];
     NSString *jpgPath = [NSHomeDirectory() stringByAppendingPathComponent:path];
     [imgData writeToFile:jpgPath atomically:YES];
-    
     self.imagePath = path;
     [self setGoalButtonImage:image];
-    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void) deletePhoto {
     [self setGoalButtonImage:[UIImage imageNamed:@"no_photo"]];
     self.imagePath = NULL;
-
 }
 
 -(void) setGoalButtonImage:(UIImage*) image {
