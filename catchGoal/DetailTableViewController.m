@@ -87,6 +87,26 @@
     return subString;
 }
 
+- (void) addNewSumToContext {
+    Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
+    self.operations = [GoalOperations createEntity];
+    self.operations.addSum = [NSNumber numberWithInt: self.addMoneySum];
+    self.operations.addDate = [NSDate date];
+    [goal addOperationsObject:self.operations];
+    goal.progress = [NSNumber numberWithInt:self.addMoneySum + [goal.progress intValue]];
+    [self.goalOperationsArray insertObject:self.operations atIndex:0];
+    [[DataSingletone sharedModel] saveContext];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView endUpdates];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.37 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+}
+
 #pragma mark - UIAlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -97,23 +117,7 @@
         // Make sure that the given number is between 1 and 100.
         if (self.addMoneySum >= 1 && self.addMoneySum <= self.sumLeft) {
             
-            Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
-            self.operations = [GoalOperations createEntity];
-            self.operations.addSum = [NSNumber numberWithInt: self.addMoneySum];
-            self.operations.addDate = [NSDate date];
-            [goal addOperationsObject:self.operations];
-            goal.progress = [NSNumber numberWithInt:self.addMoneySum + [goal.progress intValue]];
-            [self.goalOperationsArray insertObject:self.operations atIndex:0];
-            [[DataSingletone sharedModel] saveContext];
-            
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
-            [self.tableView beginUpdates];
-            [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [self.tableView endUpdates];
-
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.37 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self.tableView reloadData];
-            });
+            [self addNewSumToContext];
             
         } else{
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ошибка"
