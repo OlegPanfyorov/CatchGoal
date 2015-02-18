@@ -58,13 +58,14 @@
 - (IBAction)previousGoalButtonTap:(UIButton *)sender {
     self.selectedItemInArray--;
     [self fetchAllGoalOperations];
-    [self.tableView reloadData];
+    [self.tableView reloadData];    
 }
 
 - (IBAction)nextGoalButtonTap:(UIButton *)sender {
     self.selectedItemInArray++;
     [self fetchAllGoalOperations];
     [self.tableView reloadData];
+
 }
 
 -(IBAction)addMoneyClicked:(UIBarButtonItem*)sender {
@@ -108,7 +109,14 @@
             goal.progress = [NSNumber numberWithInt:self.addMoneySum + [goal.progress intValue]];
             [self.goalOperationsArray insertObject:self.operations atIndex:0];
             [[DataSingletone sharedModel] saveContext];
-            [self.tableView reloadData];
+            
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+            [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.37 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+            
         } else{
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ошибка"
                                                             message:[NSString stringWithFormat:@"Введенная Вами сумма не должна превышать %d %@", self.sumLeft, CURRENCY_SYMBOL]
@@ -193,7 +201,7 @@
         
         self.progressPercent = [goal.progress floatValue] / [goal.price floatValue];
     
-        [infoCell.circleProgressLabel setProgress:0];
+       // [infoCell.circleProgressLabel setProgress:0];
         infoCell.circleProgressLabel.progressLabelVCBlock = ^(KAProgressLabel *label, CGFloat progress) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [label setText:[NSString stringWithFormat:@"%.0f%%", (progress*100)]];
@@ -203,8 +211,8 @@
             });
         };
         
-        [infoCell.circleProgressLabel setBackBorderWidth: 10];
-        [infoCell.circleProgressLabel setFrontBorderWidth: 10];
+        [infoCell.circleProgressLabel setBackBorderWidth: 8];
+        [infoCell.circleProgressLabel setFrontBorderWidth: 8];
         
         [infoCell.circleProgressLabel setColorTable: @{
                                                    NSStringFromProgressLabelColorTableKey(ProgressLabelTrackColor):
