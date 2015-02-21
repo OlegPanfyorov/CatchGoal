@@ -2,7 +2,7 @@
 //  Goal.m
 //  catchGoal
 //
-//  Created by Roman Bogomolov on 17/02/15.
+//  Created by Roman Bogomolov on 22/02/15.
 //  Copyright (c) 2015 iosDevCourse. All rights reserved.
 //
 
@@ -19,7 +19,7 @@
 @dynamic price;
 @dynamic progress;
 @dynamic startDate;
+@dynamic complited;
 @dynamic operations;
-
 
 @end
