@@ -181,6 +181,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     self.goal.startDate = [NSDate date];
     self.goal.finalDate = self.finalDate;
     self.goal.imagePath = self.imagePath;
+    self.goal.complited = [NSNumber numberWithBool:NO];
     [[DataSingletone sharedModel].goalsArray addObject:self.goal];
     [[DataSingletone sharedModel] saveContext];
     
