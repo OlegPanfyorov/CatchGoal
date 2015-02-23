@@ -97,7 +97,7 @@ NSTimer *durationTimer;
         self.keyboardIsVisible = NO;
         self.hideAnimationType = FadeOut;
         self.showAnimationType = SlideInFromTop;
-        self.backgroundType = Shadow;
+        self.backgroundType = Blur;
         
         // Font
         _titleFontFamily = @"HelveticaNeue";
