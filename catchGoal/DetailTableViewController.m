@@ -11,6 +11,7 @@
 #import "GoalOperations.h"
 #import "goalInfoCell.h"
 #import "goalOperationsCell.h"
+#import "SCLAlertView.h"
 
 #define CURRENCY_SYMBOL [[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol]
 
@@ -65,30 +66,61 @@
 }
 
 -(IBAction)addMoneyClicked:(UIBarButtonItem*)sender {
- 
-    NSLog(@"sumLeft %d", self.sumLeft);
-    UIAlertView *addMoney = [[UIAlertView alloc] initWithTitle:@"Внесите сумму:"
-                                                           message:[NSString stringWithFormat:@"До достижения цели осталось собрать: %d %@", self.sumLeft, CURRENCY_SYMBOL]
-                                                          delegate:self
-                                                 cancelButtonTitle:@"Отмена"
-                                                 otherButtonTitles:@"Ок", nil];
+    self.tableView.scrollEnabled = NO;
+    sender.enabled = NO;
     
-    addMoney.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [[addMoney textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
-    [addMoney show];
-    //[[addMoney textFieldAtIndex:0] becomeFirstResponder];
+    SCLAlertView *alert = [[SCLAlertView alloc] init];
+    alert.showAnimationType = SlideInFromTop;
+    alert.backgroundType = Shadow;
+
+    UITextField *textField = [alert addTextField:@"Сумма"];
+   // [textField becomeFirstResponder];
+
+    [alert addButton:@"Готово" actionBlock:^(void) {
+        self.addMoneySum = [textField.text intValue];
+
+        if (self.addMoneySum >= 1 && self.addMoneySum <= self.sumLeft && self.addMoneySum != self.sumLeft) {
+            [self addNewSumToContextWithCompletedFlag:NO];
+            sender.enabled = YES;
+        } else if (self.addMoneySum == self.sumLeft) {
+           
+            SCLAlertView *alertWithComplited = [[SCLAlertView alloc] init];
+            [alertWithComplited showSuccess:self title:@"Завершено" subTitle:@"Вы выполнили данную цель." closeButtonTitle:@"Готово" duration:0.0f];
+            [self addNewSumToContextWithCompletedFlag:YES];
+            [alertWithComplited alertIsDismissed:^{
+                self.tableView.scrollEnabled = YES;
+                sender.enabled = YES;
+            }];
+
+
+        } else {
+            
+            SCLAlertView *alertWithError = [[SCLAlertView alloc] init];
+            [alertWithError showError:self title:@"Ошибка" subTitle:[NSString stringWithFormat:@"Введенная вами сумма не должна превышать %d %@", self.sumLeft, CURRENCY_SYMBOL] closeButtonTitle:@"OK" duration:0.0f]; // Error
+            alertWithError.showAnimationType = SlideInFromTop;
+            
+            [alertWithError alertIsDismissed:^{
+                self.tableView.scrollEnabled = YES;
+                sender.enabled = YES;
+                
+            }];
+        }
+    }];
+    
+    [alert addButton:@"Отмена" actionBlock:^(void) {
+        self.tableView.scrollEnabled = YES;
+        sender.enabled = YES;
+
+    }];
+    
+    [alert showSuccess:self title:@"Внесите сумму"
+                            subTitle:[NSString stringWithFormat:@"До достижения цели осталось собрать: %d %@", self.sumLeft, CURRENCY_SYMBOL]
+                            closeButtonTitle:nil duration:0.0f];
 }
 
--(NSString*) convertDateToString:(NSDate*) dateToConvert {
-    NSDateFormatter *dateFormater = [[NSDateFormatter alloc]init];
-    [dateFormater setDateFormat:@"dd.MM.yyyy : hh.mm"];
-    NSString *date = [dateFormater stringFromDate:dateToConvert];
-    NSString* subString = [date substringToIndex:10];
-    return subString;
-}
-
-- (void) addNewSumToContext {
+- (void) addNewSumToContextWithCompletedFlag:(BOOL) isCompleted {
     Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
+    goal.complited = [NSNumber numberWithBool:isCompleted];
     self.operations = [GoalOperations createEntity];
     self.operations.addSum = [NSNumber numberWithInt: self.addMoneySum];
     self.operations.addDate = [NSDate date];
@@ -101,33 +133,19 @@
     [self.tableView beginUpdates];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     [self.tableView endUpdates];
-    
+    self.tableView.scrollEnabled = YES;
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.37 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
 }
 
-#pragma mark - UIAlertViewDelegate
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (alertView.alertViewStyle == UIAlertViewStylePlainTextInput && buttonIndex == 1) {
-        UITextField *textField = [alertView textFieldAtIndex:0];
-        self.addMoneySum = [textField.text intValue];
-        
-        // Make sure that the given number is between 1 and 100.
-        if (self.addMoneySum >= 1 && self.addMoneySum <= self.sumLeft) {
-            
-            [self addNewSumToContext];
-            
-        } else{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ошибка"
-                                                            message:[NSString stringWithFormat:@"Введенная Вами сумма не должна превышать %d %@", self.sumLeft, CURRENCY_SYMBOL]
-                                                           delegate:nil
-                                                  cancelButtonTitle:nil
-                                                  otherButtonTitles:@"Ок", nil];
-            [alert show];
-        }
-    }
+-(NSString*) convertDateToString:(NSDate*) dateToConvert {
+    NSDateFormatter *dateFormater = [[NSDateFormatter alloc]init];
+    [dateFormater setDateFormat:@"dd.MM.yyyy : hh.mm"];
+    NSString *date = [dateFormater stringFromDate:dateToConvert];
+    NSString* subString = [date substringToIndex:10];
+    return subString;
 }
 
 #pragma mark - UITableViewDelegate

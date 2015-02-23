@@ -15,7 +15,6 @@
 #import "UIActionSheet+BlockExtensions.h"
 #import "Goal.h"
 #import "GoalOperations.h"
-
 static NSInteger const kNavAndStatusBarHeight = 64;
 
 @interface NewGoalTableViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>

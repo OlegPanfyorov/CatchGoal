@@ -87,6 +87,11 @@
 		DA5CB91F1A924E2300A66BBF /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5CB9031A924E2300A66BBF /* MagicalRecord.m */; };
 		DA6308981A77C13D00F7AB08 /* addAndEditGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6308971A77C13D00F7AB08 /* addAndEditGoalCell.m */; };
 		DA63089A1A77CAF300F7AB08 /* photoPic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6308991A77CAF300F7AB08 /* photoPic@2x.png */; };
+		DA87F4B01A9B89A60085F7F9 /* SCLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87F4A71A9B89A60085F7F9 /* SCLAlertView.m */; };
+		DA87F4B11A9B89A60085F7F9 /* SCLAlertViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87F4A91A9B89A60085F7F9 /* SCLAlertViewResponder.m */; };
+		DA87F4B21A9B89A60085F7F9 /* SCLAlertViewStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87F4AB1A9B89A60085F7F9 /* SCLAlertViewStyleKit.m */; };
+		DA87F4B31A9B89A60085F7F9 /* SCLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87F4AD1A9B89A60085F7F9 /* SCLButton.m */; };
+		DA87F4B41A9B89A60085F7F9 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87F4AF1A9B89A60085F7F9 /* UIImage+ImageEffects.m */; };
 		DA9D5F7D1A81618D00820E47 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9D5F7C1A81618D00820E47 /* CFNetwork.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		DA9D5F7F1A81619800820E47 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9D5F7E1A81619800820E47 /* Foundation.framework */; };
 		DA9D5F811A8161E500820E47 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9D5F801A8161E500820E47 /* CoreFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -262,6 +267,16 @@
 		DA6308961A77C13D00F7AB08 /* addAndEditGoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addAndEditGoalCell.h; sourceTree = "<group>"; };
 		DA6308971A77C13D00F7AB08 /* addAndEditGoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addAndEditGoalCell.m; sourceTree = "<group>"; };
 		DA6308991A77CAF300F7AB08 /* photoPic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photoPic@2x.png"; sourceTree = "<group>"; };
+		DA87F4A61A9B89A60085F7F9 /* SCLAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertView.h; sourceTree = "<group>"; };
+		DA87F4A71A9B89A60085F7F9 /* SCLAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertView.m; sourceTree = "<group>"; };
+		DA87F4A81A9B89A60085F7F9 /* SCLAlertViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertViewResponder.h; sourceTree = "<group>"; };
+		DA87F4A91A9B89A60085F7F9 /* SCLAlertViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertViewResponder.m; sourceTree = "<group>"; };
+		DA87F4AA1A9B89A60085F7F9 /* SCLAlertViewStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertViewStyleKit.h; sourceTree = "<group>"; };
+		DA87F4AB1A9B89A60085F7F9 /* SCLAlertViewStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertViewStyleKit.m; sourceTree = "<group>"; };
+		DA87F4AC1A9B89A60085F7F9 /* SCLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLButton.h; sourceTree = "<group>"; };
+		DA87F4AD1A9B89A60085F7F9 /* SCLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLButton.m; sourceTree = "<group>"; };
+		DA87F4AE1A9B89A60085F7F9 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		DA87F4AF1A9B89A60085F7F9 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		DA9D5F7C1A81618D00820E47 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		DA9D5F7E1A81619800820E47 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA9D5F801A8161E500820E47 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -420,6 +435,7 @@
 		790B7F431A69C5AB009C1F1B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DA87F4A51A9B89A60085F7F9 /* SCLAlertView */,
 				DA6308951A77C0E600F7AB08 /* Cells */,
 				DAE448731A6B15C20041F449 /* Font */,
 				DAE448701A6B0C000041F449 /* Images */,
@@ -693,6 +709,23 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		DA87F4A51A9B89A60085F7F9 /* SCLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				DA87F4A61A9B89A60085F7F9 /* SCLAlertView.h */,
+				DA87F4A71A9B89A60085F7F9 /* SCLAlertView.m */,
+				DA87F4A81A9B89A60085F7F9 /* SCLAlertViewResponder.h */,
+				DA87F4A91A9B89A60085F7F9 /* SCLAlertViewResponder.m */,
+				DA87F4AA1A9B89A60085F7F9 /* SCLAlertViewStyleKit.h */,
+				DA87F4AB1A9B89A60085F7F9 /* SCLAlertViewStyleKit.m */,
+				DA87F4AC1A9B89A60085F7F9 /* SCLButton.h */,
+				DA87F4AD1A9B89A60085F7F9 /* SCLButton.m */,
+				DA87F4AE1A9B89A60085F7F9 /* UIImage+ImageEffects.h */,
+				DA87F4AF1A9B89A60085F7F9 /* UIImage+ImageEffects.m */,
+			);
+			path = SCLAlertView;
+			sourceTree = "<group>";
+		};
 		DABF0E571A6AD96800105669 /* KAProgressLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -877,6 +910,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA87F4B01A9B89A60085F7F9 /* SCLAlertView.m in Sources */,
 				DA5CB9061A924E2300A66BBF /* MagicalImportFunctions.m in Sources */,
 				DA5CB9081A924E2300A66BBF /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				DA2AD3D81A90F9FD00BA7E4C /* goalOperationsCell.m in Sources */,
@@ -899,12 +933,16 @@
 				DAC6D2EF1A9936CC002AE5F8 /* GoalOperations.m in Sources */,
 				DA0DB12A1A923FBC00AAB6AD /* GoalDataModel.xcdatamodeld in Sources */,
 				DA5CB9131A924E2300A66BBF /* NSManagedObjectContext+MagicalRecord.m in Sources */,
+				DA87F4B21A9B89A60085F7F9 /* SCLAlertViewStyleKit.m in Sources */,
 				790B7F221A69C3AE009C1F1B /* AppDelegate.m in Sources */,
+				DA87F4B31A9B89A60085F7F9 /* SCLButton.m in Sources */,
 				8B0471A51A6A2EE100CE1F06 /* GoalsTableViewController.m in Sources */,
 				790B7F581A69CA2C009C1F1B /* ForgotPasswordViewController.m in Sources */,
 				790B7F1F1A69C3AE009C1F1B /* main.m in Sources */,
 				79ABEEC31A827D9A00DCE5F0 /* RMDateSelectionViewController.m in Sources */,
 				DA5CB90F1A924E2300A66BBF /* NSManagedObject+MagicalFinders.m in Sources */,
+				DA87F4B11A9B89A60085F7F9 /* SCLAlertViewResponder.m in Sources */,
+				DA87F4B41A9B89A60085F7F9 /* UIImage+ImageEffects.m in Sources */,
 				DA5CB9141A924E2300A66BBF /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				790B7F471A69C5C8009C1F1B /* Constants.m in Sources */,
 				DA5CB90C1A924E2300A66BBF /* NSString+MagicalDataImport.m in Sources */,
