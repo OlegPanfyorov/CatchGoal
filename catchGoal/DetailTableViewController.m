@@ -91,7 +91,7 @@
             [self addNewSumToContextWithCompletedFlag:NO];
             sender.enabled = YES;
         } else if (self.addMoneySum == self.sumLeft) {
-           
+           dispatch_async(dispatch_get_main_queue(), ^{
             SCLAlertView *alertWithComplited = [[SCLAlertView alloc] init];
             [alertWithComplited showSuccess:self title:@"Завершено" subTitle:@"Вы выполнили данную цель." closeButtonTitle:@"Готово" duration:0.0f];
             [self addNewSumToContextWithCompletedFlag:YES];
@@ -99,19 +99,21 @@
                 self.tableView.scrollEnabled = YES;
                 sender.enabled = YES;
             }];
-
+        });
 
         } else {
-            
-            SCLAlertView *alertWithError = [[SCLAlertView alloc] init];
-            [alertWithError showError:self title:@"Ошибка" subTitle:[NSString stringWithFormat:@"Введенная вами сумма не должна превышать %d %@", self.sumLeft, CURRENCY_SYMBOL] closeButtonTitle:@"OK" duration:0.0f]; // Error
-            alertWithError.showAnimationType = SlideInFromTop;
-            
-            [alertWithError alertIsDismissed:^{
-                self.tableView.scrollEnabled = YES;
-                sender.enabled = YES;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                SCLAlertView *alertWithError = [[SCLAlertView alloc] init];
+                [alertWithError showError:self title:@"Ошибка" subTitle:[NSString stringWithFormat:@"Введенная вами сумма не должна превышать %d %@", self.sumLeft, CURRENCY_SYMBOL] closeButtonTitle:@"OK" duration:0.0f]; // Error
+                alertWithError.showAnimationType = SlideInFromTop;
                 
-            }];
+                [alertWithError alertIsDismissed:^{
+                    self.tableView.scrollEnabled = YES;
+                    sender.enabled = YES;
+                    
+                }];
+
+            });
         }
     }];
     
