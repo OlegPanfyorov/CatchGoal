@@ -32,6 +32,8 @@
     [super viewDidLoad];
     self.tableView.alwaysBounceVertical = NO;
     [self fetchAllGoalOperations];
+    
+ 
 }
 
 - (void)fetchAllGoalOperations {
@@ -40,6 +42,13 @@
     NSArray *sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"addDate" ascending:NO]];
     NSArray *sortedOperatoins = [[goal.operations allObjects] sortedArrayUsingDescriptors:sortDescriptors];
     self.goalOperationsArray = [NSMutableArray arrayWithArray:sortedOperatoins];
+    
+    if ([goal.complited boolValue]) {
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+    } else {
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+    }
+
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -62,7 +71,6 @@
     self.selectedItemInArray++;
     [self fetchAllGoalOperations];
     [self.tableView reloadData];
-
 }
 
 -(IBAction)addMoneyClicked:(UIBarButtonItem*)sender {
