@@ -79,7 +79,7 @@
     
     SCLAlertView *alert = [[SCLAlertView alloc] init];
     alert.showAnimationType = SlideInFromTop;
-    alert.backgroundType = Shadow;
+    alert.backgroundType = Blur;
 
     UITextField *textField = [alert addTextField:@"Сумма"];
    // [textField becomeFirstResponder];
