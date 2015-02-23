@@ -97,7 +97,7 @@
             [self addNewSumToContextWithCompletedFlag:YES];
             [alertWithComplited alertIsDismissed:^{
                 self.tableView.scrollEnabled = YES;
-                sender.enabled = YES;
+                sender.enabled = NO;
             }];
         });
 
