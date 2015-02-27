@@ -34,6 +34,9 @@
     self.navigationController.navigationBarHidden = YES;
 
     self.wrapFieldsLabel.layer.cornerRadius = 5.f;
+    self.wrapFieldsLabel.layer.borderWidth = 1;
+    self.wrapFieldsLabel.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.11];
+    self.wrapFieldsLabel.layer.borderColor = [UIColor colorWithRed:0.67 green:0.7 blue:0.75 alpha:0.20].CGColor;
     self.loginButton.layer.cornerRadius = 5.f;
     
     self.loginTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 45)];
@@ -44,12 +47,12 @@
        
     if ([self.loginTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
         
-        self.loginTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.loginTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:16.f]}];
+        self.loginTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.loginTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.92 green:0.92 blue:0.92 alpha:1], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:16.f]}];
     }
     
     if ([self.passwordTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
         
-        self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.passwordTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:16.f]}];
+        self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.passwordTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.92 green:0.92 blue:0.92 alpha:1], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:16.f]}];
     }
     
     [self.loginButton addTarget:self action:@selector(lowAlfa:) forControlEvents:UIControlEventTouchDown];

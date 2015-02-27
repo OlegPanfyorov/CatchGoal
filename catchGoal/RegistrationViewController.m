@@ -26,6 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.wrapView.layer.cornerRadius = 5.f;
+    self.wrapView.layer.borderWidth = 1;
+    self.wrapView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.11];
+    self.wrapView.layer.borderColor = [UIColor colorWithRed:0.67 green:0.7 blue:0.75 alpha:0.20].CGColor;
     
     self.nameTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 45)];
     self.nameTextField.leftViewMode = UITextFieldViewModeAlways;
@@ -38,17 +41,17 @@
     
     if ([self.nameTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
         
-        self.nameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.nameTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:16.f]}];
+        self.nameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.nameTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.92 green:0.92 blue:0.92 alpha:1], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:16.f]}];
     }
     
     if ([self.passwordTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
         
-        self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.passwordTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:16.f]}];
+        self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.passwordTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.92 green:0.92 blue:0.92 alpha:1], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:16.f]}];
     }
     
     if ([self.emailTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
         
-        self.emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.emailTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:16.f]}];
+        self.emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.emailTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.92 green:0.92 blue:0.92 alpha:1], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:16.f]}];
     }
     
     [self.registerButton addTarget:self action:@selector(lowAlfa:) forControlEvents:UIControlEventTouchDown];

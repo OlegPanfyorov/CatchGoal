@@ -25,10 +25,13 @@
     
     self.restoreButton.layer.cornerRadius = 5.f;
     self.emailTextField.layer.cornerRadius = 5.f;
+    self.emailTextField.layer.borderWidth = 1;
+    self.emailTextField.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.11];
+    self.emailTextField.layer.borderColor = [UIColor colorWithRed:0.67 green:0.7 blue:0.75 alpha:0.20].CGColor;
     
     if ([self.emailTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
         
-        self.emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.emailTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:18.f]}];
+        self.emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.emailTextField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.92 green:0.92 blue:0.92 alpha:1], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:18.f]}];
     }
     
     [self.restoreButton addTarget:self action:@selector(lowAlfa:) forControlEvents:UIControlEventTouchDown];
