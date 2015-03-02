@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface addAndEditGoalCell : UITableViewCell
+@interface AddAndEditGoalCell : UITableViewCell
 
 @end

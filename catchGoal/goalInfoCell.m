@@ -11,7 +11,7 @@
 @implementation goalInfoCell
 
 - (void)awakeFromNib {
-    self.goalImage.layer.cornerRadius = self.goalImage.frame.size.height / 2;
+    self.goalImageButton.layer.cornerRadius = self.goalImageButton.frame.size.height / 2;
     
     
 }
@@ -22,5 +22,10 @@
     // Configure the view for the selected state
 }
 
+
+- (IBAction)photoButtonTapped:(UIButton *)sender
+{
+    [self.delegate showPhoto];
+}
 
 @end

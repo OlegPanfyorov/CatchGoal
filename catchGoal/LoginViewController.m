@@ -9,7 +9,7 @@
 #import "LoginViewController.h"
 #import "RegistrationViewController.h"
 #import "ForgotPasswordViewController.h"
-#import "GoalsTableViewController.h"
+#import "GoalsViewController.h"
 
 @interface LoginViewController ()
 
@@ -181,10 +181,8 @@
     [PFUser logInWithUsernameInBackground:login password:password block:^(PFUser *user, NSError *error) {
         if (user) {
             NSLog(@"successful login");
-
-            GoalsTableViewController  *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
+            GoalsViewController  *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
             [self.navigationController pushViewController:mainVC animated:YES];
-
         } else {
             NSLog(@"failed login");
             // The login failed. Check error to see why.

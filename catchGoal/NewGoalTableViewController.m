@@ -31,8 +31,6 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 @property (strong, nonatomic) NSDate *finalDate;
 @property (strong, nonatomic) NSString *imagePath;
 
-
-
 - (IBAction)choosePhotoButtonClicked:(id)sender;
 
 @end
@@ -42,12 +40,12 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = YES;
+    //self.navigationController.navigationBarHidden = YES;
     NSLog(@"Navframe Height=%f",
-          self.navigationController.navigationBar.frame.size.height + 20);
+    self.navigationController.navigationBar.frame.size.height + 20);
     UIButton* saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [saveButton addTarget:self action:@selector(addNewGoal) forControlEvents:UIControlEventTouchUpInside];
-    saveButton.frame = CGRectMake(0, self.view.frame.size.height - kNavAndStatusBarHeight - 20, self.view.frame.size.width, kNavAndStatusBarHeight);
+    saveButton.frame = CGRectMake(0, self.view.frame.size.height - kNavAndStatusBarHeight * 2, self.view.frame.size.width, kNavAndStatusBarHeight);
     saveButton.backgroundColor = kNavBarColorBlue;
     [saveButton setTitle:@"Сохранить" forState:UIControlStateNormal];
     [saveButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

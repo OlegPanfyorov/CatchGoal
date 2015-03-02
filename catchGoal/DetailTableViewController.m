@@ -12,15 +12,18 @@
 #import "goalInfoCell.h"
 #import "goalOperationsCell.h"
 #import "SCLAlertView.h"
+//#import "IDMPhoto.h"
+//#import "IDMPhotoBrowser.h"
 
 #define CURRENCY_SYMBOL [[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol]
 
-@interface DetailTableViewController () <UIAlertViewDelegate>
+@interface DetailTableViewController () <UIAlertViewDelegate, GoalInfoCellDelegate>
 
 @property (assign, nonatomic) CGFloat progressPercent;
 @property (assign, nonatomic) int sumLeft;
 @property (assign, nonatomic) int addMoneySum;
 @property (strong, nonatomic) NSMutableArray* goalOperationsArray;
+@property (strong, nonatomic) NSData *goalImage;
 
 -(IBAction)addMoneyClicked:(UIBarButtonItem*)sender;
 
@@ -32,7 +35,7 @@
     [super viewDidLoad];
     self.tableView.alwaysBounceVertical = NO;
     [self fetchAllGoalOperations];
-    
+    [self.navigationController.navigationBar setHidden:YES];
  
 }
 
@@ -48,7 +51,6 @@
     } else {
         self.navigationItem.rightBarButtonItem.enabled = YES;
     }
-
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -158,6 +160,25 @@
     return subString;
 }
 
+- (void) showPhoto {
+    NSLog(@"goal image clicked");
+    
+//    // Create an array to store IDMPhoto objects
+//    NSMutableArray *photos = [NSMutableArray new];
+//    IDMPhoto *photo = [IDMPhoto photoWithImage:[UIImage imageWithData:_goalImage]];
+//    [photos addObject:photo];
+//
+//    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
+//    //browser.scaleImage = [UIImage imageNamed:_chartsArray[indexPath.row]];
+//    //[browser setInitialPageIndex:indexPath.row];
+//    browser.usePopAnimation = YES;
+//    browser.displayArrowButton = NO;
+//    browser.displayDoneButton = YES;
+//    browser.displayActionButton = NO;
+//    browser.disableVerticalSwipe = NO;
+//    [self presentViewController:browser animated:YES completion:nil];
+}
+
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -216,17 +237,24 @@
             infoCell.nextGoalButton.hidden = NO;
         }
         
+        infoCell.delegate = self;
         infoCell.nameLabel.text = goal.name;
         infoCell.priceLabel.text = [NSString stringWithFormat:@"%@ %@ собрано из %@ %@", goal.progress, CURRENCY_SYMBOL, goal.price, CURRENCY_SYMBOL];
-        infoCell.progressMoney.text = [NSString stringWithFormat:@"%@ %@", goal.progress, CURRENCY_SYMBOL];
+        //infoCell.progressMoney.text = [NSString stringWithFormat:@"%@ %@", goal.progress, CURRENCY_SYMBOL];
         infoCell.startDateLabel.text = [NSString stringWithFormat:@"Начало: %@", [self convertDateToString:goal.startDate]];
         infoCell.finalDateLabel.text = [NSString stringWithFormat:@"Финал: %@", [self convertDateToString:goal.finalDate]];
         
-        NSData *goalImage = [NSData dataWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:goal.imagePath]];
+        _goalImage = [NSData dataWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:goal.imagePath]];
         if (goal.imagePath) {
-            infoCell.goalImage.image = [UIImage imageWithData:goalImage];
+            [infoCell.goalImageButton setBackgroundImage:[UIImage imageWithData:_goalImage]
+                                forState:UIControlStateNormal];
+            [infoCell.goalImageButton setBackgroundImage:[UIImage imageWithData:_goalImage]
+                                                forState:UIControlStateHighlighted];
         } else {
-            infoCell.goalImage.image = [UIImage imageNamed:@"no_photo"];
+            [infoCell.goalImageButton setBackgroundImage:[UIImage imageNamed:@"no_photo"]
+                                                forState:UIControlStateNormal];
+            [infoCell.goalImageButton setBackgroundImage:[UIImage imageNamed:@"no_photo"]
+                                                forState:UIControlStateHighlighted];
         }
         
         self.progressPercent = [goal.progress floatValue] / [goal.price floatValue];

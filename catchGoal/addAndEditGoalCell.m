@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 iosDevCourse. All rights reserved.
 //
 
-#import "addAndEditGoalCell.h"
+#import "AddAndEditGoalCell.h"
 
-@implementation addAndEditGoalCell
+@implementation AddAndEditGoalCell
 
 - (void)awakeFromNib {
     

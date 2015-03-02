@@ -8,7 +8,8 @@
 
 #import "LaunchScreenViewController.h"
 #import "LoginViewController.h"
-#import "GoalsTableViewController.h"
+#import "GoalsViewController.h"
+
 
 @interface LaunchScreenViewController ()
 
@@ -19,17 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.navigationController.navigationBar setHidden:YES];
 }
 - (void) viewWillAppear:(BOOL)animated {
     
     PFUser *currentUser = [PFUser currentUser];
-    
     if (currentUser) {
         // do stuff with the user
-        GoalsTableViewController  *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
+        GoalsViewController  *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
         [self.navigationController pushViewController:mainVC animated:YES];
-        
     } else {
         // show the signup or login screen
         LoginViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginVC"];

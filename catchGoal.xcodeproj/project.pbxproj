@@ -47,6 +47,10 @@
 		8B0471A51A6A2EE100CE1F06 /* GoalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0471A41A6A2EE100CE1F06 /* GoalsTableViewController.m */; };
 		8B6A205E1A6AB22100C4FDFE /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */; };
 		8B9E33421A6A32A400CA3778 /* GoalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */; };
+		CED0F1671AA1C3D7007C6B70 /* list-fat-7.png in Resources */ = {isa = PBXBuildFile; fileRef = CED0F1641AA1C3D7007C6B70 /* list-fat-7.png */; };
+		CED0F1681AA1C3D7007C6B70 /* list-simple-7.png in Resources */ = {isa = PBXBuildFile; fileRef = CED0F1651AA1C3D7007C6B70 /* list-simple-7.png */; };
+		CED0F1691AA1C3D7007C6B70 /* list-simple-star-7.png in Resources */ = {isa = PBXBuildFile; fileRef = CED0F1661AA1C3D7007C6B70 /* list-simple-star-7.png */; };
+		CED0F16F1AA1CF54007C6B70 /* GoalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0F16E1AA1CF54007C6B70 /* GoalsViewController.m */; };
 		D3494B6C1A6C0FE60007DD0C /* NewGoalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3494B6B1A6C0FE60007DD0C /* NewGoalTableViewController.m */; };
 		D3494B711A6C14110007DD0C /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3494B701A6C14110007DD0C /* NotificationCenter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DA0DB12A1A923FBC00AAB6AD /* GoalDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA0DB1281A923FBC00AAB6AD /* GoalDataModel.xcdatamodeld */; };
@@ -85,7 +89,7 @@
 		DA5CB91D1A924E2300A66BBF /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5CB8FF1A924E2300A66BBF /* MagicalRecord+Setup.m */; };
 		DA5CB91E1A924E2300A66BBF /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5CB9011A924E2300A66BBF /* MagicalRecord+ShorthandSupport.m */; };
 		DA5CB91F1A924E2300A66BBF /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5CB9031A924E2300A66BBF /* MagicalRecord.m */; };
-		DA6308981A77C13D00F7AB08 /* addAndEditGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6308971A77C13D00F7AB08 /* addAndEditGoalCell.m */; };
+		DA6308981A77C13D00F7AB08 /* AddAndEditGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6308971A77C13D00F7AB08 /* AddAndEditGoalCell.m */; };
 		DA63089A1A77CAF300F7AB08 /* photoPic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6308991A77CAF300F7AB08 /* photoPic@2x.png */; };
 		DA87F4B01A9B89A60085F7F9 /* SCLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87F4A71A9B89A60085F7F9 /* SCLAlertView.m */; };
 		DA87F4B11A9B89A60085F7F9 /* SCLAlertViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87F4A91A9B89A60085F7F9 /* SCLAlertViewResponder.m */; };
@@ -193,6 +197,11 @@
 		8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
 		8B9E33401A6A32A400CA3778 /* GoalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalTableViewCell.h; sourceTree = "<group>"; };
 		8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalTableViewCell.m; sourceTree = "<group>"; };
+		CED0F1641AA1C3D7007C6B70 /* list-fat-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-fat-7.png"; sourceTree = "<group>"; };
+		CED0F1651AA1C3D7007C6B70 /* list-simple-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-simple-7.png"; sourceTree = "<group>"; };
+		CED0F1661AA1C3D7007C6B70 /* list-simple-star-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-simple-star-7.png"; sourceTree = "<group>"; };
+		CED0F16D1AA1CF54007C6B70 /* GoalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalsViewController.h; sourceTree = "<group>"; };
+		CED0F16E1AA1CF54007C6B70 /* GoalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalsViewController.m; sourceTree = "<group>"; };
 		D3494B6A1A6C0FE60007DD0C /* NewGoalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGoalTableViewController.h; sourceTree = "<group>"; };
 		D3494B6B1A6C0FE60007DD0C /* NewGoalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGoalTableViewController.m; sourceTree = "<group>"; };
 		D3494B701A6C14110007DD0C /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -264,8 +273,8 @@
 		DA5CB9041A924E2300A66BBF /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		DA5CB9051A924E2300A66BBF /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
 		DA5CB9201A924E6700A66BBF /* MagicalRecordDeprecated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MagicalRecordDeprecated.h; sourceTree = "<group>"; };
-		DA6308961A77C13D00F7AB08 /* addAndEditGoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addAndEditGoalCell.h; sourceTree = "<group>"; };
-		DA6308971A77C13D00F7AB08 /* addAndEditGoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addAndEditGoalCell.m; sourceTree = "<group>"; };
+		DA6308961A77C13D00F7AB08 /* AddAndEditGoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAndEditGoalCell.h; sourceTree = "<group>"; };
+		DA6308971A77C13D00F7AB08 /* AddAndEditGoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAndEditGoalCell.m; sourceTree = "<group>"; };
 		DA6308991A77CAF300F7AB08 /* photoPic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photoPic@2x.png"; sourceTree = "<group>"; };
 		DA87F4A61A9B89A60085F7F9 /* SCLAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertView.h; sourceTree = "<group>"; };
 		DA87F4A71A9B89A60085F7F9 /* SCLAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertView.m; sourceTree = "<group>"; };
@@ -390,6 +399,8 @@
 		790B7F1C1A69C3AE009C1F1B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DAE448731A6B15C20041F449 /* Font */,
+				DAE448701A6B0C000041F449 /* Images */,
 				790B7F1D1A69C3AE009C1F1B /* Info.plist */,
 				790B7F1E1A69C3AE009C1F1B /* main.m */,
 				790B7F4F1A69C62E009C1F1B /* catchGoal-Prefix.pch */,
@@ -428,6 +439,7 @@
 				79ABEEC01A827D8F00DCE5F0 /* Datepicker */,
 				7942FE2F1A8FD1E00035F411 /* UIActionSheet+BlockExtensions.h */,
 				7942FE301A8FD1E00035F411 /* UIActionSheet+BlockExtensions.m */,
+				DABF0E571A6AD96800105669 /* KAProgressLabel */,
 			);
 			name = "Frameworks\\Libraries";
 			sourceTree = "<group>";
@@ -437,9 +449,6 @@
 			children = (
 				DA87F4A51A9B89A60085F7F9 /* SCLAlertView */,
 				DA6308951A77C0E600F7AB08 /* Cells */,
-				DAE448731A6B15C20041F449 /* Font */,
-				DAE448701A6B0C000041F449 /* Images */,
-				DABF0E571A6AD96800105669 /* KAProgressLabel */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -542,6 +551,8 @@
 				8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */,
 				8B0471A31A6A2EE100CE1F06 /* GoalsTableViewController.h */,
 				8B0471A41A6A2EE100CE1F06 /* GoalsTableViewController.m */,
+				CED0F16D1AA1CF54007C6B70 /* GoalsViewController.h */,
+				CED0F16E1AA1CF54007C6B70 /* GoalsViewController.m */,
 			);
 			name = Goals;
 			sourceTree = "<group>";
@@ -703,8 +714,8 @@
 			isa = PBXGroup;
 			children = (
 				DA2AD3D21A90F98400BA7E4C /* Detail VC */,
-				DA6308961A77C13D00F7AB08 /* addAndEditGoalCell.h */,
-				DA6308971A77C13D00F7AB08 /* addAndEditGoalCell.m */,
+				DA6308961A77C13D00F7AB08 /* AddAndEditGoalCell.h */,
+				DA6308971A77C13D00F7AB08 /* AddAndEditGoalCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -740,6 +751,9 @@
 		DAE448701A6B0C000041F449 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CED0F1641AA1C3D7007C6B70 /* list-fat-7.png */,
+				CED0F1651AA1C3D7007C6B70 /* list-simple-7.png */,
+				CED0F1661AA1C3D7007C6B70 /* list-simple-star-7.png */,
 				DA8AB27C1AA0FB93006CB011 /* logo.png */,
 				79736B8D1A9124D20046947E /* addMoney@2x.png */,
 				79736B8F1A9125260046947E /* addMoney@3x.png */,
@@ -862,12 +876,15 @@
 				DAE391E61A822A0C00B60CC2 /* goalCurrentSum.png in Resources */,
 				DA1C35DE1A8124C000A3A931 /* logout@2x.png in Resources */,
 				DAE391E21A82236C00B60CC2 /* goalName.png in Resources */,
+				CED0F1671AA1C3D7007C6B70 /* list-fat-7.png in Resources */,
 				DA1FCC851A81024800CA44C7 /* testPic2.png in Resources */,
 				DA63089A1A77CAF300F7AB08 /* photoPic@2x.png in Resources */,
 				DAE448791A6B15F40041F449 /* Roboto-Regular.ttf in Resources */,
+				CED0F1691AA1C3D7007C6B70 /* list-simple-star-7.png in Resources */,
 				DAE391EA1A82345500B60CC2 /* goalPic.png in Resources */,
 				DA1FCC861A81024800CA44C7 /* testPic3.png in Resources */,
 				DAE448771A6B15F20041F449 /* Roboto-Medium.ttf in Resources */,
+				CED0F1681AA1C3D7007C6B70 /* list-simple-7.png in Resources */,
 				DAFB806B1A6C4EFA006F28DF /* arrowForward.png in Resources */,
 				DA9E2FE91A80E55D00BC08B2 /* OpenSans-Regular.ttf in Resources */,
 				79736B901A9125260046947E /* addMoney@3x.png in Resources */,
@@ -925,7 +942,7 @@
 				DA5CB91F1A924E2300A66BBF /* MagicalRecord.m in Sources */,
 				DA5CB91C1A924E2300A66BBF /* MagicalRecord+Options.m in Sources */,
 				790B7F5B1A69CA3E009C1F1B /* LaunchScreenViewController.m in Sources */,
-				DA6308981A77C13D00F7AB08 /* addAndEditGoalCell.m in Sources */,
+				DA6308981A77C13D00F7AB08 /* AddAndEditGoalCell.m in Sources */,
 				DA5CB9171A924E2300A66BBF /* NSPersistentStore+MagicalRecord.m in Sources */,
 				790B7F521A69CA00009C1F1B /* LoginViewController.m in Sources */,
 				DA5CB9071A924E2300A66BBF /* NSAttributeDescription+MagicalDataImport.m in Sources */,
@@ -954,6 +971,7 @@
 				DA5CB90E1A924E2300A66BBF /* NSManagedObject+MagicalDataImport.m in Sources */,
 				8B9E33421A6A32A400CA3778 /* GoalTableViewCell.m in Sources */,
 				DABF0E5C1A6AD96800105669 /* KAProgressLabel.m in Sources */,
+				CED0F16F1AA1CF54007C6B70 /* GoalsViewController.m in Sources */,
 				DA2AD3D11A90F97F00BA7E4C /* goalInfoCell.m in Sources */,
 				DA5CB90A1A924E2300A66BBF /* NSObject+MagicalDataImport.m in Sources */,
 				DA5CB9181A924E2300A66BBF /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
@@ -1099,6 +1117,7 @@
 				INFOPLIST_FILE = catchGoal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1120,6 +1139,7 @@
 				INFOPLIST_FILE = catchGoal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
