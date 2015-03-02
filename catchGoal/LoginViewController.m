@@ -89,6 +89,11 @@
 
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = YES;
+
+}
+
 #pragma mark - Underline Button text
 
 -(void) underlineString:(NSString*) string button: (UIButton*) button {

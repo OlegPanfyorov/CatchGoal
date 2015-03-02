@@ -44,6 +44,14 @@
 
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = NO;
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = YES;
+}
+
 - (void) lowAlfa:(UIButton*) sender {
     sender.alpha = 0.5f;
 }
