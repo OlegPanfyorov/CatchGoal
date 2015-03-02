@@ -14,6 +14,9 @@
 @interface GoalsViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) CGFloat progress;
+@property (strong, nonatomic) NSArray* goalsArray;
+@property (strong, nonatomic) NSIndexPath* indexPath;
+
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender;
 @end
 
@@ -21,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     UIEdgeInsets inset = {1,0,10,0};
     self.tableView.contentInset = inset;
     self.tableView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
@@ -33,6 +37,7 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.goalsArray = [NSArray arrayWithArray:[DataSingletone sharedModel].goalsArray];
     [self.tableView reloadData];
 }
 
@@ -47,14 +52,15 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return  [[DataSingletone sharedModel].goalsArray count];
+    return  [self.goalsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.indexPath = indexPath;
     static NSString *identifier = @"cell";
     GoalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     [cell.lineProgressView setProgress:0];
-    Goal *goal = [DataSingletone sharedModel].goalsArray[indexPath.row];
+    Goal *goal = [self.goalsArray objectAtIndex:indexPath.row];
     cell.nameLabel.text = goal.name;
     cell.priceLabel.text = [NSString stringWithFormat:@"%@ собрано", goal.progress];
     
@@ -100,11 +106,24 @@
     });
 }
 
+- (void) fetchGoalsWithCompletedFlag:(BOOL) isCompleted {
+    if (isCompleted) {
+        NSPredicate *isCompleted = [NSPredicate predicateWithFormat:@"complited == YES"];
+        self.goalsArray = [NSArray arrayWithArray:[Goal findAllWithPredicate:isCompleted]];
+        [self.tableView reloadData];
+    } else {
+        self.goalsArray = [NSArray arrayWithArray:[DataSingletone sharedModel].goalsArray];
+        [self.tableView reloadData];
+    }
+}
+
 - (IBAction)allGoalsPressed:(UIButton*)sender {
-    
+    [self fetchGoalsWithCompletedFlag:NO];
+
 }
 - (IBAction)complitedGoalsPressed:(UIButton*)sender {
-    
+    [self fetchGoalsWithCompletedFlag:YES];
+
 }
 
 #pragma mark - Navigation
@@ -113,8 +132,7 @@
     
     if ([segue.identifier isEqualToString:@"showDetailSegue"]) {
         DetailTableViewController *detailTableViewController = (DetailTableViewController *)segue.destinationViewController;
-        UITableViewCell *cell = (UITableViewCell *)sender;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         detailTableViewController.selectedItemInArray = indexPath.row;
     }
 }
