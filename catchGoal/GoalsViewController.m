@@ -14,8 +14,6 @@
 @interface GoalsViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) CGFloat progress;
-@property (strong, nonatomic) NSArray* goalsArray;
-@property (strong, nonatomic) NSIndexPath* indexPath;
 
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender;
 @end
@@ -37,8 +35,7 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.goalsArray = [NSArray arrayWithArray:[DataSingletone sharedModel].goalsArray];
-    [self.tableView reloadData];
+    [self fetchGoalsWithCompletedFlag:NO];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -52,15 +49,15 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return  [self.goalsArray count];
+    return  [[DataSingletone sharedModel].goalsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.indexPath = indexPath;
+
     static NSString *identifier = @"cell";
     GoalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     [cell.lineProgressView setProgress:0];
-    Goal *goal = [self.goalsArray objectAtIndex:indexPath.row];
+    Goal *goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:indexPath.row];
     cell.nameLabel.text = goal.name;
     cell.priceLabel.text = [NSString stringWithFormat:@"%@ собрано", goal.progress];
     
@@ -107,12 +104,14 @@
 }
 
 - (void) fetchGoalsWithCompletedFlag:(BOOL) isCompleted {
+    [DataSingletone sharedModel].goalsArray = [NSMutableArray new];
     if (isCompleted) {
         NSPredicate *isCompleted = [NSPredicate predicateWithFormat:@"complited == YES"];
-        self.goalsArray = [NSArray arrayWithArray:[Goal findAllWithPredicate:isCompleted]];
+        [DataSingletone sharedModel].goalsArray = [NSMutableArray arrayWithArray:[Goal findAllWithPredicate:isCompleted]];
         [self.tableView reloadData];
     } else {
-        self.goalsArray = [NSArray arrayWithArray:[DataSingletone sharedModel].goalsArray];
+        NSPredicate *isCompleted = [NSPredicate predicateWithFormat:@"complited == NO"];
+        [DataSingletone sharedModel].goalsArray = [NSMutableArray arrayWithArray:[Goal findAllWithPredicate:isCompleted]];
         [self.tableView reloadData];
     }
 }
