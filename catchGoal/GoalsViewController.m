@@ -88,14 +88,23 @@
     return cell;
 }
 
+#pragma mark - Actions
+
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender {
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [PFUser logOut];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [self.navigationController popToRootViewControllerAnimated:NO];
         });
     });
+}
+
+- (IBAction)allGoalsPressed:(UIButton*)sender {
+    
+}
+- (IBAction)complitedGoalsPressed:(UIButton*)sender {
+    
 }
 
 #pragma mark - Navigation

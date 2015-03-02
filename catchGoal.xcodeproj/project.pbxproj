@@ -44,7 +44,6 @@
 		79736B8E1A9124D20046947E /* addMoney@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79736B8D1A9124D20046947E /* addMoney@2x.png */; };
 		79736B901A9125260046947E /* addMoney@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79736B8F1A9125260046947E /* addMoney@3x.png */; };
 		79ABEEC31A827D9A00DCE5F0 /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79ABEEC21A827D9A00DCE5F0 /* RMDateSelectionViewController.m */; };
-		8B0471A51A6A2EE100CE1F06 /* GoalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0471A41A6A2EE100CE1F06 /* GoalsTableViewController.m */; };
 		8B6A205E1A6AB22100C4FDFE /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */; };
 		8B9E33421A6A32A400CA3778 /* GoalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */; };
 		CED0F1671AA1C3D7007C6B70 /* list-fat-7.png in Resources */ = {isa = PBXBuildFile; fileRef = CED0F1641AA1C3D7007C6B70 /* list-fat-7.png */; };
@@ -191,8 +190,6 @@
 		79736B8F1A9125260046947E /* addMoney@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addMoney@3x.png"; sourceTree = "<group>"; };
 		79ABEEC11A827D9A00DCE5F0 /* RMDateSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDateSelectionViewController.h; sourceTree = "<group>"; };
 		79ABEEC21A827D9A00DCE5F0 /* RMDateSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDateSelectionViewController.m; sourceTree = "<group>"; };
-		8B0471A31A6A2EE100CE1F06 /* GoalsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalsTableViewController.h; sourceTree = "<group>"; };
-		8B0471A41A6A2EE100CE1F06 /* GoalsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalsTableViewController.m; sourceTree = "<group>"; };
 		8B6A205C1A6AB22100C4FDFE /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
 		8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
 		8B9E33401A6A32A400CA3778 /* GoalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalTableViewCell.h; sourceTree = "<group>"; };
@@ -549,8 +546,6 @@
 			children = (
 				8B9E33401A6A32A400CA3778 /* GoalTableViewCell.h */,
 				8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */,
-				8B0471A31A6A2EE100CE1F06 /* GoalsTableViewController.h */,
-				8B0471A41A6A2EE100CE1F06 /* GoalsTableViewController.m */,
 				CED0F16D1AA1CF54007C6B70 /* GoalsViewController.h */,
 				CED0F16E1AA1CF54007C6B70 /* GoalsViewController.m */,
 			);
@@ -953,7 +948,6 @@
 				DA87F4B21A9B89A60085F7F9 /* SCLAlertViewStyleKit.m in Sources */,
 				790B7F221A69C3AE009C1F1B /* AppDelegate.m in Sources */,
 				DA87F4B31A9B89A60085F7F9 /* SCLButton.m in Sources */,
-				8B0471A51A6A2EE100CE1F06 /* GoalsTableViewController.m in Sources */,
 				790B7F581A69CA2C009C1F1B /* ForgotPasswordViewController.m in Sources */,
 				790B7F1F1A69C3AE009C1F1B /* main.m in Sources */,
 				79ABEEC31A827D9A00DCE5F0 /* RMDateSelectionViewController.m in Sources */,
