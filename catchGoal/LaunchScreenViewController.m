@@ -28,11 +28,11 @@
     if (currentUser) {
         // do stuff with the user
         GoalsViewController  *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
-        [self.navigationController pushViewController:mainVC animated:YES];
+        [self.navigationController pushViewController:mainVC animated:NO];
     } else {
         // show the signup or login screen
         LoginViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
-        [self.navigationController pushViewController:loginVC animated:YES];
+        [self.navigationController pushViewController:loginVC animated:NO];
     }
 }
 

@@ -24,9 +24,10 @@
     UIEdgeInsets inset = {1,0,10,0};
     self.tableView.contentInset = inset;
     self.tableView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
-    self.navigationController.navigationBarHidden = YES;
+    [self.navigationController.navigationBar setHidden:NO];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.tableView.alwaysBounceVertical = NO;
 }
 

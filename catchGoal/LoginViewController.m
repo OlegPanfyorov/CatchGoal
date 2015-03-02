@@ -81,7 +81,8 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    
+    self.navigationController.navigationBarHidden = NO;
+
     self.loginTextField.text = @"";
     self.passwordTextField.text = @"";
 

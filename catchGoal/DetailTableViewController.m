@@ -35,7 +35,7 @@
     [super viewDidLoad];
     self.tableView.alwaysBounceVertical = NO;
     [self fetchAllGoalOperations];
-    [self.navigationController.navigationBar setHidden:YES];
+    [self.navigationController.navigationBar setHidden:NO];
  
 }
 
