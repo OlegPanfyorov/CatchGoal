@@ -612,6 +612,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BtX-1k-WMM">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="BzT-DL-4Vx" kind="modal" id="aLc-Rd-I7s"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -1199,13 +1202,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dzf-8r-INz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2307" y="1110"/>
+            <point key="canvasLocation" x="2379" y="1110"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ILm-xW-0oo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BzT-DL-4Vx" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="OVa-PF-N00"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yNB-M6-DBo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
