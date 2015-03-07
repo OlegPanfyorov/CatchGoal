@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWRevealTableViewCell.h"
 
-@interface GoalTableViewCell : UITableViewCell
+@interface GoalTableViewCell : SWRevealTableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;

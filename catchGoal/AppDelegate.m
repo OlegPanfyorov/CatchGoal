@@ -46,7 +46,7 @@
         
     });
     
-    [DataSingletone sharedModel].goalsArray = [[Goal MR_findAll] mutableCopy];
+   // [DataSingletone sharedModel].goalsArray = [[Goal MR_findAll] mutableCopy];
     //[Goal MR_truncateAll];
     
     

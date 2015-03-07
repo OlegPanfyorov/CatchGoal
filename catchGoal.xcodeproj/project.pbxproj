@@ -43,6 +43,18 @@
 		79548FFD1A6C37BB005AE681 /* DataSingletone.m in Sources */ = {isa = PBXBuildFile; fileRef = 79548FFC1A6C37BB005AE681 /* DataSingletone.m */; };
 		79736B8E1A9124D20046947E /* addMoney@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79736B8D1A9124D20046947E /* addMoney@2x.png */; };
 		79736B901A9125260046947E /* addMoney@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79736B8F1A9125260046947E /* addMoney@3x.png */; };
+		798FA0641AABA34800F03789 /* Begur_Catalonia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 798FA0631AABA34800F03789 /* Begur_Catalonia.jpg */; };
+		798FA0671AABA3CE00F03789 /* SWRevealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 798FA0661AABA3CE00F03789 /* SWRevealTableViewCell.m */; };
+		798FA06E1AABA69000F03789 /* airplane.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA0681AABA69000F03789 /* airplane.png */; };
+		798FA06F1AABA69000F03789 /* airplane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA0691AABA69000F03789 /* airplane@2x.png */; };
+		798FA0701AABA69000F03789 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA06A1AABA69000F03789 /* heart.png */; };
+		798FA0711AABA69000F03789 /* heart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA06B1AABA69000F03789 /* heart@2x.png */; };
+		798FA0721AABA69000F03789 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA06C1AABA69000F03789 /* star.png */; };
+		798FA0731AABA69000F03789 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA06D1AABA69000F03789 /* star@2x.png */; };
+		798FA0751AABAA9D00F03789 /* interior.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 798FA0741AABAA9D00F03789 /* interior.jpg */; };
+		798FA07F1AABAE7200F03789 /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA07C1AABAE7200F03789 /* delete@2x.png */; };
+		798FA0801AABAE7200F03789 /* done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA07D1AABAE7200F03789 /* done@2x.png */; };
+		798FA0811AABAE7200F03789 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA07E1AABAE7200F03789 /* edit@2x.png */; };
 		79ABEEC31A827D9A00DCE5F0 /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79ABEEC21A827D9A00DCE5F0 /* RMDateSelectionViewController.m */; };
 		8B6A205E1A6AB22100C4FDFE /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */; };
 		8B9E33421A6A32A400CA3778 /* GoalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */; };
@@ -188,6 +200,19 @@
 		79548FFC1A6C37BB005AE681 /* DataSingletone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSingletone.m; sourceTree = "<group>"; };
 		79736B8D1A9124D20046947E /* addMoney@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addMoney@2x.png"; sourceTree = "<group>"; };
 		79736B8F1A9125260046947E /* addMoney@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addMoney@3x.png"; sourceTree = "<group>"; };
+		798FA0631AABA34800F03789 /* Begur_Catalonia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Begur_Catalonia.jpg; sourceTree = "<group>"; };
+		798FA0651AABA3CE00F03789 /* SWRevealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealTableViewCell.h; sourceTree = "<group>"; };
+		798FA0661AABA3CE00F03789 /* SWRevealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealTableViewCell.m; sourceTree = "<group>"; };
+		798FA0681AABA69000F03789 /* airplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airplane.png; sourceTree = "<group>"; };
+		798FA0691AABA69000F03789 /* airplane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "airplane@2x.png"; sourceTree = "<group>"; };
+		798FA06A1AABA69000F03789 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		798FA06B1AABA69000F03789 /* heart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart@2x.png"; sourceTree = "<group>"; };
+		798FA06C1AABA69000F03789 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		798FA06D1AABA69000F03789 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
+		798FA0741AABAA9D00F03789 /* interior.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = interior.jpg; sourceTree = "<group>"; };
+		798FA07C1AABAE7200F03789 /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
+		798FA07D1AABAE7200F03789 /* done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done@2x.png"; sourceTree = "<group>"; };
+		798FA07E1AABAE7200F03789 /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@2x.png"; sourceTree = "<group>"; };
 		79ABEEC11A827D9A00DCE5F0 /* RMDateSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDateSelectionViewController.h; sourceTree = "<group>"; };
 		79ABEEC21A827D9A00DCE5F0 /* RMDateSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDateSelectionViewController.m; sourceTree = "<group>"; };
 		8B6A205C1A6AB22100C4FDFE /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
@@ -444,6 +469,8 @@
 		790B7F431A69C5AB009C1F1B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				798FA0651AABA3CE00F03789 /* SWRevealTableViewCell.h */,
+				798FA0661AABA3CE00F03789 /* SWRevealTableViewCell.m */,
 				DA87F4A51A9B89A60085F7F9 /* SCLAlertView */,
 				DA6308951A77C0E600F7AB08 /* Cells */,
 			);
@@ -746,6 +773,17 @@
 		DAE448701A6B0C000041F449 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				798FA07C1AABAE7200F03789 /* delete@2x.png */,
+				798FA07D1AABAE7200F03789 /* done@2x.png */,
+				798FA07E1AABAE7200F03789 /* edit@2x.png */,
+				798FA0741AABAA9D00F03789 /* interior.jpg */,
+				798FA0681AABA69000F03789 /* airplane.png */,
+				798FA0691AABA69000F03789 /* airplane@2x.png */,
+				798FA06A1AABA69000F03789 /* heart.png */,
+				798FA06B1AABA69000F03789 /* heart@2x.png */,
+				798FA06C1AABA69000F03789 /* star.png */,
+				798FA06D1AABA69000F03789 /* star@2x.png */,
+				798FA0631AABA34800F03789 /* Begur_Catalonia.jpg */,
 				CED0F1641AA1C3D7007C6B70 /* list-fat-7.png */,
 				CED0F1651AA1C3D7007C6B70 /* list-simple-7.png */,
 				CED0F1661AA1C3D7007C6B70 /* list-simple-star-7.png */,
@@ -871,6 +909,8 @@
 				DAE391E61A822A0C00B60CC2 /* goalCurrentSum.png in Resources */,
 				DA1C35DE1A8124C000A3A931 /* logout@2x.png in Resources */,
 				DAE391E21A82236C00B60CC2 /* goalName.png in Resources */,
+				798FA0711AABA69000F03789 /* heart@2x.png in Resources */,
+				798FA0751AABAA9D00F03789 /* interior.jpg in Resources */,
 				CED0F1671AA1C3D7007C6B70 /* list-fat-7.png in Resources */,
 				DA1FCC851A81024800CA44C7 /* testPic2.png in Resources */,
 				DA63089A1A77CAF300F7AB08 /* photoPic@2x.png in Resources */,
@@ -878,27 +918,36 @@
 				CED0F1691AA1C3D7007C6B70 /* list-simple-star-7.png in Resources */,
 				DAE391EA1A82345500B60CC2 /* goalPic.png in Resources */,
 				DA1FCC861A81024800CA44C7 /* testPic3.png in Resources */,
+				798FA0641AABA34800F03789 /* Begur_Catalonia.jpg in Resources */,
 				DAE448771A6B15F20041F449 /* Roboto-Medium.ttf in Resources */,
 				CED0F1681AA1C3D7007C6B70 /* list-simple-7.png in Resources */,
+				798FA06E1AABA69000F03789 /* airplane.png in Resources */,
 				DAFB806B1A6C4EFA006F28DF /* arrowForward.png in Resources */,
 				DA9E2FE91A80E55D00BC08B2 /* OpenSans-Regular.ttf in Resources */,
 				79736B901A9125260046947E /* addMoney@3x.png in Resources */,
 				79736B8E1A9124D20046947E /* addMoney@2x.png in Resources */,
 				DA8AB2771AA0E82D006CB011 /* loginPic@2x.png in Resources */,
 				DAE391E81A822AC400B60CC2 /* goalExpDate.png in Resources */,
+				798FA0811AABAE7200F03789 /* edit@2x.png in Resources */,
+				798FA0731AABA69000F03789 /* star@2x.png in Resources */,
+				798FA07F1AABAE7200F03789 /* delete@2x.png in Resources */,
 				790B7F281A69C3AE009C1F1B /* Main.storyboard in Resources */,
+				798FA06F1AABA69000F03789 /* airplane@2x.png in Resources */,
 				DA8AB27D1AA0FB93006CB011 /* logo.png in Resources */,
 				DA1FCC841A81024800CA44C7 /* testPic1.png in Resources */,
 				DA8AB2791AA0E922006CB011 /* passPic@2x.png in Resources */,
 				790B7F2D1A69C3AE009C1F1B /* LaunchScreen.xib in Resources */,
 				DAE4487B1A6B15F70041F449 /* Roboto-Light.ttf in Resources */,
 				7942FE331A8FF3360035F411 /* no_photo.png in Resources */,
+				798FA0701AABA69000F03789 /* heart.png in Resources */,
 				DAFB806E1A6C4FB9006F28DF /* arrowBack.png in Resources */,
+				798FA0721AABA69000F03789 /* star.png in Resources */,
 				DA8AB2751AA0E46F006CB011 /* bg.png in Resources */,
 				DAE391E41A82262D00B60CC2 /* goalTotalSum.png in Resources */,
 				790B7F2A1A69C3AE009C1F1B /* Images.xcassets in Resources */,
 				DA9E2FEB1A80E56000BC08B2 /* OpenSans-Semibold.ttf in Resources */,
 				DA1C35E01A8125BC00A3A931 /* logout@3x.png in Resources */,
+				798FA0801AABAE7200F03789 /* done@2x.png in Resources */,
 				DA8AB27B1AA0F6FA006CB011 /* emalPic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -967,6 +1016,7 @@
 				DABF0E5C1A6AD96800105669 /* KAProgressLabel.m in Sources */,
 				CED0F16F1AA1CF54007C6B70 /* GoalsViewController.m in Sources */,
 				DA2AD3D11A90F97F00BA7E4C /* goalInfoCell.m in Sources */,
+				798FA0671AABA3CE00F03789 /* SWRevealTableViewCell.m in Sources */,
 				DA5CB90A1A924E2300A66BBF /* NSObject+MagicalDataImport.m in Sources */,
 				DA5CB9181A924E2300A66BBF /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				79548FFD1A6C37BB005AE681 /* DataSingletone.m in Sources */,
