@@ -25,8 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UIEdgeInsets inset = {1,0,10,0};
-    self.tableView.contentInset = inset;
     self.tableView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
     [self.navigationController.navigationBar setHidden:NO];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -167,13 +165,14 @@
                                {
                                    self.indexPath = [self.tableView indexPathForCell:cell];
                                    Goal* goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:self.indexPath.row];
+                                   
                                    if (goal.imagePath) {
                                        NSError *error;
                                        NSString *imgToRemove = [NSHomeDirectory() stringByAppendingPathComponent:goal.imagePath];
                                        [[NSFileManager defaultManager] removeItemAtPath:imgToRemove error:&error];
                                        NSLog( @"Image has been deteted at Path - %@", goal.imagePath);
-                                       
                                    }
+                                   
                                    [goal deleteEntity];
                                    [[DataSingletone sharedModel] saveContext];
                                    [[DataSingletone sharedModel].goalsArray removeObjectAtIndex:self.indexPath.row];
