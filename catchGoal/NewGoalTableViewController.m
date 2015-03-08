@@ -15,6 +15,8 @@
 #import "UIActionSheet+BlockExtensions.h"
 #import "Goal.h"
 #import "GoalOperations.h"
+#import "SCLAlertView.h"
+
 static NSInteger const kNavAndStatusBarHeight = 64;
 
 @interface NewGoalTableViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -181,10 +183,12 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     self.goal.finalDate = self.finalDate;
     self.goal.imagePath = self.imagePath;
     self.goal.complited = [NSNumber numberWithBool:NO];
+    
     [[DataSingletone sharedModel].goalsArray addObject:self.goal];
     [[DataSingletone sharedModel] saveContext];
     
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 - (void)setImageForGoal:(UIImage*)image {

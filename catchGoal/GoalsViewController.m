@@ -15,6 +15,7 @@
 @interface GoalsViewController () <UITableViewDelegate, UITableViewDataSource,SWRevealTableViewCellDelegate, SWRevealTableViewCellDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) CGFloat progress;
+@property (strong, nonatomic) NSIndexPath* indexPath;
 
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender;
 @end
@@ -59,7 +60,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
     static NSString *identifier = @"cell";
     GoalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     [cell.lineProgressView setProgress:0];
@@ -137,7 +137,15 @@
     
     SWCellButtonItem *item1 = [SWCellButtonItem itemWithImage:[UIImage imageNamed:@"done.png"] handler:^(SWCellButtonItem *item, SWRevealTableViewCell *cell)
                                {
-                                   NSLog( @"Star Tapped");
+                                   self.indexPath = [self.tableView indexPathForCell:cell];
+                                   Goal* goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:self.indexPath.row];
+                                   int sumLeft = [goal.price intValue] - [goal.progress intValue];
+                                   goal.progress = [NSNumber numberWithInt:sumLeft + [goal.progress intValue]];
+                                   goal.complited = [NSNumber numberWithBool:YES];
+                                   [[DataSingletone sharedModel].goalsArray removeObjectAtIndex:self.indexPath.row];
+                                   [[DataSingletone sharedModel] saveContext];
+                                   [self.tableView deleteRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                                   NSLog( @"Heart Tapped %d", sumLeft);
                                    return YES;
                                }];
     
@@ -157,7 +165,19 @@
     
     SWCellButtonItem *item3 = [SWCellButtonItem itemWithImage:[UIImage imageNamed:@"delete.png"] handler:^(SWCellButtonItem *item, SWRevealTableViewCell *cell)
                                {
-                                   NSLog( @"Airplane Tapped");
+                                   self.indexPath = [self.tableView indexPathForCell:cell];
+                                   Goal* goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:self.indexPath.row];
+                                   if (goal.imagePath) {
+                                       NSError *error;
+                                       NSString *imgToRemove = [NSHomeDirectory() stringByAppendingPathComponent:goal.imagePath];
+                                       [[NSFileManager defaultManager] removeItemAtPath:imgToRemove error:&error];
+                                       NSLog( @"Image has been deteted at Path - %@", goal.imagePath);
+                                       
+                                   }
+                                   [goal deleteEntity];
+                                   [[DataSingletone sharedModel] saveContext];
+                                   [[DataSingletone sharedModel].goalsArray removeObjectAtIndex:self.indexPath.row];
+                                   [self.tableView deleteRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationFade];
                                    return YES;
                                }];
     
