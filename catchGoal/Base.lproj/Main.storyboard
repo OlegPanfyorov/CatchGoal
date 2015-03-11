@@ -6,12 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="OpenSans-Regular.ttf">
-            <string>OpenSans</string>
-            <string>OpenSans</string>
-            <string>OpenSans</string>
-            <string>OpenSans</string>
-        </mutableArray>
         <mutableArray key="OpenSans-Semibold.ttf">
             <string>OpenSans-Semibold</string>
             <string>OpenSans-Semibold</string>
@@ -32,6 +26,10 @@
             <string>Roboto-Medium</string>
         </mutableArray>
         <mutableArray key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
@@ -984,7 +982,7 @@
                                                         <constraint firstAttribute="height" constant="44" id="Gz4-vP-5Yy"/>
                                                     </constraints>
                                                     <color key="textColor" red="0.32549019610000002" green="0.41568627450000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -996,7 +994,7 @@
                                                     </connections>
                                                 </textField>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalName.png" translatesAutoresizingMaskIntoConstraints="NO" id="GCT-DJ-hHg">
-                                                    <rect key="frame" x="23" y="23" width="9" height="13"/>
+                                                    <rect key="frame" x="23" y="22" width="9" height="13"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="9" id="0qM-Zp-bBC"/>
                                                         <constraint firstAttribute="height" constant="13" id="jJT-NG-uNl"/>
@@ -1007,7 +1005,7 @@
                                                 <constraint firstItem="GCT-DJ-hHg" firstAttribute="leading" secondItem="Z1H-x9-hdE" secondAttribute="leadingMargin" constant="15" id="8bI-rp-o3H"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ofy-L6-2LN" secondAttribute="trailing" priority="777" constant="10" id="DTp-fj-lTb"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ofy-L6-2LN" secondAttribute="bottom" id="KEZ-84-Uaf"/>
-                                                <constraint firstItem="GCT-DJ-hHg" firstAttribute="top" secondItem="Z1H-x9-hdE" secondAttribute="topMargin" constant="15" id="OYq-7N-axR"/>
+                                                <constraint firstItem="GCT-DJ-hHg" firstAttribute="top" secondItem="Z1H-x9-hdE" secondAttribute="topMargin" constant="14" id="OYq-7N-axR"/>
                                                 <constraint firstItem="Ofy-L6-2LN" firstAttribute="leading" secondItem="Z1H-x9-hdE" secondAttribute="leading" priority="777" constant="10" id="cu8-qI-Nar"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1024,7 +1022,7 @@
                                                         <constraint firstAttribute="height" constant="44" id="rJE-dy-1gI"/>
                                                     </constraints>
                                                     <color key="textColor" red="0.32549019610000002" green="0.41568627450000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -1064,7 +1062,7 @@
                                                         <constraint firstAttribute="height" constant="44" id="ZBm-eQ-QnC"/>
                                                     </constraints>
                                                     <color key="textColor" red="0.32549019610000002" green="0.41568627450000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -1076,7 +1074,7 @@
                                                     </connections>
                                                 </textField>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalCurrentSum.png" translatesAutoresizingMaskIntoConstraints="NO" id="HE2-cw-hUD">
-                                                    <rect key="frame" x="23" y="23" width="13" height="12"/>
+                                                    <rect key="frame" x="23" y="22" width="13" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="13" id="10N-s3-oPn"/>
                                                         <constraint firstAttribute="height" constant="12" id="xz5-FP-KCq"/>
@@ -1084,7 +1082,7 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="HE2-cw-hUD" firstAttribute="top" secondItem="xyI-wf-eci" secondAttribute="topMargin" constant="15" id="A6Z-g7-NdO"/>
+                                                <constraint firstItem="HE2-cw-hUD" firstAttribute="top" secondItem="xyI-wf-eci" secondAttribute="topMargin" constant="14" id="A6Z-g7-NdO"/>
                                                 <constraint firstItem="HE2-cw-hUD" firstAttribute="leading" secondItem="xyI-wf-eci" secondAttribute="leadingMargin" constant="15" id="ZpN-0O-wa7"/>
                                                 <constraint firstItem="b6x-Wa-28V" firstAttribute="leading" secondItem="xyI-wf-eci" secondAttribute="leading" priority="777" constant="10" id="c2X-dw-Txq"/>
                                                 <constraint firstAttribute="bottom" secondItem="b6x-Wa-28V" secondAttribute="bottom" id="fRq-26-isq"/>
@@ -1104,7 +1102,7 @@
                                                         <constraint firstAttribute="height" constant="44" id="gsQ-Xq-t0j"/>
                                                     </constraints>
                                                     <color key="textColor" red="0.32549019610000002" green="0.41568627450000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -1116,7 +1114,7 @@
                                                     </connections>
                                                 </textField>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalExpDate.png" translatesAutoresizingMaskIntoConstraints="NO" id="tsv-8q-M8L">
-                                                    <rect key="frame" x="23" y="23" width="13" height="13"/>
+                                                    <rect key="frame" x="23" y="22" width="13" height="13"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="13" id="qLB-9g-pZM"/>
                                                         <constraint firstAttribute="height" constant="13" id="zi0-4n-AMF"/>
@@ -1128,7 +1126,7 @@
                                                 <constraint firstItem="tsv-8q-M8L" firstAttribute="leading" secondItem="OYp-zI-HUK" secondAttribute="leadingMargin" constant="15" id="A4I-9x-QNI"/>
                                                 <constraint firstAttribute="trailing" secondItem="yY7-oC-Det" secondAttribute="trailing" priority="777" constant="10" id="H6M-SI-39E"/>
                                                 <constraint firstItem="yY7-oC-Det" firstAttribute="leading" secondItem="OYp-zI-HUK" secondAttribute="leading" priority="777" constant="10" id="PvI-Hz-38J"/>
-                                                <constraint firstItem="tsv-8q-M8L" firstAttribute="top" secondItem="OYp-zI-HUK" secondAttribute="topMargin" constant="15" id="cV5-Zm-KMB"/>
+                                                <constraint firstItem="tsv-8q-M8L" firstAttribute="top" secondItem="OYp-zI-HUK" secondAttribute="topMargin" constant="14" id="cV5-Zm-KMB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

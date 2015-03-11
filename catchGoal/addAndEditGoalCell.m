@@ -14,19 +14,21 @@
     
     self.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
     self.backgroundColor = [UIColor clearColor];
+    
     for (UIView* view in self.contentView.subviews) {
         
         if ([view isKindOfClass:[UITextField class]]) {
             UITextField* field = (UITextField*)view;
             
+            field.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1];
             field.alpha = 0.75;
             field.layer.cornerRadius = 5.f;
-            field.layer.borderColor = [UIColor colorWithRed:0.87 green:0.87 blue:0.87 alpha:1].CGColor;
-            field.layer.borderWidth = 1.f;
             field.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 35, 44)];
             field.leftViewMode = UITextFieldViewModeAlways;
             
-        } 
+            field.attributedPlaceholder = [[NSAttributedString alloc] initWithString:field.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:14.f]}];
+            
+        }
         
         
     }
