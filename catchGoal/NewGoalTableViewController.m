@@ -19,7 +19,7 @@
 
 static NSInteger const kNavAndStatusBarHeight = 64;
 
-@interface NewGoalTableViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface NewGoalTableViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 
 {
     DataSingletone *singletone;
@@ -30,6 +30,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 @property (weak, nonatomic) IBOutlet UITextField *progressInMoney;
 @property (weak, nonatomic) IBOutlet UITextField *finalDateTextField;
 @property (weak, nonatomic) IBOutlet UIButton *choosePhotoButton;
+@property (strong, nonatomic) GoalOperations* operations;
 @property (strong, nonatomic) NSDate *finalDate;
 @property (strong, nonatomic) NSString *imagePath;
 
@@ -90,7 +91,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 }
 
 -(void) showDatePicker {
-    
+    [self hideKeyboard];
     RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController dateSelectionController];
     dateSelectionVC.hideNowButton = YES;
     
@@ -102,6 +103,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     dateSelectionVC.datePicker.minuteInterval = 5;
     NSDate *datePlusMonth = [NSDate date];
     datePlusMonth = [datePlusMonth dateByAddingTimeInterval:(30 * 24 * 60 * 60)];
+    [dateSelectionVC.datePicker setMinimumDate:[NSDate date]];
     dateSelectionVC.datePicker.date = datePlusMonth;
 
     [dateSelectionVC showWithSelectionHandler:^(RMDateSelectionViewController *vc, NSDate *aDate) {
@@ -153,42 +155,81 @@ static NSInteger const kNavAndStatusBarHeight = 64;
             [self.progressInMoney becomeFirstResponder];
             break;
         case 2:
-            [textField resignFirstResponder];
-            [self.finalDateTextField becomeFirstResponder];
+            [self.progressInMoney resignFirstResponder];
+            //[self.finalDateTextField becomeFirstResponder];
             break;
         case 3:
-            [textField resignFirstResponder];
+            //[textField resignFirstResponder];
             break;
         default:
             break;
     }
-    [textField resignFirstResponder];
+    //[textField resignFirstResponder];
     return YES;
 }
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     if (textField.tag == 3) {
-        [self.finalDateTextField resignFirstResponder];
         [self showDatePicker];
+        return NO;
     }
+    return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    if (textField.tag == 1 || textField.tag == 2) {
+        NSString *formatedText = [self formatNumber:textField.text];
+        textField.text = formatedText;
+    }
+    return YES;
 }
 
 #pragma mark - Actions
 
 -(void)addNewGoal {
-    self.goal = [Goal createEntity];
-    self.goal.name = self.goalName.text;
-    self.goal.price = [self convertStringToNSNumber:self.totalCost.text];
-    self.goal.progress = [self convertStringToNSNumber:self.progressInMoney.text];
-    self.goal.startDate = [NSDate date];
-    self.goal.finalDate = self.finalDate;
-    self.goal.imagePath = self.imagePath;
-    self.goal.complited = [NSNumber numberWithBool:NO];
+    if (!self.finalDate || [self.goalName.text isEqualToString:@""] || [self.totalCost.text isEqualToString:@""]) {
+        [[[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Заполните все поля" delegate:nil cancelButtonTitle:@"Ок" otherButtonTitles: nil] show];
+    } else {
+        if ([self.progressInMoney.text isEqualToString:@""]) {
+            self.progressInMoney.text = @"0";
+        }
+        if (self.goal.progress.integerValue > self.goal.price.integerValue) {
+            [[[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Текущие накопления не могут превышать стоимость цели" delegate:nil cancelButtonTitle:@"Ок" otherButtonTitles: nil] show];
+        } else {
+            self.goal = [Goal createEntity];
+            self.goal.name = self.goalName.text;
+            self.goal.price = [self convertStringToNSNumber:self.totalCost.text];
+            self.goal.progress = [self convertStringToNSNumber:self.progressInMoney.text];
+            self.goal.startDate = [NSDate date];
+            self.goal.finalDate = self.finalDate;
+            self.goal.imagePath = self.imagePath;
+            self.goal.complited = [NSNumber numberWithBool:NO];
+            if (self.goal.progress.integerValue > 0) {
+                self.operations = [GoalOperations createEntity];
+                self.operations.addSum = self.goal.progress;
+                self.operations.addDate = [NSDate date];
+                [self.goal addOperationsObject:self.operations];
+            }
+            [[DataSingletone sharedModel].goalsArray addObject:self.goal];
+            [[DataSingletone sharedModel] saveContext];
+            
+            [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
+}
+
+-(NSString*) formatNumber:(NSString*) string {
     
-    [[DataSingletone sharedModel].goalsArray addObject:self.goal];
-    [[DataSingletone sharedModel] saveContext];
-    
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    
+    if (string != nil) {
+        NSString *numberBeta = string;
+        NSString *numberThreeEight = [[numberBeta componentsSeparatedByCharactersInSet:
+                                       [[NSCharacterSet decimalDigitCharacterSet] invertedSet]]
+                                      componentsJoinedByString:@""];
+        return numberThreeEight;
+    }
+    else {
+        return @"";
+    }
 }
 
 - (void)setImageForGoal:(UIImage*)image {

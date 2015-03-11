@@ -10,12 +10,14 @@
 #import "DetailTableViewController.h"
 #import "GoalTableViewCell.h"
 #import "Goal.h"
+#import "GoalOperations.h"
 #import "SWRevealTableViewCell.h"
 
 @interface GoalsViewController () <UITableViewDelegate, UITableViewDataSource,SWRevealTableViewCellDelegate, SWRevealTableViewCellDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) CGFloat progress;
 @property (strong, nonatomic) NSIndexPath* indexPath;
+@property (strong, nonatomic) GoalOperations* operations;
 
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender;
 @end
@@ -140,6 +142,10 @@
                                    int sumLeft = [goal.price intValue] - [goal.progress intValue];
                                    goal.progress = [NSNumber numberWithInt:sumLeft + [goal.progress intValue]];
                                    goal.complited = [NSNumber numberWithBool:YES];
+                                   self.operations = [GoalOperations createEntity];
+                                   self.operations.addSum = [NSNumber numberWithInt: sumLeft];
+                                   self.operations.addDate = [NSDate date];
+                                   [goal addOperationsObject:self.operations];
                                    [[DataSingletone sharedModel].goalsArray removeObjectAtIndex:self.indexPath.row];
                                    [[DataSingletone sharedModel] saveContext];
                                    [self.tableView deleteRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationFade];
