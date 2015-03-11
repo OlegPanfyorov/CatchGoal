@@ -19,7 +19,7 @@
         if ([view isKindOfClass:[UITextField class]]) {
             UITextField* field = (UITextField*)view;
             
-            field.alpha = 0.5;
+            field.alpha = 0.85;
             field.layer.cornerRadius = 5.f;
             field.layer.borderColor = [UIColor colorWithRed:0.87 green:0.87 blue:0.87 alpha:1].CGColor;
             field.layer.borderWidth = 1.f;
