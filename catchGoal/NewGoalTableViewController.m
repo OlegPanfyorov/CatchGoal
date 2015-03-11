@@ -78,6 +78,12 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     [self.view addGestureRecognizer:hideKeyboard];
     
     self.choosePhotoButton.layer.cornerRadius = self.choosePhotoButton.frame.size.height / 2;
+    
+    self.tableView.backgroundColor = [UIColor clearColor];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"interior.jpg"]];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    [self.tableView setBackgroundView:imageView];
 }
 
 - (void)hideKeyboard {
@@ -190,7 +196,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
         if ([self.progressInMoney.text isEqualToString:@""]) {
             self.progressInMoney.text = @"0";
         }
-        if ([self.progressInMoney.text integerValue] > [self.totalCost.text integerValue]) {
+        if ([self.progressInMoney.text integerValue] >= [self.totalCost.text integerValue]) {
             [[[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Текущие накопления не могут превышать стоимость цели" delegate:nil cancelButtonTitle:@"Ок" otherButtonTitles: nil] show];
         } else {
             self.goal = [Goal createEntity];
@@ -234,7 +240,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 }
 
 -(void)cancelToBack {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (IBAction)choosePhotoButtonClicked:(id)sender {
