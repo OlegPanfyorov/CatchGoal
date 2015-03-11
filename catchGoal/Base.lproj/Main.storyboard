@@ -1016,7 +1016,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Сумма" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rJv-Vu-wYz">
-                                                    <rect key="frame" x="10" y="7" width="300" height="44"/>
+                                                    <rect key="frame" x="10" y="6" width="300" height="44"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="rJE-dy-1gI"/>
@@ -1043,7 +1043,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="rJv-Vu-wYz" secondAttribute="trailing" priority="777" constant="10" id="2aA-jt-at8"/>
-                                                <constraint firstAttribute="bottom" secondItem="rJv-Vu-wYz" secondAttribute="bottom" constant="-1" id="QXM-tQ-Via"/>
+                                                <constraint firstAttribute="bottom" secondItem="rJv-Vu-wYz" secondAttribute="bottom" id="QXM-tQ-Via"/>
                                                 <constraint firstItem="vTq-y2-wAA" firstAttribute="top" secondItem="E6k-wQ-oPx" secondAttribute="topMargin" constant="16" id="TTJ-0E-Lpn"/>
                                                 <constraint firstItem="vTq-y2-wAA" firstAttribute="leading" secondItem="E6k-wQ-oPx" secondAttribute="leadingMargin" constant="15" id="eIR-Wb-la2"/>
                                                 <constraint firstItem="rJv-Vu-wYz" firstAttribute="leading" secondItem="E6k-wQ-oPx" secondAttribute="leading" priority="777" constant="10" id="ecS-da-bfa"/>

@@ -42,6 +42,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     [super viewDidLoad];
     self.choosePhotoButton.alpha = 0.75;
     
+    
     NSLog(@"Navframe Height=%f",
           self.navigationController.navigationBar.frame.size.height + 20);
     UIButton* saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -79,6 +80,8 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     [self.view addGestureRecognizer:hideKeyboard];
     
     self.choosePhotoButton.layer.cornerRadius = self.choosePhotoButton.frame.size.height / 2;
+    self.choosePhotoButton.layer.borderWidth = 2;
+    self.choosePhotoButton.layer.borderColor = [UIColor whiteColor].CGColor;
     
     self.tableView.backgroundColor = [UIColor clearColor];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"interior-blur.png"]];

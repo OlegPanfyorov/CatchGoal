@@ -20,14 +20,15 @@
         if ([view isKindOfClass:[UITextField class]]) {
             UITextField* field = (UITextField*)view;
             
-            field.textColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1];
-    //      field.backgroundColor = [UIColor blackColor];
-            field.alpha = 0.5;
-            field.layer.cornerRadius = 5.f;
+            field.textColor = [UIColor colorWithWhite:1.0 alpha:1.0];
+            field.backgroundColor = [[UIColor colorWithWhite:1.0 alpha:1.0] colorWithAlphaComponent:0.25];
+           // field.backgroundColor = [UIColor blackColor];
+           // field.alpha = 0.4;
+            field.layer.cornerRadius = 21.f;
             field.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 35, 44)];
             field.leftViewMode = UITextFieldViewModeAlways;
             
-            field.attributedPlaceholder = [[NSAttributedString alloc] initWithString:field.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.7], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:14.f]}];
+            field.attributedPlaceholder = [[NSAttributedString alloc] initWithString:field.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithWhite:1.0 alpha:0.75], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:14.f]}];
             
         }
         
