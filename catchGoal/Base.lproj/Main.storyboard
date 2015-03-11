@@ -955,7 +955,7 @@
                                                         <constraint firstAttribute="height" constant="80" id="dKC-jx-hgE"/>
                                                     </constraints>
                                                     <state key="normal" backgroundImage="goalPic.png">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" red="0.66274509803921566" green="0.94901960784313721" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="choosePhotoButtonClicked:" destination="GGm-5O-CVc" eventType="touchUpInside" id="kMB-FX-YNZ"/>
