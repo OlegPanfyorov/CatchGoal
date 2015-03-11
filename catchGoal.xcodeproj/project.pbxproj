@@ -75,6 +75,8 @@
 		DA1FCC861A81024800CA44C7 /* testPic3.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1FCC831A81024800CA44C7 /* testPic3.png */; };
 		DA2AD3D11A90F97F00BA7E4C /* goalInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2AD3D01A90F97F00BA7E4C /* goalInfoCell.m */; };
 		DA2AD3D81A90F9FD00BA7E4C /* goalOperationsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2AD3D71A90F9FD00BA7E4C /* goalOperationsCell.m */; };
+		DA34D42A1AB0F48100C1F01F /* allGoals.png in Resources */ = {isa = PBXBuildFile; fileRef = DA34D4291AB0F48100C1F01F /* allGoals.png */; };
+		DA34D4381AB0FCDA00C1F01F /* goalList.png in Resources */ = {isa = PBXBuildFile; fileRef = DA34D4371AB0FCDA00C1F01F /* goalList.png */; };
 		DA375E6B1A81652400548755 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA375E6A1A81652400548755 /* CoreGraphics.framework */; };
 		DA5CB9061A924E2300A66BBF /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5CB8CE1A924E2300A66BBF /* MagicalImportFunctions.m */; };
 		DA5CB9071A924E2300A66BBF /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5CB8D01A924E2300A66BBF /* NSAttributeDescription+MagicalDataImport.m */; };
@@ -243,6 +245,8 @@
 		DA2AD3D01A90F97F00BA7E4C /* goalInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = goalInfoCell.m; sourceTree = "<group>"; };
 		DA2AD3D61A90F9FD00BA7E4C /* goalOperationsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = goalOperationsCell.h; sourceTree = "<group>"; };
 		DA2AD3D71A90F9FD00BA7E4C /* goalOperationsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = goalOperationsCell.m; sourceTree = "<group>"; };
+		DA34D4291AB0F48100C1F01F /* allGoals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = allGoals.png; sourceTree = "<group>"; };
+		DA34D4371AB0FCDA00C1F01F /* goalList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goalList.png; sourceTree = "<group>"; };
 		DA375E6A1A81652400548755 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DA5CB8CD1A924E2300A66BBF /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
 		DA5CB8CE1A924E2300A66BBF /* MagicalImportFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalImportFunctions.m; sourceTree = "<group>"; };
@@ -777,6 +781,8 @@
 		DAE448701A6B0C000041F449 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DA34D4291AB0F48100C1F01F /* allGoals.png */,
+				DA34D4371AB0FCDA00C1F01F /* goalList.png */,
 				CE7CF4671AB0944D00BD1FB2 /* logoAlert.png */,
 				798FA07C1AABAE7200F03789 /* delete@2x.png */,
 				798FA07D1AABAE7200F03789 /* done@2x.png */,
@@ -912,6 +918,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA34D4381AB0FCDA00C1F01F /* goalList.png in Resources */,
 				DAE391E61A822A0C00B60CC2 /* goalCurrentSum.png in Resources */,
 				CE7CF4681AB0944D00BD1FB2 /* logoAlert.png in Resources */,
 				DA1C35DE1A8124C000A3A931 /* logout@2x.png in Resources */,
@@ -942,6 +949,7 @@
 				798FA06F1AABA69000F03789 /* airplane@2x.png in Resources */,
 				DA8AB27D1AA0FB93006CB011 /* logo.png in Resources */,
 				DA1FCC841A81024800CA44C7 /* testPic1.png in Resources */,
+				DA34D42A1AB0F48100C1F01F /* allGoals.png in Resources */,
 				DA8AB2791AA0E922006CB011 /* passPic@2x.png in Resources */,
 				790B7F2D1A69C3AE009C1F1B /* LaunchScreen.xib in Resources */,
 				DAE4487B1A6B15F70041F449 /* Roboto-Light.ttf in Resources */,
