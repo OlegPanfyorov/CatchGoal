@@ -6,8 +6,7 @@
 //  Copyright (c) 2015 iosDevCourse. All rights reserved.
 //
 
-#define kNavBarColorBlue [UIColor colorWithRed:0.32 green:0.64 blue:0.9 alpha:1]
-#define kNavBarColorGreen [UIColor colorWithRed:0.52 green:0.98 blue:0.49 alpha:1]
+#define ALPHA_OF_BUTTONS 0.75
 
 #import "NewGoalTableViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
@@ -40,13 +39,15 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.navigationController.navigationBarHidden = YES;
+    
+    self.choosePhotoButton.alpha = ALPHA_OF_BUTTONS;
+
     NSLog(@"Navframe Height=%f",
     self.navigationController.navigationBar.frame.size.height + 20);
     UIButton* saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [saveButton addTarget:self action:@selector(addNewGoal) forControlEvents:UIControlEventTouchUpInside];
     saveButton.frame = CGRectMake(0, self.view.frame.size.height - kNavAndStatusBarHeight * 2, self.view.frame.size.width, kNavAndStatusBarHeight);
-    saveButton.backgroundColor = kNavBarColorBlue;
+    saveButton.backgroundColor = [[UIColor colorWithRed:0.32 green:0.64 blue:0.9 alpha:1] colorWithAlphaComponent:ALPHA_OF_BUTTONS];
     [saveButton setTitle:@"Сохранить" forState:UIControlStateNormal];
     [saveButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [saveButton.titleLabel setFont:[UIFont boldSystemFontOfSize:18]];
