@@ -9,11 +9,9 @@
 #import "GoalsViewController.h"
 #import "DetailTableViewController.h"
 #import "GoalTableViewCell.h"
-#import "Goal.h"
-#import "GoalOperations.h"
 #import "SWRevealTableViewCell.h"
 
-@interface GoalsViewController () <UITableViewDelegate, UITableViewDataSource,SWRevealTableViewCellDelegate, SWRevealTableViewCellDataSource>
+@interface GoalsViewController () <UITableViewDelegate, UITableViewDataSource,SWRevealTableViewCellDelegate, SWRevealTableViewCellDataSource, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) CGFloat progress;
 @property (strong, nonatomic) NSIndexPath* indexPath;
@@ -65,7 +63,7 @@
     [cell.lineProgressView setProgress:0];
     Goal *goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:indexPath.row];
     cell.nameLabel.text = goal.name;
-    cell.priceLabel.text = [NSString stringWithFormat:@"%@ собрано", goal.progress];
+    cell.priceLabel.text = [NSString stringWithFormat:@"%@ %@ собрано", goal.progress, CURRENCY_SYMBOL];
     cell.delegate = self;
     cell.dataSource = self;
     cell.cellRevealMode = SWCellRevealModeNormal;
@@ -159,7 +157,14 @@
     
     SWCellButtonItem *item2 = [SWCellButtonItem itemWithImage:[UIImage imageNamed:@"edit.png"] handler:^(SWCellButtonItem *item, SWRevealTableViewCell *cell)
                                {
-                                   NSLog( @"Heart Tapped");
+                                   NSLog( @"EDIT Tapped");
+                                   self.indexPath = [self.tableView indexPathForCell:cell];
+                                   UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Выберите действие"
+                                                                                            delegate:self
+                                                                                   cancelButtonTitle:@"Отмена"
+                                                                              destructiveButtonTitle:nil
+                                                                                   otherButtonTitles:@"Изменить фото", @"Изменить название", @"Изменить стоимость", nil];
+                                   [actionSheet showInView:self.view];
                                    return YES;
                                }];
     
@@ -197,6 +202,122 @@
     return items;
 }
 
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0: {
+            NSLog(@"Edit PHOTO clicked");
+            Goal* goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:self.indexPath.row];
+            SCLAlertView *alert = [[SCLAlertView alloc] init];
+            alert.showAnimationType = SlideInFromTop;
+            alert.backgroundType = Blur;
+            
+            UIColor *color = [UIColor colorWithRed:53.0/255.0 green:149.0/255.0 blue:226.0/255.0 alpha:1.0];
+            [alert addButton:@"Камера" actionBlock:^{
+                UIImagePickerController *imgPicker = [[UIImagePickerController alloc] init];
+                imgPicker.allowsEditing = YES;
+                [imgPicker setDelegate:self];
+                imgPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                [self presentViewController:imgPicker animated:YES completion:nil];
+            }];
+            [alert addButton:@"Галерея" actionBlock:^{
+                UIImagePickerController *imgPicker = [[UIImagePickerController alloc] init];
+                imgPicker.allowsEditing = YES;
+                [imgPicker setDelegate:self];
+                imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                [self presentViewController:imgPicker animated:YES completion:nil];
+            }];
+            [alert showCustom:self image:[UIImage imageNamed:@"logoAlert"] color:color title:@"Выберите источник:" subTitle:nil closeButtonTitle:@"Отмена" duration:0.0f];
+        }
+            break;
+        case 1: {
+            NSLog(@"Edit NAME clicked");
+            Goal* goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:self.indexPath.row];
+            SCLAlertView *alert = [[SCLAlertView alloc] init];
+            alert.showAnimationType = SlideInFromTop;
+            alert.backgroundType = Blur;
+            
+            UITextField *textField = [alert addTextField:@"Новое название"];
+            // [textField becomeFirstResponder];
+            
+            [alert addButton:@"Готово" actionBlock:^(void) {
+                if (![textField.text isEqualToString:@""]) {
+                    NSString *newName = textField.text;
+                                                                                                //Меняем название в базе
+                }
+            }];
+            
+            [alert addButton:@"Отмена" actionBlock:^(void) {
+            }];
+            
+            [alert showInfo:self title:@"Изменить название?"
+                      subTitle:[NSString stringWithFormat:@"Текущее название: %@", goal.name]
+              closeButtonTitle:nil duration:0.0f];
+        }
+            break;
+        case 2: {
+            NSLog(@"Edit PRICE clicked");
+            Goal* goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:self.indexPath.row];
+            SCLAlertView *alert = [[SCLAlertView alloc] init];
+            alert.showAnimationType = SlideInFromTop;
+            alert.backgroundType = Blur;
+            
+            UITextField *textField = [alert addTextField:@"Новая стоимость"];
+            // [textField becomeFirstResponder];
+            
+            [alert addButton:@"Готово" actionBlock:^(void) {
+                NSString *newPrice = [self formatText:textField.text];
+                if (![newPrice isEqualToString:@""]) {
+                    
+                    //Находим сумму всех платежей по этой целе и сравниваем, если newPrice меньше, предлагаем закрыть цель, сделать ее выполненной и делаем соответствущую запись в базу, в else просто меняем стоимость данной в базе
+                }
+            }];
+            
+            [alert addButton:@"Отмена" actionBlock:^(void) {
+            }];
+            
+            [alert showInfo:self title:@"Изменить стоимость?"
+                   subTitle:[NSString stringWithFormat:@"Текущая стоимость: %@ %@", goal.price, CURRENCY_SYMBOL]
+           closeButtonTitle:nil duration:0.0f];
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+#pragma mark - UIImagePickerControllerDelegate
+
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+//    UIImage *image = info[UIImagePickerControllerOriginalImage];
+//    NSData *imgData   = UIImageJPEGRepresentation(image, 0.5);
+//    NSString *name    = [[NSUUID UUID] UUIDString];
+//    NSString *path	  = [NSString stringWithFormat:@"Documents/%@.jpg", name];
+//    NSString *jpgPath = [NSHomeDirectory() stringByAppendingPathComponent:path];
+//    [imgData writeToFile:jpgPath atomically:YES];
+
+    //хз как ты сохраняешь эту картинку и путь в базу) вытянуть с базы у конкретной цели (по self.indexpath вытягивай цель) путь к картинке, удалить картинку, и записать новую локально и сделать запись в базу с реплейсом пути (старого на новый)
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(NSString*) formatText:(NSString*) string {
+    if (string != nil) {
+        NSString *numberBeta = string;
+        NSString *numberThreeEight = [[numberBeta componentsSeparatedByCharactersInSet:
+                                       [[NSCharacterSet decimalDigitCharacterSet] invertedSet]]
+                                      componentsJoinedByString:@""];
+        return numberThreeEight;
+    } else {
+        return @"";
+    }
+}
+
+#pragma mark - UIAlertViewDelegate 
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+}
 
 #pragma mark - Actions
 

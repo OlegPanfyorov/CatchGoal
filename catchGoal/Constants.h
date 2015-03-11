@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define CURRENCY_SYMBOL [[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol]
+
 extern NSString *const kExampleConstant;
 
 @interface Constants : NSObject

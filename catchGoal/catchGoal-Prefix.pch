@@ -23,5 +23,7 @@
 #import "StartScreensMainViewController.h"
 #import "KAProgressLabel.h"
 #import "DataSingletone.h"
+#import "SCLAlertView.h"
+#import "GoalOperations.h"
 
 #endif

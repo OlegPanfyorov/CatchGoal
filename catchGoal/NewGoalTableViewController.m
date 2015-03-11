@@ -13,9 +13,6 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "RMDateSelectionViewController.h"
 #import "UIActionSheet+BlockExtensions.h"
-#import "Goal.h"
-#import "GoalOperations.h"
-#import "SCLAlertView.h"
 
 static NSInteger const kNavAndStatusBarHeight = 64;
 
@@ -178,7 +175,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
     if (textField.tag == 1 || textField.tag == 2) {
-        NSString *formatedText = [self formatNumber:textField.text];
+        NSString *formatedText = [self formatText:textField.text];
         textField.text = formatedText;
     }
     return YES;
@@ -218,7 +215,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     }
 }
 
--(NSString*) formatNumber:(NSString*) string {
+-(NSString*) formatText:(NSString*) string {
     
     if (string != nil) {
         NSString *numberBeta = string;

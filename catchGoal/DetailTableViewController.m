@@ -7,15 +7,13 @@
 //
 
 #import "DetailTableViewController.h"
-#include "Goal.h"
-#import "GoalOperations.h"
 #import "goalInfoCell.h"
 #import "goalOperationsCell.h"
-#import "SCLAlertView.h"
+
 //#import "IDMPhoto.h"
 //#import "IDMPhotoBrowser.h"
 
-#define CURRENCY_SYMBOL [[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol]
+
 
 @interface DetailTableViewController () <UIAlertViewDelegate, GoalInfoCellDelegate>
 
