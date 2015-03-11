@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 iosDevCourse. All rights reserved.
 //
 
-#define ALPHA_OF_BUTTONS 0.75
+#define ALPHA_OF_BUTTONS 0.5
 
 #import "NewGoalTableViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
@@ -81,7 +81,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     self.choosePhotoButton.layer.cornerRadius = self.choosePhotoButton.frame.size.height / 2;
     
     self.tableView.backgroundColor = [UIColor clearColor];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"interior.jpg"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"interior-blur.png"]];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     [self.tableView setBackgroundView:imageView];

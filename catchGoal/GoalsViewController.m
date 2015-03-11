@@ -32,7 +32,7 @@
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.tableView.alwaysBounceVertical = NO;
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"interior.jpg"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"interior-blur.png"]];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     [self.tableView setBackgroundView:imageView];

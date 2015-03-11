@@ -66,6 +66,7 @@
 		D3494B6C1A6C0FE60007DD0C /* NewGoalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3494B6B1A6C0FE60007DD0C /* NewGoalTableViewController.m */; };
 		D3494B711A6C14110007DD0C /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3494B701A6C14110007DD0C /* NotificationCenter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DA0DB12A1A923FBC00AAB6AD /* GoalDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA0DB1281A923FBC00AAB6AD /* GoalDataModel.xcdatamodeld */; };
+		DA16B0F01AB0BC360044254E /* interior-blur.png in Resources */ = {isa = PBXBuildFile; fileRef = DA16B0EF1AB0BC360044254E /* interior-blur.png */; };
 		DA1A58F01A92226C00EA9DD3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1A58EF1A92226C00EA9DD3 /* CoreData.framework */; };
 		DA1C35DE1A8124C000A3A931 /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1C35DD1A8124C000A3A931 /* logout@2x.png */; };
 		DA1C35E01A8125BC00A3A931 /* logout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1C35DF1A8125BC00A3A931 /* logout@3x.png */; };
@@ -230,6 +231,7 @@
 		D3494B6B1A6C0FE60007DD0C /* NewGoalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGoalTableViewController.m; sourceTree = "<group>"; };
 		D3494B701A6C14110007DD0C /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		DA0DB1291A923FBC00AAB6AD /* GoalDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoalDataModel.xcdatamodel; sourceTree = "<group>"; };
+		DA16B0EF1AB0BC360044254E /* interior-blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "interior-blur.png"; sourceTree = "<group>"; };
 		DA1A58EF1A92226C00EA9DD3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DA1A59301A9222CC00EA9DD3 /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
 		DA1C35DD1A8124C000A3A931 /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@2x.png"; sourceTree = "<group>"; };
@@ -780,6 +782,7 @@
 				798FA07D1AABAE7200F03789 /* done@2x.png */,
 				798FA07E1AABAE7200F03789 /* edit@2x.png */,
 				798FA0741AABAA9D00F03789 /* interior.jpg */,
+				DA16B0EF1AB0BC360044254E /* interior-blur.png */,
 				798FA0681AABA69000F03789 /* airplane.png */,
 				798FA0691AABA69000F03789 /* airplane@2x.png */,
 				798FA06A1AABA69000F03789 /* heart.png */,
@@ -944,6 +947,7 @@
 				DAE4487B1A6B15F70041F449 /* Roboto-Light.ttf in Resources */,
 				7942FE331A8FF3360035F411 /* no_photo.png in Resources */,
 				798FA0701AABA69000F03789 /* heart.png in Resources */,
+				DA16B0F01AB0BC360044254E /* interior-blur.png in Resources */,
 				DAFB806E1A6C4FB9006F28DF /* arrowBack.png in Resources */,
 				798FA0721AABA69000F03789 /* star.png in Resources */,
 				DA8AB2751AA0E46F006CB011 /* bg.png in Resources */,
