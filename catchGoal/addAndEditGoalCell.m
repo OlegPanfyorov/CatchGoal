@@ -28,7 +28,7 @@
             field.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 35, 44)];
             field.leftViewMode = UITextFieldViewModeAlways;
             
-            field.attributedPlaceholder = [[NSAttributedString alloc] initWithString:field.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithWhite:1.0 alpha:0.75], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Regular" size:14.f]}];
+            field.attributedPlaceholder = [[NSAttributedString alloc] initWithString:field.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithWhite:1.0 alpha:0.75], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Medium" size:14.f]}];
             
         }
         

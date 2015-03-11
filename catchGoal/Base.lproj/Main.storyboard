@@ -6,9 +6,8 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="OpenSans-Semibold.ttf">
-            <string>OpenSans-Semibold</string>
-            <string>OpenSans-Semibold</string>
+        <mutableArray key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
         </mutableArray>
         <mutableArray key="Roboto-Medium.ttf">
             <string>Roboto-Medium</string>
@@ -26,6 +25,7 @@
             <string>Roboto-Medium</string>
         </mutableArray>
         <mutableArray key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
@@ -380,10 +380,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hv5-8g-Qta">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwo-lG-4DJ">
-                                        <rect key="frame" x="209" y="6" width="71" height="30"/>
+                                        <rect key="frame" x="209" y="10" width="71" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="J9F-Iy-xZ0"/>
                                             <constraint firstAttribute="width" constant="71" id="fVb-9V-oFu"/>
@@ -397,7 +397,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h65-k5-rMv">
-                                        <rect key="frame" x="40" y="7" width="59" height="30"/>
+                                        <rect key="frame" x="40" y="10" width="59" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Ky6-vd-CQl"/>
                                             <constraint firstAttribute="width" constant="59" id="fY1-sA-rIJ"/>
@@ -411,18 +411,19 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.20784313730000001" green="0.58431372550000005" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.29548030771440942" green="0.43094099086344462" blue="0.75305606613333342" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="h65-k5-rMv" firstAttribute="leading" secondItem="Hv5-8g-Qta" secondAttribute="leading" constant="40" id="JF0-hf-DFA"/>
-                                    <constraint firstAttribute="height" constant="44" id="Snm-6K-lTs"/>
-                                    <constraint firstItem="Zwo-lG-4DJ" firstAttribute="top" secondItem="Hv5-8g-Qta" secondAttribute="top" constant="6" id="Une-CR-yLZ"/>
+                                    <constraint firstAttribute="height" constant="49" id="Snm-6K-lTs"/>
+                                    <constraint firstItem="Zwo-lG-4DJ" firstAttribute="top" secondItem="Hv5-8g-Qta" secondAttribute="top" constant="10" id="Une-CR-yLZ"/>
                                     <constraint firstAttribute="trailing" secondItem="Zwo-lG-4DJ" secondAttribute="trailing" constant="40" id="h7C-cq-Khc"/>
-                                    <constraint firstItem="h65-k5-rMv" firstAttribute="top" secondItem="Hv5-8g-Qta" secondAttribute="top" constant="7" id="jCQ-L1-3uh"/>
+                                    <constraint firstItem="h65-k5-rMv" firstAttribute="top" secondItem="Hv5-8g-Qta" secondAttribute="top" constant="10" id="jCQ-L1-3uh"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eAb-H7-jgN">
-                                <rect key="frame" x="0.0" y="20" width="320" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="72" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="eAb-H7-jgN">
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="72" id="kFM-JM-NWE" customClass="GoalTableViewCell">
                                         <rect key="frame" x="0.0" y="248" width="320" height="72"/>
@@ -439,12 +440,12 @@
                                                                 <constraint firstAttribute="height" constant="21" id="Zo7-LI-mDr"/>
                                                                 <constraint firstAttribute="width" constant="235" id="hbZ-xo-zuy"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJq-40-ghx" customClass="KAProgressLabel">
                                                             <rect key="frame" x="6" y="56" width="288" height="6"/>
-                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="6" id="K6f-Yl-rYC"/>
                                                             </constraints>
@@ -466,7 +467,7 @@
                                                                 <constraint firstAttribute="width" constant="205" id="4jt-rn-Zt9"/>
                                                                 <constraint firstAttribute="height" constant="21" id="ywL-qF-R1g"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="12"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -509,7 +510,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.38287168560606055" green="0.19510089092694383" blue="0.28425496480090889" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Hv5-8g-Qta" firstAttribute="top" secondItem="eAb-H7-jgN" secondAttribute="bottom" id="K1W-A2-mCv"/>
                             <constraint firstItem="1yE-gX-GEz" firstAttribute="top" secondItem="Hv5-8g-Qta" secondAttribute="bottom" id="Sd0-Mv-3mc"/>
@@ -530,12 +531,13 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BtX-1k-WMM">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="BzT-DL-4Vx" kind="modal" animates="NO" id="aLc-Rd-I7s"/>
+                                <segue destination="BzT-DL-4Vx" kind="modal" id="aLc-Rd-I7s"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="buttonView" destination="Hv5-8g-Qta" id="lfu-pB-thT"/>
                         <outlet property="tableView" destination="eAb-H7-jgN" id="STZ-nj-c3k"/>
                     </connections>
                 </viewController>

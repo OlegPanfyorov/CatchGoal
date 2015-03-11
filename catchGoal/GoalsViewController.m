@@ -16,6 +16,7 @@
 @property (assign, nonatomic) CGFloat progress;
 @property (strong, nonatomic) NSIndexPath* indexPath;
 @property (strong, nonatomic) GoalOperations* operations;
+@property (weak, nonatomic) IBOutlet UIView *buttonView;
 
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender;
 @end
@@ -24,19 +25,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.tableView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
+    
+    UIEdgeInsets inset = {-37,0,0,0};
+    self.tableView.contentInset = inset;
     [self.navigationController.navigationBar setHidden:NO];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorColor = [[UIColor whiteColor] colorWithAlphaComponent:0.18];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.tableView.alwaysBounceVertical = NO;
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"interior-blur.png"]];
+    imageView.frame = [UIScreen mainScreen].bounds;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-    [self.tableView setBackgroundView:imageView];
-}
+    
+    [self.view insertSubview:imageView belowSubview:self.tableView];
+    [self.view sendSubviewToBack:imageView];
+    
+    self.buttonView.backgroundColor = [[UIColor colorWithRed:0.13 green:0.13 blue:0.16 alpha:1] colorWithAlphaComponent:0.55];
+} // [[UIColor colorWithRed:0.32 green:0.64 blue:0.9 alpha:1] colorWithAlphaComponent:0.3];
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -53,6 +61,10 @@
 
 #pragma mark - UITableViewDataSource
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return  [[DataSingletone sharedModel].goalsArray count];
 }
@@ -63,7 +75,9 @@
     [cell.lineProgressView setProgress:0];
     Goal *goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:indexPath.row];
     cell.nameLabel.text = goal.name;
+    cell.nameLabel.textColor = [UIColor colorWithWhite:1.0 alpha:0.85];
     cell.priceLabel.text = [NSString stringWithFormat:@"%@ %@ собрано", goal.progress, CURRENCY_SYMBOL];
+    cell.priceLabel.textColor = [UIColor colorWithWhite:1.0 alpha:0.65];
     cell.delegate = self;
     cell.dataSource = self;
     cell.cellRevealMode = SWCellRevealModeNormal;
@@ -82,30 +96,53 @@
     if (progress < 0.5f) {
         [cell.lineProgressView setColorTable: @{
                                                 NSStringFromProgressLabelColorTableKey(ProgressLabelFillColor):
-                                                    [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1],
+                                                    [UIColor colorWithWhite:1.0 alpha:0.15],
                                                 NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
                                                     [UIColor colorWithRed:1 green:0.39 blue:0.33 alpha:1],
                                                 }];
     } else {
         [cell.lineProgressView setColorTable: @{
                                                 NSStringFromProgressLabelColorTableKey(ProgressLabelFillColor):
-                                                    [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1],
+                                                    [UIColor colorWithWhite:1.0 alpha:0.15],
                                                 NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
                                                     [UIColor colorWithRed:0.42 green:0.82 blue:0.28 alpha:1],
                                                 }];
     }
     
-    cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // customize here the cell object before it is displayed.
+    // Remove seperator inset
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    // Prevent the cell from inheriting the Table View's margin settings
+    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
+        [cell setPreservesSuperviewLayoutMargins:NO];
+    }
+    
+    // Explictly set your cell's layout margins
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
 
-    [cell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.6]];
-    //[cell.contentView setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:1]];
+}
 
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    // Force your tableview margins (this may be a bad idea)
+    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [self.tableView setLayoutMargins:UIEdgeInsetsZero];
+    }
 }
 
 #pragma mark - SWRevealTableViewCell delegate
