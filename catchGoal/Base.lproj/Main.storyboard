@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Roboto-Light.ttf">
@@ -410,13 +411,23 @@
                                             <action selector="allGoalsPressed:" destination="SeA-cz-fPi" eventType="touchUpInside" id="i8a-ts-bQs"/>
                                         </connections>
                                     </button>
+                                    <view alpha="0.59999999999999964" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaH-Co-Yua">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="3"/>
+                                        <color key="backgroundColor" red="1" green="0.29923153069119923" blue="0.31875444131062514" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="EkQ-ya-P9h"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.29548030771440942" green="0.43094099086344462" blue="0.75305606613333342" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eaH-Co-Yua" secondAttribute="trailing" id="HSP-Dh-Ktm"/>
                                     <constraint firstItem="h65-k5-rMv" firstAttribute="leading" secondItem="Hv5-8g-Qta" secondAttribute="leading" constant="40" id="JF0-hf-DFA"/>
+                                    <constraint firstAttribute="width" secondItem="eaH-Co-Yua" secondAttribute="width" multiplier="2" id="K9e-mP-SrL"/>
                                     <constraint firstAttribute="height" constant="49" id="Snm-6K-lTs"/>
                                     <constraint firstItem="Zwo-lG-4DJ" firstAttribute="top" secondItem="Hv5-8g-Qta" secondAttribute="top" constant="3" id="Une-CR-yLZ"/>
                                     <constraint firstAttribute="trailing" secondItem="Zwo-lG-4DJ" secondAttribute="trailing" constant="40" id="h7C-cq-Khc"/>
+                                    <constraint firstItem="eaH-Co-Yua" firstAttribute="top" secondItem="Hv5-8g-Qta" secondAttribute="top" id="hmb-x1-ket"/>
                                     <constraint firstItem="h65-k5-rMv" firstAttribute="top" secondItem="Hv5-8g-Qta" secondAttribute="top" constant="14" id="jCQ-L1-3uh"/>
                                 </constraints>
                             </view>
@@ -531,7 +542,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BtX-1k-WMM">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="BzT-DL-4Vx" kind="modal" id="aLc-Rd-I7s"/>
+                                <segue destination="BzT-DL-4Vx" kind="modal" modalTransitionStyle="crossDissolve" id="aLc-Rd-I7s"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
