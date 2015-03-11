@@ -190,7 +190,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
         if ([self.progressInMoney.text isEqualToString:@""]) {
             self.progressInMoney.text = @"0";
         }
-        if (self.goal.progress.integerValue > self.goal.price.integerValue) {
+        if ([self.progressInMoney.text integerValue] > [self.totalCost.text integerValue]) {
             [[[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Текущие накопления не могут превышать стоимость цели" delegate:nil cancelButtonTitle:@"Ок" otherButtonTitles: nil] show];
         } else {
             self.goal = [Goal createEntity];
