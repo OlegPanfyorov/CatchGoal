@@ -39,6 +39,8 @@
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -383,27 +385,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hv5-8g-Qta">
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <subviews>
-                                    <button opaque="NO" alpha="0.79999999999999982" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwo-lG-4DJ">
-                                        <rect key="frame" x="236" y="3" width="44" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="J9F-Iy-xZ0"/>
-                                            <constraint firstAttribute="width" constant="44" id="fVb-9V-oFu"/>
-                                        </constraints>
-                                        <state key="normal" title="Complited" image="allGoals.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="complitedGoalsPressed:" destination="SeA-cz-fPi" eventType="touchUpInside" id="9Rz-oV-x2R"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" alpha="0.79999999999999982" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h65-k5-rMv">
-                                        <rect key="frame" x="40" y="14" width="37" height="22"/>
+                                        <rect key="frame" x="0.0" y="3" width="160" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="22" id="Ky6-vd-CQl"/>
-                                            <constraint firstAttribute="width" constant="37" id="fY1-sA-rIJ"/>
+                                            <constraint firstAttribute="height" constant="44" id="Ky6-vd-CQl"/>
                                         </constraints>
-                                        <state key="normal" title="All goals" image="goalList.png">
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                        <state key="normal" title="Все">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -411,28 +399,54 @@
                                             <action selector="allGoalsPressed:" destination="SeA-cz-fPi" eventType="touchUpInside" id="i8a-ts-bQs"/>
                                         </connections>
                                     </button>
-                                    <view alpha="0.59999999999999964" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaH-Co-Yua">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNc-im-exM">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="3"/>
+                                        <color key="backgroundColor" red="1" green="0.38823529411764707" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="xh6-S4-gyn"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaH-Co-Yua">
                                         <rect key="frame" x="160" y="0.0" width="160" height="3"/>
-                                        <color key="backgroundColor" red="1" green="0.29923153069119923" blue="0.31875444131062514" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="3" id="EkQ-ya-P9h"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" alpha="0.79999999999999982" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwo-lG-4DJ">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="49"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="J9F-Iy-xZ0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                        <state key="normal" title="Выполненные">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="complitedGoalsPressed:" destination="SeA-cz-fPi" eventType="touchUpInside" id="9Rz-oV-x2R"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.29548030771440942" green="0.43094099086344462" blue="0.75305606613333342" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="eaH-Co-Yua" firstAttribute="width" secondItem="Zwo-lG-4DJ" secondAttribute="width" id="0ib-4x-kOO"/>
+                                    <constraint firstItem="h65-k5-rMv" firstAttribute="width" secondItem="KNc-im-exM" secondAttribute="width" id="1O3-WH-cbK"/>
+                                    <constraint firstItem="KNc-im-exM" firstAttribute="width" secondItem="Hv5-8g-Qta" secondAttribute="width" multiplier="0.5" id="2ex-zn-V8O"/>
                                     <constraint firstAttribute="trailing" secondItem="eaH-Co-Yua" secondAttribute="trailing" id="HSP-Dh-Ktm"/>
-                                    <constraint firstItem="h65-k5-rMv" firstAttribute="leading" secondItem="Hv5-8g-Qta" secondAttribute="leading" constant="40" id="JF0-hf-DFA"/>
+                                    <constraint firstItem="h65-k5-rMv" firstAttribute="leading" secondItem="Hv5-8g-Qta" secondAttribute="leading" id="JF0-hf-DFA"/>
                                     <constraint firstAttribute="width" secondItem="eaH-Co-Yua" secondAttribute="width" multiplier="2" id="K9e-mP-SrL"/>
                                     <constraint firstAttribute="height" constant="49" id="Snm-6K-lTs"/>
-                                    <constraint firstItem="Zwo-lG-4DJ" firstAttribute="top" secondItem="Hv5-8g-Qta" secondAttribute="top" constant="3" id="Une-CR-yLZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="Zwo-lG-4DJ" secondAttribute="trailing" constant="40" id="h7C-cq-Khc"/>
+                                    <constraint firstItem="Zwo-lG-4DJ" firstAttribute="top" secondItem="Hv5-8g-Qta" secondAttribute="top" id="Une-CR-yLZ"/>
+                                    <constraint firstItem="KNc-im-exM" firstAttribute="leading" secondItem="Hv5-8g-Qta" secondAttribute="leading" id="e36-Lc-5ha"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zwo-lG-4DJ" secondAttribute="trailing" id="h7C-cq-Khc"/>
                                     <constraint firstItem="eaH-Co-Yua" firstAttribute="top" secondItem="Hv5-8g-Qta" secondAttribute="top" id="hmb-x1-ket"/>
-                                    <constraint firstItem="h65-k5-rMv" firstAttribute="top" secondItem="Hv5-8g-Qta" secondAttribute="top" constant="14" id="jCQ-L1-3uh"/>
+                                    <constraint firstItem="h65-k5-rMv" firstAttribute="top" secondItem="Hv5-8g-Qta" secondAttribute="top" constant="3" id="jCQ-L1-3uh"/>
+                                    <constraint firstItem="KNc-im-exM" firstAttribute="top" secondItem="Hv5-8g-Qta" secondAttribute="top" id="lEd-Tc-BqO"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="72" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="eAb-H7-jgN">
-                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -527,7 +541,7 @@
                             <constraint firstItem="1yE-gX-GEz" firstAttribute="top" secondItem="Hv5-8g-Qta" secondAttribute="bottom" id="Sd0-Mv-3mc"/>
                             <constraint firstItem="Hv5-8g-Qta" firstAttribute="leading" secondItem="q8L-2e-uGE" secondAttribute="leading" id="UHm-ee-a29"/>
                             <constraint firstAttribute="trailing" secondItem="eAb-H7-jgN" secondAttribute="trailing" id="YbX-gf-cS0"/>
-                            <constraint firstItem="eAb-H7-jgN" firstAttribute="top" secondItem="kpa-Kz-eBs" secondAttribute="bottom" id="ZNv-4J-nIw"/>
+                            <constraint firstItem="eAb-H7-jgN" firstAttribute="top" secondItem="kpa-Kz-eBs" secondAttribute="bottom" constant="-20" id="ZNv-4J-nIw"/>
                             <constraint firstAttribute="trailing" secondItem="Hv5-8g-Qta" secondAttribute="trailing" id="vAg-i6-sOc"/>
                             <constraint firstItem="eAb-H7-jgN" firstAttribute="leading" secondItem="q8L-2e-uGE" secondAttribute="leading" id="vjy-Cb-ouI"/>
                         </constraints>
@@ -550,6 +564,8 @@
                     <connections>
                         <outlet property="buttonView" destination="Hv5-8g-Qta" id="lfu-pB-thT"/>
                         <outlet property="tableView" destination="eAb-H7-jgN" id="STZ-nj-c3k"/>
+                        <outletCollection property="buttonIndicators" destination="KNc-im-exM" id="HMy-7p-6MT"/>
+                        <outletCollection property="buttonIndicators" destination="eaH-Co-Yua" id="fh6-Sn-tBT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbA-dC-UfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1191,14 +1207,12 @@
     </scenes>
     <resources>
         <image name="addMoney.png" width="32" height="32"/>
-        <image name="allGoals.png" width="128" height="128"/>
         <image name="arrowBack.png" width="60" height="60"/>
         <image name="arrowForward.png" width="60" height="60"/>
         <image name="bg.png" width="640" height="1136"/>
         <image name="emalPic.png" width="30" height="30"/>
         <image name="goalCurrentSum.png" width="26" height="24"/>
         <image name="goalExpDate.png" width="23" height="23"/>
-        <image name="goalList.png" width="128" height="69"/>
         <image name="goalName.png" width="18" height="25"/>
         <image name="goalPic.png" width="160" height="160"/>
         <image name="goalTotalSum.png" width="17" height="24"/>

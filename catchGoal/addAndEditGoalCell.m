@@ -24,7 +24,7 @@
             field.backgroundColor = [[UIColor colorWithWhite:1.0 alpha:1.0] colorWithAlphaComponent:0.25];
            // field.backgroundColor = [UIColor blackColor];
            // field.alpha = 0.4;
-            field.layer.cornerRadius = 21.f;
+            field.layer.cornerRadius = 5.f;
             field.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 35, 44)];
             field.leftViewMode = UITextFieldViewModeAlways;
             

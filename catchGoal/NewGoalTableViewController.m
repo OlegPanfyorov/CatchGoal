@@ -335,8 +335,8 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 }
 
 -(void) deletePhoto {
-    [self setGoalButtonImage:[UIImage imageNamed:@"no_photo"]];
-    self.imagePath = NULL;
+    //[self setGoalButtonImage:[UIImage imageNamed:@"no_photo"]];
+    self.imagePath = [[NSBundle mainBundle] pathForResource:@"no_photo" ofType:@"png"];
 }
 
 -(void) setGoalButtonImage:(UIImage*) image {

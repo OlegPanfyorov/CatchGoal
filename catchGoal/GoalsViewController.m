@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSIndexPath* indexPath;
 @property (strong, nonatomic) GoalOperations* operations;
 @property (weak, nonatomic) IBOutlet UIView *buttonView;
+@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *buttonIndicators;
 
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender;
 @end
@@ -26,11 +27,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIEdgeInsets inset = {-37,0,0,0};
+    UIEdgeInsets inset = {0,0,0,0};
     self.tableView.contentInset = inset;
     [self.navigationController.navigationBar setHidden:NO];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    self.tableView.separatorColor = [[UIColor whiteColor] colorWithAlphaComponent:0.18];
+    self.tableView.separatorColor = [[UIColor whiteColor] colorWithAlphaComponent:0.2];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.tableView.alwaysBounceVertical = NO;
@@ -62,7 +63,7 @@
 #pragma mark - UITableViewDataSource
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 0;
+    return 15;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -75,9 +76,9 @@
     [cell.lineProgressView setProgress:0];
     Goal *goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:indexPath.row];
     cell.nameLabel.text = goal.name;
-    cell.nameLabel.textColor = [UIColor colorWithWhite:1.0 alpha:0.85];
+    cell.nameLabel.textColor = [UIColor colorWithWhite:1.0 alpha:0.95];
     cell.priceLabel.text = [NSString stringWithFormat:@"%@ %@ собрано", goal.progress, CURRENCY_SYMBOL];
-    cell.priceLabel.textColor = [UIColor colorWithWhite:1.0 alpha:0.65];
+    cell.priceLabel.textColor = [UIColor colorWithWhite:1.0 alpha:0.8];
     cell.delegate = self;
     cell.dataSource = self;
     cell.cellRevealMode = SWCellRevealModeNormal;
@@ -242,13 +243,14 @@
 #pragma mark - UIActionSheetDelegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    Goal* goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:self.indexPath.row];
+
     switch (buttonIndex) {
         case 0: {
             NSLog(@"Edit PHOTO clicked");
-            Goal* goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:self.indexPath.row];
             SCLAlertView *alert = [[SCLAlertView alloc] init];
             alert.showAnimationType = SlideInFromTop;
-            alert.backgroundType = Blur;
+            alert.backgroundType = Shadow;
             
             UIColor *color = [UIColor colorWithRed:53.0/255.0 green:149.0/255.0 blue:226.0/255.0 alpha:1.0];
             [alert addButton:@"Камера" actionBlock:^{
@@ -270,10 +272,10 @@
             break;
         case 1: {
             NSLog(@"Edit NAME clicked");
-            Goal* goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:self.indexPath.row];
+            
             SCLAlertView *alert = [[SCLAlertView alloc] init];
             alert.showAnimationType = SlideInFromTop;
-            alert.backgroundType = Blur;
+            alert.backgroundType = Shadow;
             
             UITextField *textField = [alert addTextField:@"Новое название"];
             // [textField becomeFirstResponder];
@@ -281,6 +283,12 @@
             [alert addButton:@"Готово" actionBlock:^(void) {
                 if (![textField.text isEqualToString:@""]) {
                     NSString *newName = textField.text;
+                    goal.name = newName;
+                    [[DataSingletone sharedModel] saveContext];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.37 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+
+                    });
                                                                                                 //Меняем название в базе
                 }
             }];
@@ -295,23 +303,46 @@
             break;
         case 2: {
             NSLog(@"Edit PRICE clicked");
-            Goal* goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:self.indexPath.row];
             SCLAlertView *alert = [[SCLAlertView alloc] init];
             alert.showAnimationType = SlideInFromTop;
-            alert.backgroundType = Blur;
+            alert.backgroundType = Shadow;
             
             UITextField *textField = [alert addTextField:@"Новая стоимость"];
             // [textField becomeFirstResponder];
             
             [alert addButton:@"Готово" actionBlock:^(void) {
                 NSString *newPrice = [self formatText:textField.text];
-                if (![newPrice isEqualToString:@""]) {
+                
+                if (![newPrice isEqualToString:@""] && [newPrice integerValue] < [goal.price integerValue]) {
+          
+                    SCLAlertView *infoAler = [[SCLAlertView alloc] init];
+                    infoAler.backgroundType = Shadow;
                     
-                    //Находим сумму всех платежей по этой целе и сравниваем, если newPrice меньше, предлагаем закрыть цель, сделать ее выполненной и делаем соответствущую запись в базу, в else просто меняем стоимость данной в базе
+                    [infoAler addButton:@"Закрыть" actionBlock:^{
+                        
+                            goal.complited = [NSNumber numberWithBool:YES];
+                            [[DataSingletone sharedModel] saveContext];
+
+                    }];
+                    
+                    [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+                    
+                    [infoAler showInfo:self title:@"Внимание" subTitle:@"Введенная сумма меньше текущей суммы цели! Хотите закрыть данную цель?" closeButtonTitle:@"Отмена" duration:0];
+                      
+                } else {
+                    NSNumberFormatter* formatter = [[NSNumberFormatter alloc] init];
+                    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+                    goal.price = [formatter numberFromString:newPrice];
+                    
+                    [[DataSingletone sharedModel] saveContext];
+                    [self.tableView reloadData];
+                    
                 }
+                
             }];
             
             [alert addButton:@"Отмена" actionBlock:^(void) {
+                
             }];
             
             [alert showInfo:self title:@"Изменить стоимость?"
@@ -327,15 +358,27 @@
 #pragma mark - UIImagePickerControllerDelegate
 
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-//    UIImage *image = info[UIImagePickerControllerOriginalImage];
-//    NSData *imgData   = UIImageJPEGRepresentation(image, 0.5);
-//    NSString *name    = [[NSUUID UUID] UUIDString];
-//    NSString *path	  = [NSString stringWithFormat:@"Documents/%@.jpg", name];
-//    NSString *jpgPath = [NSHomeDirectory() stringByAppendingPathComponent:path];
-//    [imgData writeToFile:jpgPath atomically:YES];
+    Goal* goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:self.indexPath.row];
+    
+    if (goal.imagePath) {
+        NSError *error;
+        NSString *imgToRemove = [NSHomeDirectory() stringByAppendingPathComponent:goal.imagePath];
+        [[NSFileManager defaultManager] removeItemAtPath:imgToRemove error:&error];
+        NSLog( @"Image has been deteted at Path - %@", goal.imagePath);
+    }
 
-    //хз как ты сохраняешь эту картинку и путь в базу) вытянуть с базы у конкретной цели (по self.indexpath вытягивай цель) путь к картинке, удалить картинку, и записать новую локально и сделать запись в базу с реплейсом пути (старого на новый)
-    [self dismissViewControllerAnimated:YES completion:nil];
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    NSData *imgData   = UIImageJPEGRepresentation(image, 0.5);
+    NSString *name    = [[NSUUID UUID] UUIDString];
+    NSString *path	  = [NSString stringWithFormat:@"Documents/%@.jpg", name];
+    NSString *jpgPath = [NSHomeDirectory() stringByAppendingPathComponent:path];
+    [imgData writeToFile:jpgPath atomically:YES];
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        goal.imagePath = path;
+        [[DataSingletone sharedModel] saveContext];
+        [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    }];
 }
 
 -(NSString*) formatText:(NSString*) string {
@@ -383,10 +426,18 @@
 
 - (IBAction)allGoalsPressed:(UIButton*)sender {
     [self fetchGoalsWithCompletedFlag:NO];
+    
+    [[self.buttonIndicators firstObject] setBackgroundColor:[UIColor colorWithRed:1 green:0.39 blue:0.33 alpha:0.75]];
+    [[self.buttonIndicators lastObject] setBackgroundColor:[UIColor clearColor]];
+
+    
 
 }
 - (IBAction)complitedGoalsPressed:(UIButton*)sender {
     [self fetchGoalsWithCompletedFlag:YES];
+    
+    [[self.buttonIndicators firstObject] setBackgroundColor:[UIColor clearColor]];
+    [[self.buttonIndicators lastObject] setBackgroundColor:[UIColor colorWithRed:0.42 green:0.82 blue:0.28 alpha:0.75]];
 
 }
 
