@@ -16,6 +16,7 @@
 @property (assign, nonatomic) CGFloat progress;
 @property (strong, nonatomic) NSIndexPath* indexPath;
 @property (strong, nonatomic) GoalOperations* operations;
+@property (assign, nonatomic) NSInteger operationsSum;
 @property (weak, nonatomic) IBOutlet UIView *buttonView;
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *buttonIndicators;
 
@@ -244,6 +245,8 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     Goal* goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:self.indexPath.row];
+    NSNumberFormatter* formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
 
     switch (buttonIndex) {
         case 0: {
@@ -288,8 +291,7 @@
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.37 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                         [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationLeft];
 
-                    });
-                                                                                                //Меняем название в базе
+                    });   //Меняем название в базе
                 }
             }];
             
@@ -310,35 +312,35 @@
             UITextField *textField = [alert addTextField:@"Новая стоимость"];
             // [textField becomeFirstResponder];
             
+            self.operationsSum = 0;
+            for (GoalOperations *operation in goal.operations) {
+                self.operationsSum = self.operationsSum + operation.addSum.integerValue;
+            }
+            NSLog(@"operations sum of goal: %@ is %zd", goal.name, self.operationsSum);
+            
             [alert addButton:@"Готово" actionBlock:^(void) {
                 NSString *newPrice = [self formatText:textField.text];
-                
-                if (![newPrice isEqualToString:@""] && [newPrice integerValue] < [goal.price integerValue]) {
-          
-                    SCLAlertView *infoAler = [[SCLAlertView alloc] init];
-                    infoAler.backgroundType = Shadow;
-                    
-                    [infoAler addButton:@"Закрыть" actionBlock:^{
+                    if (![newPrice isEqualToString:@""] && [newPrice integerValue] <= self.operationsSum) {
                         
+                        SCLAlertView *infoAler = [[SCLAlertView alloc] init];
+                        infoAler.backgroundType = Shadow;
+                        [infoAler addButton:@"Завершить" actionBlock:^{
+                            goal.price = [formatter numberFromString:newPrice];
                             goal.complited = [NSNumber numberWithBool:YES];
-                            [[DataSingletone sharedModel] saveContext];
+                            [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+                                [self fetchGoalsWithCompletedFlag:NO];
+                            }];
 
-                    }];
-                    
-                    [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-                    
-                    [infoAler showInfo:self title:@"Внимание" subTitle:@"Введенная сумма меньше текущей суммы цели! Хотите закрыть данную цель?" closeButtonTitle:@"Отмена" duration:0];
-                      
-                } else {
-                    NSNumberFormatter* formatter = [[NSNumberFormatter alloc] init];
-                    formatter.numberStyle = NSNumberFormatterDecimalStyle;
-                    goal.price = [formatter numberFromString:newPrice];
-                    
-                    [[DataSingletone sharedModel] saveContext];
-                    [self.tableView reloadData];
-                    
-                }
-                
+                        }];
+                        [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+                        NSString *messageString = [NSString stringWithFormat:@"Введенная сумма меньше или равна собранным на %@ накоплениям! Хотите завершить данную цель?", goal.name];
+                        [infoAler showInfo:self title:@"Внимание" subTitle:messageString closeButtonTitle:@"Отмена" duration:0];
+                    } else if ([newPrice integerValue] > self.operationsSum) {
+                        goal.price = [formatter numberFromString:newPrice];
+                        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+                            [self fetchGoalsWithCompletedFlag:NO];
+                        }];
+                    }
             }];
             
             [alert addButton:@"Отмена" actionBlock:^(void) {
@@ -346,7 +348,7 @@
             }];
             
             [alert showInfo:self title:@"Изменить стоимость?"
-                   subTitle:[NSString stringWithFormat:@"Текущая стоимость: %@ %@", goal.price, CURRENCY_SYMBOL]
+                   subTitle:[NSString stringWithFormat:@"Текущая стоимость: %@ %@\nТекущие накопления: %d %@", goal.price, CURRENCY_SYMBOL, self.operationsSum, CURRENCY_SYMBOL]
            closeButtonTitle:nil duration:0.0f];
         }
             break;
@@ -427,7 +429,7 @@
 - (IBAction)allGoalsPressed:(UIButton*)sender {
     [self fetchGoalsWithCompletedFlag:NO];
     
-    [[self.buttonIndicators firstObject] setBackgroundColor:[UIColor colorWithRed:1 green:0.39 blue:0.33 alpha:0.75]];
+    [[self.buttonIndicators firstObject] setBackgroundColor:[UIColor colorWithRed:0.208 green:0.584 blue:0.886 alpha:1.000]];
     [[self.buttonIndicators lastObject] setBackgroundColor:[UIColor clearColor]];
 
     
