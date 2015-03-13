@@ -82,7 +82,7 @@
     [cell.lineProgressView setProgress:0];
     Goal *goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:indexPath.row];
     cell.nameLabel.text = goal.name;
-    cell.nameLabel.textColor = [UIColor colorWithWhite:1.0 alpha:0.95];
+    cell.nameLabel.textColor = [UIColor colorWithWhite:1.0 alpha:1];
     cell.priceLabel.text = [NSString stringWithFormat:@"%@ %@ собрано", goal.progress, CURRENCY_SYMBOL];
     cell.priceLabel.textColor = [UIColor colorWithWhite:1.0 alpha:0.8];
     cell.delegate = self;
