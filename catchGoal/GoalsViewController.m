@@ -435,7 +435,7 @@
 - (IBAction)allGoalsPressed:(UIButton*)sender {
     [self fetchGoalsWithCompletedFlag:NO];
     
-    [[self.buttonIndicators firstObject] setBackgroundColor:[UIColor colorWithRed:0.208 green:0.584 blue:0.886 alpha:1.000]];
+    [[self.buttonIndicators firstObject] setBackgroundColor:[UIColor colorWithRed:1 green:0.39 blue:0.33 alpha:1]];
     [[self.buttonIndicators lastObject] setBackgroundColor:[UIColor clearColor]];
 
     
