@@ -61,11 +61,18 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
         
-    UIBarButtonItem *cancelItem =
-    [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                 target:self
-                                                 action:@selector(cancelToBack)];
-    self.navigationItem.leftBarButtonItem = cancelItem;
+//    UIBarButtonItem *cancelItem =
+//    [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+//                                                 target:self
+//                                                 action:@selector(cancelToBack)];
+//    self.navigationItem.leftBarButtonItem = cancelItem;
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *backBtnImage = [UIImage imageNamed:@"close.png"]  ;
+    [backBtn setBackgroundImage:backBtnImage forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(goback) forControlEvents:UIControlEventTouchUpInside];
+    backBtn.frame = CGRectMake(0, 0, 30, 30);
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn] ;
+    self.navigationItem.leftBarButtonItem = backButton;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
     //show datapicker
@@ -92,6 +99,10 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     [self.tableView setBackgroundView:imageView];
+}
+
+- (void)goback {
+    [self.navigationController dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)hideKeyboard {
