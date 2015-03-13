@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setHidden:YES];
+    self.navigationController.navigationBarHidden = YES;
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
@@ -28,7 +28,7 @@
     self.navigationController.navigationBar.translucent = YES;
 }
 - (void) viewWillAppear:(BOOL)animated {
-    
+
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
         // do stuff with the user
@@ -39,6 +39,8 @@
         LoginViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
         [self.navigationController pushViewController:loginVC animated:NO];
     }
+    
+
 }
 
 - (void)didReceiveMemoryWarning {

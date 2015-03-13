@@ -21,6 +21,8 @@
     singleTap.numberOfTapsRequired = 1;
     self.view.userInteractionEnabled = TRUE;
     [self.view addGestureRecognizer:singleTap];
+    
+
 }
 
 -(void) viewWillAppear:(BOOL)animated  {
