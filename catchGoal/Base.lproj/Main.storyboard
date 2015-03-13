@@ -459,7 +459,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RV9-oY-7LY">
-                                                    <rect key="frame" x="0.0" y="1" width="320" height="71"/>
+                                                    <rect key="frame" x="0.0" y="8" width="320" height="71"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJq-40-ghx" customClass="KAProgressLabel">
                                                             <rect key="frame" x="77" y="56" width="233" height="7"/>
@@ -516,7 +516,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="RV9-oY-7LY" firstAttribute="leading" secondItem="4TB-l4-c50" secondAttribute="leading" priority="800" id="BzU-Am-HSG"/>
-                                                <constraint firstAttribute="bottom" secondItem="RV9-oY-7LY" secondAttribute="bottom" constant="-1" id="Zdd-Cf-kRP"/>
+                                                <constraint firstItem="RV9-oY-7LY" firstAttribute="top" secondItem="4TB-l4-c50" secondAttribute="topMargin" id="Dvf-Bj-shC"/>
                                                 <constraint firstAttribute="trailing" secondItem="RV9-oY-7LY" secondAttribute="trailing" priority="800" id="a0h-6Q-ov6"/>
                                             </constraints>
                                         </tableViewCellContentView>
