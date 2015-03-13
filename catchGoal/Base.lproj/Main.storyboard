@@ -459,37 +459,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RV9-oY-7LY">
-                                                    <rect key="frame" x="0.0" y="3" width="320" height="68"/>
+                                                    <rect key="frame" x="0.0" y="1" width="320" height="71"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iPad Air 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEI-5d-Pk9">
-                                                            <rect key="frame" x="6" y="7" width="235" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="21" id="Zo7-LI-mDr"/>
-                                                                <constraint firstAttribute="width" constant="235" id="hbZ-xo-zuy"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJq-40-ghx" customClass="KAProgressLabel">
-                                                            <rect key="frame" x="0.0" y="62" width="320" height="6"/>
+                                                            <rect key="frame" x="77" y="56" width="233" height="7"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="6" id="K6f-Yl-rYC"/>
+                                                                <constraint firstAttribute="height" constant="7" id="K6f-Yl-rYC"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testPic2.png" translatesAutoresizingMaskIntoConstraints="NO" id="5x8-x5-XQf">
-                                                            <rect key="frame" x="269" y="6" width="45" height="45"/>
+                                                            <rect key="frame" x="10" y="7" width="57" height="57"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="45" id="H6W-EE-fMW"/>
-                                                                <constraint firstAttribute="width" constant="45" id="dbe-i0-mnL"/>
+                                                                <constraint firstAttribute="height" constant="57" id="H6W-EE-fMW"/>
+                                                                <constraint firstAttribute="width" constant="57" id="dbe-i0-mnL"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$499" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5G-we-V92">
-                                                            <rect key="frame" x="6" y="29" width="205" height="21"/>
+                                                            <rect key="frame" x="77" y="29" width="205" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="205" id="4jt-rn-Zt9"/>
                                                                 <constraint firstAttribute="height" constant="21" id="ywL-qF-R1g"/>
@@ -497,26 +488,35 @@
                                                             <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="15"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iPad Air 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEI-5d-Pk9">
+                                                            <rect key="frame" x="77" y="6" width="235" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="Zo7-LI-mDr"/>
+                                                                <constraint firstAttribute="width" constant="235" id="hbZ-xo-zuy"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="5x8-x5-XQf" secondAttribute="trailing" constant="6" id="7aa-IY-PEO"/>
-                                                        <constraint firstItem="s5G-we-V92" firstAttribute="leading" secondItem="RV9-oY-7LY" secondAttribute="leading" constant="6" id="Dha-qc-ddU"/>
-                                                        <constraint firstItem="s5G-we-V92" firstAttribute="top" secondItem="pEI-5d-Pk9" secondAttribute="bottom" constant="1" id="IhN-DZ-wr9"/>
-                                                        <constraint firstItem="WJq-40-ghx" firstAttribute="leading" secondItem="RV9-oY-7LY" secondAttribute="leading" priority="800" id="KAz-jq-ix5"/>
-                                                        <constraint firstItem="pEI-5d-Pk9" firstAttribute="top" secondItem="RV9-oY-7LY" secondAttribute="top" constant="7" id="bzG-SS-4th"/>
-                                                        <constraint firstItem="pEI-5d-Pk9" firstAttribute="leading" secondItem="RV9-oY-7LY" secondAttribute="leading" constant="6" id="rsh-wp-4y0"/>
-                                                        <constraint firstAttribute="trailing" secondItem="WJq-40-ghx" secondAttribute="trailing" priority="800" id="w2o-Q8-4AJ"/>
-                                                        <constraint firstAttribute="bottom" secondItem="WJq-40-ghx" secondAttribute="bottom" id="wHX-Xr-ckx"/>
-                                                        <constraint firstItem="5x8-x5-XQf" firstAttribute="top" secondItem="RV9-oY-7LY" secondAttribute="top" constant="6" id="wt4-Qi-sMP"/>
-                                                        <constraint firstAttribute="height" constant="68" id="wu4-y0-OOA"/>
+                                                        <constraint firstItem="WJq-40-ghx" firstAttribute="leading" secondItem="5x8-x5-XQf" secondAttribute="trailing" constant="10" id="8XN-mT-cYw"/>
+                                                        <constraint firstItem="s5G-we-V92" firstAttribute="top" secondItem="pEI-5d-Pk9" secondAttribute="bottom" constant="2" id="IhN-DZ-wr9"/>
+                                                        <constraint firstItem="s5G-we-V92" firstAttribute="leading" secondItem="5x8-x5-XQf" secondAttribute="trailing" constant="10" id="MBO-X5-SqS"/>
+                                                        <constraint firstItem="5x8-x5-XQf" firstAttribute="leading" secondItem="RV9-oY-7LY" secondAttribute="leading" constant="10" id="T4h-nm-SkT"/>
+                                                        <constraint firstItem="pEI-5d-Pk9" firstAttribute="top" secondItem="RV9-oY-7LY" secondAttribute="top" constant="6" id="bzG-SS-4th"/>
+                                                        <constraint firstItem="pEI-5d-Pk9" firstAttribute="leading" secondItem="5x8-x5-XQf" secondAttribute="trailing" constant="10" id="duh-Zf-VEg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="WJq-40-ghx" secondAttribute="trailing" priority="800" constant="10" id="w2o-Q8-4AJ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="WJq-40-ghx" secondAttribute="bottom" constant="8" id="wHX-Xr-ckx"/>
+                                                        <constraint firstItem="5x8-x5-XQf" firstAttribute="top" secondItem="RV9-oY-7LY" secondAttribute="top" constant="7" id="wt4-Qi-sMP"/>
+                                                        <constraint firstAttribute="height" constant="71" id="wu4-y0-OOA"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="RV9-oY-7LY" firstAttribute="leading" secondItem="4TB-l4-c50" secondAttribute="leading" priority="800" id="BzU-Am-HSG"/>
-                                                <constraint firstAttribute="bottom" secondItem="RV9-oY-7LY" secondAttribute="bottom" id="Zdd-Cf-kRP"/>
+                                                <constraint firstAttribute="bottom" secondItem="RV9-oY-7LY" secondAttribute="bottom" constant="-1" id="Zdd-Cf-kRP"/>
                                                 <constraint firstAttribute="trailing" secondItem="RV9-oY-7LY" secondAttribute="trailing" priority="800" id="a0h-6Q-ov6"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -572,7 +572,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbA-dC-UfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1923" y="448"/>
+            <point key="canvasLocation" x="1923" y="447"/>
         </scene>
         <!--Detail Table View Controller-->
         <scene sceneID="fHd-zK-bZn">
