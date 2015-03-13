@@ -106,7 +106,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 }
 
 - (void)goback {
-    [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)hideKeyboard {
@@ -263,7 +263,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 }
 
 -(void)cancelToBack {
-    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)choosePhotoButtonClicked:(id)sender {

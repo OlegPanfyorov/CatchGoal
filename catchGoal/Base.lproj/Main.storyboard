@@ -558,7 +558,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BtX-1k-WMM">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="BzT-DL-4Vx" kind="modal" modalTransitionStyle="crossDissolve" id="aLc-Rd-I7s"/>
+                                <segue destination="BzT-DL-4Vx" kind="modal" modalTransitionStyle="flipHorizontal" id="aLc-Rd-I7s"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
