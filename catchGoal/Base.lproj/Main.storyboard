@@ -985,7 +985,7 @@
                                                         <constraint firstAttribute="width" constant="80" id="SjG-iE-ayx"/>
                                                         <constraint firstAttribute="height" constant="80" id="dKC-jx-hgE"/>
                                                     </constraints>
-                                                    <state key="normal" backgroundImage="goalPic.png">
+                                                    <state key="normal" backgroundImage="no_photo.png">
                                                         <color key="titleShadowColor" red="0.66274509803921566" green="0.94901960784313721" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
@@ -1216,11 +1216,11 @@
         <image name="goalCurrentSumWhite.png" width="26" height="24"/>
         <image name="goalExpDateWhite.png" width="23" height="23"/>
         <image name="goalNameWhite.png" width="18" height="25"/>
-        <image name="goalPic.png" width="160" height="160"/>
         <image name="goalTotalSumWhite.png" width="17" height="24"/>
         <image name="loginPic.png" width="15" height="15"/>
         <image name="logo.png" width="430" height="70"/>
         <image name="logout.png" width="19" height="22"/>
+        <image name="no_photo.png" width="432" height="432"/>
         <image name="passPic.png" width="15" height="15"/>
         <image name="testPic2.png" width="90" height="90"/>
     </resources>
