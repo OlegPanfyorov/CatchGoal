@@ -31,6 +31,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+//                                                  forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.shadowImage = [UIImage new];
+//    self.navigationController.navigationBar.translucent = YES;
+//    
     self.tableView.alwaysBounceVertical = NO;
     [self fetchAllGoalOperations];
     [self.navigationController.navigationBar setHidden:NO];
