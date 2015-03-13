@@ -57,6 +57,10 @@
 		8B6A205E1A6AB22100C4FDFE /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */; };
 		8B9E33421A6A32A400CA3778 /* GoalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */; };
 		CE0A38DB1AB342CC00738EE3 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0A38DA1AB342CC00738EE3 /* close.png */; };
+		CE0A38E01AB3475200738EE3 /* goalCurrentSumWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0A38DC1AB3475200738EE3 /* goalCurrentSumWhite.png */; };
+		CE0A38E11AB3475200738EE3 /* goalExpDateWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0A38DD1AB3475200738EE3 /* goalExpDateWhite.png */; };
+		CE0A38E21AB3475200738EE3 /* goalNameWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0A38DE1AB3475200738EE3 /* goalNameWhite.png */; };
+		CE0A38E31AB3475200738EE3 /* goalTotalSumWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0A38DF1AB3475200738EE3 /* goalTotalSumWhite.png */; };
 		CE7CF4681AB0944D00BD1FB2 /* logoAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7CF4671AB0944D00BD1FB2 /* logoAlert.png */; };
 		CED0F1671AA1C3D7007C6B70 /* list-fat-7.png in Resources */ = {isa = PBXBuildFile; fileRef = CED0F1641AA1C3D7007C6B70 /* list-fat-7.png */; };
 		CED0F1681AA1C3D7007C6B70 /* list-simple-7.png in Resources */ = {isa = PBXBuildFile; fileRef = CED0F1651AA1C3D7007C6B70 /* list-simple-7.png */; };
@@ -229,6 +233,10 @@
 		8B9E33401A6A32A400CA3778 /* GoalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalTableViewCell.h; sourceTree = "<group>"; };
 		8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalTableViewCell.m; sourceTree = "<group>"; };
 		CE0A38DA1AB342CC00738EE3 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		CE0A38DC1AB3475200738EE3 /* goalCurrentSumWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goalCurrentSumWhite.png; sourceTree = "<group>"; };
+		CE0A38DD1AB3475200738EE3 /* goalExpDateWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goalExpDateWhite.png; sourceTree = "<group>"; };
+		CE0A38DE1AB3475200738EE3 /* goalNameWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goalNameWhite.png; sourceTree = "<group>"; };
+		CE0A38DF1AB3475200738EE3 /* goalTotalSumWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goalTotalSumWhite.png; sourceTree = "<group>"; };
 		CE7CF4671AB0944D00BD1FB2 /* logoAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoAlert.png; sourceTree = "<group>"; };
 		CED0F1641AA1C3D7007C6B70 /* list-fat-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-fat-7.png"; sourceTree = "<group>"; };
 		CED0F1651AA1C3D7007C6B70 /* list-simple-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-simple-7.png"; sourceTree = "<group>"; };
@@ -816,6 +824,10 @@
 				79736B8F1A9125260046947E /* addMoney@3x.png */,
 				7942FE321A8FF3360035F411 /* no_photo.png */,
 				DAE391E91A82345500B60CC2 /* goalPic.png */,
+				CE0A38DC1AB3475200738EE3 /* goalCurrentSumWhite.png */,
+				CE0A38DD1AB3475200738EE3 /* goalExpDateWhite.png */,
+				CE0A38DE1AB3475200738EE3 /* goalNameWhite.png */,
+				CE0A38DF1AB3475200738EE3 /* goalTotalSumWhite.png */,
 				DAE391E11A82236C00B60CC2 /* goalName.png */,
 				DAE391E31A82262D00B60CC2 /* goalTotalSum.png */,
 				DAE391E51A822A0C00B60CC2 /* goalCurrentSum.png */,
@@ -936,6 +948,7 @@
 				DA34D4381AB0FCDA00C1F01F /* goalList.png in Resources */,
 				DAE391E61A822A0C00B60CC2 /* goalCurrentSum.png in Resources */,
 				DA878F081AB30D0A00337998 /* proximanova-regular.otf in Resources */,
+				CE0A38E21AB3475200738EE3 /* goalNameWhite.png in Resources */,
 				CE7CF4681AB0944D00BD1FB2 /* logoAlert.png in Resources */,
 				DA1C35DE1A8124C000A3A931 /* logout@2x.png in Resources */,
 				DAE391E21A82236C00B60CC2 /* goalName.png in Resources */,
@@ -951,6 +964,7 @@
 				CE0A38DB1AB342CC00738EE3 /* close.png in Resources */,
 				DA1FCC861A81024800CA44C7 /* testPic3.png in Resources */,
 				DAE448771A6B15F20041F449 /* Roboto-Medium.ttf in Resources */,
+				CE0A38E31AB3475200738EE3 /* goalTotalSumWhite.png in Resources */,
 				CED0F1681AA1C3D7007C6B70 /* list-simple-7.png in Resources */,
 				798FA06E1AABA69000F03789 /* airplane.png in Resources */,
 				DAFB806B1A6C4EFA006F28DF /* arrowForward.png in Resources */,
@@ -959,6 +973,7 @@
 				DA878F021AB30B8000337998 /* proximanova-light.otf in Resources */,
 				79736B8E1A9124D20046947E /* addMoney@2x.png in Resources */,
 				DA8AB2771AA0E82D006CB011 /* loginPic@2x.png in Resources */,
+				CE0A38E01AB3475200738EE3 /* goalCurrentSumWhite.png in Resources */,
 				DAE391E81A822AC400B60CC2 /* goalExpDate.png in Resources */,
 				798FA0811AABAE7200F03789 /* edit@2x.png in Resources */,
 				798FA0731AABA69000F03789 /* star@2x.png in Resources */,
@@ -981,6 +996,7 @@
 				DAE391E41A82262D00B60CC2 /* goalTotalSum.png in Resources */,
 				790B7F2A1A69C3AE009C1F1B /* Images.xcassets in Resources */,
 				DA9E2FEB1A80E56000BC08B2 /* OpenSans-Semibold.ttf in Resources */,
+				CE0A38E11AB3475200738EE3 /* goalExpDateWhite.png in Resources */,
 				DA1C35E01A8125BC00A3A931 /* logout@3x.png in Resources */,
 				798FA0801AABAE7200F03789 /* done@2x.png in Resources */,
 				DA8AB27B1AA0F6FA006CB011 /* emalPic.png in Resources */,

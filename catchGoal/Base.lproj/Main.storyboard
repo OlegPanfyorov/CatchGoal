@@ -7,11 +7,13 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
+        </mutableArray>
         <mutableArray key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
-            <string>Roboto-Medium</string>
-            <string>Roboto-Medium</string>
-            <string>Roboto-Medium</string>
             <string>Roboto-Medium</string>
             <string>Roboto-Medium</string>
             <string>Roboto-Medium</string>
@@ -92,14 +94,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-login.png" translatesAutoresizingMaskIntoConstraints="NO" id="DCG-7M-3jY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EAC-af-0Ch">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EAC-af-0Ch">
                                 <rect key="frame" x="26" y="207" width="268" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Bwo-ZN-E74"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="V0I-8j-dyI" id="Saj-7F-Dv0"/>
@@ -233,7 +235,7 @@
                                             <constraint firstAttribute="height" constant="44" id="smM-G7-XPq"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                         <connections>
                                             <outlet property="delegate" destination="Dge-2g-Qbv" id="aS8-Pb-NUz"/>
@@ -253,7 +255,7 @@
                                             <constraint firstAttribute="height" constant="44" id="zz5-o7-KEm"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
                                         <connections>
                                             <outlet property="delegate" destination="Dge-2g-Qbv" id="Fcs-P3-HJi"/>
@@ -269,7 +271,7 @@
                                             <constraint firstAttribute="height" constant="44" id="RJZ-6S-y1E"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="Dge-2g-Qbv" id="P09-Ov-r7C"/>
@@ -1013,7 +1015,7 @@
                                                         <constraint firstAttribute="height" constant="44" id="Gz4-vP-5Yy"/>
                                                     </constraints>
                                                     <color key="textColor" red="0.32549019610000002" green="0.41568627450000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -1024,7 +1026,7 @@
                                                         <outlet property="delegate" destination="GGm-5O-CVc" id="Bou-xs-DfN"/>
                                                     </connections>
                                                 </textField>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalName.png" translatesAutoresizingMaskIntoConstraints="NO" id="GCT-DJ-hHg">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalNameWhite.png" translatesAutoresizingMaskIntoConstraints="NO" id="GCT-DJ-hHg">
                                                     <rect key="frame" x="23" y="22" width="9" height="13"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="9" id="0qM-Zp-bBC"/>
@@ -1053,7 +1055,7 @@
                                                         <constraint firstAttribute="height" constant="44" id="rJE-dy-1gI"/>
                                                     </constraints>
                                                     <color key="textColor" red="0.32549019610000002" green="0.41568627450000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -1064,7 +1066,7 @@
                                                         <outlet property="delegate" destination="GGm-5O-CVc" id="Npa-AV-Qal"/>
                                                     </connections>
                                                 </textField>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalTotalSum.png" translatesAutoresizingMaskIntoConstraints="NO" id="vTq-y2-wAA">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalTotalSumWhite.png" translatesAutoresizingMaskIntoConstraints="NO" id="vTq-y2-wAA">
                                                     <rect key="frame" x="23" y="24" width="9" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="ld1-Kl-v7l"/>
@@ -1093,7 +1095,7 @@
                                                         <constraint firstAttribute="height" constant="44" id="ZBm-eQ-QnC"/>
                                                     </constraints>
                                                     <color key="textColor" red="0.32549019610000002" green="0.41568627450000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -1104,7 +1106,7 @@
                                                         <outlet property="delegate" destination="GGm-5O-CVc" id="GbY-T7-uwR"/>
                                                     </connections>
                                                 </textField>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalCurrentSum.png" translatesAutoresizingMaskIntoConstraints="NO" id="HE2-cw-hUD">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalCurrentSumWhite.png" translatesAutoresizingMaskIntoConstraints="NO" id="HE2-cw-hUD">
                                                     <rect key="frame" x="23" y="22" width="13" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="13" id="10N-s3-oPn"/>
@@ -1133,7 +1135,7 @@
                                                         <constraint firstAttribute="height" constant="44" id="gsQ-Xq-t0j"/>
                                                     </constraints>
                                                     <color key="textColor" red="0.32549019610000002" green="0.41568627450000001" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -1144,7 +1146,7 @@
                                                         <outlet property="delegate" destination="GGm-5O-CVc" id="BYR-gU-5k2"/>
                                                     </connections>
                                                 </textField>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalExpDate.png" translatesAutoresizingMaskIntoConstraints="NO" id="tsv-8q-M8L">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalExpDateWhite.png" translatesAutoresizingMaskIntoConstraints="NO" id="tsv-8q-M8L">
                                                     <rect key="frame" x="23" y="22" width="13" height="13"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="13" id="qLB-9g-pZM"/>
@@ -1213,11 +1215,11 @@
         <image name="arrowForward.png" width="60" height="60"/>
         <image name="bg-login.png" width="640" height="1136"/>
         <image name="emalPic.png" width="30" height="30"/>
-        <image name="goalCurrentSum.png" width="26" height="24"/>
-        <image name="goalExpDate.png" width="23" height="23"/>
-        <image name="goalName.png" width="18" height="25"/>
+        <image name="goalCurrentSumWhite.png" width="26" height="24"/>
+        <image name="goalExpDateWhite.png" width="23" height="23"/>
+        <image name="goalNameWhite.png" width="18" height="25"/>
         <image name="goalPic.png" width="160" height="160"/>
-        <image name="goalTotalSum.png" width="17" height="24"/>
+        <image name="goalTotalSumWhite.png" width="17" height="24"/>
         <image name="loginPic.png" width="15" height="15"/>
         <image name="logo.png" width="430" height="70"/>
         <image name="logout.png" width="19" height="22"/>
