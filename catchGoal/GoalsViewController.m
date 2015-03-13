@@ -27,7 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationController.navigationBarHidden = NO;
+
     UIEdgeInsets inset = {-14,0,-31,0};
     self.tableView.contentInset = inset;
     [self.navigationController.navigationBar setHidden:NO];

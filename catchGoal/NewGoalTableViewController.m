@@ -40,9 +40,13 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    
     self.choosePhotoButton.alpha = 0.75;
-    
-    
     NSLog(@"Navframe Height=%f",
           self.navigationController.navigationBar.frame.size.height + 20);
     UIButton* saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
