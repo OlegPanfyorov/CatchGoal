@@ -942,7 +942,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ayP-OZ-aqQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="omF-OA-dBH" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="omF-OA-dBH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Aiv-x0-bwz">
@@ -960,7 +960,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5M-LD-l3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108" y="448"/>
+            <point key="canvasLocation" x="104" y="447"/>
         </scene>
         <!--New Goal Table View Controller-->
         <scene sceneID="fyK-hS-cJB">
