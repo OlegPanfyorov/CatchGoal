@@ -942,7 +942,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ayP-OZ-aqQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="omF-OA-dBH" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="omF-OA-dBH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Aiv-x0-bwz">
