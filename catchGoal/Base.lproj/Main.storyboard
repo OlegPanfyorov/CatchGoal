@@ -471,7 +471,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJq-40-ghx" customClass="KAProgressLabel">
-                                                            <rect key="frame" x="0.0" y="56" width="320" height="6"/>
+                                                            <rect key="frame" x="0.0" y="62" width="320" height="6"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="6" id="K6f-Yl-rYC"/>
@@ -507,7 +507,7 @@
                                                         <constraint firstItem="pEI-5d-Pk9" firstAttribute="top" secondItem="RV9-oY-7LY" secondAttribute="top" constant="7" id="bzG-SS-4th"/>
                                                         <constraint firstItem="pEI-5d-Pk9" firstAttribute="leading" secondItem="RV9-oY-7LY" secondAttribute="leading" constant="6" id="rsh-wp-4y0"/>
                                                         <constraint firstAttribute="trailing" secondItem="WJq-40-ghx" secondAttribute="trailing" priority="800" id="w2o-Q8-4AJ"/>
-                                                        <constraint firstAttribute="bottom" secondItem="WJq-40-ghx" secondAttribute="bottom" constant="6" id="wHX-Xr-ckx"/>
+                                                        <constraint firstAttribute="bottom" secondItem="WJq-40-ghx" secondAttribute="bottom" id="wHX-Xr-ckx"/>
                                                         <constraint firstItem="5x8-x5-XQf" firstAttribute="top" secondItem="RV9-oY-7LY" secondAttribute="top" constant="6" id="wt4-Qi-sMP"/>
                                                         <constraint firstAttribute="height" constant="68" id="wu4-y0-OOA"/>
                                                     </constraints>

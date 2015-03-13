@@ -31,7 +31,7 @@
     UIEdgeInsets inset = {-20,0,0,0};
     self.tableView.contentInset = inset;
     [self.navigationController.navigationBar setHidden:NO];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.separatorColor = [[UIColor blackColor] colorWithAlphaComponent:0.25];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
