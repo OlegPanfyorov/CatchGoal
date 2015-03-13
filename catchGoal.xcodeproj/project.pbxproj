@@ -43,7 +43,6 @@
 		79548FFD1A6C37BB005AE681 /* DataSingletone.m in Sources */ = {isa = PBXBuildFile; fileRef = 79548FFC1A6C37BB005AE681 /* DataSingletone.m */; };
 		79736B8E1A9124D20046947E /* addMoney@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79736B8D1A9124D20046947E /* addMoney@2x.png */; };
 		79736B901A9125260046947E /* addMoney@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79736B8F1A9125260046947E /* addMoney@3x.png */; };
-		798FA0641AABA34800F03789 /* Begur_Catalonia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 798FA0631AABA34800F03789 /* Begur_Catalonia.jpg */; };
 		798FA0671AABA3CE00F03789 /* SWRevealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 798FA0661AABA3CE00F03789 /* SWRevealTableViewCell.m */; };
 		798FA06E1AABA69000F03789 /* airplane.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA0681AABA69000F03789 /* airplane.png */; };
 		798FA06F1AABA69000F03789 /* airplane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA0691AABA69000F03789 /* airplane@2x.png */; };
@@ -51,7 +50,6 @@
 		798FA0711AABA69000F03789 /* heart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA06B1AABA69000F03789 /* heart@2x.png */; };
 		798FA0721AABA69000F03789 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA06C1AABA69000F03789 /* star.png */; };
 		798FA0731AABA69000F03789 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA06D1AABA69000F03789 /* star@2x.png */; };
-		798FA0751AABAA9D00F03789 /* interior.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 798FA0741AABAA9D00F03789 /* interior.jpg */; };
 		798FA07F1AABAE7200F03789 /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA07C1AABAE7200F03789 /* delete@2x.png */; };
 		798FA0801AABAE7200F03789 /* done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA07D1AABAE7200F03789 /* done@2x.png */; };
 		798FA0811AABAE7200F03789 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA07E1AABAE7200F03789 /* edit@2x.png */; };
@@ -106,6 +104,7 @@
 		DA5CB91F1A924E2300A66BBF /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5CB9031A924E2300A66BBF /* MagicalRecord.m */; };
 		DA6308981A77C13D00F7AB08 /* AddAndEditGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6308971A77C13D00F7AB08 /* AddAndEditGoalCell.m */; };
 		DA63089A1A77CAF300F7AB08 /* photoPic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6308991A77CAF300F7AB08 /* photoPic@2x.png */; };
+		DA878EFF1AB3061700337998 /* bg-main.gif in Resources */ = {isa = PBXBuildFile; fileRef = DA878EFE1AB3061700337998 /* bg-main.gif */; };
 		DA87F4B01A9B89A60085F7F9 /* SCLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87F4A71A9B89A60085F7F9 /* SCLAlertView.m */; };
 		DA87F4B11A9B89A60085F7F9 /* SCLAlertViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87F4A91A9B89A60085F7F9 /* SCLAlertViewResponder.m */; };
 		DA87F4B21A9B89A60085F7F9 /* SCLAlertViewStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87F4AB1A9B89A60085F7F9 /* SCLAlertViewStyleKit.m */; };
@@ -204,7 +203,6 @@
 		79548FFC1A6C37BB005AE681 /* DataSingletone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSingletone.m; sourceTree = "<group>"; };
 		79736B8D1A9124D20046947E /* addMoney@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addMoney@2x.png"; sourceTree = "<group>"; };
 		79736B8F1A9125260046947E /* addMoney@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addMoney@3x.png"; sourceTree = "<group>"; };
-		798FA0631AABA34800F03789 /* Begur_Catalonia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Begur_Catalonia.jpg; sourceTree = "<group>"; };
 		798FA0651AABA3CE00F03789 /* SWRevealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealTableViewCell.h; sourceTree = "<group>"; };
 		798FA0661AABA3CE00F03789 /* SWRevealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealTableViewCell.m; sourceTree = "<group>"; };
 		798FA0681AABA69000F03789 /* airplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airplane.png; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 		798FA06B1AABA69000F03789 /* heart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart@2x.png"; sourceTree = "<group>"; };
 		798FA06C1AABA69000F03789 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		798FA06D1AABA69000F03789 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
-		798FA0741AABAA9D00F03789 /* interior.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = interior.jpg; sourceTree = "<group>"; };
 		798FA07C1AABAE7200F03789 /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
 		798FA07D1AABAE7200F03789 /* done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done@2x.png"; sourceTree = "<group>"; };
 		798FA07E1AABAE7200F03789 /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@2x.png"; sourceTree = "<group>"; };
@@ -306,6 +303,7 @@
 		DA6308961A77C13D00F7AB08 /* AddAndEditGoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAndEditGoalCell.h; sourceTree = "<group>"; };
 		DA6308971A77C13D00F7AB08 /* AddAndEditGoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAndEditGoalCell.m; sourceTree = "<group>"; };
 		DA6308991A77CAF300F7AB08 /* photoPic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photoPic@2x.png"; sourceTree = "<group>"; };
+		DA878EFE1AB3061700337998 /* bg-main.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "bg-main.gif"; sourceTree = "<group>"; };
 		DA87F4A61A9B89A60085F7F9 /* SCLAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertView.h; sourceTree = "<group>"; };
 		DA87F4A71A9B89A60085F7F9 /* SCLAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertView.m; sourceTree = "<group>"; };
 		DA87F4A81A9B89A60085F7F9 /* SCLAlertViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertViewResponder.h; sourceTree = "<group>"; };
@@ -781,13 +779,13 @@
 		DAE448701A6B0C000041F449 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DA878EFE1AB3061700337998 /* bg-main.gif */,
 				DA34D4291AB0F48100C1F01F /* allGoals.png */,
 				DA34D4371AB0FCDA00C1F01F /* goalList.png */,
 				CE7CF4671AB0944D00BD1FB2 /* logoAlert.png */,
 				798FA07C1AABAE7200F03789 /* delete@2x.png */,
 				798FA07D1AABAE7200F03789 /* done@2x.png */,
 				798FA07E1AABAE7200F03789 /* edit@2x.png */,
-				798FA0741AABAA9D00F03789 /* interior.jpg */,
 				DA16B0EF1AB0BC360044254E /* interior-blur.png */,
 				798FA0681AABA69000F03789 /* airplane.png */,
 				798FA0691AABA69000F03789 /* airplane@2x.png */,
@@ -795,7 +793,6 @@
 				798FA06B1AABA69000F03789 /* heart@2x.png */,
 				798FA06C1AABA69000F03789 /* star.png */,
 				798FA06D1AABA69000F03789 /* star@2x.png */,
-				798FA0631AABA34800F03789 /* Begur_Catalonia.jpg */,
 				CED0F1641AA1C3D7007C6B70 /* list-fat-7.png */,
 				CED0F1651AA1C3D7007C6B70 /* list-simple-7.png */,
 				CED0F1661AA1C3D7007C6B70 /* list-simple-star-7.png */,
@@ -924,7 +921,6 @@
 				DA1C35DE1A8124C000A3A931 /* logout@2x.png in Resources */,
 				DAE391E21A82236C00B60CC2 /* goalName.png in Resources */,
 				798FA0711AABA69000F03789 /* heart@2x.png in Resources */,
-				798FA0751AABAA9D00F03789 /* interior.jpg in Resources */,
 				CED0F1671AA1C3D7007C6B70 /* list-fat-7.png in Resources */,
 				DA1FCC851A81024800CA44C7 /* testPic2.png in Resources */,
 				DA63089A1A77CAF300F7AB08 /* photoPic@2x.png in Resources */,
@@ -932,7 +928,6 @@
 				CED0F1691AA1C3D7007C6B70 /* list-simple-star-7.png in Resources */,
 				DAE391EA1A82345500B60CC2 /* goalPic.png in Resources */,
 				DA1FCC861A81024800CA44C7 /* testPic3.png in Resources */,
-				798FA0641AABA34800F03789 /* Begur_Catalonia.jpg in Resources */,
 				DAE448771A6B15F20041F449 /* Roboto-Medium.ttf in Resources */,
 				CED0F1681AA1C3D7007C6B70 /* list-simple-7.png in Resources */,
 				798FA06E1AABA69000F03789 /* airplane.png in Resources */,
@@ -942,6 +937,7 @@
 				79736B8E1A9124D20046947E /* addMoney@2x.png in Resources */,
 				DA8AB2771AA0E82D006CB011 /* loginPic@2x.png in Resources */,
 				DAE391E81A822AC400B60CC2 /* goalExpDate.png in Resources */,
+				DA878EFF1AB3061700337998 /* bg-main.gif in Resources */,
 				798FA0811AABAE7200F03789 /* edit@2x.png in Resources */,
 				798FA0731AABA69000F03789 /* star@2x.png in Resources */,
 				798FA07F1AABAE7200F03789 /* delete@2x.png in Resources */,

@@ -32,12 +32,12 @@
     self.tableView.contentInset = inset;
     [self.navigationController.navigationBar setHidden:NO];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    self.tableView.separatorColor = [[UIColor whiteColor] colorWithAlphaComponent:0.2];
+    self.tableView.separatorColor = [[UIColor blackColor] colorWithAlphaComponent:0.25];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.tableView.alwaysBounceVertical = NO;
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"interior-blur.png"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg-main.gif"]];
     imageView.frame = [UIScreen mainScreen].bounds;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
@@ -46,6 +46,11 @@
     [self.view sendSubviewToBack:imageView];
     
     self.buttonView.backgroundColor = [[UIColor colorWithRed:0.13 green:0.13 blue:0.16 alpha:1] colorWithAlphaComponent:0.55];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
 } // [[UIColor colorWithRed:0.32 green:0.64 blue:0.9 alpha:1] colorWithAlphaComponent:0.3];
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -326,13 +331,14 @@
                         infoAler.backgroundType = Shadow;
                         [infoAler addButton:@"Завершить" actionBlock:^{
                             goal.price = [formatter numberFromString:newPrice];
+                            goal.progress = [formatter numberFromString:newPrice];
                             goal.complited = [NSNumber numberWithBool:YES];
                             [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
                                 [self fetchGoalsWithCompletedFlag:NO];
                             }];
 
                         }];
-                        [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+                        //[self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationLeft];
                         NSString *messageString = [NSString stringWithFormat:@"Введенная сумма меньше или равна собранным на %@ накоплениям! Хотите завершить данную цель?", goal.name];
                         [infoAler showInfo:self title:@"Внимание" subTitle:messageString closeButtonTitle:@"Отмена" duration:0];
                     } else if ([newPrice integerValue] > self.operationsSum) {

@@ -13,7 +13,7 @@
 
 
 - (void)awakeFromNib {
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.17];
     self.lineProgressView.progressType = ProgressLabelRect;
     self.lineProgressView.backBorderWidth = 0.0;
     self.lineProgressView.frontBorderWidth = 0.0;
