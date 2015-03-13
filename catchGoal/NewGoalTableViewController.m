@@ -41,10 +41,14 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIEdgeInsets inset = {0,0,0,0};
+    self.tableView.contentInset = inset;
+    
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
+    self.navigationItem.title = @"Создание цели";
     
     self.choosePhotoButton.alpha = 0.75;
     NSLog(@"Navframe Height=%f",

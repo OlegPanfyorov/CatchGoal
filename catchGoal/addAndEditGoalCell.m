@@ -12,22 +12,24 @@
 
 - (void)awakeFromNib {
     
-    //self.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
+    UIView* circle = [[UIView alloc] initWithFrame:CGRectMake(10, 19, 7, 7)];
+    circle.backgroundColor = [UIColor whiteColor];
+    circle.layer.cornerRadius = circle.frame.size.height / 2;
+    
+    if (self.tag == 0) {
+        [self addSubview:circle];
+    }
+    
     self.backgroundColor = [UIColor clearColor];
     
     for (UIView* view in self.contentView.subviews) {
         
         if ([view isKindOfClass:[UITextField class]]) {
             UITextField* field = (UITextField*)view;
-            
             field.textColor = [UIColor colorWithWhite:1.0 alpha:1.0];
             field.backgroundColor = [[UIColor colorWithWhite:1.0 alpha:1.0] colorWithAlphaComponent:0.25];
-           // field.backgroundColor = [UIColor blackColor];
-           // field.alpha = 0.4;
-            field.layer.cornerRadius = 5.f;
             field.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 35, 44)];
             field.leftViewMode = UITextFieldViewModeAlways;
-            
             field.attributedPlaceholder = [[NSAttributedString alloc] initWithString:field.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithWhite:1.0 alpha:0.75], NSFontAttributeName: [UIFont fontWithName:@"Roboto-Medium" size:14.f]}];
             
         }

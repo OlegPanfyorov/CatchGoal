@@ -89,7 +89,7 @@
     cell.delegate = self;
     cell.dataSource = self;
     cell.cellRevealMode = SWCellRevealModeNormal;
-    
+
     NSData *goalImage = [NSData dataWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:goal.imagePath]];
     
     if (goal.imagePath) {
