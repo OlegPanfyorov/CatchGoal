@@ -111,6 +111,7 @@
 		DA878F051AB30B8400337998 /* proximanova-semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DA878F011AB30B6C00337998 /* proximanova-semibold.otf */; };
 		DA878F071AB30D0900337998 /* proximanova-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DA878F061AB30D0700337998 /* proximanova-regular.otf */; };
 		DA878F081AB30D0A00337998 /* proximanova-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DA878F061AB30D0700337998 /* proximanova-regular.otf */; };
+		DA878F0E1AB312EF00337998 /* bg-login.png in Resources */ = {isa = PBXBuildFile; fileRef = DA878F0D1AB312EF00337998 /* bg-login.png */; };
 		DA87F4B01A9B89A60085F7F9 /* SCLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87F4A71A9B89A60085F7F9 /* SCLAlertView.m */; };
 		DA87F4B11A9B89A60085F7F9 /* SCLAlertViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87F4A91A9B89A60085F7F9 /* SCLAlertViewResponder.m */; };
 		DA87F4B21A9B89A60085F7F9 /* SCLAlertViewStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87F4AB1A9B89A60085F7F9 /* SCLAlertViewStyleKit.m */; };
@@ -313,6 +314,7 @@
 		DA878F001AB30B6C00337998 /* proximanova-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-light.otf"; sourceTree = "<group>"; };
 		DA878F011AB30B6C00337998 /* proximanova-semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-semibold.otf"; sourceTree = "<group>"; };
 		DA878F061AB30D0700337998 /* proximanova-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-regular.otf"; sourceTree = "<group>"; };
+		DA878F0D1AB312EF00337998 /* bg-login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-login.png"; sourceTree = "<group>"; };
 		DA87F4A61A9B89A60085F7F9 /* SCLAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertView.h; sourceTree = "<group>"; };
 		DA87F4A71A9B89A60085F7F9 /* SCLAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertView.m; sourceTree = "<group>"; };
 		DA87F4A81A9B89A60085F7F9 /* SCLAlertViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertViewResponder.h; sourceTree = "<group>"; };
@@ -789,6 +791,7 @@
 			isa = PBXGroup;
 			children = (
 				DA878EFE1AB3061700337998 /* bg-main.gif */,
+				DA878F0D1AB312EF00337998 /* bg-login.png */,
 				DA34D4291AB0F48100C1F01F /* allGoals.png */,
 				DA34D4371AB0FCDA00C1F01F /* goalList.png */,
 				CE7CF4671AB0944D00BD1FB2 /* logoAlert.png */,
@@ -937,6 +940,7 @@
 				CED0F1671AA1C3D7007C6B70 /* list-fat-7.png in Resources */,
 				DA1FCC851A81024800CA44C7 /* testPic2.png in Resources */,
 				DA63089A1A77CAF300F7AB08 /* photoPic@2x.png in Resources */,
+				DA878F0E1AB312EF00337998 /* bg-login.png in Resources */,
 				DAE448791A6B15F40041F449 /* Roboto-Regular.ttf in Resources */,
 				CED0F1691AA1C3D7007C6B70 /* list-simple-star-7.png in Resources */,
 				DAE391EA1A82345500B60CC2 /* goalPic.png in Resources */,

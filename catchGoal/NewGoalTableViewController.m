@@ -84,7 +84,7 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     self.choosePhotoButton.layer.borderColor = [UIColor whiteColor].CGColor;
     
     self.tableView.backgroundColor = [UIColor clearColor];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg-main.gif"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg-main.png"]];
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     [self.tableView setBackgroundView:imageView];
