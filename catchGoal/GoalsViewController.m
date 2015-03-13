@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIEdgeInsets inset = {0,0,0,0};
+    UIEdgeInsets inset = {-20,0,0,0};
     self.tableView.contentInset = inset;
     [self.navigationController.navigationBar setHidden:NO];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
