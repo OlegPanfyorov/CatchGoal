@@ -22,6 +22,7 @@
     
     self.backgroundColor = [UIColor clearColor];
     
+    
     for (UIView* view in self.contentView.subviews) {
         
         if ([view isKindOfClass:[UITextField class]]) {

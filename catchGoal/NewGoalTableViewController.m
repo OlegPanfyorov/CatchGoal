@@ -43,7 +43,6 @@ static NSInteger const kNavAndStatusBarHeight = 64;
     
     UIEdgeInsets inset = {0,0,0,0};
     self.tableView.contentInset = inset;
-    
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
@@ -167,6 +166,13 @@ static NSInteger const kNavAndStatusBarHeight = 64;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)tableView:(UITableView *)tableView
+  willDisplayCell:(UITableViewCell *)cell
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell setBackgroundColor:[UIColor clearColor]];
 }
 
 #pragma mark - UITextFieldDelegate
