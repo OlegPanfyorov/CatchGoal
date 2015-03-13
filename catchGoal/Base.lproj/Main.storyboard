@@ -459,7 +459,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RV9-oY-7LY">
-                                                    <rect key="frame" x="0.0" y="8" width="320" height="71"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJq-40-ghx" customClass="KAProgressLabel">
                                                             <rect key="frame" x="77" y="56" width="233" height="7"/>
@@ -480,7 +480,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$499" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5G-we-V92">
-                                                            <rect key="frame" x="77" y="29" width="205" height="21"/>
+                                                            <rect key="frame" x="77" y="32" width="205" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="205" id="4jt-rn-Zt9"/>
                                                                 <constraint firstAttribute="height" constant="21" id="ywL-qF-R1g"/>
@@ -489,12 +489,12 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iPad Air 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEI-5d-Pk9">
-                                                            <rect key="frame" x="77" y="6" width="235" height="21"/>
+                                                            <rect key="frame" x="77" y="9" width="235" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Zo7-LI-mDr"/>
                                                                 <constraint firstAttribute="width" constant="235" id="hbZ-xo-zuy"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="19"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -504,7 +504,7 @@
                                                         <constraint firstItem="s5G-we-V92" firstAttribute="top" secondItem="pEI-5d-Pk9" secondAttribute="bottom" constant="2" id="IhN-DZ-wr9"/>
                                                         <constraint firstItem="s5G-we-V92" firstAttribute="leading" secondItem="5x8-x5-XQf" secondAttribute="trailing" constant="10" id="MBO-X5-SqS"/>
                                                         <constraint firstItem="5x8-x5-XQf" firstAttribute="leading" secondItem="RV9-oY-7LY" secondAttribute="leading" constant="10" id="T4h-nm-SkT"/>
-                                                        <constraint firstItem="pEI-5d-Pk9" firstAttribute="top" secondItem="RV9-oY-7LY" secondAttribute="top" constant="6" id="bzG-SS-4th"/>
+                                                        <constraint firstItem="pEI-5d-Pk9" firstAttribute="top" secondItem="RV9-oY-7LY" secondAttribute="top" constant="9" id="bzG-SS-4th"/>
                                                         <constraint firstItem="pEI-5d-Pk9" firstAttribute="leading" secondItem="5x8-x5-XQf" secondAttribute="trailing" constant="10" id="duh-Zf-VEg"/>
                                                         <constraint firstAttribute="trailing" secondItem="WJq-40-ghx" secondAttribute="trailing" priority="800" constant="10" id="w2o-Q8-4AJ"/>
                                                         <constraint firstAttribute="bottom" secondItem="WJq-40-ghx" secondAttribute="bottom" constant="8" id="wHX-Xr-ckx"/>
@@ -516,8 +516,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="RV9-oY-7LY" firstAttribute="leading" secondItem="4TB-l4-c50" secondAttribute="leading" priority="800" id="BzU-Am-HSG"/>
-                                                <constraint firstItem="RV9-oY-7LY" firstAttribute="top" secondItem="4TB-l4-c50" secondAttribute="topMargin" id="Dvf-Bj-shC"/>
                                                 <constraint firstAttribute="trailing" secondItem="RV9-oY-7LY" secondAttribute="trailing" priority="800" id="a0h-6Q-ov6"/>
+                                                <constraint firstItem="RV9-oY-7LY" firstAttribute="top" secondItem="4TB-l4-c50" secondAttribute="top" id="vYz-Ap-d70"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
