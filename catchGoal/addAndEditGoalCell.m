@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
     
-    UIView* circle = [[UIView alloc] initWithFrame:CGRectMake(10, 19, 7, 7)];
+    UIView* circle = [[UIView alloc] initWithFrame:CGRectMake(15, 21, 5, 5)];
     circle.backgroundColor = [UIColor whiteColor];
     circle.layer.cornerRadius = circle.frame.size.height / 2;
     
