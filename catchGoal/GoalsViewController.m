@@ -204,7 +204,9 @@
                                {
                                    NSLog( @"EDIT Tapped");
                                    self.indexPath = [self.tableView indexPathForCell:cell];
-                                   UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Выберите действие"
+                                   Goal* goal = [[DataSingletone sharedModel].goalsArray objectAtIndex:self.indexPath.row];
+
+                                   UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:goal.name
                                                                                             delegate:self
                                                                                    cancelButtonTitle:@"Отмена"
                                                                               destructiveButtonTitle:nil
