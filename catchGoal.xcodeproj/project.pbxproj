@@ -486,8 +486,11 @@
 				D3494B701A6C14110007DD0C /* NotificationCenter.framework */,
 				794465B31A6A529900F00F63 /* parse need. */,
 				79ABEEC01A827D8F00DCE5F0 /* Datepicker */,
+				DA87F4A51A9B89A60085F7F9 /* SCLAlertView */,
 				7942FE2F1A8FD1E00035F411 /* UIActionSheet+BlockExtensions.h */,
 				7942FE301A8FD1E00035F411 /* UIActionSheet+BlockExtensions.m */,
+				798FA0651AABA3CE00F03789 /* SWRevealTableViewCell.h */,
+				798FA0661AABA3CE00F03789 /* SWRevealTableViewCell.m */,
 				DABF0E571A6AD96800105669 /* KAProgressLabel */,
 			);
 			name = "Frameworks\\Libraries";
@@ -496,9 +499,6 @@
 		790B7F431A69C5AB009C1F1B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				798FA0651AABA3CE00F03789 /* SWRevealTableViewCell.h */,
-				798FA0661AABA3CE00F03789 /* SWRevealTableViewCell.m */,
-				DA87F4A51A9B89A60085F7F9 /* SCLAlertView */,
 				DA6308951A77C0E600F7AB08 /* Cells */,
 			);
 			name = UI;
