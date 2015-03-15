@@ -36,6 +36,7 @@
     self.tableView.separatorColor = [[UIColor blackColor] colorWithAlphaComponent:0.25];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     self.tableView.alwaysBounceVertical = NO;
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg-main.png"]];
