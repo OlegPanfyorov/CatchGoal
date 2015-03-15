@@ -378,7 +378,7 @@
         NSLog( @"Image has been deteted at Path - %@", goal.imagePath);
     }
 
-    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    UIImage *image = info[UIImagePickerControllerEditedImage];
     NSData *imgData   = UIImageJPEGRepresentation(image, 0.5);
     NSString *name    = [[NSUUID UUID] UUIDString];
     NSString *path	  = [NSString stringWithFormat:@"Documents/%@.jpg", name];
