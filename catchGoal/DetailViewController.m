@@ -1,45 +1,54 @@
 //
-//  DetailTableViewController.m
+//  DetailViewController.m
 //  catchGoal
 //
-//  Created by Maverick on 1/17/15.
+//  Created by GeX on 15/03/15.
 //  Copyright (c) 2015 iosDevCourse. All rights reserved.
 //
 
-#import "DetailTableViewController.h"
+#import "DetailViewController.h"
 #import "goalInfoCell.h"
 #import "goalOperationsCell.h"
 
-//#import "IDMPhoto.h"
-//#import "IDMPhotoBrowser.h"
-
-
-
-@interface DetailTableViewController () <UIAlertViewDelegate, GoalInfoCellDelegate>
-
+@interface DetailViewController () <UIAlertViewDelegate, GoalInfoCellDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (assign, nonatomic) CGFloat progressPercent;
 @property (assign, nonatomic) int sumLeft;
 @property (assign, nonatomic) int addMoneySum;
 @property (strong, nonatomic) NSMutableArray* goalOperationsArray;
 @property (strong, nonatomic) NSData *goalImage;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
 
 -(IBAction)addMoneyClicked:(UIBarButtonItem*)sender;
-
 @end
 
-@implementation DetailTableViewController
+@implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-//                                                  forBarMetrics:UIBarMetricsDefault];
-//    self.navigationController.navigationBar.shadowImage = [UIImage new];
-//    self.navigationController.navigationBar.translucent = YES;
-//    
+    
+
+    
+    self.tableView.separatorColor = [[UIColor blackColor] colorWithAlphaComponent:0.25];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.alwaysBounceVertical = NO;
+
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg-main.png"]];
+    imageView.frame = [UIScreen mainScreen].bounds;
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    
+    [self.view insertSubview:imageView belowSubview:self.tableView];
+    [self.view sendSubviewToBack:imageView];
+    
     self.tableView.alwaysBounceVertical = NO;
     [self fetchAllGoalOperations];
     [self.navigationController.navigationBar setHidden:NO];
- 
 }
 
 - (void)fetchAllGoalOperations {
@@ -60,16 +69,12 @@
     return UIStatusBarStyleLightContent;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 #pragma mark - Actions
 
 - (IBAction)previousGoalButtonTap:(UIButton *)sender {
     self.selectedItemInArray--;
     [self fetchAllGoalOperations];
-    [self.tableView reloadData];    
+    [self.tableView reloadData];
 }
 
 - (IBAction)nextGoalButtonTap:(UIButton *)sender {
@@ -85,27 +90,27 @@
     SCLAlertView *alert = [[SCLAlertView alloc] init];
     alert.showAnimationType = SlideInFromTop;
     alert.backgroundType = Blur;
-
+    
     UITextField *textField = [alert addTextField:@"Сумма"];
-   // [textField becomeFirstResponder];
-
+    // [textField becomeFirstResponder];
+    
     [alert addButton:@"Готово" actionBlock:^(void) {
         self.addMoneySum = [textField.text intValue];
-
+        
         if (self.addMoneySum >= 1 && self.addMoneySum <= self.sumLeft && self.addMoneySum != self.sumLeft) {
             [self addNewSumToContextWithCompletedFlag:NO];
             sender.enabled = YES;
         } else if (self.addMoneySum == self.sumLeft) {
-           dispatch_async(dispatch_get_main_queue(), ^{
-            SCLAlertView *alertWithComplited = [[SCLAlertView alloc] init];
-            [alertWithComplited showSuccess:self title:@"Завершено" subTitle:@"Вы выполнили данную цель." closeButtonTitle:@"Готово" duration:0.0f];
-            [self addNewSumToContextWithCompletedFlag:YES];
-            [alertWithComplited alertIsDismissed:^{
-                self.tableView.scrollEnabled = YES;
-                sender.enabled = NO;
-            }];
-        });
-
+            dispatch_async(dispatch_get_main_queue(), ^{
+                SCLAlertView *alertWithComplited = [[SCLAlertView alloc] init];
+                [alertWithComplited showSuccess:self title:@"Завершено" subTitle:@"Вы выполнили данную цель." closeButtonTitle:@"Готово" duration:0.0f];
+                [self addNewSumToContextWithCompletedFlag:YES];
+                [alertWithComplited alertIsDismissed:^{
+                    self.tableView.scrollEnabled = YES;
+                    sender.enabled = NO;
+                }];
+            });
+            
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
                 SCLAlertView *alertWithError = [[SCLAlertView alloc] init];
@@ -117,7 +122,7 @@
                     sender.enabled = YES;
                     
                 }];
-
+                
             });
         }
     }];
@@ -125,12 +130,12 @@
     [alert addButton:@"Отмена" actionBlock:^(void) {
         self.tableView.scrollEnabled = YES;
         sender.enabled = YES;
-
+        
     }];
     
     [alert showSuccess:self title:@"Внесите сумму"
-                            subTitle:[NSString stringWithFormat:@"До достижения цели осталось собрать: %d %@", self.sumLeft, CURRENCY_SYMBOL]
-                            closeButtonTitle:nil duration:0.0f];
+              subTitle:[NSString stringWithFormat:@"До достижения цели осталось собрать: %d %@", self.sumLeft, CURRENCY_SYMBOL]
+      closeButtonTitle:nil duration:0.0f];
 }
 
 - (void) addNewSumToContextWithCompletedFlag:(BOOL) isCompleted {
@@ -149,7 +154,7 @@
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     [self.tableView endUpdates];
     self.tableView.scrollEnabled = YES;
-
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.37 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
@@ -166,20 +171,20 @@
 - (void) showPhoto {
     NSLog(@"goal image clicked");
     
-//    // Create an array to store IDMPhoto objects
-//    NSMutableArray *photos = [NSMutableArray new];
-//    IDMPhoto *photo = [IDMPhoto photoWithImage:[UIImage imageWithData:_goalImage]];
-//    [photos addObject:photo];
-//
-//    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
-//    //browser.scaleImage = [UIImage imageNamed:_chartsArray[indexPath.row]];
-//    //[browser setInitialPageIndex:indexPath.row];
-//    browser.usePopAnimation = YES;
-//    browser.displayArrowButton = NO;
-//    browser.displayDoneButton = YES;
-//    browser.displayActionButton = NO;
-//    browser.disableVerticalSwipe = NO;
-//    [self presentViewController:browser animated:YES completion:nil];
+    //    // Create an array to store IDMPhoto objects
+    //    NSMutableArray *photos = [NSMutableArray new];
+    //    IDMPhoto *photo = [IDMPhoto photoWithImage:[UIImage imageWithData:_goalImage]];
+    //    [photos addObject:photo];
+    //
+    //    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
+    //    //browser.scaleImage = [UIImage imageNamed:_chartsArray[indexPath.row]];
+    //    //[browser setInitialPageIndex:indexPath.row];
+    //    browser.usePopAnimation = YES;
+    //    browser.displayArrowButton = NO;
+    //    browser.displayDoneButton = YES;
+    //    browser.displayActionButton = NO;
+    //    browser.disableVerticalSwipe = NO;
+    //    [self presentViewController:browser animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDelegate
@@ -188,13 +193,38 @@
     if (section == 0) {
         return 0;
     } else {
-        return 20;
+        return 30;
     }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (section != 0) {
+        UIView* header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
+        header.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
+        UILabel* name = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, header.frame.size.width, header.frame.size.height)];
+        name.textColor = [UIColor whiteColor];
+        
+        name.text = [[self tableView: tableView titleForHeaderInSection:1] uppercaseString];
+        [header addSubview:name];
+        
+        return header;
+    } else   {
+        return 0;
+    }
+
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    if (section == 0) {
+        return 1;
+    } else
+        return [self.goalOperationsArray count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 1) {
-        return [NSString stringWithFormat:@"    Операции (%lu)", (unsigned long)[self.goalOperationsArray count]];
+        return [NSString stringWithFormat:@"Операции (%lu)", (unsigned long)[self.goalOperationsArray count]];
     } else {
         return nil;
     }
@@ -211,17 +241,9 @@
     return 2;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    if (section == 0) {
-        return 1;
-    } else
-        return [self.goalOperationsArray count];
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Goal *goal = [DataSingletone sharedModel].goalsArray[self.selectedItemInArray];
-
+    
     if (indexPath.section == 0) {
         self.navigationItem.title = goal.name;
         static NSString* infoCellIdentifier = @"infoCell";
@@ -250,7 +272,7 @@
         _goalImage = [NSData dataWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:goal.imagePath]];
         if (goal.imagePath) {
             [infoCell.goalImageButton setBackgroundImage:[UIImage imageWithData:_goalImage]
-                                forState:UIControlStateNormal];
+                                                forState:UIControlStateNormal];
             [infoCell.goalImageButton setBackgroundImage:[UIImage imageWithData:_goalImage]
                                                 forState:UIControlStateHighlighted];
         } else {
@@ -261,12 +283,12 @@
         }
         
         self.progressPercent = [goal.progress floatValue] / [goal.price floatValue];
-    
-       // [infoCell.circleProgressLabel setProgress:0];
+        
+        // [infoCell.circleProgressLabel setProgress:0];
         infoCell.circleProgressLabel.progressLabelVCBlock = ^(KAProgressLabel *label, CGFloat progress) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [label setText:[NSString stringWithFormat:@"%.0f%%", (progress*100)]];
-                [label setTextColor:[UIColor colorWithRed:0.42 green:0.82 blue:0.28 alpha:1]];
+                [label setTextColor:[UIColor colorWithWhite:1.0 alpha:0.8]];
                 [label setFont:[UIFont systemFontOfSize:50.f]];
                 
             });
@@ -276,59 +298,27 @@
         [infoCell.circleProgressLabel setFrontBorderWidth: 8];
         
         [infoCell.circleProgressLabel setColorTable: @{
-                                                   NSStringFromProgressLabelColorTableKey(ProgressLabelTrackColor):
-                                                       [UIColor colorWithRed:0.89 green:0.89 blue:0.9 alpha:1],
-                                                   NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
-                                                       [UIColor colorWithRed:0 green:0.69 blue:0.96 alpha:1],
-                                                   }];
+                                                       NSStringFromProgressLabelColorTableKey(ProgressLabelTrackColor):
+                                                           [UIColor colorWithWhite:1.0 alpha:0.15],
+                                                       NSStringFromProgressLabelColorTableKey(ProgressLabelProgressColor):
+                                                           [UIColor colorWithRed:1 green:0.39 blue:0.33 alpha:1],
+                                                       }];
         [infoCell.circleProgressLabel setProgress:self.progressPercent timing:TPPropertyAnimationTimingEaseOut duration:2.f delay:0.0];
         [infoCell.nextGoalButton addTarget:self action:@selector(nextGoalButtonTap:) forControlEvents:UIControlEventTouchUpInside];
         [infoCell.previousGoalButton addTarget:self action:@selector(previousGoalButtonTap:) forControlEvents:UIControlEventTouchUpInside];
-
+        
         return infoCell;
         
     } else {
         static NSString* operationsCellIdentifier = @"operationsCell";
         goalOperationsCell* operationsCell = [tableView dequeueReusableCellWithIdentifier:operationsCellIdentifier];
         self.operations = [self.goalOperationsArray objectAtIndex:indexPath.row];
-        operationsCell.sumLabel.text = [NSString stringWithFormat:@"%@ %@", [self.operations.addSum stringValue], CURRENCY_SYMBOL];
+        operationsCell.sumLabel.text = [NSString stringWithFormat:@"+ %@ %@", [self.operations.addSum stringValue], CURRENCY_SYMBOL];
         operationsCell.dateLabel.text = [self convertDateToString:self.operations.addDate];
         return operationsCell;
     }
-
+    
     return nil;
-}
-
--(void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
-    UIEdgeInsets insets = {28,0,0,0};
-    self.tableView.contentInset = insets;
-    
-    // Force your tableview margins (this may be a bad idea)
-    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-        [self.tableView setSeparatorInset:UIEdgeInsetsZero];
-    }
-    
-    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-        [self.tableView setLayoutMargins:UIEdgeInsetsZero];
-    }
-}
-
--(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Remove seperator inset
-    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-        [cell setSeparatorInset:UIEdgeInsetsZero];
-    }
-    // Prevent the cell from inheriting the Table View's margin settings
-    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
-        [cell setPreservesSuperviewLayoutMargins:NO];
-    }
-    // Explictly set your cell's layout margins
-    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-        [cell setLayoutMargins:UIEdgeInsetsZero];
-    }
 }
 
 @end

@@ -12,7 +12,8 @@
 
 - (void)awakeFromNib {
     self.goalImageButton.layer.cornerRadius = self.goalImageButton.frame.size.height / 2;
-    
+    self.backgroundColor = [UIColor clearColor];
+    self.headerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.1];
     
 }
 

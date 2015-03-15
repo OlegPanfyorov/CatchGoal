@@ -11,5 +11,6 @@
 @interface goalOperationsCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sumLabel;
+@property (weak, nonatomic) IBOutlet UIView *bgView;
 
 @end

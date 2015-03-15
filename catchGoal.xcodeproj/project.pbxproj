@@ -53,7 +53,6 @@
 		798FA0801AABAE7200F03789 /* done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA07D1AABAE7200F03789 /* done@2x.png */; };
 		798FA0811AABAE7200F03789 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 798FA07E1AABAE7200F03789 /* edit@2x.png */; };
 		79ABEEC31A827D9A00DCE5F0 /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79ABEEC21A827D9A00DCE5F0 /* RMDateSelectionViewController.m */; };
-		8B6A205E1A6AB22100C4FDFE /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */; };
 		8B9E33421A6A32A400CA3778 /* GoalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */; };
 		CE0A38DB1AB342CC00738EE3 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0A38DA1AB342CC00738EE3 /* close.png */; };
 		CE0A38E01AB3475200738EE3 /* goalCurrentSumWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0A38DC1AB3475200738EE3 /* goalCurrentSumWhite.png */; };
@@ -106,6 +105,7 @@
 		DA5CB91F1A924E2300A66BBF /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DA5CB9031A924E2300A66BBF /* MagicalRecord.m */; };
 		DA6308981A77C13D00F7AB08 /* AddAndEditGoalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA6308971A77C13D00F7AB08 /* AddAndEditGoalCell.m */; };
 		DA63089A1A77CAF300F7AB08 /* photoPic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6308991A77CAF300F7AB08 /* photoPic@2x.png */; };
+		DA7B36531AB52CDC0001881D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7B36521AB52CDC0001881D /* DetailViewController.m */; };
 		DA878F021AB30B8000337998 /* proximanova-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = DA878F001AB30B6C00337998 /* proximanova-light.otf */; };
 		DA878F031AB30B8100337998 /* proximanova-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = DA878F001AB30B6C00337998 /* proximanova-light.otf */; };
 		DA878F041AB30B8300337998 /* proximanova-semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DA878F011AB30B6C00337998 /* proximanova-semibold.otf */; };
@@ -227,8 +227,6 @@
 		798FA07E1AABAE7200F03789 /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@2x.png"; sourceTree = "<group>"; };
 		79ABEEC11A827D9A00DCE5F0 /* RMDateSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDateSelectionViewController.h; sourceTree = "<group>"; };
 		79ABEEC21A827D9A00DCE5F0 /* RMDateSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDateSelectionViewController.m; sourceTree = "<group>"; };
-		8B6A205C1A6AB22100C4FDFE /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
-		8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
 		8B9E33401A6A32A400CA3778 /* GoalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalTableViewCell.h; sourceTree = "<group>"; };
 		8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalTableViewCell.m; sourceTree = "<group>"; };
 		CE0A38DA1AB342CC00738EE3 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
@@ -317,6 +315,8 @@
 		DA6308961A77C13D00F7AB08 /* AddAndEditGoalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAndEditGoalCell.h; sourceTree = "<group>"; };
 		DA6308971A77C13D00F7AB08 /* AddAndEditGoalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAndEditGoalCell.m; sourceTree = "<group>"; };
 		DA6308991A77CAF300F7AB08 /* photoPic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photoPic@2x.png"; sourceTree = "<group>"; };
+		DA7B36511AB52CDC0001881D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		DA7B36521AB52CDC0001881D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		DA878F001AB30B6C00337998 /* proximanova-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-light.otf"; sourceTree = "<group>"; };
 		DA878F011AB30B6C00337998 /* proximanova-semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-semibold.otf"; sourceTree = "<group>"; };
 		DA878F061AB30D0700337998 /* proximanova-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-regular.otf"; sourceTree = "<group>"; };
@@ -526,19 +526,19 @@
 		790B7F4C1A69C5DF009C1F1B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				790B7F4E1A69C5FD009C1F1B /* Start Screens (login, reg, launch) */,
+				790B7F4E1A69C5FD009C1F1B /* Start Screens */,
 				790B7F261A69C3AE009C1F1B /* Main.storyboard */,
 				D3494B6A1A6C0FE60007DD0C /* NewGoalTableViewController.h */,
 				D3494B6B1A6C0FE60007DD0C /* NewGoalTableViewController.m */,
 				CED0F16D1AA1CF54007C6B70 /* GoalsViewController.h */,
 				CED0F16E1AA1CF54007C6B70 /* GoalsViewController.m */,
-				8B6A205C1A6AB22100C4FDFE /* DetailTableViewController.h */,
-				8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */,
+				DA7B36511AB52CDC0001881D /* DetailViewController.h */,
+				DA7B36521AB52CDC0001881D /* DetailViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		790B7F4E1A69C5FD009C1F1B /* Start Screens (login, reg, launch) */ = {
+		790B7F4E1A69C5FD009C1F1B /* Start Screens */ = {
 			isa = PBXGroup;
 			children = (
 				794465D41A6A5CE400F00F63 /* StartScreensMainViewController.h */,
@@ -552,7 +552,7 @@
 				790B7F591A69CA3E009C1F1B /* LaunchScreenViewController.h */,
 				790B7F5A1A69CA3E009C1F1B /* LaunchScreenViewController.m */,
 			);
-			name = "Start Screens (login, reg, launch)";
+			name = "Start Screens";
 			sourceTree = "<group>";
 		};
 		794465B31A6A529900F00F63 /* parse need. */ = {
@@ -999,7 +999,6 @@
 				DA2AD3D81A90F9FD00BA7E4C /* goalOperationsCell.m in Sources */,
 				DA5CB9121A924E2300A66BBF /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				DA5CB9151A924E2300A66BBF /* NSManagedObjectContext+MagicalThreading.m in Sources */,
-				8B6A205E1A6AB22100C4FDFE /* DetailTableViewController.m in Sources */,
 				DA5CB91B1A924E2300A66BBF /* MagicalRecord+iCloud.m in Sources */,
 				DA5CB9101A924E2300A66BBF /* NSManagedObject+MagicalRecord.m in Sources */,
 				DAC6D2F21A9936CC002AE5F8 /* Goal.m in Sources */,
@@ -1020,6 +1019,7 @@
 				790B7F221A69C3AE009C1F1B /* AppDelegate.m in Sources */,
 				DA87F4B31A9B89A60085F7F9 /* SCLButton.m in Sources */,
 				790B7F581A69CA2C009C1F1B /* ForgotPasswordViewController.m in Sources */,
+				DA7B36531AB52CDC0001881D /* DetailViewController.m in Sources */,
 				790B7F1F1A69C3AE009C1F1B /* main.m in Sources */,
 				79ABEEC31A827D9A00DCE5F0 /* RMDateSelectionViewController.m in Sources */,
 				DA5CB90F1A924E2300A66BBF /* NSManagedObject+MagicalFinders.m in Sources */,

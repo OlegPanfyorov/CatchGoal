@@ -7,7 +7,7 @@
 //
 
 #import "GoalsViewController.h"
-#import "DetailTableViewController.h"
+#import "DetailViewController.h"
 #import "GoalTableViewCell.h"
 #import "SWRevealTableViewCell.h"
 
@@ -455,7 +455,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"showDetailSegue"]) {
-        DetailTableViewController *detailTableViewController = (DetailTableViewController *)segue.destinationViewController;
+        DetailViewController *detailTableViewController = (DetailViewController *)segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         detailTableViewController.selectedItemInArray = indexPath.row;
     }
