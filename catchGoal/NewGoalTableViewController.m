@@ -348,7 +348,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 #pragma mark - UIImagePickerControllerDelegate
 
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    UIImage *image = info[UIImagePickerControllerEditedImage];
     NSData *imgData   = UIImageJPEGRepresentation(image, 0.5);
     NSString *name    = [[NSUUID UUID] UUIDString];
     NSString *path	  = [NSString stringWithFormat:@"Documents/%@.jpg", name];
