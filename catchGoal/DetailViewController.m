@@ -203,7 +203,7 @@
         header.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
         UILabel* name = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, header.frame.size.width, header.frame.size.height)];
         name.textColor = [UIColor whiteColor];
-        
+        name.font = [UIFont fontWithName:@"Roboto-Regular" size:14];
         name.text = [[self tableView: tableView titleForHeaderInSection:1] uppercaseString];
         [header addSubview:name];
         
@@ -224,7 +224,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 1) {
-        return [NSString stringWithFormat:@"Операции (%lu)", (unsigned long)[self.goalOperationsArray count]];
+        return [NSString stringWithFormat:@"История платежей (%lu)", (unsigned long)[self.goalOperationsArray count]];
     } else {
         return nil;
     }
