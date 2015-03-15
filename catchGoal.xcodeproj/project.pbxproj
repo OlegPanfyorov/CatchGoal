@@ -526,21 +526,16 @@
 		790B7F4C1A69C5DF009C1F1B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D3494B691A6C0FC40007DD0C /* New Goal */,
-				790B7F4D1A69C5F2009C1F1B /* Main screen */,
 				790B7F4E1A69C5FD009C1F1B /* Start Screens (login, reg, launch) */,
-				8B0471A21A6A2E9100CE1F06 /* Goals */,
-				8BFB55321A6A3D2900FE9379 /* Goal detail */,
+				790B7F261A69C3AE009C1F1B /* Main.storyboard */,
+				D3494B6A1A6C0FE60007DD0C /* NewGoalTableViewController.h */,
+				D3494B6B1A6C0FE60007DD0C /* NewGoalTableViewController.m */,
+				CED0F16D1AA1CF54007C6B70 /* GoalsViewController.h */,
+				CED0F16E1AA1CF54007C6B70 /* GoalsViewController.m */,
+				8B6A205C1A6AB22100C4FDFE /* DetailTableViewController.h */,
+				8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */,
 			);
 			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		790B7F4D1A69C5F2009C1F1B /* Main screen */ = {
-			isa = PBXGroup;
-			children = (
-				790B7F261A69C3AE009C1F1B /* Main.storyboard */,
-			);
-			name = "Main screen";
 			sourceTree = "<group>";
 		};
 		790B7F4E1A69C5FD009C1F1B /* Start Screens (login, reg, launch) */ = {
@@ -593,35 +588,6 @@
 				79ABEEC21A827D9A00DCE5F0 /* RMDateSelectionViewController.m */,
 			);
 			name = Datepicker;
-			sourceTree = "<group>";
-		};
-		8B0471A21A6A2E9100CE1F06 /* Goals */ = {
-			isa = PBXGroup;
-			children = (
-				8B9E33401A6A32A400CA3778 /* GoalTableViewCell.h */,
-				8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */,
-				CED0F16D1AA1CF54007C6B70 /* GoalsViewController.h */,
-				CED0F16E1AA1CF54007C6B70 /* GoalsViewController.m */,
-			);
-			name = Goals;
-			sourceTree = "<group>";
-		};
-		8BFB55321A6A3D2900FE9379 /* Goal detail */ = {
-			isa = PBXGroup;
-			children = (
-				8B6A205C1A6AB22100C4FDFE /* DetailTableViewController.h */,
-				8B6A205D1A6AB22100C4FDFE /* DetailTableViewController.m */,
-			);
-			name = "Goal detail";
-			sourceTree = "<group>";
-		};
-		D3494B691A6C0FC40007DD0C /* New Goal */ = {
-			isa = PBXGroup;
-			children = (
-				D3494B6A1A6C0FE60007DD0C /* NewGoalTableViewController.h */,
-				D3494B6B1A6C0FE60007DD0C /* NewGoalTableViewController.m */,
-			);
-			name = "New Goal";
 			sourceTree = "<group>";
 		};
 		DA1A58F11A9222B800EA9DD3 /* Core Data */ = {
@@ -763,6 +729,8 @@
 			isa = PBXGroup;
 			children = (
 				DA2AD3D21A90F98400BA7E4C /* Detail VC */,
+				8B9E33401A6A32A400CA3778 /* GoalTableViewCell.h */,
+				8B9E33411A6A32A400CA3778 /* GoalTableViewCell.m */,
 				DA6308961A77C13D00F7AB08 /* AddAndEditGoalCell.h */,
 				DA6308971A77C13D00F7AB08 /* AddAndEditGoalCell.m */,
 			);
