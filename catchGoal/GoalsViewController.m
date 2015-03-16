@@ -53,11 +53,14 @@
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
-} // [[UIColor colorWithRed:0.32 green:0.64 blue:0.9 alpha:1] colorWithAlphaComponent:0.3];
+    
+
+}
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self fetchGoalsWithCompletedFlag:NO];
+
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -117,7 +120,7 @@
                                                     [UIColor colorWithRed:0.42 green:0.82 blue:0.28 alpha:1],
                                                 }];
     }
-    
+ 
     return cell;
 }
 
@@ -434,6 +437,7 @@
         [DataSingletone sharedModel].goalsArray = [NSMutableArray arrayWithArray:[Goal findAllWithPredicate:isCompleted]];
         [self.tableView reloadData];
     }
+
 }
 
 - (IBAction)allGoalsPressed:(UIButton*)sender {

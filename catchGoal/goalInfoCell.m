@@ -14,7 +14,14 @@
     self.goalImageButton.layer.cornerRadius = self.goalImageButton.frame.size.height / 2;
     self.backgroundColor = [UIColor clearColor];
     self.headerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.1];
-    
+    self.mediaDataView.backgroundColor = [UIColor clearColor];
+     
+    for (UIButton* button in self.showButtons) {
+        button.backgroundColor = [UIColor clearColor];
+//        button.layer.cornerRadius = button.frame.size.height / 2;
+//        button.layer.borderColor = [UIColor colorWithWhite:1.0 alpha:0.2].CGColor;
+//        button.layer.borderWidth = 1;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

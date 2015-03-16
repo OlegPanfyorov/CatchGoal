@@ -16,6 +16,8 @@
 @end
 
 @interface goalInfoCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIView *mediaDataView;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *showButtons;
 
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (nonatomic, assign) id<GoalInfoCellDelegate> delegate;

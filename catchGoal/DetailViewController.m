@@ -9,25 +9,33 @@
 #import "DetailViewController.h"
 #import "goalInfoCell.h"
 #import "goalOperationsCell.h"
+#import "BEMSimpleLineGraphView.h"
 
-@interface DetailViewController () <UIAlertViewDelegate, GoalInfoCellDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface DetailViewController () <UIAlertViewDelegate, GoalInfoCellDelegate, UITableViewDelegate, UITableViewDataSource, BEMSimpleLineGraphDataSource, BEMSimpleLineGraphDelegate, UIScrollViewDelegate>
+
 @property (assign, nonatomic) CGFloat progressPercent;
 @property (assign, nonatomic) int sumLeft;
 @property (assign, nonatomic) int addMoneySum;
 @property (strong, nonatomic) NSMutableArray* goalOperationsArray;
 @property (strong, nonatomic) NSData *goalImage;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (strong, nonatomic) UIView* mediaDataView;
+@property (strong, nonatomic) BEMSimpleLineGraphView* graph;
 
--(IBAction)addMoneyClicked:(UIBarButtonItem*)sender;
+- (IBAction)showGraph:(id)sender;
+- (IBAction)showProgress:(UIButton *)sender;
+- (IBAction)addMoneyClicked:(UIBarButtonItem*)sender;
 @end
 
+UIButton* showProgress;
+UIButton* showGraph;
+BOOL flag;
 @implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 
+    flag = YES;
     
     self.tableView.separatorColor = [[UIColor blackColor] colorWithAlphaComponent:0.25];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -49,6 +57,7 @@
     self.tableView.alwaysBounceVertical = NO;
     [self fetchAllGoalOperations];
     [self.navigationController.navigationBar setHidden:NO];
+ 
 }
 
 - (void)fetchAllGoalOperations {
@@ -63,10 +72,105 @@
     } else {
         self.navigationItem.rightBarButtonItem.enabled = YES;
     }
+    
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
+}
+#pragma mark - BEMSimpleLineGraph
+
+- (void) handleTap:(UITapGestureRecognizer*) tapGesture {
+    
+    if (flag) {
+        [self showGraph];
+        flag = NO;
+    } else {
+        [self showProgress];
+        flag = YES;
+    }
+    
+}
+
+- (void) setupGraph:(BOOL) isHidden {
+    
+    if (isHidden) {
+        [self.graph removeFromSuperview];
+    } else {
+    
+    BEMSimpleLineGraphView *graph = [[BEMSimpleLineGraphView alloc] initWithFrame:CGRectMake(0, 0, self.mediaDataView.frame.size.width - 10, self.mediaDataView.frame.size.height - 5)];
+        graph.dataSource = self;
+        graph.delegate = self;
+        graph.colorTop = [UIColor clearColor];
+        graph.colorBottom = [UIColor clearColor];
+        graph.colorLine = [UIColor colorWithRed:1 green:0.39 blue:0.33 alpha:1];
+        graph.widthLine = 2.0;
+        graph.sizePoint = 8.0;
+        graph.colorXaxisLabel = [UIColor whiteColor];
+        graph.colorYaxisLabel = [UIColor whiteColor];
+        graph.colorReferenceLines = [UIColor colorWithWhite:1.0 alpha:0.15];
+        graph.colorPoint = [UIColor whiteColor];
+        graph.enableTouchReport = YES;
+        graph.enablePopUpReport = YES;
+        graph.enableBezierCurve = YES;
+        graph.enableYAxisLabel = YES;
+        graph.enableXAxisLabel = YES;
+        graph.autoScaleYAxis = YES;
+        graph.alwaysDisplayDots = YES;
+        graph.enableReferenceXAxisLines = YES;
+        graph.enableReferenceYAxisLines = YES;
+        graph.enableReferenceAxisFrame = YES;
+        graph.animationGraphStyle = BEMLineAnimationDraw;
+        graph.hidden = isHidden;
+        graph.userInteractionEnabled = YES;
+        self.graph = graph;
+ 
+    [self.mediaDataView addSubview:graph];
+        
+
+        
+    }
+}
+
+- (NSInteger)numberOfPointsInLineGraph:(BEMSimpleLineGraphView *)graph {
+    
+    return [self.goalOperationsArray count]; // Number of points in the graph.
+}
+
+- (CGFloat)lineGraph:(BEMSimpleLineGraphView *)graph valueForPointAtIndex:(NSInteger)index {
+    
+    NSArray* reversedArray = [[self.goalOperationsArray reverseObjectEnumerator] allObjects];
+    self.operations = [reversedArray objectAtIndex:index];
+    return [self.operations.addSum floatValue]; // The value of the point on the Y-Axis for the index.
+}
+
+- (NSString *)lineGraph:(BEMSimpleLineGraphView *)graph labelOnXAxisForIndex:(NSInteger)index {
+    
+    NSDateFormatter *dateFormater = [[NSDateFormatter alloc]init];
+    [dateFormater setDateFormat:@"dd.MM"];
+    
+    NSArray* reversedArray = [[self.goalOperationsArray reverseObjectEnumerator] allObjects];
+    self.operations = [reversedArray objectAtIndex:index];
+    NSString *date = [dateFormater stringFromDate:self.operations.addDate];
+    
+    return date;
+}
+
+- (NSString *)popUpSuffixForlineGraph:(BEMSimpleLineGraphView *)graph {
+    return CURRENCY_SYMBOL;
+}
+
+- (NSInteger)numberOfGapsBetweenLabelsOnLineGraph:(BEMSimpleLineGraphView *)graph {
+    return 2;
+}
+
+- (NSInteger)numberOfYAxisLabelsOnLineGraph:(BEMSimpleLineGraphView *)graph {
+    return 4;
 }
 
 #pragma mark - Actions
@@ -81,6 +185,27 @@
     self.selectedItemInArray++;
     [self fetchAllGoalOperations];
     [self.tableView reloadData];
+}
+
+- (void)showGraph {
+    for (UIView* view in self.mediaDataView.subviews) {
+            view.hidden = YES;
+    }
+    
+    [self setupGraph:NO];
+
+}
+
+- (void)showProgress {
+    [self setupGraph:YES];
+    
+    for (UIView* view in self.mediaDataView.subviews) {
+            view.hidden = NO;
+    }
+    
+
+    [self.tableView reloadData];
+
 }
 
 -(IBAction)addMoneyClicked:(UIBarButtonItem*)sender {
@@ -100,6 +225,7 @@
         if (self.addMoneySum >= 1 && self.addMoneySum <= self.sumLeft && self.addMoneySum != self.sumLeft) {
             [self addNewSumToContextWithCompletedFlag:NO];
             sender.enabled = YES;
+            [self.graph reloadGraph];
         } else if (self.addMoneySum == self.sumLeft) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 SCLAlertView *alertWithComplited = [[SCLAlertView alloc] init];
@@ -248,10 +374,12 @@
         self.navigationItem.title = goal.name;
         static NSString* infoCellIdentifier = @"infoCell";
         goalInfoCell* infoCell = [tableView dequeueReusableCellWithIdentifier:infoCellIdentifier];
+        self.mediaDataView = infoCell.mediaDataView;
         self.sumLeft = [goal.price floatValue] - [goal.progress floatValue];
         if (self.selectedItemInArray == 0) {
             infoCell.previousGoalButton.hidden = YES;
             // For next button
+            
         } else {
             infoCell.previousGoalButton.hidden = NO;
         }
@@ -293,6 +421,13 @@
                 
             });
         };
+        
+        UITapGestureRecognizer* tapGesture =
+        [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                action:@selector(handleTap:)];
+        
+        tapGesture.numberOfTapsRequired = 2;
+        [self.mediaDataView addGestureRecognizer:tapGesture];
         
         [infoCell.circleProgressLabel setBackBorderWidth: 8];
         [infoCell.circleProgressLabel setFrontBorderWidth: 8];

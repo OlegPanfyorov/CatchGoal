@@ -132,6 +132,10 @@
 		DA9E2FEA1A80E55E00BC08B2 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA9E2FE71A80E55A00BC08B2 /* OpenSans-Regular.ttf */; };
 		DA9E2FEB1A80E56000BC08B2 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA9E2FE81A80E55A00BC08B2 /* OpenSans-Semibold.ttf */; };
 		DA9E2FEC1A80E56100BC08B2 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA9E2FE81A80E55A00BC08B2 /* OpenSans-Semibold.ttf */; };
+		DABD69451AB6B4540097C067 /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD693E1AB6B4540097C067 /* BEMCircle.m */; };
+		DABD69461AB6B4540097C067 /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD69401AB6B4540097C067 /* BEMLine.m */; };
+		DABD69471AB6B4540097C067 /* BEMPermanentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD69421AB6B4540097C067 /* BEMPermanentPopupView.m */; };
+		DABD69481AB6B4540097C067 /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD69441AB6B4540097C067 /* BEMSimpleLineGraphView.m */; };
 		DABF0E5C1A6AD96800105669 /* KAProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DABF0E591A6AD96800105669 /* KAProgressLabel.m */; };
 		DABF0E5D1A6AD96800105669 /* TPPropertyAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DABF0E5B1A6AD96800105669 /* TPPropertyAnimation.m */; };
 		DAC6D2EF1A9936CC002AE5F8 /* GoalOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC6D2EE1A9936CC002AE5F8 /* GoalOperations.m */; };
@@ -343,6 +347,14 @@
 		DA9D5F821A8162C200820E47 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		DA9E2FE71A80E55A00BC08B2 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		DA9E2FE81A80E55A00BC08B2 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		DABD693D1AB6B4540097C067 /* BEMCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMCircle.h; sourceTree = "<group>"; };
+		DABD693E1AB6B4540097C067 /* BEMCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMCircle.m; sourceTree = "<group>"; };
+		DABD693F1AB6B4540097C067 /* BEMLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMLine.h; sourceTree = "<group>"; };
+		DABD69401AB6B4540097C067 /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMLine.m; sourceTree = "<group>"; };
+		DABD69411AB6B4540097C067 /* BEMPermanentPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMPermanentPopupView.h; sourceTree = "<group>"; };
+		DABD69421AB6B4540097C067 /* BEMPermanentPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMPermanentPopupView.m; sourceTree = "<group>"; };
+		DABD69431AB6B4540097C067 /* BEMSimpleLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMSimpleLineGraphView.h; sourceTree = "<group>"; };
+		DABD69441AB6B4540097C067 /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMSimpleLineGraphView.m; sourceTree = "<group>"; };
 		DABF0E581A6AD96800105669 /* KAProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KAProgressLabel.h; sourceTree = "<group>"; };
 		DABF0E591A6AD96800105669 /* KAProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KAProgressLabel.m; sourceTree = "<group>"; };
 		DABF0E5A1A6AD96800105669 /* TPPropertyAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPPropertyAnimation.h; sourceTree = "<group>"; };
@@ -491,6 +503,7 @@
 				7942FE301A8FD1E00035F411 /* UIActionSheet+BlockExtensions.m */,
 				798FA0651AABA3CE00F03789 /* SWRevealTableViewCell.h */,
 				798FA0661AABA3CE00F03789 /* SWRevealTableViewCell.m */,
+				DABD693C1AB6B4540097C067 /* BEMSimpleLineGraph */,
 				DABF0E571A6AD96800105669 /* KAProgressLabel */,
 			);
 			name = "Frameworks\\Libraries";
@@ -754,6 +767,22 @@
 			path = SCLAlertView;
 			sourceTree = "<group>";
 		};
+		DABD693C1AB6B4540097C067 /* BEMSimpleLineGraph */ = {
+			isa = PBXGroup;
+			children = (
+				DABD693D1AB6B4540097C067 /* BEMCircle.h */,
+				DABD693E1AB6B4540097C067 /* BEMCircle.m */,
+				DABD693F1AB6B4540097C067 /* BEMLine.h */,
+				DABD69401AB6B4540097C067 /* BEMLine.m */,
+				DABD69411AB6B4540097C067 /* BEMPermanentPopupView.h */,
+				DABD69421AB6B4540097C067 /* BEMPermanentPopupView.m */,
+				DABD69431AB6B4540097C067 /* BEMSimpleLineGraphView.h */,
+				DABD69441AB6B4540097C067 /* BEMSimpleLineGraphView.m */,
+			);
+			name = BEMSimpleLineGraph;
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		DABF0E571A6AD96800105669 /* KAProgressLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1010,7 +1039,9 @@
 				DA6308981A77C13D00F7AB08 /* AddAndEditGoalCell.m in Sources */,
 				DA5CB9171A924E2300A66BBF /* NSPersistentStore+MagicalRecord.m in Sources */,
 				790B7F521A69CA00009C1F1B /* LoginViewController.m in Sources */,
+				DABD69461AB6B4540097C067 /* BEMLine.m in Sources */,
 				DA5CB9071A924E2300A66BBF /* NSAttributeDescription+MagicalDataImport.m in Sources */,
+				DABD69471AB6B4540097C067 /* BEMPermanentPopupView.m in Sources */,
 				DA5CB91E1A924E2300A66BBF /* MagicalRecord+ShorthandSupport.m in Sources */,
 				DAC6D2EF1A9936CC002AE5F8 /* GoalOperations.m in Sources */,
 				DA0DB12A1A923FBC00AAB6AD /* GoalDataModel.xcdatamodeld in Sources */,
@@ -1029,6 +1060,7 @@
 				790B7F471A69C5C8009C1F1B /* Constants.m in Sources */,
 				DA5CB90C1A924E2300A66BBF /* NSString+MagicalDataImport.m in Sources */,
 				DA5CB9191A924E2300A66BBF /* MagicalRecord+Actions.m in Sources */,
+				DABD69451AB6B4540097C067 /* BEMCircle.m in Sources */,
 				DA5CB9091A924E2300A66BBF /* NSNumber+MagicalDataImport.m in Sources */,
 				DA5CB90D1A924E2300A66BBF /* NSManagedObject+MagicalAggregation.m in Sources */,
 				7942FE311A8FD1E00035F411 /* UIActionSheet+BlockExtensions.m in Sources */,
@@ -1042,6 +1074,7 @@
 				DA5CB90A1A924E2300A66BBF /* NSObject+MagicalDataImport.m in Sources */,
 				DA5CB9181A924E2300A66BBF /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				79548FFD1A6C37BB005AE681 /* DataSingletone.m in Sources */,
+				DABD69481AB6B4540097C067 /* BEMSimpleLineGraphView.m in Sources */,
 				D3494B6C1A6C0FE60007DD0C /* NewGoalTableViewController.m in Sources */,
 				790B7F551A69CA0D009C1F1B /* RegistrationViewController.m in Sources */,
 				DA5CB9161A924E2300A66BBF /* NSManagedObjectModel+MagicalRecord.m in Sources */,
