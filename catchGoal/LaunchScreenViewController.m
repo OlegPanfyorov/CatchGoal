@@ -18,9 +18,10 @@ typedef NS_ENUM(NSInteger, Buttons) {
     forgotPassword,
 };
 
-@interface LaunchScreenViewController () {
-    Buttons buttonType;
-}
+@interface LaunchScreenViewController ()
+
+@property (weak, nonatomic) IBOutlet UIView *buttonsView;
+@property (weak, nonatomic) IBOutlet UILabel *workHard;
 
 @end
 
@@ -32,12 +33,18 @@ typedef NS_ENUM(NSInteger, Buttons) {
 
 }
 - (void) viewWillAppear:(BOOL)animated {
-
+    self.buttonsView.alpha = 0.0f;
+    self.workHard.alpha = 0.0f;
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
         // do stuff with the user
         GoalsViewController  *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
         [self.navigationController pushViewController:mainVC animated:NO];
+    } else {
+        [UIView animateWithDuration:1.2f animations:^{
+            self.buttonsView.alpha = 0.75f;
+            self.workHard.alpha = 0.8f;
+        }];
     }
 }
 
@@ -46,23 +53,28 @@ typedef NS_ENUM(NSInteger, Buttons) {
     // Dispose of any resources that can be recreated.
 }
 
+-(UIStatusBarStyle) preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark - Actions
 
 - (IBAction)buttonClicked:(UIButton *)sender {
     switch (sender.tag) {
         case Login: {
             LoginViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
-            [self presentViewController:loginVC animated:YES completion:nil];
+            [self presentViewController:loginVC animated:NO completion:nil];
         }
             break;
         case Registration: {
             RegistrationViewController *registrationVC = [self.storyboard instantiateViewControllerWithIdentifier:@"registrationVC"];
-            [self presentViewController:registrationVC animated:YES completion:nil];
+            [self presentViewController:registrationVC animated:NO completion:nil];
         }
             break;
         case forgotPassword: {
             ForgotPasswordViewController *forgotPasswordVC = [self.storyboard instantiateViewControllerWithIdentifier:@"forgotVC"];
-            [self presentViewController:forgotPasswordVC animated:YES completion:nil];
+            [self presentViewController:forgotPasswordVC animated:NO completion:nil];
         }
             break;
             
@@ -70,12 +82,6 @@ typedef NS_ENUM(NSInteger, Buttons) {
             break;
     }
 }
-
-
-
-
-
-
 
 
 @end

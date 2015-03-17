@@ -58,10 +58,17 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-login.png" translatesAutoresizingMaskIntoConstraints="NO" id="u2w-g8-xus">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="u2w-g8-xus">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <view alpha="0.5499999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HDg-7B-zVU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="vPf-eg-FTd">
+                                <rect key="frame" x="53" y="80" width="215" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="215" id="Ghk-P5-xIH"/>
+                                    <constraint firstAttribute="height" constant="35" id="zLn-lH-bI4"/>
+                                </constraints>
+                            </imageView>
+                            <view alpha="0.74999999999999978" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HDg-7B-zVU">
                                 <rect key="frame" x="0.0" y="440" width="320" height="128"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqQ-wT-IQC">
@@ -113,6 +120,16 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.11764705882352941" green="0.14901960784313725" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyu-KS-ouL">
+                                <rect key="frame" x="65" y="180" width="191" height="208"/>
+                                <string key="text">WORK
+HARD
+DREAM
+BIG.</string>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -124,6 +141,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="RkW-Dg-lBB"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="buttonsView" destination="HDg-7B-zVU" id="Le5-vB-8QH"/>
+                        <outlet property="workHard" destination="pyu-KS-ouL" id="RCc-QU-icF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -1291,6 +1312,7 @@
         <image name="arrowForward.png" width="60" height="60"/>
         <image name="bg-login.png" width="640" height="1136"/>
         <image name="emalPic.png" width="30" height="30"/>
+        <image name="launchScreenBG.png" width="640" height="1136"/>
         <image name="loginPic.png" width="15" height="15"/>
         <image name="logo.png" width="430" height="70"/>
         <image name="logout.png" width="22" height="22"/>

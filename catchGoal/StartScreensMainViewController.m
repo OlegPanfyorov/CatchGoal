@@ -7,6 +7,7 @@
 //
 
 #import "StartScreensMainViewController.h"
+#import "MBProgressHUD.h"
 
 @implementation StartScreensMainViewController
 
@@ -44,6 +45,17 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
+
+#pragma mark - MBProgressHUD
+
+- (void)showHUD {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
+- (void)hideHUD {
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+}
+
 
 - (void)hideKeyboard {
 }

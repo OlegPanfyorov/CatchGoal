@@ -101,7 +101,7 @@
 
 - (IBAction)backButtonPressed:(UIButton *)sender {
     //[self.navigationController popViewControllerAnimated:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (IBAction)registerButtonClicked:(UIButton *)sender {
@@ -195,7 +195,7 @@
 #pragma mark - API request
 
 - (void)registrationRequest:(NSString*) login withPassword:(NSString*) password andEmail:(NSString *)email {
-    
+    [self showHUD];
     PFUser *user = [PFUser user];
     user.username = login;
     user.password = password;
@@ -204,8 +204,10 @@
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             // Hooray! Let them use the app now.
+            [self hideHUD];
             [[[UIAlertView alloc] initWithTitle:@"Успешно" message:@"Регистрация успешно завершена" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
         } else {
+            [self hideHUD];
             NSString *errorString = [error userInfo][@"error"];
             // Show the errorString somewhere and let the user try again.
             NSLog(@"Registration error: %@", errorString);
@@ -218,7 +220,8 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 0:
-            [self.navigationController popViewControllerAnimated:YES];
+            //[self.navigationController popViewControllerAnimated:YES];
+            [self dismissViewControllerAnimated:NO completion:nil];
             break;
         default:
             break;

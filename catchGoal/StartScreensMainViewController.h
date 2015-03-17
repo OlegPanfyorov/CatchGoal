@@ -17,5 +17,7 @@
 - (void)keyboardWillShow: (NSNotification *) notif;
 - (void)keyboardWillHide: (NSNotification *) notif;
 
+- (void)showHUD;
+- (void)hideHUD;
 
 @end

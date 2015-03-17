@@ -40,6 +40,8 @@
 		794465D31A6A536800F00F63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794465D21A6A536800F00F63 /* UIKit.framework */; };
 		794465D61A6A5CE400F00F63 /* StartScreensMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 794465D51A6A5CE400F00F63 /* StartScreensMainViewController.m */; };
 		79548FFD1A6C37BB005AE681 /* DataSingletone.m in Sources */ = {isa = PBXBuildFile; fileRef = 79548FFC1A6C37BB005AE681 /* DataSingletone.m */; };
+		7971EE471AB8BF0600310B82 /* launchScreenBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 7971EE461AB8BF0600310B82 /* launchScreenBG.png */; };
+		7971EE4A1AB8C37100310B82 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7971EE491AB8C37100310B82 /* MBProgressHUD.m */; };
 		79736B8E1A9124D20046947E /* addMoney@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79736B8D1A9124D20046947E /* addMoney@2x.png */; };
 		79736B901A9125260046947E /* addMoney@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79736B8F1A9125260046947E /* addMoney@3x.png */; };
 		798FA0671AABA3CE00F03789 /* SWRevealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 798FA0661AABA3CE00F03789 /* SWRevealTableViewCell.m */; };
@@ -216,6 +218,9 @@
 		794465D51A6A5CE400F00F63 /* StartScreensMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreensMainViewController.m; sourceTree = "<group>"; };
 		79548FFB1A6C37BB005AE681 /* DataSingletone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSingletone.h; sourceTree = "<group>"; };
 		79548FFC1A6C37BB005AE681 /* DataSingletone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSingletone.m; sourceTree = "<group>"; };
+		7971EE461AB8BF0600310B82 /* launchScreenBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchScreenBG.png; sourceTree = "<group>"; };
+		7971EE481AB8C37100310B82 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		7971EE491AB8C37100310B82 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		79736B8D1A9124D20046947E /* addMoney@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addMoney@2x.png"; sourceTree = "<group>"; };
 		79736B8F1A9125260046947E /* addMoney@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addMoney@3x.png"; sourceTree = "<group>"; };
 		798FA0651AABA3CE00F03789 /* SWRevealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealTableViewCell.h; sourceTree = "<group>"; };
@@ -503,6 +508,8 @@
 				7942FE301A8FD1E00035F411 /* UIActionSheet+BlockExtensions.m */,
 				798FA0651AABA3CE00F03789 /* SWRevealTableViewCell.h */,
 				798FA0661AABA3CE00F03789 /* SWRevealTableViewCell.m */,
+				7971EE481AB8C37100310B82 /* MBProgressHUD.h */,
+				7971EE491AB8C37100310B82 /* MBProgressHUD.m */,
 				DABD693C1AB6B4540097C067 /* BEMSimpleLineGraph */,
 				DABF0E571A6AD96800105669 /* KAProgressLabel */,
 			);
@@ -797,6 +804,7 @@
 		DAE448701A6B0C000041F449 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7971EE461AB8BF0600310B82 /* launchScreenBG.png */,
 				DAE75A381AB363EA00F6AA69 /* no_photo.png */,
 				DAE75A321AB355AE00F6AA69 /* logout@2x.png */,
 				DAE75A361AB3565D00F6AA69 /* logout@3x.png */,
@@ -983,6 +991,7 @@
 				DA878F041AB30B8300337998 /* proximanova-semibold.otf in Resources */,
 				DA34D42A1AB0F48100C1F01F /* allGoals.png in Resources */,
 				DA8AB2791AA0E922006CB011 /* passPic@2x.png in Resources */,
+				7971EE471AB8BF0600310B82 /* launchScreenBG.png in Resources */,
 				790B7F2D1A69C3AE009C1F1B /* LaunchScreen.xib in Resources */,
 				DAE4487B1A6B15F70041F449 /* Roboto-Light.ttf in Resources */,
 				798FA0701AABA69000F03789 /* heart.png in Resources */,
@@ -1029,6 +1038,7 @@
 				DA5CB9121A924E2300A66BBF /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				DA5CB9151A924E2300A66BBF /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				DA5CB91B1A924E2300A66BBF /* MagicalRecord+iCloud.m in Sources */,
+				7971EE4A1AB8C37100310B82 /* MBProgressHUD.m in Sources */,
 				DA5CB9101A924E2300A66BBF /* NSManagedObject+MagicalRecord.m in Sources */,
 				DAC6D2F21A9936CC002AE5F8 /* Goal.m in Sources */,
 				DA5CB91D1A924E2300A66BBF /* MagicalRecord+Setup.m in Sources */,

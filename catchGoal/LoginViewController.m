@@ -156,7 +156,7 @@
 
 - (IBAction)backButtonPressed:(UIButton *)sender {
     //[self.navigationController popViewControllerAnimated:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (IBAction)registrationClicked:(UIButton *)sender {
@@ -188,13 +188,17 @@
 #pragma mark - API Requests
 
 -(void) loginRequest:(NSString*)login withPassword:(NSString*) password {
-    
+    [self showHUD];
     [PFUser logInWithUsernameInBackground:login password:password block:^(PFUser *user, NSError *error) {
         if (user) {
             NSLog(@"successful login");
-            GoalsViewController  *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
-            [self.navigationController pushViewController:mainVC animated:YES];
+            [self hideHUD];
+            [self dismissViewControllerAnimated:NO completion:^{
+                GoalsViewController  *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
+                [self.navigationController pushViewController:mainVC animated:YES];
+            }];
         } else {
+            [self hideHUD];
             NSLog(@"failed login");
             // The login failed. Check error to see why.
         }

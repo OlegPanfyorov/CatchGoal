@@ -95,7 +95,7 @@
 
 - (IBAction)backButtonPressed:(UIButton *)sender {
     //[self.navigationController popViewControllerAnimated:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 #pragma mark - Validate Email address
@@ -128,8 +128,10 @@
 #pragma mark - API Request
 
 - (void)forgotPasswordRequest:(NSString *)email {
+    [self showHUD];
     [PFUser requestPasswordResetForEmailInBackground:email block:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
+            [self hideHUD];
             [[[UIAlertView alloc] initWithTitle:@"Успешно"
                                         message:@"На ваш email адресс отправлена ссылка по котороый вы можете изменить пароль"
                                        delegate:self
@@ -137,6 +139,7 @@
                               otherButtonTitles: nil] show];
             
         } else {
+            [self hideHUD];
             NSLog(@"Forgot password request error: %@", [error description]);
         }
     }];
@@ -147,7 +150,8 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 0:
-            [self.navigationController popViewControllerAnimated:YES];
+            //[self.navigationController popViewControllerAnimated:YES];
+            [self dismissViewControllerAnimated:NO completion:nil];
             break;
         default:
             break;

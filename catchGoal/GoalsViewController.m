@@ -411,13 +411,23 @@
 #pragma mark - UIAlertViewDelegate 
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
+    switch (buttonIndex) {
+        case 1:
+            [self logOut];
+            break;
+
+        default:
+            break;
+    }
 }
 
 #pragma mark - Actions
 
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender {
-    
+    [[[UIAlertView alloc] initWithTitle:@"Внимание" message:@"Вы уверены что хотите выйти?" delegate:self cancelButtonTitle:@"Отмена" otherButtonTitles:@"Да", nil] show];
+}
+
+- (void) logOut {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [PFUser logOut];
         dispatch_async(dispatch_get_main_queue(), ^{
