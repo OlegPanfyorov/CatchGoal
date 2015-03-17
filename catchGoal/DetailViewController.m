@@ -358,7 +358,7 @@ BOOL flag;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return 315;
+        return 242;
     } else
         return 44;
 }
@@ -456,4 +456,11 @@ BOOL flag;
     return nil;
 }
 
+-(void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    UIEdgeInsets inset = {0,0,0,0};
+    self.tableView.contentInset = inset;
+    
+    
+}
 @end
