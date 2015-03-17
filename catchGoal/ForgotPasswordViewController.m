@@ -94,7 +94,8 @@
 }
 
 - (IBAction)backButtonPressed:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Validate Email address

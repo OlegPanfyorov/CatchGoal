@@ -154,6 +154,11 @@
 
 #pragma mark - Actions
 
+- (IBAction)backButtonPressed:(UIButton *)sender {
+    //[self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)registrationClicked:(UIButton *)sender {
     
     RegistrationViewController *registrationVC = [self.storyboard instantiateViewControllerWithIdentifier:@"registrationVC"];

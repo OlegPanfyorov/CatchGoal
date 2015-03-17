@@ -131,9 +131,6 @@ BOOL flag;
         self.graph = graph;
  
     [self.mediaDataView addSubview:graph];
-        
-
-        
     }
 }
 
