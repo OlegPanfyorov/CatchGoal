@@ -11,6 +11,10 @@
 #import "goalOperationsCell.h"
 #import "BEMSimpleLineGraphView.h"
 
+
+#import "JTSImageViewController.h"
+#import "JTSImageInfo.h"
+
 @interface DetailViewController () <UIAlertViewDelegate, GoalInfoCellDelegate, UITableViewDelegate, UITableViewDataSource, BEMSimpleLineGraphDataSource, BEMSimpleLineGraphDelegate, UIScrollViewDelegate>
 
 @property (assign, nonatomic) CGFloat progressPercent;
@@ -22,8 +26,8 @@
 @property (strong, nonatomic) UIView* mediaDataView;
 @property (strong, nonatomic) BEMSimpleLineGraphView* graph;
 
-- (IBAction)showGraph:(id)sender;
-- (IBAction)showProgress:(UIButton *)sender;
+
+- (IBAction)showImage:(UIButton *)sender;
 - (IBAction)addMoneyClicked:(UIBarButtonItem*)sender;
 @end
 
@@ -187,6 +191,7 @@ BOOL flag;
 - (void)showGraph {
     for (UIView* view in self.mediaDataView.subviews) {
             view.hidden = YES;
+        
     }
     
     [self setupGraph:NO];
@@ -203,6 +208,23 @@ BOOL flag;
 
     [self.tableView reloadData];
 
+}
+
+- (IBAction)showImage:(UIButton *)sender {
+
+    if (self.goalImage) {
+        JTSImageInfo *imageInfo = [[JTSImageInfo alloc] init];
+        imageInfo.image = [UIImage imageWithData:self.goalImage];
+        //  imageInfo.referenceRect = self.bigImageButton.frame;
+        //  imageInfo.referenceView = self.bigImageButton.superview;
+        
+        JTSImageViewController *imageViewer = [[JTSImageViewController alloc]
+                                               initWithImageInfo:imageInfo
+                                               mode:JTSImageViewControllerMode_Image
+                                               backgroundStyle:JTSImageViewControllerBackgroundOption_Blurred];
+        
+        [imageViewer showFromViewController:self transition:JTSImageViewControllerTransition_FromOriginalPosition];
+    }
 }
 
 -(IBAction)addMoneyClicked:(UIBarButtonItem*)sender {
@@ -293,6 +315,8 @@ BOOL flag;
 
 - (void) showPhoto {
     NSLog(@"goal image clicked");
+    
+
     
     //    // Create an array to store IDMPhoto objects
     //    NSMutableArray *photos = [NSMutableArray new];

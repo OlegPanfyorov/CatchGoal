@@ -156,6 +156,12 @@
 		DAE75A331AB355AE00F6AA69 /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE75A321AB355AE00F6AA69 /* logout@2x.png */; };
 		DAE75A371AB3565D00F6AA69 /* logout@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE75A361AB3565D00F6AA69 /* logout@3x.png */; };
 		DAE75A391AB363EA00F6AA69 /* no_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE75A381AB363EA00F6AA69 /* no_photo.png */; };
+		DAF8FC801AB9A62C00BFE8CA /* JTSAnimatedGIFUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF8FC751AB9A62C00BFE8CA /* JTSAnimatedGIFUtility.m */; };
+		DAF8FC811AB9A62C00BFE8CA /* JTSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF8FC771AB9A62C00BFE8CA /* JTSImageInfo.m */; };
+		DAF8FC821AB9A62C00BFE8CA /* JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF8FC791AB9A62C00BFE8CA /* JTSImageViewController.m */; };
+		DAF8FC831AB9A62C00BFE8CA /* JTSSimpleImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF8FC7B1AB9A62C00BFE8CA /* JTSSimpleImageDownloader.m */; };
+		DAF8FC841AB9A62C00BFE8CA /* UIApplication+JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF8FC7D1AB9A62C00BFE8CA /* UIApplication+JTSImageViewController.m */; };
+		DAF8FC851AB9A62C00BFE8CA /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF8FC7F1AB9A62C00BFE8CA /* UIImage+JTSImageEffects.m */; };
 		DAFB806B1A6C4EFA006F28DF /* arrowForward.png in Resources */ = {isa = PBXBuildFile; fileRef = DAFB80691A6C4EFA006F28DF /* arrowForward.png */; };
 		DAFB806E1A6C4FB9006F28DF /* arrowBack.png in Resources */ = {isa = PBXBuildFile; fileRef = DAFB806D1A6C4FB9006F28DF /* arrowBack.png */; };
 /* End PBXBuildFile section */
@@ -379,6 +385,18 @@
 		DAE75A321AB355AE00F6AA69 /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@2x.png"; sourceTree = "<group>"; };
 		DAE75A361AB3565D00F6AA69 /* logout@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@3x.png"; sourceTree = "<group>"; };
 		DAE75A381AB363EA00F6AA69 /* no_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_photo.png; sourceTree = "<group>"; };
+		DAF8FC741AB9A62C00BFE8CA /* JTSAnimatedGIFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSAnimatedGIFUtility.h; sourceTree = "<group>"; };
+		DAF8FC751AB9A62C00BFE8CA /* JTSAnimatedGIFUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSAnimatedGIFUtility.m; sourceTree = "<group>"; };
+		DAF8FC761AB9A62C00BFE8CA /* JTSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageInfo.h; sourceTree = "<group>"; };
+		DAF8FC771AB9A62C00BFE8CA /* JTSImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageInfo.m; sourceTree = "<group>"; };
+		DAF8FC781AB9A62C00BFE8CA /* JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageViewController.h; sourceTree = "<group>"; };
+		DAF8FC791AB9A62C00BFE8CA /* JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageViewController.m; sourceTree = "<group>"; };
+		DAF8FC7A1AB9A62C00BFE8CA /* JTSSimpleImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSSimpleImageDownloader.h; sourceTree = "<group>"; };
+		DAF8FC7B1AB9A62C00BFE8CA /* JTSSimpleImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSSimpleImageDownloader.m; sourceTree = "<group>"; };
+		DAF8FC7C1AB9A62C00BFE8CA /* UIApplication+JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JTSImageViewController.h"; sourceTree = "<group>"; };
+		DAF8FC7D1AB9A62C00BFE8CA /* UIApplication+JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JTSImageViewController.m"; sourceTree = "<group>"; };
+		DAF8FC7E1AB9A62C00BFE8CA /* UIImage+JTSImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JTSImageEffects.h"; sourceTree = "<group>"; };
+		DAF8FC7F1AB9A62C00BFE8CA /* UIImage+JTSImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JTSImageEffects.m"; sourceTree = "<group>"; };
 		DAFB80691A6C4EFA006F28DF /* arrowForward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowForward.png; sourceTree = "<group>"; };
 		DAFB806D1A6C4FB9006F28DF /* arrowBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowBack.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -494,6 +512,7 @@
 		790B7F421A69C5A0009C1F1B /* Frameworks\Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				DAF8FC731AB9A60B00BFE8CA /* JTSImageVC */,
 				DA1A58F11A9222B800EA9DD3 /* Core Data */,
 				DA9D5F821A8162C200820E47 /* LocalAuthentication.framework */,
 				DA9D5F801A8161E500820E47 /* CoreFoundation.framework */,
@@ -868,6 +887,25 @@
 			name = Font;
 			sourceTree = "<group>";
 		};
+		DAF8FC731AB9A60B00BFE8CA /* JTSImageVC */ = {
+			isa = PBXGroup;
+			children = (
+				DAF8FC741AB9A62C00BFE8CA /* JTSAnimatedGIFUtility.h */,
+				DAF8FC751AB9A62C00BFE8CA /* JTSAnimatedGIFUtility.m */,
+				DAF8FC761AB9A62C00BFE8CA /* JTSImageInfo.h */,
+				DAF8FC771AB9A62C00BFE8CA /* JTSImageInfo.m */,
+				DAF8FC781AB9A62C00BFE8CA /* JTSImageViewController.h */,
+				DAF8FC791AB9A62C00BFE8CA /* JTSImageViewController.m */,
+				DAF8FC7A1AB9A62C00BFE8CA /* JTSSimpleImageDownloader.h */,
+				DAF8FC7B1AB9A62C00BFE8CA /* JTSSimpleImageDownloader.m */,
+				DAF8FC7C1AB9A62C00BFE8CA /* UIApplication+JTSImageViewController.h */,
+				DAF8FC7D1AB9A62C00BFE8CA /* UIApplication+JTSImageViewController.m */,
+				DAF8FC7E1AB9A62C00BFE8CA /* UIImage+JTSImageEffects.h */,
+				DAF8FC7F1AB9A62C00BFE8CA /* UIImage+JTSImageEffects.m */,
+			);
+			name = JTSImageVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1033,6 +1071,8 @@
 			files = (
 				DA87F4B01A9B89A60085F7F9 /* SCLAlertView.m in Sources */,
 				DA5CB9061A924E2300A66BBF /* MagicalImportFunctions.m in Sources */,
+				DAF8FC851AB9A62C00BFE8CA /* UIImage+JTSImageEffects.m in Sources */,
+				DAF8FC831AB9A62C00BFE8CA /* JTSSimpleImageDownloader.m in Sources */,
 				DA5CB9081A924E2300A66BBF /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				DA2AD3D81A90F9FD00BA7E4C /* goalOperationsCell.m in Sources */,
 				DA5CB9121A924E2300A66BBF /* NSManagedObjectContext+MagicalObserving.m in Sources */,
@@ -1068,10 +1108,12 @@
 				DA87F4B41A9B89A60085F7F9 /* UIImage+ImageEffects.m in Sources */,
 				DA5CB9141A924E2300A66BBF /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				790B7F471A69C5C8009C1F1B /* Constants.m in Sources */,
+				DAF8FC841AB9A62C00BFE8CA /* UIApplication+JTSImageViewController.m in Sources */,
 				DA5CB90C1A924E2300A66BBF /* NSString+MagicalDataImport.m in Sources */,
 				DA5CB9191A924E2300A66BBF /* MagicalRecord+Actions.m in Sources */,
 				DABD69451AB6B4540097C067 /* BEMCircle.m in Sources */,
 				DA5CB9091A924E2300A66BBF /* NSNumber+MagicalDataImport.m in Sources */,
+				DAF8FC821AB9A62C00BFE8CA /* JTSImageViewController.m in Sources */,
 				DA5CB90D1A924E2300A66BBF /* NSManagedObject+MagicalAggregation.m in Sources */,
 				7942FE311A8FD1E00035F411 /* UIActionSheet+BlockExtensions.m in Sources */,
 				DA5CB90B1A924E2300A66BBF /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
@@ -1084,10 +1126,12 @@
 				DA5CB90A1A924E2300A66BBF /* NSObject+MagicalDataImport.m in Sources */,
 				DA5CB9181A924E2300A66BBF /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				79548FFD1A6C37BB005AE681 /* DataSingletone.m in Sources */,
+				DAF8FC811AB9A62C00BFE8CA /* JTSImageInfo.m in Sources */,
 				DABD69481AB6B4540097C067 /* BEMSimpleLineGraphView.m in Sources */,
 				D3494B6C1A6C0FE60007DD0C /* NewGoalTableViewController.m in Sources */,
 				790B7F551A69CA0D009C1F1B /* RegistrationViewController.m in Sources */,
 				DA5CB9161A924E2300A66BBF /* NSManagedObjectModel+MagicalRecord.m in Sources */,
+				DAF8FC801AB9A62C00BFE8CA /* JTSAnimatedGIFUtility.m in Sources */,
 				DA5CB9111A924E2300A66BBF /* NSManagedObject+MagicalRequests.m in Sources */,
 				DABF0E5D1A6AD96800105669 /* TPPropertyAnimation.m in Sources */,
 				DA5CB91A1A924E2300A66BBF /* MagicalRecord+ErrorHandling.m in Sources */,
