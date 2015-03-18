@@ -1066,7 +1066,7 @@ BIG.</string>
                                     <constraint firstAttribute="width" constant="215" id="QMW-IW-322"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q04-g1-tgM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q04-g1-tgM">
                                 <rect key="frame" x="134" y="413" width="52" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="6lg-QO-d39"/>
@@ -1096,10 +1096,12 @@ BIG.</string>
                             <constraint firstItem="O3r-D2-WoX" firstAttribute="top" secondItem="bbv-dW-xfB" secondAttribute="top" id="Syz-UH-fRT"/>
                             <constraint firstAttribute="centerX" secondItem="cNW-2f-TCb" secondAttribute="centerX" id="T89-VP-gNw"/>
                             <constraint firstAttribute="trailing" secondItem="O3r-D2-WoX" secondAttribute="trailing" id="Tzu-x8-IzL"/>
+                            <constraint firstItem="Q04-g1-tgM" firstAttribute="top" secondItem="kd4-2L-AXh" secondAttribute="bottom" constant="19" id="Uoi-TC-H0h"/>
                             <constraint firstItem="zHG-EY-Pbf" firstAttribute="leading" secondItem="bbv-dW-xfB" secondAttribute="leadingMargin" constant="10" id="Z6F-M9-xm3"/>
                             <constraint firstItem="kd4-2L-AXh" firstAttribute="leading" secondItem="bbv-dW-xfB" secondAttribute="leadingMargin" constant="10" id="eo2-Sp-yJH"/>
                             <constraint firstItem="zHG-EY-Pbf" firstAttribute="top" secondItem="2pu-bc-YZh" secondAttribute="bottom" constant="5" id="gj7-74-O32"/>
                             <constraint firstItem="CQn-Oi-UyG" firstAttribute="top" secondItem="O3r-D2-WoX" secondAttribute="bottom" id="r8e-AK-9sa"/>
+                            <constraint firstAttribute="centerX" secondItem="Q04-g1-tgM" secondAttribute="centerX" id="yqL-FF-quf"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
