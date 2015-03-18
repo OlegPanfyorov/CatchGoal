@@ -15,12 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *loginTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UIButton *restoreButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
-@property (weak, nonatomic) IBOutlet UIButton *registrationButton;
 
-- (IBAction)registrationClicked:(UIButton *)sender;
-- (IBAction)forgotPasswordClicked:(UIButton *)sender;
 - (IBAction)loginClicked:(UIButton *)sender;
 
 
@@ -61,10 +57,6 @@
      UIControlEventTouchDragOutside |
      UIControlEventTouchDragExit |
      UIControlEventTouchUpOutside];
-  //  [self underlineString:@"Забыли пароль?" button:self.restoreButton];
-  //  [self underlineString:@"Регистрация" button:self.registrationButton];
-    
-
 }
 
 - (void) lowAlfa:(UIButton*) sender {
@@ -82,16 +74,12 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     self.navigationController.navigationBarHidden = NO;
-
     self.loginTextField.text = @"";
     self.passwordTextField.text = @"";
-
-
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = YES;
-
 }
 
 #pragma mark - Underline Button text
@@ -103,7 +91,6 @@
                       value:[NSNumber numberWithInt:kCTUnderlineStyleSingle]
                       range:(NSRange){0,[attString length]}];
     button.titleLabel.attributedText = attString;
-    
     
 }
 
@@ -155,20 +142,7 @@
 #pragma mark - Actions
 
 - (IBAction)backButtonPressed:(UIButton *)sender {
-    //[self.navigationController popViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:NO completion:nil];
-}
-
-- (IBAction)registrationClicked:(UIButton *)sender {
-    
-    RegistrationViewController *registrationVC = [self.storyboard instantiateViewControllerWithIdentifier:@"registrationVC"];
-    [self.navigationController pushViewController:registrationVC animated:YES];
-}
-
-- (IBAction)forgotPasswordClicked:(UIButton *)sender {
-    
-    ForgotPasswordViewController *forgotPasswordVC = [self.storyboard instantiateViewControllerWithIdentifier:@"forgotVC"];
-    [self.navigationController pushViewController:forgotPasswordVC animated:YES];
 }
 
 - (IBAction)loginClicked:(UIButton *)sender {

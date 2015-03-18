@@ -94,7 +94,6 @@
 }
 
 - (IBAction)backButtonPressed:(UIButton *)sender {
-    //[self.navigationController popViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
@@ -150,7 +149,6 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (buttonIndex) {
         case 0:
-            //[self.navigationController popViewControllerAnimated:YES];
             [self dismissViewControllerAnimated:NO completion:nil];
             break;
         default:

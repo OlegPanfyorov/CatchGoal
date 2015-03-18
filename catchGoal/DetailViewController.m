@@ -10,8 +10,6 @@
 #import "goalInfoCell.h"
 #import "goalOperationsCell.h"
 #import "BEMSimpleLineGraphView.h"
-
-
 #import "JTSImageViewController.h"
 #import "JTSImageInfo.h"
 
@@ -204,10 +202,7 @@ BOOL flag;
     for (UIView* view in self.mediaDataView.subviews) {
             view.hidden = NO;
     }
-    
-
     [self.tableView reloadData];
-
 }
 
 - (IBAction)showImage:(UIButton *)sender {
@@ -312,27 +307,6 @@ BOOL flag;
     return subString;
 }
 
-- (void) showPhoto {
-    NSLog(@"goal image clicked");
-    
-
-    
-    //    // Create an array to store IDMPhoto objects
-    //    NSMutableArray *photos = [NSMutableArray new];
-    //    IDMPhoto *photo = [IDMPhoto photoWithImage:[UIImage imageWithData:_goalImage]];
-    //    [photos addObject:photo];
-    //
-    //    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
-    //    //browser.scaleImage = [UIImage imageNamed:_chartsArray[indexPath.row]];
-    //    //[browser setInitialPageIndex:indexPath.row];
-    //    browser.usePopAnimation = YES;
-    //    browser.displayArrowButton = NO;
-    //    browser.displayDoneButton = YES;
-    //    browser.displayActionButton = NO;
-    //    browser.disableVerticalSwipe = NO;
-    //    [self presentViewController:browser animated:YES completion:nil];
-}
-
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -377,16 +351,16 @@ BOOL flag;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
 
     if (indexPath.section == 0) {
-        if (screenSize.height >= 667) {
+        if (IS_IPHONE6) {
             return 300;
         } else {
-        return 242;
+            return 242;
         }
-    } else
+    } else {
         return 44;
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
