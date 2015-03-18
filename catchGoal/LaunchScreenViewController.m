@@ -43,7 +43,7 @@ typedef NS_ENUM(NSInteger, Buttons) {
     } else {
         [UIView animateWithDuration:1.2f animations:^{
             self.buttonsView.alpha = 0.75f;
-            self.workHard.alpha = 0.8f;
+            self.workHard.alpha = 0.75f;
         }];
     }
 }

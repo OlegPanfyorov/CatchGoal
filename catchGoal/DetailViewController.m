@@ -217,7 +217,6 @@ BOOL flag;
         imageInfo.image = [UIImage imageWithData:self.goalImage];
         //  imageInfo.referenceRect = self.bigImageButton.frame;
         //  imageInfo.referenceView = self.bigImageButton.superview;
-        
         JTSImageViewController *imageViewer = [[JTSImageViewController alloc]
                                                initWithImageInfo:imageInfo
                                                mode:JTSImageViewControllerMode_Image
