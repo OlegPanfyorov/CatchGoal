@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D98g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D105g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="omF-OA-dBH">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -700,7 +700,7 @@ BIG.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mLP-sU-f1G">
-                                <rect key="frame" x="0.0" y="93" width="320" height="475"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="476"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="infoCell" rowHeight="241" id="uk1-4S-7LB" customClass="goalInfoCell">
@@ -856,10 +856,10 @@ BIG.</string>
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4R-IA-Xgo">
-                                <rect key="frame" x="0.0" y="20" width="320" height="73"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="72"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmJ-ti-XcT">
-                                        <rect key="frame" x="8" y="7" width="60" height="60"/>
+                                        <rect key="frame" x="8" y="6" width="60" height="60"/>
                                         <color key="backgroundColor" red="1" green="0.38823529410000002" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="kdR-4q-lIw"/>
@@ -872,7 +872,7 @@ BIG.</string>
                                             <action selector="showImage:" destination="l7G-vV-BF0" eventType="touchUpInside" id="z4B-5V-AT5"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="iPad Air 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfD-5g-n4D">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iPad Air 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfD-5g-n4D">
                                         <rect key="frame" x="76" y="9" width="234" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="51l-Sv-12A"/>
@@ -897,11 +897,10 @@ BIG.</string>
                                     <constraint firstAttribute="trailing" secondItem="iFL-x4-xny" secondAttribute="trailing" constant="10" id="2rq-ol-zyM"/>
                                     <constraint firstAttribute="centerY" secondItem="dmJ-ti-XcT" secondAttribute="centerY" id="4RK-2b-xM1"/>
                                     <constraint firstItem="FfD-5g-n4D" firstAttribute="leading" secondItem="dmJ-ti-XcT" secondAttribute="trailing" priority="888" constant="8" id="F6q-Jt-eoP"/>
-                                    <constraint firstAttribute="height" constant="73" id="Khx-Nm-L5L"/>
+                                    <constraint firstAttribute="centerY" secondItem="FfD-5g-n4D" secondAttribute="centerY" constant="16.5" id="MLj-aT-Jyv"/>
                                     <constraint firstItem="dmJ-ti-XcT" firstAttribute="leading" secondItem="M4R-IA-Xgo" secondAttribute="leading" constant="8" id="Zch-tP-LDp"/>
-                                    <constraint firstItem="iFL-x4-xny" firstAttribute="top" secondItem="FfD-5g-n4D" secondAttribute="bottom" priority="888" constant="8" id="pue-Ym-8Ow"/>
+                                    <constraint firstItem="iFL-x4-xny" firstAttribute="top" secondItem="FfD-5g-n4D" secondAttribute="bottom" priority="888" constant="7" id="pue-Ym-8Ow"/>
                                     <constraint firstAttribute="trailing" secondItem="FfD-5g-n4D" secondAttribute="trailing" constant="10" id="swx-Df-BVo"/>
-                                    <constraint firstItem="FfD-5g-n4D" firstAttribute="top" secondItem="M4R-IA-Xgo" secondAttribute="top" priority="888" constant="8" id="tuz-Pv-iWH"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -914,6 +913,7 @@ BIG.</string>
                             <constraint firstItem="mLP-sU-f1G" firstAttribute="leading" secondItem="oBF-f7-3Vz" secondAttribute="leading" id="aEP-IF-VKz"/>
                             <constraint firstItem="M4R-IA-Xgo" firstAttribute="leading" secondItem="oBF-f7-3Vz" secondAttribute="leading" id="lGg-EG-T9b"/>
                             <constraint firstItem="mLP-sU-f1G" firstAttribute="top" secondItem="M4R-IA-Xgo" secondAttribute="bottom" id="xlm-ab-78W"/>
+                            <constraint firstAttribute="height" secondItem="M4R-IA-Xgo" secondAttribute="height" multiplier="7.9" id="zpC-Js-1gG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="N0U-ti-SB3">
