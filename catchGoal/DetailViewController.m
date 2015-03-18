@@ -377,8 +377,14 @@ BOOL flag;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+
     if (indexPath.section == 0) {
+        if (screenSize.height >= 667) {
+            return 300;
+        } else {
         return 242;
+        }
     } else
         return 44;
 }
