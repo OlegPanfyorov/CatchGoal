@@ -115,9 +115,6 @@
                                     </label>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOs-On-PLm">
                                         <rect key="frame" x="0.0" y="64" width="320" height="64"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="Gko-oe-4IE"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
                                         <state key="normal" title="ЗАБЫЛИ ПАРОЛЬ?">
                                             <color key="titleColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -138,6 +135,7 @@
                                     <constraint firstAttribute="bottom" secondItem="WOs-On-PLm" secondAttribute="bottom" id="N19-r2-W1n"/>
                                     <constraint firstItem="WOs-On-PLm" firstAttribute="top" secondItem="f0F-de-Zc4" secondAttribute="bottom" constant="15" id="PpY-js-jHy"/>
                                     <constraint firstAttribute="height" constant="128" id="Wu0-7s-hKN"/>
+                                    <constraint firstItem="WOs-On-PLm" firstAttribute="height" secondItem="HDg-7B-zVU" secondAttribute="height" multiplier="0.5" id="dHM-za-xh2"/>
                                     <constraint firstAttribute="trailing" secondItem="8V2-8t-8jf" secondAttribute="trailing" id="dKI-mE-W98"/>
                                     <constraint firstItem="WOs-On-PLm" firstAttribute="top" secondItem="8V2-8t-8jf" secondAttribute="bottom" id="erK-dS-GTl"/>
                                     <constraint firstItem="bqQ-wT-IQC" firstAttribute="leading" secondItem="HDg-7B-zVU" secondAttribute="leading" id="mdG-Uy-Srf"/>
