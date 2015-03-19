@@ -167,6 +167,9 @@
         if (user) {
             NSLog(@"successful login");
             [self hideHUD];
+            
+            [[DataSingletone sharedModel] downloadFromParse];
+            
             [self dismissViewControllerAnimated:NO completion:^{
                 GoalsViewController  *mainVC = [self.storyboard instantiateViewControllerWithIdentifier:@"mainVC"];
                 [self.navigationController pushViewController:mainVC animated:YES];

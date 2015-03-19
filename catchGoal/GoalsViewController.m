@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = NO;
-
+    
     UIEdgeInsets inset = {-14,0,-31,0};
     self.tableView.contentInset = inset;
     [self.navigationController.navigationBar setHidden:NO];
@@ -53,7 +53,6 @@
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
-    
 
 }
 
@@ -61,10 +60,13 @@
     [super viewWillAppear:animated];
     [self fetchGoalsWithCompletedFlag:NO];
 
+   // [[DataSingletone sharedModel] saveToParse];
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,7 +95,8 @@
     cell.delegate = self;
     cell.dataSource = self;
     cell.cellRevealMode = SWCellRevealModeNormal;
-
+    
+    
     NSData *goalImage = [NSData dataWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:goal.imagePath]];
     
     if (goal.imagePath) {
@@ -120,7 +123,7 @@
                                                     [UIColor colorWithRed:0.42 green:0.82 blue:0.28 alpha:1],
                                                 }];
     }
- 
+
     return cell;
 }
 
@@ -300,6 +303,7 @@
                     NSString *newName = textField.text;
                     goal.name = newName;
                     [[DataSingletone sharedModel] saveContext];
+                    
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.37 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                         [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationLeft];
 

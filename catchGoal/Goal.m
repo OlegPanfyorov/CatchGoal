@@ -15,6 +15,7 @@
 @dynamic finalDate;
 @dynamic imagePath;
 @dynamic name;
+@dynamic objectId;
 @dynamic perMonth;
 @dynamic price;
 @dynamic progress;

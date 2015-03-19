@@ -131,6 +131,12 @@ BOOL flag;
         graph.hidden = isHidden;
         graph.userInteractionEnabled = YES;
         self.graph = graph;
+        
+        self.mediaDataView.alpha = 0;
+        [UIView animateWithDuration:0.5 animations:^{
+            self.mediaDataView.alpha = 1;
+
+        }];
  
     [self.mediaDataView addSubview:graph];
     }
@@ -202,6 +208,7 @@ BOOL flag;
     for (UIView* view in self.mediaDataView.subviews) {
             view.hidden = NO;
     }
+    
     [self.tableView reloadData];
 }
 

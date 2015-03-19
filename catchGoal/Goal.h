@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSDate * finalDate;
 @property (nonatomic, retain) NSString * imagePath;
+@property (nonatomic, retain) NSString * objectId;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * perMonth;
 @property (nonatomic, retain) NSNumber * price;

@@ -18,5 +18,8 @@
 -(id) init;
 
 - (void) saveContext;
+- (void) downloadFromParse;
+- (void) saveToParse;
+
 
 @end

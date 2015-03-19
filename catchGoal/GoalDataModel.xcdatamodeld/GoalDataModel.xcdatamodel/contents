@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14D72i" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14D105g" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Goal" representedClassName="Goal" syncable="YES">
         <attribute name="complited" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="finalDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="perMonth" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="progress" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -17,7 +18,7 @@
         <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goal" inverseName="operations" inverseEntity="Goal" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Goal" positionX="0" positionY="0" width="128" height="178"/>
+        <element name="Goal" positionX="0" positionY="0" width="128" height="193"/>
         <element name="GoalOperations" positionX="-281" positionY="38" width="128" height="88"/>
     </elements>
 </model>
