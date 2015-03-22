@@ -18,6 +18,8 @@
 		790B7F551A69CA0D009C1F1B /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 790B7F541A69CA0D009C1F1B /* RegistrationViewController.m */; };
 		790B7F581A69CA2C009C1F1B /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 790B7F571A69CA2C009C1F1B /* ForgotPasswordViewController.m */; };
 		790B7F5B1A69CA3E009C1F1B /* LaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 790B7F5A1A69CA3E009C1F1B /* LaunchScreenViewController.m */; };
+		792F5D041ABDD7D2001A7615 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792F5D021ABDD7D2001A7615 /* Crashlytics.framework */; };
+		792F5D051ABDD7D2001A7615 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792F5D031ABDD7D2001A7615 /* Fabric.framework */; };
 		7942FE311A8FD1E00035F411 /* UIActionSheet+BlockExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7942FE301A8FD1E00035F411 /* UIActionSheet+BlockExtensions.m */; };
 		794465A81A6A523A00F00F63 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 794465A71A6A523A00F00F63 /* libsqlite3.0.dylib */; };
 		794465AE1A6A529600F00F63 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794465A91A6A529600F00F63 /* Parse.framework */; };
@@ -199,6 +201,8 @@
 		790B7F571A69CA2C009C1F1B /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		790B7F591A69CA3E009C1F1B /* LaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenViewController.h; sourceTree = "<group>"; };
 		790B7F5A1A69CA3E009C1F1B /* LaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenViewController.m; sourceTree = "<group>"; };
+		792F5D021ABDD7D2001A7615 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		792F5D031ABDD7D2001A7615 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		7942FE2F1A8FD1E00035F411 /* UIActionSheet+BlockExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+BlockExtensions.h"; sourceTree = "<group>"; };
 		7942FE301A8FD1E00035F411 /* UIActionSheet+BlockExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+BlockExtensions.m"; sourceTree = "<group>"; };
 		794465A71A6A523A00F00F63 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -413,6 +417,7 @@
 				DA9D5F7F1A81619800820E47 /* Foundation.framework in Frameworks */,
 				DA9D5F7D1A81618D00820E47 /* CFNetwork.framework in Frameworks */,
 				D3494B711A6C14110007DD0C /* NotificationCenter.framework in Frameworks */,
+				792F5D051ABDD7D2001A7615 /* Fabric.framework in Frameworks */,
 				794465D31A6A536800F00F63 /* UIKit.framework in Frameworks */,
 				794465D11A6A536000F00F63 /* SystemConfiguration.framework in Frameworks */,
 				794465CF1A6A535700F00F63 /* StoreKit.framework in Frameworks */,
@@ -425,6 +430,7 @@
 				794465BB1A6A52E600F00F63 /* AudioToolbox.framework in Frameworks */,
 				794465B91A6A52DD00F00F63 /* Accounts.framework in Frameworks */,
 				794465B71A6A52D500F00F63 /* Social.framework in Frameworks */,
+				792F5D041ABDD7D2001A7615 /* Crashlytics.framework in Frameworks */,
 				794465B51A6A52C900F00F63 /* AdSupport.framework in Frameworks */,
 				794465AF1A6A529600F00F63 /* ParseUI.framework in Frameworks */,
 				794465AE1A6A529600F00F63 /* Parse.framework in Frameworks */,
@@ -512,6 +518,7 @@
 		790B7F421A69C5A0009C1F1B /* Frameworks\Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				792F5D001ABDD785001A7615 /* Fabric */,
 				DAF8FC731AB9A60B00BFE8CA /* JTSImageVC */,
 				DA1A58F11A9222B800EA9DD3 /* Core Data */,
 				DA9D5F821A8162C200820E47 /* LocalAuthentication.framework */,
@@ -592,6 +599,15 @@
 				790B7F5A1A69CA3E009C1F1B /* LaunchScreenViewController.m */,
 			);
 			name = "Start Screens";
+			sourceTree = "<group>";
+		};
+		792F5D001ABDD785001A7615 /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				792F5D021ABDD7D2001A7615 /* Crashlytics.framework */,
+				792F5D031ABDD7D2001A7615 /* Fabric.framework */,
+			);
+			name = Fabric;
 			sourceTree = "<group>";
 		};
 		794465B31A6A529900F00F63 /* parse need. */ = {
@@ -916,6 +932,7 @@
 				790B7F151A69C3AE009C1F1B /* Sources */,
 				790B7F161A69C3AE009C1F1B /* Frameworks */,
 				790B7F171A69C3AE009C1F1B /* Resources */,
+				792F5D011ABDD7B4001A7615 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1063,6 +1080,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		792F5D011ABDD7B4001A7615 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 4632fdc7ad5d52ec6a93af2f091e1ef448c98553 5131dc0196c804dd6520b349fa1cf2a7255799c349fc8e318c7896220aa5d007";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		790B7F151A69C3AE009C1F1B /* Sources */ = {
@@ -1272,7 +1305,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "73eaedb6-89b8-41c4-b6cf-df7a1dc6b03b";
+				PROVISIONING_PROFILE = "7dc88c92-0076-4d7a-9bae-e84f1b98c5ac";
 			};
 			name = Debug;
 		};
@@ -1294,7 +1327,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "73eaedb6-89b8-41c4-b6cf-df7a1dc6b03b";
+				PROVISIONING_PROFILE = "7dc88c92-0076-4d7a-9bae-e84f1b98c5ac";
 			};
 			name = Release;
 		};

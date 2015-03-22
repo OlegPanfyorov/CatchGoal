@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "Goal.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @interface AppDelegate ()
 
@@ -17,6 +20,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //Fabric.io
+    [Fabric with:@[CrashlyticsKit]];
+
+    
     // Override point for customization after application launch.
 
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"GoalDataModel"];
